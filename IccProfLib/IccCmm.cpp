@@ -132,7 +132,7 @@ static __inline bool IsSpaceSpectralPCS(icUInt32Number sig)
  */
 icFloatNumber CIccPCSUtil::UnitClip(icFloatNumber v)
 {
-  if (v<0)
+  if (v<0 || isnan(v))
     v = 0;
   if (v>1.0)
     v = 1.0;
@@ -145,12 +145,12 @@ icFloatNumber CIccPCSUtil::UnitClip(icFloatNumber v)
  * Name: CIccPCS::NegClip
  * 
  * Purpose: 
- *  Convert a double to an icUInt16Number with clipping of negative numbers
+ *  clipping of negative numbers
  **************************************************************************
  */
 icFloatNumber CIccPCSUtil::NegClip(icFloatNumber v)
 {
-  if (v<0)
+  if (v<0 || isnan(v))
     v=0;
   
   return v;

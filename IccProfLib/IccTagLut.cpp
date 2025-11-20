@@ -1611,7 +1611,7 @@ icValidateStatus CIccMatrix::Validate(std::string sigPath, std::string &sReport,
   
 static icFloatNumber ClutUnitClip(icFloatNumber v)
 {
-  if (v<0)
+  if (v<0 || isnan(v))
     return 0;
   else if (v>1.0)
     return 1.0;

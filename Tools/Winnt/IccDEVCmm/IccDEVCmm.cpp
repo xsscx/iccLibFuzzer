@@ -317,7 +317,7 @@ static BOOL IsValidBitmapType(BMFORMAT bmType, icColorSpaceSignature sigSpace)
 
 __inline icFloatNumber UnitClip(icFloatNumber v)
 {
-  if (v<0.0)
+  if (v<0.0 || isnan(v))
     return 0.0;
   if (v>1.0)
     return 1.0;

@@ -3383,7 +3383,7 @@ bool CIccTagNamedColor2::GetColorName(std::string &sColorName, icInt32Number ind
  */
 icFloatNumber CIccTagNamedColor2::UnitClip(icFloatNumber v) const
 {
-  if (v<0)
+  if (v<0 || isnan(v))
     v = 0;
   if (v>1.0)
     v = 1.0;
@@ -3406,7 +3406,7 @@ icFloatNumber CIccTagNamedColor2::UnitClip(icFloatNumber v) const
  */
 icFloatNumber CIccTagNamedColor2::NegClip(icFloatNumber v) const
 {
-  if (v<0)
+  if (v<0 || isnan(v))
     v=0;
   
   return v;

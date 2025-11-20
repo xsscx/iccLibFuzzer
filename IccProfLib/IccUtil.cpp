@@ -767,7 +767,7 @@ icFloatNumber icU16toF(icUInt16Number num)
 icUInt8Number icABtoU8(icFloatNumber num)
 {
   icFloatNumber v = num + 128.0f;
-  if (v<0)
+  if (v<0 || isnan(v))
     v=0;
   else if (v>255)
     v=255;
