@@ -84,6 +84,7 @@
 #include "IccSparseMatrix.h"
 #include "IccEncoding.h"
 #include "IccMatrixMath.h"
+#include <math.h>
 
 #ifdef USEICCDEVNAMESPACE
 namespace iccDEV {
