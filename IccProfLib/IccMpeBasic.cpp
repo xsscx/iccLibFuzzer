@@ -5363,6 +5363,8 @@ icValidateStatus CIccMpeMatrix::Validate(std::string sigPath, std::string &sRepo
 
 static icFloatNumber NoClip(icFloatNumber v)
 {
+  if (isnan(v))
+    v = 0;
   return v;
 }
 

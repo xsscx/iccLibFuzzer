@@ -778,6 +778,8 @@ icValidateStatus CIccMpeInvEmissionMatrix::Validate(std::string sigPath, std::st
 
 static icFloatNumber NoClip(icFloatNumber v)
 {
+  if (isnan(v))
+    v = 0;
   return v;
 }
 
