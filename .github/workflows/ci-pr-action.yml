@@ -7,11 +7,11 @@
 #
 ## Intent: iccDEV ci-pr-action
 #
-## Last Updated: 28-NOV-2025 2300Z by David Hoyt 
+## Last Updated: 02-DEC-2025 2300Z by David Hoyt 
 ##               Added user-controllable input (uci) checks
-## TODO: Push binary releases, tags etc.. 
 #
-## Comment: Known good and working from PatchIccMax
+#
+#
 #
 #
 #
@@ -123,7 +123,78 @@ jobs:
           else
             echo "src_changed=false" >> "$GITHUB_OUTPUT"
           fi
+ 
+      - name: Print PR Info
+        shell: bash
+        env:
+          BASH_ENV: /dev/null
+        run: |
+          set -euo pipefail
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git config --global credential.helper ""
+          unset GITHUB_TOKEN || true
 
+          # ================================
+          #   ICCDEV – Welcome Banner
+          # ================================
+          {
+            echo "<div align=\"center\">"
+            echo "  <a href=\"https://color.org\" target=\"_blank\">"
+            echo "    <img src=\"https://color.org/system/images/ICC_logo_text.gif\" alt=\"ICC Logo\" width=\"320\">"
+            echo "  </a>"
+            echo "  <h3>Welcome to the ICC Development Workflow</h3>"
+            echo "</div>"
+            echo ""        
+            echo "## 🧩 ICCDEV PR Summary"
+            echo "  ⏱️ <em>Date:</em> $(date -u '+%Y-%m-%d %H:%M:%S UTC')"     
+            echo ""       
+            echo "  <strong>PRs Are Typically Reviewed Within 14 Days</strong><br>"            
+            echo ""
+            echo "## ✔️ PR Checklist"
+            echo ""
+            echo "- [x] You have followed the [guidelines for contributing](https://github.com/InternationalColorConsortium/iccDEV/blob/master/CONTRIBUTING.md)"
+            echo "- [x] Commits follow GitHub’s [acceptable use policy](https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies)"
+            echo "- [x] You checked for duplicate [pull requests](https://github.com/InternationalColorConsortium/iccDEV/pulls)"
+            echo "- [x] You built your PR locally using the official [Build Instructions](https://github.com/InternationalColorConsortium/iccDEV/blob/master/docs/build.md)"
+            echo "- [x] You included Unit Tests and/or Issue reproduction steps + fix"
+            echo ""
+            echo "> iccDEV Maintainers will review your PR within **14 days**."
+            echo ""
+            echo "If you have questions, contact a listed [Maintainer](https://github.com/InternationalColorConsortium/iccDEV/tree/master/.github/CODEOWNERS)."
+            echo ""
+            echo "## 🛡️ Legal Requirements"
+            echo ""
+            echo "All contributions to ICC open-source projects follow:"
+            echo "- The [International Color Consortium IP Policy](https://www.color.org/iccip.xalter)"
+            echo "- Open-source software best practices"
+            echo "- Contributor License Agreement (CLA) requirements"
+            echo ""
+            echo "### 📄 Contributor License Agreements"
+            echo "Before contributing code, you must complete a **Contributor License Agreement (CLA)**."
+            echo ""
+            echo "- [🧍 Personal CLA](https://github.com/InternationalColorConsortium/.github/blob/main/docs/CLA.md)"
+            echo "- [🏢 Corporate CLA](https://github.com/InternationalColorConsortium/.github/blob/main/docs/icc-individual-cla.pdf)"
+            echo ""
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          # ================================
+          #   Branch / PR Context
+          # ================================
+          echo "## 📌 PR / Branch Context" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          echo "HEAD_REF:  ${GITHUB_HEAD_REF:-<none>}" >> "$GITHUB_STEP_SUMMARY"
+          echo "BASE_REF:  ${GITHUB_BASE_REF:-<none>}" >> "$GITHUB_STEP_SUMMARY"
+          echo "GITHUB_REF: $GITHUB_REF" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+
+          # ================================
+          #   Recent Commits
+          # ================================
+          echo "## 📝 Recent Git Commits" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          git --no-pager log -n 5 --pretty=format:"Commit: %H%nAuthor: %an%nDate: %ad%nMessage: %s%n" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
 
   setup:
     name: 🧭 Init
@@ -291,9 +362,18 @@ jobs:
           set -euo pipefail
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git config --global credential.helper ""
-          echo "## 🧩 iccDEV PR Summary" >> "$GITHUB_STEP_SUMMARY"
-          echo "" >> "$GITHUB_STEP_SUMMARY"
 
+          {
+            echo "<div align=\"center\">"
+            echo "  <a href=\"https://color.org\" target=\"_blank\">"
+            echo "    <img src=\"https://color.org/system/images/ICC_logo_text.gif\" alt=\"ICC Logo\" width=\"320\">"
+            echo "  </a>"
+            echo "</div>"
+            echo ""
+            echo "## 🧩 ICCDEV PR Summary"
+            echo ""
+          } >> "$GITHUB_STEP_SUMMARY"
+            
           if [ "${{ needs.detect-src.outputs.src_changed }}" != "true" ]; then
             echo "- 💤 Non-source PR detected — build, analysis, and linting skipped." >> "$GITHUB_STEP_SUMMARY"
             echo "" >> "$GITHUB_STEP_SUMMARY"
