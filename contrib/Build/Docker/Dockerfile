@@ -26,6 +26,8 @@ FROM ubuntu:24.04 AS builder
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+LABEL org.opencontainers.image.description="iccDEV build and runtime environment (Ubuntu 24.04, wxWidgets, toolchain)"
+
 LABEL \
   org.opencontainers.image.title="iccDEV" \
   org.opencontainers.image.description="iccDEV build and runtime environment (Ubuntu 24.04, wxWidgets, toolchain)" \
@@ -121,12 +123,24 @@ RUN git clone https://github.com/InternationalColorConsortium/iccDEV.git /opt/ic
 # =========================
 # 2) RUNTIME STAGE
 # =========================
-FROM ubuntu:24.04
+FROM ubuntu:24.04 AS builder2
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-LABEL maintainer="https://github.com/InternationalColorConsortium/iccDEV" \
-      org.opencontainers.image.source="https://github.com/InternationalColorConsortium/iccDEV"
+LABEL org.opencontainers.image.description="iccDEV build and runtime environment (Ubuntu 24.04, wxWidgets, toolchain)"
+
+LABEL \
+  org.opencontainers.image.title="iccDEV" \
+  org.opencontainers.image.description="iccDEV build and runtime environment (Ubuntu 24.04, wxWidgets, toolchain)" \
+  org.opencontainers.image.version="2.3.1.1" \
+  org.opencontainers.image.variant="ubuntu-24.04" \
+  org.opencontainers.image.licenses="BSD-3-Clause" \
+  org.opencontainers.image.url="https://github.com/InternationalColorConsortium/iccDEV" \
+  org.opencontainers.image.documentation="https://github.com/InternationalColorConsortium/iccDEV/tree/master/docs" \
+  org.opencontainers.image.source="https://github.com/InternationalColorConsortium/iccDEV" \
+  org.opencontainers.image.vendor="International Color Consortium" \
+  org.opencontainers.image.authors="ICC Development Team" \
+  org.opencontainers.image.base.name="ubuntu:24.04"
 
 # Runtime-only dependencies (no compilers, no headers)
 RUN apt-get update \

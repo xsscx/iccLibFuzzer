@@ -1,0 +1,185 @@
+###############################################################
+#
+## Copyright (©) 2024-2025 David H Hoyt. All rights reserved.
+##                 https://srd.cx
+##
+## Last Updated: 06-DEC-2025 1600Z by David Hoyt
+#
+## Intent: Dockerfile
+#          Version 1.0.2
+# 
+#
+#  Tag: ci-docker-debug-asan
+#
+#
+#
+#
+#
+#
+#
+###############################################################
+
+# =========================
+# 1) BUILD STAGE
+# =========================
+FROM ubuntu:24.04 AS builder
+ENV DEBIAN_FRONTEND=noninteractive
+
+# ------------------------------------------------------------
+# Runtime dependencies (no compilers, no headers)
+# ------------------------------------------------------------
+# Build toolchain + dev dependencies
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
+    build-essential \
+    cmake \
+    ninja-build \
+    git \
+    curl \
+    ca-certificates \
+    pkg-config \
+    ccache \
+    gdb \
+    clang-18 \
+    clang-tools-18 \
+    lldb-18 \
+    llvm-18 \
+    llvm-18-dev \
+    libclang-18-dev \
+    libxml2-dev \
+    nlohmann-json3-dev \
+    libtiff6 \
+    libgtk-3-dev \
+    libgdk-pixbuf2.0-dev \
+    libcurl4-openssl-dev \
+    libglu1-mesa-dev \
+    libnotify-dev \
+    libjpeg-dev \
+    libpng-dev \
+    zlib1g-dev \
+    libsecret-1-dev \
+    libx11-dev \
+    libxext-dev \
+    libxtst-dev \
+    libclang-rt-18-dev \
+ && rm -rf /var/lib/apt/lists/*
+
+# ------------------------------------------------------------
+# Build iccDEV using Clang-18 with full sanitizer propagation
+# ------------------------------------------------------------
+ENV CC=/usr/bin/clang-18
+ENV CXX=/usr/bin/clang++-18
+
+RUN git clone https://github.com/InternationalColorConsortium/iccDEV.git /opt/iccdev \
+ && cd /opt/iccdev \
+ && sed -i '/find_package(wxWidgets COMPONENTS core base REQUIRED)/,/endif()/ s/^/# /' Build/Cmake/CMakeLists.txt \
+ && cd Build \
+ && cmake \
+    -DCMAKE_INSTALL_PREFIX=/opt/iccdev/install \
+    -DCMAKE_BUILD_TYPE=Debug \
+    -DCMAKE_C_COMPILER=/usr/bin/clang-18 \
+    -DCMAKE_CXX_COMPILER=/usr/bin/clang++-18 \
+    -DCMAKE_TRY_COMPILE_TARGET_TYPE=STATIC_LIBRARY \
+    -DCMAKE_TRY_COMPILE_C_FLAGS="" \
+    -DCMAKE_TRY_COMPILE_CXX_FLAGS="" \
+    -DCMAKE_TRY_COMPILE_LINKER_FLAGS="" \
+    -DTIFF_LIBRARY=/usr/lib/$(dpkg-architecture -q DEB_HOST_MULTIARCH)/libtiff.so \
+    -DTIFF_INCLUDE_DIR=/usr/include \
+    -DZLIB_LIBRARY=/usr/lib/$(dpkg-architecture -q DEB_HOST_MULTIARCH)/libz.so \
+    -DZLIB_INCLUDE_DIR=/usr/include \
+    -DPNG_LIBRARY=/usr/lib/$(dpkg-architecture -q DEB_HOST_MULTIARCH)/libpng.so \
+    -DPNG_PNG_INCLUDE_DIR=/usr/include \
+    -DJPEG_LIBRARY=/usr/lib/$(dpkg-architecture -q DEB_HOST_MULTIARCH)/libjpeg.so \
+    -DJPEG_INCLUDE_DIR=/usr/include \
+    -DCMAKE_C_FLAGS="-g -fsanitize=address,undefined -fno-omit-frame-pointer" \
+    -DCMAKE_CXX_FLAGS="-g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall" \
+    -DCMAKE_EXE_LINKER_FLAGS="" \
+    -DCMAKE_SHARED_LINKER_FLAGS="" \
+    ../Build/Cmake \
+ && make -j"$(nproc)" \
+ && rm -rf /opt/iccdev/.git
+
+###############################################################
+# 2) RUNTIME STAGE
+###############################################################
+FROM ubuntu:24.04 AS runtime
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install runtime deps
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends \
+    git curl ca-certificates pkg-config \
+    libtiff6 libgtk-3-0 libgdk-pixbuf2.0-0 \
+    libcurl4 libglu1-mesa libnotify-bin \
+    libjpeg8 libpng16-16 zlib1g libsecret-1-0 \
+    libx11-6 libxext6 libxtst6 \
+ && rm -rf /var/lib/apt/lists/*
+
+# Pull artifacts from builder
+COPY --from=builder /usr/local /usr/local
+COPY --from=builder /opt/iccdev /opt/iccdev
+
+# Runtime user
+RUN groupadd -r iccdev \
+ && useradd -r -g iccdev -d /opt/iccdev -s /usr/sbin/nologin iccdev \
+ && chown -R iccdev:iccdev /opt/iccdev
+
+# ------------------------------------------------------------
+# Deterministic PATH injection
+# ------------------------------------------------------------
+RUN find /opt/iccdev/Build/Tools -maxdepth 1 -type d | paste -sd: - \
+      > /opt/iccdev/toolpaths.txt
+
+RUN TOOLPATHS="$(cat /opt/iccdev/toolpaths.txt)" \
+ && printf 'export PATH=%s:$PATH\n' "$TOOLPATHS" \
+      > /etc/profile.d/iccdev-tools.sh \
+ && chmod 644 /etc/profile.d/iccdev-tools.sh
+
+RUN cat /opt/iccdev/toolpaths.txt | tr -d '\n' \
+      | sed 's|$|:|' \
+      | sed 's|^|PATH=|' \
+      > /etc/environment
+
+ENV PATH="$(cat /opt/iccdev/toolpaths.txt):${PATH}"
+
+# ------------------------------------------------------------
+# Deterministic PATH injection (runtime evaluated)
+# ------------------------------------------------------------
+RUN printf '%s\n' 'export PATH=$(cat /opt/iccdev/toolpaths.txt):$PATH' \
+  > /etc/profile.d/iccdev-tools.sh \
+ && chmod 644 /etc/profile.d/iccdev-tools.sh
+
+# ------------------------------------------------------------
+# Deterministic login/interactive banner + run iccToXml
+# ------------------------------------------------------------
+RUN { \
+  echo "echo \"\""; \
+  echo "echo \"========= International Color Consortium ============\""; \
+  echo "echo \"https://color.org              iccDEV v2.3.1.1 Docker\""; \
+  echo "echo \"\""; \
+  echo "echo \"The Libraries & Tools are located in:\""; \
+  echo "find /opt/iccdev -type f \\( -perm -111 -o -name \"*.a\" -o -name \"*.so\" -o -name \"*.dylib\" \\) -mmin -1440 ! -path \"*/.git/*\" ! -path \"*/CMakeFiles/*\" ! -name \"*.sh\" -print"; \
+  echo "echo \"\""; \
+  echo "echo \"The Testing directory contains pre-built ICC profiles\""; \
+  echo "echo \"\""; \
+  echo "echo \"Open an Issue with Comments or Feedback at URL:\""; \
+  echo "echo \"https://github.com/InternationalColorConsortium/iccDEV/issues\""; \
+  echo "echo \"=================================================\""; \
+} > /etc/profile.d/iccdev-banner.sh \
+ && chmod 644 /etc/profile.d/iccdev-banner.sh
+
+USER iccdev
+WORKDIR /opt/iccdev
+
+###############################################################
+# 3) DEBUG-ASAN FINAL IMAGE (this is what GHCR sees)
+###############################################################
+FROM runtime AS debug-asan
+
+LABEL org.opencontainers.image.title="iccDEV (Debug + ASAN)" \
+      org.opencontainers.image.description="ICC profile creation and processing tools — Debug + AddressSanitizer/UBSan build" \
+      org.opencontainers.image.licenses="BSD-3-Clause" \
+      org.opencontainers.image.vendor="International Color Consortium" \
+      org.opencontainers.image.source="https://github.com/InternationalColorConsortium/iccDEV"
+
+CMD ["bash"]
