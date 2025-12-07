@@ -12,10 +12,11 @@ To Run: `docker run -it ghcr.io/internationalcolorconsortium/iccdev:latest bash 
 
 ```
 ========= International Color Consortium ============
-https://color.org
- iccDEV v2.3.1.1 Docker
+https://color.org              iccDEV v2.3.1.1 Docker
+=====================================================
 
-The Libraries & Tools are located in:
+The Libraries & Tools are on PATH located in:
+
 /opt/iccdev/Build/IccProfLib/libIccProfLib2.so.2.3.1.1
 /opt/iccdev/Build/IccProfLib/libIccProfLib2-static.a
 /opt/iccdev/Build/IccXML/libIccXML2.so.2.3.1.1
@@ -38,8 +39,13 @@ The Testing directory contains pre-built ICC profiles
 
 Open an Issue with Comments or Feedback at URL:
 https://github.com/InternationalColorConsortium/iccDEV/issues
-=================================================
-iccdev@f4146a0a5ace:~$
+
+=== Thank you for using iccDEV Libraries & Tools ======
+
+iccdev@061742a2614f:~$ iccToXml
+IccToXml built with IccProfLib Version 2.3.1.1, IccLibXML Version 2.3.1.1
+
+Usage: IccToXml src_icc_profile dest_xml_file
 ```
 
 ## Example Usage
