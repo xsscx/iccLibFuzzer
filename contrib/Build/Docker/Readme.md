@@ -11,9 +11,17 @@ To Run: `docker run -it ghcr.io/internationalcolorconsortium/iccdev:latest bash 
 - At login, you will see:
 
 ```
-========= International Color Consortium ============
-https://color.org              iccDEV v2.3.1.1 Docker
-=====================================================
+============================================================
+==== International Color Consortium | https://color.org ====
+==== iccDEV v2.3.1.1-debug-sanitizers Built for Docker  ====
+============================================================
+
+iccDEV provides a set of libraries and tools that allow for
+the interaction, manipulation, and application of ICC color
+management profiles.
+
+URL https://github.com/InternationalColorConsortium/iccDEV
+============================================================
 
 The Libraries & Tools are on PATH located in:
 
@@ -35,17 +43,28 @@ The Libraries & Tools are on PATH located in:
 /opt/iccdev/Build/Tools/IccSpecSepToTiff/iccSpecSepToTiff
 /opt/iccdev/Build/Tools/IccTiffDump/iccTiffDump
 
-The Testing directory contains pre-built ICC profiles
+=====================================================
+Example Use:
+iccToXml Testing/sRGB_v4_ICC_preference.icc Testing/sRGB_v4_ICC_preference.xml
+XML successfully created
 
+The Testing directory contains ICC profiles.
+
+To create all the profiles run these 2 commands:
+-----
+cd Testing
+bash CreateAllProfiles.sh
+-----
+The Expected Output:
+ICC files: 204
+
+=====================================================
 Open an Issue with Comments or Feedback at URL:
 https://github.com/InternationalColorConsortium/iccDEV/issues
 
-=== Thank you for using iccDEV Libraries & Tools ======
+=== Thank you for using iccDEV Libraries & Tools ====
 
-iccdev@061742a2614f:~$ iccToXml
-IccToXml built with IccProfLib Version 2.3.1.1, IccLibXML Version 2.3.1.1
-
-Usage: IccToXml src_icc_profile dest_xml_file
+iccdev@v2.3.1.1:/opt/iccdev$
 ```
 
 ## Example Usage
