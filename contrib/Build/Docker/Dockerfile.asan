@@ -3,15 +3,15 @@
 ## Copyright (©) 2024-2025 David H Hoyt. All rights reserved.
 ##                 https://srd.cx
 ##
-## Last Updated: 06-DEC-2025 1600Z by David Hoyt
+## Last Updated: 07-DEC-2025 1600Z by David Hoyt
 #
 ## Intent: Dockerfile
-#          Version 1.0.2
+#          Version 1.2.2.5
 # 
 #
-#  Tag: ci-docker-debug-asan
+#  Tag: ci-docker-debug-asan-ubsan
 #
-#
+#       Added defult run example at login
 #
 #
 #
@@ -64,6 +64,8 @@ RUN apt-get update \
     libclang-rt-18-dev \
  && rm -rf /var/lib/apt/lists/*
 
+
+
 # ------------------------------------------------------------
 # Build iccDEV using Clang-18 with full sanitizer propagation
 # ------------------------------------------------------------
@@ -99,6 +101,18 @@ RUN git clone https://github.com/InternationalColorConsortium/iccDEV.git /opt/ic
  && make -j"$(nproc)" \
  && rm -rf /opt/iccdev/.git
 
+# ------------------------------------------------------------
+# Build-time security scrub: remove possible secrets/tokens/keys
+# ------------------------------------------------------------
+RUN rm -rf /root/.ssh || true \
+ && rm -rf /root/.gnupg || true \
+ && rm -rf /root/.config || true \
+ && find /opt/iccdev -type f -name "*.asc" -delete || true \
+ && find /opt/iccdev -type f -name "*id_rsa*" -delete || true \
+ && find /opt/iccdev -type f -name "*.pem" -delete || true \
+ && find /opt/iccdev -type f -name "*.key" -delete || true \
+ && find /opt/iccdev -type f -name "*token*" -delete || true
+
 ###############################################################
 # 2) RUNTIME STAGE
 ###############################################################
@@ -126,50 +140,94 @@ RUN groupadd -r iccdev \
 
 # ------------------------------------------------------------
 # Deterministic PATH injection
+#   - Discover directories that actually contain executables
+#   - Bake them into /etc/profile.d for login shells
+#   - Provide a sane default PATH for non-login shells
 # ------------------------------------------------------------
-RUN find /opt/iccdev/Build/Tools -maxdepth 1 -type d | paste -sd: - \
-      > /opt/iccdev/toolpaths.txt
 
+# ------------------------------------------------------------
+# Collect executable dirs
+# ------------------------------------------------------------
+RUN find /opt/iccdev/Build/Tools -type f -perm -111 -printf '%h\n' \
+    | sort -u \
+    | paste -sd: - \
+    > /opt/iccdev/toolpaths.txt
+
+# ------------------------------------------------------------
+# Deterministic PATH script (loads BEFORE banner)
+# ------------------------------------------------------------
 RUN TOOLPATHS="$(cat /opt/iccdev/toolpaths.txt)" \
  && printf 'export PATH=%s:$PATH\n' "$TOOLPATHS" \
-      > /etc/profile.d/iccdev-tools.sh \
- && chmod 644 /etc/profile.d/iccdev-tools.sh
+      > /etc/profile.d/00-iccdev-path.sh \
+ && chmod 644 /etc/profile.d/00-iccdev-path.sh
 
-RUN cat /opt/iccdev/toolpaths.txt | tr -d '\n' \
-      | sed 's|$|:|' \
-      | sed 's|^|PATH=|' \
+# ------------------------------------------------------------
+# Default PATH for non-login shells
+# ------------------------------------------------------------
+RUN TOOLPATHS="$(cat /opt/iccdev/toolpaths.txt)" \
+ && printf 'PATH=%s:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\n' "$TOOLPATHS" \
       > /etc/environment
 
-ENV PATH="$(cat /opt/iccdev/toolpaths.txt):${PATH}"
 
 # ------------------------------------------------------------
-# Deterministic PATH injection (runtime evaluated)
+# Build-time verification that iccToXml is on PATH
 # ------------------------------------------------------------
-RUN printf '%s\n' 'export PATH=$(cat /opt/iccdev/toolpaths.txt):$PATH' \
-  > /etc/profile.d/iccdev-tools.sh \
- && chmod 644 /etc/profile.d/iccdev-tools.sh
+RUN iccToXml --version || iccToXml -h || true
 
 # ------------------------------------------------------------
 # Deterministic login/interactive banner + run iccToXml
+# (executed only in login shells, e.g. `bash -l`)
 # ------------------------------------------------------------
 RUN { \
   echo "echo \"\""; \
-  echo "echo \"========= International Color Consortium ============\""; \
-  echo "echo \"https://color.org              iccDEV v2.3.1.1 Docker\""; \
+  echo "echo \"============================================================\""; \
+  echo "echo \"==== International Color Consortium | https://color.org ====\""; \
+  echo "echo \"==== iccDEV v2.3.1.1-debug-sanitizers Built for Docker  ====\""; \
+  echo "echo \"============================================================\""; \
   echo "echo \"\""; \
-  echo "echo \"The Libraries & Tools are located in:\""; \
+  echo "echo \"iccDEV provides a set of libraries and tools that allow for \""; \
+  echo "echo \"the interaction, manipulation, and application of ICC color \""; \
+  echo "echo \"management profiles.\""; \
+  echo "echo \"\""; \
+  echo "echo \"URL https://github.com/InternationalColorConsortium/iccDEV\""; \
+  echo "echo \"============================================================\""; \
+  echo "echo \"\""; \
+  echo "echo \"The Libraries & Tools are on PATH located in:\""; \
+  echo "echo \"\""; \
   echo "find /opt/iccdev -type f \\( -perm -111 -o -name \"*.a\" -o -name \"*.so\" -o -name \"*.dylib\" \\) -mmin -1440 ! -path \"*/.git/*\" ! -path \"*/CMakeFiles/*\" ! -name \"*.sh\" -print"; \
+  echo "echo \"\""; \ 
+  echo "echo \"=====================================================\""; \
+  echo "echo \"Example Use:\""; \
+  echo "echo \"iccToXml Testing/sRGB_v4_ICC_preference.icc Testing/sRGB_v4_ICC_preference.xml\""; \
+  echo "iccToXml Testing/sRGB_v4_ICC_preference.icc Testing/sRGB_v4_ICC_preference.xml; [ \$? -ne 0 ] && echo \"\""; \
   echo "echo \"\""; \
-  echo "echo \"The Testing directory contains pre-built ICC profiles\""; \
+  echo "echo \"The Testing directory contains ICC profiles.\""; \
   echo "echo \"\""; \
+  echo "echo \"To create all the profiles run these 2 commands:\""; \
+  echo "echo \"-----\""; \
+  echo "echo \"cd Testing\""; \
+  echo "echo \"bash CreateAllProfiles.sh\""; \
+  echo "echo \"-----\""; \
+  echo "echo \"The Expected Output:\""; \
+  echo "echo \"ICC files: 204\""; \
+  echo "echo \"\""; \
+  echo "echo \"=====================================================\""; \
   echo "echo \"Open an Issue with Comments or Feedback at URL:\""; \
   echo "echo \"https://github.com/InternationalColorConsortium/iccDEV/issues\""; \
-  echo "echo \"=================================================\""; \
+  echo "echo \"\""; \
+  echo "echo \"=== Thank you for using iccDEV Libraries & Tools ====\""; \
+  echo "echo \"\""; \
 } > /etc/profile.d/iccdev-banner.sh \
  && chmod 644 /etc/profile.d/iccdev-banner.sh
 
+# Set deterministic prompt for all shells
+RUN printf 'export PS1="iccdev@v2.3.1.1:\$(pwd)$ "\n' > /etc/profile.d/10-iccdev-prompt.sh \
+ && chmod 644 /etc/profile.d/10-iccdev-prompt.sh
+
 USER iccdev
 WORKDIR /opt/iccdev
+
+RUN printf 'export PS1="iccdev@v2.3.1.1:\$(pwd)$ "\n' >> ~/.bashrc
 
 ###############################################################
 # 3) DEBUG-ASAN FINAL IMAGE (this is what GHCR sees)
@@ -182,4 +240,5 @@ LABEL org.opencontainers.image.title="iccDEV (Debug + ASAN)" \
       org.opencontainers.image.vendor="International Color Consortium" \
       org.opencontainers.image.source="https://github.com/InternationalColorConsortium/iccDEV"
 
-CMD ["bash"]
+# Use a login shell so /etc/profile.d/* (tools + banner) are sourced
+CMD ["bash", "-l"]
