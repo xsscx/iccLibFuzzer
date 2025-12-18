@@ -2,7 +2,7 @@
 @file
 File:       sanitize.ps1
 
-Contains:   Implementation of definitions and macros for ICC signature logging.
+Contains:   Implementation of sanitizer for powershell.
 
 Version:    V1
 

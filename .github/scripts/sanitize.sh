@@ -3,7 +3,7 @@
 # @file
 # File:       sanitize.sh
 #
-# Contains:   Implementation of definitions and macros for ICC signature logging.
+# Contains:   Implementation of sanitizer for BASH Shell.
 #
 # Version:    V1
 #
