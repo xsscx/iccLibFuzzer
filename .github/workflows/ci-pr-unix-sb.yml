@@ -135,7 +135,7 @@ jobs:
           scan-build cmake \
             -DCMAKE_INSTALL_PREFIX=$HOME/.local \
             -DCMAKE_BUILD_TYPE=${{ inputs.build-type || 'Release' }} \
-             Cmake/
+            Cmake
           echo "::endgroup::"
 
       - name: Run scan-build CMake build

@@ -62,7 +62,7 @@
 #
 # Intent: Try Sanitizing User Controllable Inputs
 #
-# File: .github/scripts/sanitize.sh
+# File: .github/scripts/sanitize-sed.sh
 # 
 #
 # Comment: Sanitizing User Controllable Input 
