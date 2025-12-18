@@ -90,8 +90,8 @@ echo "============================================================"
 # ===== CONFIG =====
 REPO_URL="${1:?Usage: $0 <repo-url>}"
 
-# ---- URL validation (scheme whitelist) ----
-if [[ ! "$REPO_URL" =~ ^(https://|ssh://|git@|git://) ]]; then
+# ---- URL validation (scheme whitelist; disallow insecure git://) ----
+if [[ ! "$REPO_URL" =~ ^(https://|ssh://|git@) ]]; then
   echo "Error: unsupported or unsafe repo URL scheme"
   exit 1
 fi
