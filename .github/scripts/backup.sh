@@ -84,7 +84,7 @@ echo "============================================================"
 echo "Script: $(basename "$0")"
 echo "Start:  ${SCRIPT_START_TS}"
 echo "PID:    $$"
-echo "Args:   $*"
+echo "Args:   $# argument(s)"
 echo "============================================================"
 
 # ===== CONFIG =====
