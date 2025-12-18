@@ -234,4 +234,4 @@ sanitizer_version() {
   printf 'iccDEV-sanitizer-v1\n'
 }
 
-# End of newest-sanitizer.sh
+# End of sanitize-sed.sh
