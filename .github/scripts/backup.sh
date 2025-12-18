@@ -114,7 +114,9 @@ unset http_proxy https_proxy HTTP_PROXY HTTPS_PROXY
 
 # ===== CLEANUP HANDLER =====
 cleanup() {
-  git -C "$WORK_DIR" worktree prune >/dev/null 2>&1 || true
+  if [[ -n "${WORK_DIR:-}" && -d "$WORK_DIR" ]]; then
+    git -C "$WORK_DIR" worktree prune >/dev/null 2>&1 || true
+  fi
 }
 trap cleanup EXIT INT TERM
 
