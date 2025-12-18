@@ -497,7 +497,7 @@ jobs:
             # remove CRs
             v="${v//$'\r'/}"
             # trim leading/trailing whitespace (awk used for portability)
-            v="$(echo -n "$v" | awk '{$1=$1;print}')"
+            v="$(printf '%s' "$v" | awk '{$1=$1;print}')"
             # lowercase (use tr for portability)
             v="$(echo "$v" | tr '[:upper:]' '[:lower:]')"
             printf '%s' "$v"
