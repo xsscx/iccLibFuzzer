@@ -11148,7 +11148,7 @@ bool CIccTagSpectralViewingConditions::Write(CIccIO *pIO)
 
   icUInt32Number vals = m_observerRange.steps*3;
 
-  if (vals)
+  if (vals && m_observer)
     if (pIO->WriteFloat32Float(&m_observer[0], vals) != vals)
       return false;
 
@@ -11162,7 +11162,7 @@ bool CIccTagSpectralViewingConditions::Write(CIccIO *pIO)
 
   vals = m_illuminantRange.steps;
 
-  if (vals)
+  if (vals && m_illuminant)
     if (pIO->WriteFloat32Float(&m_illuminant[0], vals) != vals)
       return false;
 
