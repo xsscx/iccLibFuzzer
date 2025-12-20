@@ -92,6 +92,9 @@ namespace iccDEV {
 
 size_t CIccIO::ReadLine(void *pBuf8, size_t nNum/*=256*/)
 {
+  if (!pBuf8)
+    return 0;
+
   size_t n=0;
   icInt8Number c, *ptr=(icInt8Number*)pBuf8;
 
@@ -113,14 +116,22 @@ size_t CIccIO::ReadLine(void *pBuf8, size_t nNum/*=256*/)
 
 size_t CIccIO::Read16(void *pBuf16, size_t nNum)
 {
+  if (!pBuf16)
+    return 0;
+
   nNum = Read8(pBuf16, nNum<<1)>>1;
+#ifdef ICC_BYTE_ORDER_LITTLE_ENDIAN
   icSwab16Array(pBuf16, nNum);
+#endif
 
   return nNum;
 }
 
 size_t CIccIO::Write16(void *pBuf16, size_t nNum)
 {
+  if (!pBuf16)
+    return 0;
+
 #ifndef ICC_BYTE_ORDER_LITTLE_ENDIAN
   return Write8(pBuf16, nNum<<1)>>1;
 #else
@@ -142,8 +153,13 @@ size_t CIccIO::Write16(void *pBuf16, size_t nNum)
 
 size_t CIccIO::Read32(void *pBuf32, size_t nNum)
 {
+  if (!pBuf32)
+    return 0;
+
   nNum = Read8(pBuf32, nNum<<2)>>2;
+#ifdef ICC_BYTE_ORDER_LITTLE_ENDIAN
   icSwab32Array(pBuf32, nNum);
+#endif
 
   return nNum;
 }
@@ -151,6 +167,9 @@ size_t CIccIO::Read32(void *pBuf32, size_t nNum)
 
 size_t CIccIO::Write32(void *pBuf32, size_t nNum)
 {
+  if (!pBuf32)
+    return 0;
+
 #ifndef ICC_BYTE_ORDER_LITTLE_ENDIAN
   return Write8(pBuf32, nNum<<2)>>2;
 #else
@@ -172,8 +191,13 @@ size_t CIccIO::Write32(void *pBuf32, size_t nNum)
 
 size_t CIccIO::Read64(void *pBuf64, size_t nNum)
 {
+  if (!pBuf64)
+    return 0;
+
   nNum = Read8(pBuf64, nNum<<3)>>3;
+#ifdef ICC_BYTE_ORDER_LITTLE_ENDIAN
   icSwab64Array(pBuf64, nNum);
+#endif
 
   return nNum;
 }
@@ -181,6 +205,9 @@ size_t CIccIO::Read64(void *pBuf64, size_t nNum)
 
 size_t CIccIO::Write64(void *pBuf64, size_t nNum)
 {
+  if (!pBuf64)
+    return 0;
+
 #ifndef ICC_BYTE_ORDER_LITTLE_ENDIAN
   return Write8(pBuf64, nNum<<3)>>3;
 #else
@@ -202,6 +229,9 @@ size_t CIccIO::Write64(void *pBuf64, size_t nNum)
 
 size_t CIccIO::ReadUInt8Float(void *pBufFloat, size_t nNum)
 {
+  if (!pBufFloat)
+    return 0;
+
   icFloatNumber *ptr = (icFloatNumber*)pBufFloat;
   icUInt8Number tmp;
   size_t i;
@@ -218,6 +248,9 @@ size_t CIccIO::ReadUInt8Float(void *pBufFloat, size_t nNum)
 
 size_t CIccIO::WriteUInt8Float(void *pBufFloat, size_t nNum)
 {
+  if (!pBufFloat)
+    return 0;
+
   icFloatNumber *ptr = (icFloatNumber*)pBufFloat;
   icUInt8Number tmp;
   size_t i;
@@ -235,6 +268,9 @@ size_t CIccIO::WriteUInt8Float(void *pBufFloat, size_t nNum)
 
 size_t CIccIO::ReadUInt16Float(void *pBufFloat, size_t nNum)
 {
+  if (!pBufFloat)
+    return 0;
+
   icFloatNumber *ptr = (icFloatNumber*)pBufFloat;
   icUInt16Number tmp;
   size_t i;
@@ -251,6 +287,9 @@ size_t CIccIO::ReadUInt16Float(void *pBufFloat, size_t nNum)
 
 size_t CIccIO::WriteUInt16Float(void *pBufFloat, size_t nNum)
 {
+  if (!pBufFloat)
+    return 0;
+
   icFloatNumber *ptr = (icFloatNumber*)pBufFloat;
   icUInt16Number tmp;
   size_t i;
@@ -268,6 +307,9 @@ size_t CIccIO::WriteUInt16Float(void *pBufFloat, size_t nNum)
 
 size_t CIccIO::ReadFloat16Float(void *pBufFloat, size_t nNum)
 {
+  if (!pBufFloat)
+    return 0;
+
   icFloatNumber *ptr = (icFloatNumber*)pBufFloat;
   icFloat16Number tmp;
   size_t i;
@@ -284,6 +326,9 @@ size_t CIccIO::ReadFloat16Float(void *pBufFloat, size_t nNum)
 
 size_t CIccIO::WriteFloat16Float(void *pBufFloat, size_t nNum)
 {
+  if (!pBufFloat)
+    return 0;
+
   icFloatNumber *ptr = (icFloatNumber*)pBufFloat;
   icUInt16Number tmp;
   size_t i;
@@ -304,6 +349,9 @@ size_t CIccIO::ReadFloat32Float(void *pBufFloat, size_t nNum)
   if (sizeof(icFloat32Number)==sizeof(icFloatNumber))
     return Read32(pBufFloat, nNum);
 
+  if (!pBufFloat)
+    return 0;
+
   icFloatNumber *ptr = (icFloatNumber*)pBufFloat;
   icFloat32Number tmp;
   size_t i;
@@ -322,6 +370,9 @@ size_t CIccIO::WriteFloat32Float(void *pBufFloat, size_t nNum)
 {
   if (sizeof(icFloat32Number)==sizeof(icFloatNumber))
     return Write32(pBufFloat, nNum);
+
+  if (!pBufFloat)
+    return 0;
 
   icFloatNumber *ptr = (icFloatNumber*)pBufFloat;
   icFloat32Number tmp;
@@ -451,7 +502,7 @@ void CIccFileIO::Close()
 
 size_t CIccFileIO::Read8(void *pBuf, size_t nNum)
 {
-  if (!m_fFile)
+  if (!m_fFile || !pBuf)
     return 0;
 
   return fread(pBuf, 1, nNum, m_fFile);
@@ -460,7 +511,7 @@ size_t CIccFileIO::Read8(void *pBuf, size_t nNum)
 
 size_t CIccFileIO::Write8(void *pBuf, size_t nNum)
 {
-  if (!m_fFile)
+  if (!m_fFile || !pBuf)
     return 0;
 
   return fwrite(pBuf, 1, nNum, m_fFile);
@@ -721,7 +772,7 @@ void CIccMemIO::Close()
 
 size_t CIccMemIO::Read8(void *pBuf, size_t nNum)
 {
-  if (!m_pData)
+  if (!m_pData || !pBuf)
     return 0;
   if (nNum > 0) {
       nNum = __min((m_nSize - m_nPos), nNum);
@@ -734,7 +785,7 @@ size_t CIccMemIO::Read8(void *pBuf, size_t nNum)
 
 size_t CIccMemIO::Write8(void *pBuf, size_t nNum)
 {
-  if (!m_pData)
+  if (!m_pData || !pBuf)
     return 0;
 
   nNum = __min((m_nAvail-m_nPos), nNum);
@@ -837,6 +888,9 @@ void CIccNullIO::Close()
 
 size_t CIccNullIO::Read8(void *pBuf, size_t nNum)
 {
+  if (!pBuf)
+    return 0;
+
   size_t nLeft = m_nSize - m_nPos;
   size_t nRead = (nNum <= nLeft) ? nNum : nLeft;
 
