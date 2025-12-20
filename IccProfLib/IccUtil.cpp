@@ -113,6 +113,11 @@ ICCPROFLIB_API const char* icMsgValidateInformation = "Information - ";
 {
   void *nptr;
   
+  if (size == 0) {
+    free(ptr);
+    return NULL;
+  }
+  
   if (ptr)
     nptr = realloc(ptr, size);
   else
