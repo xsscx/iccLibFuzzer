@@ -2125,6 +2125,9 @@ bool CIccTagXmlSpectralViewingConditions::ParseXml(xmlNode *pNode, std::string &
       icFloatNumber *pBuf = vals.GetBuf();
       memcpy(m_observer, pBuf, m_observerRange.steps*3*sizeof(icFloatNumber));
     }
+    else {
+      setObserver(m_stdObserver, m_observerRange, NULL);
+    }
   }
 
   pChild = icXmlFindNode(pNode, "StdIlluminant");
