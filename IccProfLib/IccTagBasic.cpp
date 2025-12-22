@@ -454,13 +454,16 @@ bool CIccTagText::Read(icUInt32Number size, CIccIO *pIO)
 
   size_t nSize = size - sizeof(icTagTypeSignature) - sizeof(icUInt32Number);
 
-  icChar *pBuf = GetBuffer((icUInt32Number)nSize);
+  icChar *pBuf = GetBuffer((icUInt32Number)nSize+1);
 
   if (nSize) {
     if (pIO->Read8(pBuf, nSize) != nSize) {
       return false;
     }
   }
+  
+  // always NULL terminate the string
+  m_szText[nSize] = '\0';
 
   Release();
 
@@ -802,13 +805,16 @@ bool CIccTagUtf8Text::Read(icUInt32Number size, CIccIO *pIO)
 
   size_t nSize = size - sizeof(icTagTypeSignature) - sizeof(icUInt32Number);
 
-  icUChar *pBuf = GetBuffer((icUInt32Number)nSize);
+  icUChar *pBuf = GetBuffer((icUInt32Number)nSize+1);
 
   if (nSize) {
     if (pIO->Read8(pBuf, nSize) != nSize) {
       return false;
     }
   }
+  
+  // always NULL terminate the string
+  pBuf[nSize] = '\0';
 
   Release();
 
@@ -1625,13 +1631,16 @@ bool CIccTagUtf16Text::Read(icUInt32Number size, CIccIO *pIO)
 
   size_t nSize = (size - sizeof(icTagTypeSignature) - sizeof(icUInt32Number))/sizeof(icUChar16);
 
-  icUChar16 *pBuf = GetBuffer((icUInt32Number)nSize);
+  icUChar16 *pBuf = GetBuffer((icUInt32Number)nSize+1);
 
   if (nSize) {
     if (pIO->Read16(pBuf, nSize) != nSize) {
       return false;
     }
   }
+  
+  // always NULL terminate the string
+  pBuf[nSize] = 0;
 
   Release();
 
@@ -2079,15 +2088,16 @@ bool CIccTagTextDescription::Read(icUInt32Number size, CIccIO *pIO)
   if (3*sizeof(icUInt32Number) + nSize > size)
     return false;
 
-  icChar *pBuf = GetBuffer(nSize);
+  icChar *pBuf = GetBuffer(nSize+1);
 
   if (nSize) {
     if (pIO->Read8(pBuf, nSize) != nSize) {
       return false;
     }
   }
-  else 
-    m_szText[0] = '\0';
+
+  // always NULL terminate the string!
+  m_szText[nSize] = '\0';
   
   Release();
 
@@ -2812,7 +2822,7 @@ bool CIccTagNamedColor2::SetSize(icUInt32Number nSize, icInt32Number nDeviceCoor
   if (nDeviceCoords>0)
     nDeviceCoords--;
 
-  icUInt32Number nColorEntrySize = 32/*rootName*/ + (3/*PCS*/ + 1/*iAny*/ + nDeviceCoords)*sizeof(icFloatNumber);
+  size_t nColorEntrySize = 32/*rootName*/ + (3/*PCS*/ + 1/*iAny*/ + (size_t)nDeviceCoords)*sizeof(icFloatNumber);
 
   SIccNamedColorEntry* pNamedColor = (SIccNamedColorEntry*)calloc(nSize, nColorEntrySize);
 
@@ -2927,9 +2937,9 @@ bool CIccTagNamedColor2::Read(icUInt32Number size, CIccIO *pIO)
 
   size -= nTagHdrSize;
 
-  icUInt32Number nCount = size / (32+(3+nCoords)*sizeof(icUInt16Number));
+  size_t nCount = size / (32+(3+(size_t)nCoords)*sizeof(icUInt16Number));
 
-  if (nCount < nNum)
+  if (nCount < (size_t)nNum)
     return false;
 
   if (!SetSize(nNum, nCoords))
@@ -3616,6 +3626,8 @@ bool CIccTagXYZ::Read(icUInt32Number size, CIccIO *pIO)
 
   if (!pIO->Read32(&m_nReserved))
     return false;
+    
+  size_t number = ((size-2*sizeof(icUInt32Number)) / sizeof(icXYZNumber));
 
   icUInt32Number nNum=((size-2*sizeof(icUInt32Number)) / sizeof(icXYZNumber));
   icUInt32Number nNum32 = nNum*sizeof(icXYZNumber)/sizeof(icUInt32Number);
@@ -4449,7 +4461,7 @@ CIccTagSparseMatrixArray::CIccTagSparseMatrixArray(int nNumMatrices/* =1 */, int
  * Purpose: Copy Constructor
  *
  * Args:
- *  ITFN = The CIccTagFixedNum object to be copied
+ *  ITSMA = The CIccTagSparseMatrixArray object to be copied
  *****************************************************************************
  */
 CIccTagSparseMatrixArray::CIccTagSparseMatrixArray(const CIccTagSparseMatrixArray &ITSMA)
