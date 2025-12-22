@@ -3893,6 +3893,8 @@ bool CIccCalculatorFunc::SequenceNeedTempReset(SIccCalcOp *op, icUInt32Number nO
       memcpy(ifTemps, tempUsage, nMaxTemp);
 
       p=i+2;
+      if (p > nOps)
+        return true;
       rv = rv || SequenceNeedTempReset(&op[p], icIntMin(nOps-p, op[i].data.size), ifTemps, nMaxTemp);
 
       if (i<nOps && op[i+1].sig==icSigElseOp) {
@@ -3905,6 +3907,8 @@ bool CIccCalculatorFunc::SequenceNeedTempReset(SIccCalcOp *op, icUInt32Number nO
         memcpy(elseTemps, tempUsage, nMaxTemp);
 
         p=i+2+op[i].data.size;
+        if (p > nOps)
+          return true;
         rv = rv || SequenceNeedTempReset(&op[p], icIntMin(nOps-p, op[i+1].data.size), elseTemps, nMaxTemp);
 
         if (!rv) {
@@ -3988,12 +3992,16 @@ int CIccCalculatorFunc::CheckUnderflowOverflow(SIccCalcOp *op, icUInt32Number nO
       int incI = 0;
       if (i+1<nOps && op[i+1].sig==icSigElseOp) {
         p = i+2; 
+        if (p > nOps)
+          return -1;
         nIfArgs = CheckUnderflowOverflow(&op[p], icIntMin(nOps-p, op[i].data.size), nArgs, bCheckUnderflow, sReport);
         if (nIfArgs<0)
           return -1;
         incI =op[i].data.size;
 
         p = i+2+op[i].data.size;
+        if (p > nOps)
+          return -1;
         nElseArgs = CheckUnderflowOverflow(&op[p], icIntMin(nOps-p, op[i+1].data.size), nArgs, bCheckUnderflow, sReport);
         if (nElseArgs<0)
           return -1;
@@ -4005,6 +4013,8 @@ int CIccCalculatorFunc::CheckUnderflowOverflow(SIccCalcOp *op, icUInt32Number nO
       }
       else {
         p = i+1; 
+        if (p > nOps)
+          return -1;
         nIfArgs = CheckUnderflowOverflow(&op[p], icIntMin(nOps-p, op[i].data.size), nArgs, bCheckUnderflow, sReport);
         if (nIfArgs<0)
           return -1;
@@ -4039,6 +4049,8 @@ int CIccCalculatorFunc::CheckUnderflowOverflow(SIccCalcOp *op, icUInt32Number nO
         if (pos>=nOps)
           return -1;
 
+        if (pos > nOps)
+          return -1;
         nCaseArgs = CheckUnderflowOverflow(&op[pos], icIntMin(nOps-pos, len), nArgs, bCheckUnderflow, sReport);
         if (nCaseArgs<0)
           return -1;
