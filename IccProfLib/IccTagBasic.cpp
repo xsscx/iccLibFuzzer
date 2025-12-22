@@ -4556,10 +4556,10 @@ bool CIccTagSparseMatrixArray::Read(icUInt32Number size, CIccIO *pIO)
   
   // We can't use GetBytesPerMatrix() because the relevant member data isn't set until we call Reset.
   // But this math must match GetBytesPerMatrix()
-  icUInt32Number nBytesPerMatrix = nChannels * sizeof(icFloatNumber);
+  icUInt64Number nBytesPerMatrix = nChannels * sizeof(icFloatNumber);
 
   icUInt64Number nNeededSize = nBytesPerMatrix * nNumMatrices;
-  if (nNeededSize > nSizeLeft)
+  if (nNeededSize > (icUInt64Number)nSizeLeft)
     return false;
 
   // this sets the sizes, and allocates a huge chunk of memory for matrix storage in m_RawData
@@ -4754,13 +4754,18 @@ bool CIccTagSparseMatrixArray::Write(CIccIO *pIO)
       !pIO->Write32(&m_nSize))
       return false;
 
-  icUInt32Number nBytesPerMatrix = m_nChannelsPerMatrix * sizeof(icFloatNumber);
+  icUInt64Number nBytesPerMatrix = m_nChannelsPerMatrix * sizeof(icFloatNumber);
+  icUInt64Number nNeededSize = m_nSize * nBytesPerMatrix;
   CIccSparseMatrix mtx;
   icUInt16Number nRows;
   int i;
+  
+  // current profile format cannot go over 4 Gig
+  if (nNeededSize >= (0x100000000ULL - pIO->Tell()))
+    return false;
 
   for (i=0; i<(int)m_nSize; i++) {
-    icUInt8Number *pMatrix = m_RawData + i*nBytesPerMatrix;
+    icUInt8Number *pMatrix = m_RawData + (size_t)i * nBytesPerMatrix;
     mtx.Reset(pMatrix, nBytesPerMatrix, icSparseMatrixFloatNum, true);
     nRows = mtx.Rows();
 

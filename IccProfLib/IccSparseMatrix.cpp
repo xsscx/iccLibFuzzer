@@ -2,7 +2,7 @@
 
 #include <cstring>
 
-CIccSparseMatrix::CIccSparseMatrix(void *pMatrix, icUInt32Number nSize, icSparseMatrixType nType, bool bInitFromData/*=false*/)
+CIccSparseMatrix::CIccSparseMatrix(void *pMatrix, size_t nSize, icSparseMatrixType nType, bool bInitFromData/*=false*/)
 {
   m_pMatrix = (unsigned char*)pMatrix;
   m_nRawSize = nSize;
@@ -112,7 +112,7 @@ CIccSparseMatrix &CIccSparseMatrix::operator=(const CIccSparseMatrix &mtx)
   return *this;
 }
 
-void CIccSparseMatrix::Reset(void *pMatrix, icUInt32Number nSize, icSparseMatrixType nType, bool bInitFromData/*=true*/)
+void CIccSparseMatrix::Reset(void *pMatrix, size_t nSize, icSparseMatrixType nType, bool bInitFromData/*=true*/)
 {
   if (m_Data)
     delete m_Data;
@@ -200,10 +200,10 @@ bool CIccSparseMatrix::Init(icUInt16Number nRows, icUInt16Number nCols, bool bSe
     return false;
   }
 
-  m_nMaxEntries = (m_nRawSize - coloffset - (nTypeSize-1)) / (nTypeSize+sizeof(icUInt16Number));
+  m_nMaxEntries = (icUInt32Number)((m_nRawSize - coloffset - (nTypeSize-1)) / (nTypeSize+sizeof(icUInt16Number)));
 
   icUInt32Number dataoffset = ((icUInt32Number)((coloffset + m_nMaxEntries*sizeof(icUInt16Number) + nTypeSize-1) / nTypeSize)) * nTypeSize;
-  
+
   m_RowStart = (icUInt16Number*)(m_pMatrix + 2*sizeof(icUInt16Number));
   m_ColumnIndices = (icUInt16Number*)(m_pMatrix + (3+m_nRows)*sizeof(icUInt16Number));
 
