@@ -1270,10 +1270,16 @@ bool CIccProfile::LoadTag(IccTagEntry *pTagEntry, CIccIO *pIO, bool bReadAll/*=f
   if (pTagEntry->pTag)
     return pTagEntry->pTag->ReadAll();
 
+  // if the tag claims to be inside the header, or zero length, return an error
   if (pTagEntry->TagInfo.offset<sizeof(m_Header) ||
     !pTagEntry->TagInfo.size) {
     return false;
   }
+  
+  // if the tag claims to be longer than the actual file, return an error
+  // NOTE - ccox - it would be nice to cache the file length instead of calculating it per tag
+  if ( (pTagEntry->TagInfo.offset + pTagEntry->TagInfo.size) > pIO->GetLength())
+    return false;
 
   icTagTypeSignature sigType;
 
@@ -1291,7 +1297,6 @@ bool CIccProfile::LoadTag(IccTagEntry *pTagEntry, CIccIO *pIO, bool bReadAll/*=f
 
   //Now seek back to where the tag starts so the created tag object can read
   //in its data.
-  //First we need to get the tag type to create the right kind of tag
   if (pIO->Seek(pTagEntry->TagInfo.offset, icSeekSet)!= pTagEntry->TagInfo.offset) {
     delete pTag;
     return false;
