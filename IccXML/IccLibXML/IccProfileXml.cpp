@@ -132,7 +132,7 @@ bool CIccProfileXml::ToXmlWithBlanks(std::string &xml, std::string blanks)
   }
  
   xml+= blanks + "    ";
-  xml+= icGetHeaderFlagsName(m_Header.flags, m_Header.mcs!=0);
+  xml+= icGetHeaderFlagsName(m_Header.flags, (icUInt32Number)m_Header.mcs != 0);
 
   if (m_Header.manufacturer != 0){
 	  snprintf(line, bufSize, "    <DeviceManufacturer>%s</DeviceManufacturer>\n", icFixXml(fix, icGetSigStr(buf, bufSize, m_Header.manufacturer)));

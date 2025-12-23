@@ -281,6 +281,13 @@ bool CIccTagUnknown::Read(icUInt32Number size, CIccIO *pIO)
 
   m_nSize = size - sizeof(icTagTypeSignature);
 
+  // Validate size to prevent excessive memory allocation (CVE mitigation)
+  // ICC profiles should have reasonable tag sizes (max 100MB is generous)
+  #define MAX_ICC_TAG_SIZE (100 * 1024 * 1024)
+  if (m_nSize > MAX_ICC_TAG_SIZE) {
+    return false;
+  }
+
   if (m_nSize > 0) { // size could be stored as smaller than expected value, therefore the size check
 
     m_pData = new icUInt8Number[m_nSize];
