@@ -362,8 +362,7 @@ jobs:
           cd Build/Cmake
           Write-Host "========= Building... ================`n"  
           cmake  -B build -S . -DCMAKE_TOOLCHAIN_FILE="..\..\scripts\buildsystems\vcpkg.cmake" -DVCPKG_MANIFEST_MODE=OFF -DCMAKE_BUILD_TYPE=Debug  -Wno-dev
-          cmake --build build -- /m /maxcpucount
-          cmake --build build -- /m /maxcpucount          
+          cmake --build build -- /m /maxcpucount        
           $exeDirs = Get-ChildItem -Recurse -File -Include *.exe -Path .\build\ |
               Where-Object { $_.FullName -match 'icc' -and $_.FullName -notmatch '\\CMakeFiles\\' -and $_.Name -notmatch '^CMake(C|CXX)CompilerId\.exe$' } |
               ForEach-Object { Split-Path $_.FullName -Parent } |
@@ -442,4 +441,5 @@ jobs:
           echo "### Windows Build Summary" >> $GITHUB_STEP_SUMMARY
           echo "- Build Directory: Build/" >> $GITHUB_STEP_SUMMARY
           echo "- Artifacts Uploaded:  iccdev-v231-windows-msvc" >> $GITHUB_STEP_SUMMARY
+
           echo "- Status: Success" >> $GITHUB_STEP_SUMMARY

@@ -1,0 +1,5 @@
+[libfuzzer]
+max_len = 1048576
+timeout = 25
+rss_limit_mb = 2048
+detect_leaks = 0

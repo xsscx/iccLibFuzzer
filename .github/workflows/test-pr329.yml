@@ -1,0 +1,139 @@
+name: Test PR 329 Fix
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - issue-328
+  workflow_dispatch:
+    inputs:
+      duration:
+        description: 'Fuzzing duration in seconds'
+        required: false
+        default: '300'
+
+permissions:
+  contents: read
+
+env:
+  DURATION_MAX: 3600
+  DURATION_DEFAULT: 300
+
+jobs:
+  test-fix:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        sanitizer: [address]
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+      
+      - name: Checkout base commit (trusted sanitizers)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.event.pull_request.base.sha || github.sha }}
+          path: base
+          fetch-depth: 1
+          persist-credentials: false
+      
+      - name: Configure Git Environment
+        shell: bash --noprofile --norc {0}
+        env:
+          BASH_ENV: /dev/null
+        run: |
+          source .github/scripts/workflow-prologue.sh
+      
+      - name: Install Dependencies
+        shell: bash --noprofile --norc {0}
+        env:
+          BASH_ENV: /dev/null
+        run: |
+          source .github/scripts/workflow-prologue.sh
+          sudo apt-get update -qq
+          sudo apt-get install -y clang cmake build-essential nlohmann-json3-dev libtiff-dev libpng-dev libjpeg-turbo8-dev libxml2-dev
+      
+      - name: Build Fuzzers
+        shell: bash --noprofile --norc {0}
+        env:
+          BASH_ENV: /dev/null
+          SANITIZER: ${{ matrix.sanitizer }}
+        run: |
+          source .github/scripts/workflow-prologue.sh
+          source .github/scripts/load-sanitizer.sh
+          
+          SANITIZER_CLEAN="$(sanitize_filename "$SANITIZER")"
+          ./build-fuzzers-local.sh "$SANITIZER_CLEAN"
+      
+      - name: Test Known Crash
+        shell: bash --noprofile --norc {0}
+        env:
+          BASH_ENV: /dev/null
+          SANITIZER: ${{ matrix.sanitizer }}
+        run: |
+          source .github/scripts/workflow-prologue.sh
+          source .github/scripts/load-sanitizer.sh
+          
+          SANITIZER_CLEAN="$(sanitize_filename "$SANITIZER")"
+          CRASH_FILE="Testing/crashes/crash-3c3c6c65ab8b4ba09d67bcb0edfdc2345e8285dd"
+          
+          if [ -f "$CRASH_FILE" ]; then
+            echo "Testing known crash: $CRASH_FILE"
+            if "./fuzzers-local/${SANITIZER_CLEAN}/icc_profile_fuzzer" "$CRASH_FILE" 2>&1 | head -20; then
+              echo "✅ Known crash handled without error"
+            else
+              echo "❌ Fuzzer failed on known crash"
+              exit 1
+            fi
+          else
+            echo "⚠️  Known crash file not found: $CRASH_FILE"
+            exit 1
+          fi
+      
+      - name: Validate Duration Input
+        shell: bash --noprofile --norc {0}
+        env:
+          BASH_ENV: /dev/null
+          USER_DURATION: ${{ github.event.inputs.duration }}
+        run: |
+          source .github/scripts/workflow-prologue.sh
+          source .github/scripts/load-sanitizer.sh
+          
+          DURATION="${USER_DURATION:-${{ env.DURATION_DEFAULT }}}"
+          DURATION_CLEAN="$(sanitize_line "$DURATION")"
+          
+          if ! [[ "$DURATION_CLEAN" =~ ^[0-9]+$ ]]; then
+            echo "Error: Duration must be numeric"
+            exit 1
+          fi
+          if [ "$DURATION_CLEAN" -lt 1 ] || [ "$DURATION_CLEAN" -gt "${{ env.DURATION_MAX }}" ]; then
+            echo "Error: Duration must be 1-${{ env.DURATION_MAX }}s"
+            exit 1
+          fi
+          echo "VALIDATED_DURATION=$DURATION_CLEAN" >> "$GITHUB_ENV"
+      
+      - name: Run Fuzzing Test
+        shell: bash --noprofile --norc {0}
+        env:
+          BASH_ENV: /dev/null
+          SANITIZER: ${{ matrix.sanitizer }}
+        run: |
+          source .github/scripts/workflow-prologue.sh
+          source .github/scripts/load-sanitizer.sh
+          
+          SANITIZER_CLEAN="$(sanitize_filename "$SANITIZER")"
+          ./run-local-fuzzer.sh "$SANITIZER_CLEAN" icc_profile_fuzzer "$VALIDATED_DURATION"
+      
+      - name: Upload Crashes
+        if: always()
+        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874
+        with:
+          name: crashes-${{ matrix.sanitizer }}
+          path: fuzzers-local/${{ matrix.sanitizer }}/crashes/
+          if-no-files-found: ignore
+          retention-days: 30

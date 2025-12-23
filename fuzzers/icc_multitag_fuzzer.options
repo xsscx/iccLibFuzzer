@@ -1,0 +1,4 @@
+max_len = 10485760
+timeout = 25
+rss_limit_mb = 2048
+detect_leaks = 0

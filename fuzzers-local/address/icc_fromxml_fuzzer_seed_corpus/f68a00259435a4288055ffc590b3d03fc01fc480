@@ -1,0 +1,1246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IccProfile>
+  <Header>
+    <PreferredCMMType></PreferredCMMType>
+    <ProfileVersion>5.00</ProfileVersion>
+    <ProfileDeviceClass>spac</ProfileDeviceClass>
+	<ProfileDeviceSubClass>sref</ProfileDeviceSubClass>
+	<ProfileSubClassVersion>1.00</ProfileSubClassVersion>
+    <DataColourSpace>nc009F</DataColourSpace>
+	<PCS></PCS>
+    <CreationDateTime>now</CreationDateTime>
+    <ProfileFlags EmbeddedInFile="true" UseWithEmbeddedDataOnly="false"/>
+    <DeviceAttributes ReflectiveOrTransparency="reflective" GlossyOrMatte="glossy" MediaPolarity="positive" MediaColour="colour"/>
+    <RenderingIntent>Absolute Colorimetric</RenderingIntent>
+    <PCSIlluminant>
+      <XYZNumber X="2.1097202156472501" Y="0.9999999999999996" Z="0.0463850013577531"/>
+    </PCSIlluminant>
+    <ProfileCreator></ProfileCreator>
+    <ProfileID>1</ProfileID>
+	<SpectralPCS>rs001F</SpectralPCS>
+	<SpectralRange>
+		<Wavelengths start="400" end="700" steps="31"/>
+	</SpectralRange>
+  </Header>
+
+  <Tags>
+    <multiLocalizedUnicodeType>
+      <TagSignature>desc</TagSignature>
+      <LocalizedText LanguageCountry="enUS"><![CDATA[400nm to 700nm in 10nm steps spectral reflectance using "R2" light and Standard 2deg observer with Wpt MAT based PCC]]></LocalizedText>
+    </multiLocalizedUnicodeType>
+
+    <multiProcessElementType>
+      <TagSignature>D2B3</TagSignature>
+	    <MultiProcessElements InputChannels="31" OutputChannels="31"/>
+    </multiProcessElementType>
+	
+    <multiProcessElementType>
+      <TagSignature>B2D3</TagSignature>
+	    <MultiProcessElements InputChannels="31" OutputChannels="31"/>
+    </multiProcessElementType>
+	
+    <multiProcessElementType>
+      <TagSignature>c2sp</TagSignature>
+	    <MultiProcessElements InputChannels="3" OutputChannels="3">
+				<MatrixElement InputChannels="3" OutputChannels="3">
+					<MatrixData>
+					 -2.0331969367665725 5.0892338518418576 3.5461547560652900
+					 -4.4541351710540820 10.1689773011883862 4.9154189012807734
+					 -0.0184612023988211 0.0114752827983642 18.3712786085132400
+					</MatrixData>
+				</MatrixElement>
+			</MultiProcessElements>
+    </multiProcessElementType>
+	
+    <multiProcessElementType>
+      <TagSignature>s2cp</TagSignature>
+	    <MultiProcessElements InputChannels="3" OutputChannels="3">
+				<MatrixElement InputChannels="3" OutputChannels="3">
+					<MatrixData>
+					 5.0827562852452850 -2.5434107256706597 -0.3005948218325123
+					 2.2245115388771914 -1.0147773405371947 -0.1578772231944409
+					 0.0037181349749546 -0.0019219981353686 0.0542293416352644
+					</MatrixData>
+				</MatrixElement>
+			</MultiProcessElements>
+    </multiProcessElementType>
+	
+	  <spectralViewingConditionsType>
+			<TagSignature>svcn</TagSignature>
+				<StdObserver>CIE 1931 standard colorimetric observer</StdObserver>
+			<IlluminantXYZ X="337.5552345035600" Y="159.9999999999999" Z="7.421600217240496"/>
+			<ObserverFuncs start="400" end="700" steps="31">
+			 0.0143100000000000 0.0435100 atn2 pop
+1000.5 0 atn2 pop
+-1 NaN atn2 pop
+-1 -INF atn2 pop
+-1 +INF atn2 pop
+-1 -1000.5 atn2 pop
+-1 1000.5 atn2 pop
+-1 -1 atn2 pop
+-1 1 atn2 pop
+-1 0 atn2 pop
+1 NaN atn2 pop
+1 -INF atn2 pop
+1 +INF atn2 pop
+1 -1000.5 atn2 pop
+1 1000.5 atn2 pop
+1 -1 atn2 pop
+1 1 atn2 pop
+1 0 atn2 pop
+0 NaN atn2 pop
+0 -INF atn2 pop
+0 +INF atn2 pop
+0 -1000.5 atn2 pop
+0 1000.5 atn2 pop
+0 -1 atn2 pop
+0 1 atn2 pop
+0 0 atn2 pop
+NaN NaN ctop pop(2)
+NaN -INF ctop pop(2)
+NaN +INF ctop pop(2)
+NaN -1000.5 ctop pop(2)
+NaN 1000.5 ctop pop(2)
+NaN -1 ctop pop(2)
+NaN 1 ctop pop(2)
+NaN 0 ctop pop(2)
+-INF NaN ctop pop(2)
+-INF -INF ctop pop(2)
+-INF +INF ctop pop(2)
+-INF -1000.5 ctop pop(2)
+-INF 1000.5 ctop pop(2)
+-INF -1 ctop pop(2)
+-INF 1 ctop pop(2)
+-INF 0 ctop pop(2)
++INF NaN ctop pop(2)
++INF -INF ctop pop(2)
++INF +INF ctop pop(2)
++INF -1000.5 ctop pop(2)
++INF 1000.5 ctop pop(2)
++INF -1 ctop pop(2)
++INF 1 ctop pop(2)
++INF 0 ctop pop(2)
+-1000.5 NaN ctop pop(2)
+-1000.5 -INF ctop pop(2)
+-1000.5 +INF ctop pop(2)
+-1000.5 -1000.5 ctop pop(2)
+-1000.5 1000.5 ctop pop(2)
+-1000.5 -1 ctop pop(2)
+-1000.5 1 ctop pop(2)
+-1000.5 0 ctop pop(2)
+1000.5 NaN ctop pop(2)
+1000.5 -INF ctop pop(2)
+1000.5 +INF ctop pop(2)
+1000.5 -1000.5 ctop pop(2)
+1000.5 1000.5 ctop pop(2)
+1000.5 -1 ctop pop(2)
+1000.5 1 ctop pop(2)
+1000.5 0 ctop pop(2)
+-1 NaN ctop pop(2)
+-1 -INF ctop pop(2)
+-1 +INF ctop pop(2)
+-1 -1000.5 ctop pop(2)
+-1 1000.5 ctop pop(2)
+-1 -1 ctop pop(2)
+-1 1 ctop pop(2)
+-1 0 ctop pop(2)
+1 NaN ctop pop(2)
+1 -INF ctop pop(2)
+1 +INF ctop pop(2)
+1 -1000.5 ctop pop(2)
+1 1000.5 ctop pop(2)
+1 -1 ctop pop(2)
+1 1 ctop pop(2)
+1 0 ctop pop(2)
+0 NaN ctop pop(2)
+0 -INF ctop pop(2)
+0 +INF ctop pop(2)
+0 -1000.5 ctop pop(2)
+0 1000.5 ctop pop(2)
+0 -1 ctop pop(2)
+0 1 ctop pop(2)
+0 0 ctop pop(2)
+NaN NaN ptoc pop(2)
+NaN -INF ptoc pop(2)
+NaN +INF ptoc pop(2)
+NaN -1000.5 ptoc pop(2)
+NaN 1000.5 ptoc pop(2)
+NaN -1 ptoc pop(2)
+NaN 1 ptoc pop(2)
+NaN 0 ptoc pop(2)
+-INF NaN ptoc pop(2)
+-INF -INF ptoc pop(2)
+-INF +INF ptoc pop(2)
+-INF -1000.5 ptoc pop(2)
+-INF 1000.5 ptoc pop(2)
+-INF -1 ptoc pop(2)
+-INF 1 ptoc pop(2)
+-INF 0 ptoc pop(2)
++INF NaN ptoc pop(2)
++INF -INF ptoc pop(2)
++INF +INF ptoc pop(2)
++INF -1000.5 ptoc pop(2)
++INF 1000.5 ptoc pop(2)
++INF -1 ptoc pop(2)
++INF 1 ptoc pop(2)
++INF 0 ptoc pop(2)
+-1000.5 NaN ptoc pop(2)
+-1000.5 -INF ptoc pop(2)
+-1000.5 +INF ptoc pop(2)
+-1000.5 -1000.5 ptoc pop(2)
+-1000.5 1000.5 ptoc pop(2)
+-1000.5 -1 ptoc pop(2)
+-1000.5 1 ptoc pop(2)
+-1000.5 0 ptoc pop(2)
+1000.5 NaN ptoc pop(2)
+1000.5 -INF ptoc pop(2)
+1000.5 +INF ptoc pop(2)
+1000.5 -1000.5 ptoc pop(2)
+1000.5 1000.5 ptoc pop(2)
+1000.5 -1 ptoc pop(2)
+1000.5 1 ptoc pop(2)
+1000.5 0 ptoc pop(2)
+-1 NaN ptoc pop(2)
+-1 -INF ptoc pop(2)
+-1 +INF ptoc pop(2)
+-1 -1000.5 ptoc pop(2)
+-1 1000.5 ptoc pop(2)
+-1 -1 ptoc pop(2)
+-1 1 ptoc pop(2)
+-1 0 ptoc pop(2)
+1 NaN ptoc pop(2)
+1 -INF ptoc pop(2)
+1 +INF ptoc pop(2)
+1 -1000.5 ptoc pop(2)
+1 1000.5 ptoc pop(2)
+1 -1 ptoc pop(2)
+1 1 ptoc pop(2)
+1 0 ptoc pop(2)
+0 NaN ptoc pop(2)
+0 -INF ptoc pop(2)
+0 +INF ptoc pop(2)
+0 -1000.5 ptoc pop(2)
+0 1000.5 ptoc pop(2)
+0 -1 ptoc pop(2)
+0 1 ptoc pop(2)
+0 0 ptoc pop(2)
+NaN NaN lt pop
+NaN -INF lt pop
+NaN +INF lt pop
+NaN -1000.5 lt pop
+NaN 1000.5 lt pop
+NaN -1 lt pop
+NaN 1 lt pop
+NaN 0 lt pop
+-INF NaN lt pop
+-INF -INF lt pop
+-INF +INF lt pop
+-INF -1000.5 lt pop
+-INF 1000.5 lt pop
+-INF -1 lt pop
+-INF 1 lt pop
+-INF 0 lt pop
++INF NaN lt pop
++INF -INF lt pop
++INF +INF lt pop
++INF -1000.5 lt pop
++INF 1000.5 lt pop
++INF -1 lt pop
++INF 1 lt pop
++INF 0 lt pop
+-1000.5 NaN lt pop
+-1000.5 -INF lt pop
+-1000.5 +INF lt pop
+-1000.5 -1000.5 lt pop
+-1000.5 1000.5 lt pop
+-1000.5 -1 lt pop
+-1000.5 1 lt pop
+-1000.5 0 lt pop
+1000.5 NaN lt pop
+1000.5 -INF lt pop
+1000.5 +INF lt pop
+1000.5 -1000.5 lt pop
+1000.5 1000.5 lt pop
+1000.5 -1 lt pop
+1000.5 1 lt pop
+1000.5 0 lt pop
+-1 NaN lt pop
+-1 -INF lt pop
+-1 +INF lt pop
+-1 -1000.5 lt pop
+-1 1000.5 lt pop
+-1 -1 lt pop
+-1 1 lt pop
+-1 0 lt pop
+1 NaN lt pop
+1 -INF lt pop
+1 +INF lt pop
+1 -1000.5 lt pop
+1 1000.5 lt pop
+1 -1 lt pop
+1 1 lt pop
+1 0 lt pop
+0 NaN lt pop
+0 -INF lt pop
+0 +INF lt pop
+0 -1000.5 lt pop
+0 1000.5 lt pop
+0 -1 lt pop
+0 1 lt pop
+0 0 lt pop
+NaN NaN le pop
+NaN -INF le pop
+NaN +INF le pop
+NaN -1000.5 le pop
+NaN 1000.5 le pop
+NaN -1 le pop
+NaN 1 le pop
+NaN 0 le pop
+-INF NaN le pop
+-INF -INF le pop
+-INF +INF le pop
+-INF -1000.5 le pop
+-INF 1000.5 le pop
+-INF -1 le pop
+-INF 1 le pop
+-INF 0 le pop
++INF NaN le pop
++INF -INF le pop
++INF +INF le pop
++INF -1000.5 le pop
++INF 1000.5 le pop
++INF -1 le pop
++INF 1 le pop
++INF 0 le pop
+-1000.5 NaN le pop
+-1000.5 -INF le pop
+-1000.5 +INF le pop
+-1000.5 -1000.5 le pop
+-1000.5 1000.5 le pop
+-1000.5 -1 le pop
+-1000.5 1 le pop
+-1000.5 0 le pop
+1000.5 NaN le pop
+1000.5 -INF le pop
+1000.5 +INF le pop
+1000.5 -1000.5 le pop
+1000.5 1000.5 le pop
+1000.5 -1 le pop
+1000.5 1 le pop
+1000.5 0 le pop
+-1 NaN le pop
+-1 -INF le pop
+-1 +INF le pop
+-1 -1000.5 le pop
+-1 1000.5 le pop
+-1 -1 le pop
+-1 1 le pop
+-1 0 le pop
+1 NaN le pop
+1 -INF le pop
+1 +INF le pop
+1 -1000.5 le pop
+1 1000.5 le pop
+1 -1 le pop
+1 1 le pop
+1 0 le pop
+0 NaN le pop
+0 -INF le pop
+0 +INF le pop
+0 -1000.5 le pop
+0 1000.5 le pop
+0 -1 le pop
+0 1 le pop
+0 0 le pop
+NaN NaN eq pop
+NaN -INF eq pop
+NaN +INF eq pop
+NaN -1000.5 eq pop
+NaN 1000.5 eq pop
+NaN -1 eq pop
+NaN 1 eq pop
+NaN 0 eq pop
+-INF NaN eq pop
+-INF -INF eq pop
+-INF +INF eq pop
+-INF -1000.5 eq pop
+-INF 1000.5 eq pop
+-INF -1 eq pop
+-INF 1 eq pop
+-INF 0 eq pop
++INF NaN eq pop
++INF -INF eq pop
++INF +INF eq pop
++INF -1000.5 eq pop
++INF 1000.5 eq pop
++INF -1 eq pop
++INF 1 eq pop
++INF 0 eq pop
+-1000.5 NaN eq pop
+-1000.5 -INF eq pop
+-1000.5 +INF eq pop
+-1000.5 -1000.5 eq pop
+-1000.5 1000.5 eq pop
+-1000.5 -1 eq pop
+-1000.5 1 eq pop
+-1000.5 0 eq pop
+1000.5 NaN eq pop
+1000.5 -INF eq pop
+1000.5 +INF eq pop
+1000.5 -1000.5 eq pop
+1000.5 1000.5 eq pop
+1000.5 -1 eq pop
+1000.5 1 eq pop
+1000.5 0 eq pop
+-1 NaN eq pop
+-1 -INF eq pop
+-1 +INF eq pop
+-1 -1000.5 eq pop
+-1 1000.5 eq pop
+-1 -1 eq pop
+-1 1 eq pop
+-1 0 eq pop
+1 NaN eq pop
+1 -INF eq pop
+1 +INF eq pop
+1 -1000.5 eq pop
+1 1000.5 eq pop
+1 -1 eq pop
+1 1 eq pop
+1 0 eq pop
+0 NaN eq pop
+0 -INF eq pop
+0 +INF eq pop
+0 -1000.5 eq pop
+0 1000.5 eq pop
+0 -1 eq pop
+0 1 eq pop
+0 0 eq pop
+NaN NaN near pop
+NaN -INF near pop
+NaN +INF near pop
+NaN -1000.5 near pop
+NaN 1000.5 near pop
+NaN -1 near pop
+NaN 1 near pop
+NaN 0 near pop
+-INF NaN near pop
+-INF -INF near pop
+-INF +INF near pop
+-INF -1000.5 near pop
+-INF 1000.5 near pop
+-INF -1 near pop
+-INF 1 near pop
+-INF 0 near pop
++INF NaN near pop
++INF -INF near pop
++INF +INF near pop
++INF -1000.5 near pop
++INF 1000.5 near pop
++INF -1 near pop
++INF 1 near pop
++INF 0 near pop
+-1000.5 NaN near pop
+-1000.5 -INF near pop
+-1000.5 +INF near pop
+-1000.5 -1000.5 near pop
+-1000.5 1000.5 near pop
+-1000.5 -1 near pop
+-1000.5 1 near pop
+-1000.5 0 near pop
+1000.5 NaN near pop
+1000.5 -INF near pop
+1000.5 +INF near pop
+1000.5 -1000.5 near pop
+1000.5 1000.5 near pop
+1000.5 -1 near pop
+1000.5 1 near pop
+1000.5 0 near pop
+-1 NaN near pop
+-1 -INF near pop
+-1 +INF near pop
+-1 -1000.5 near pop
+-1 1000.5 near pop
+-1 -1 near pop
+-1 1 near pop
+-1 0 near pop
+1 NaN near pop
+1 -INF near pop
+1 +INF near pop
+1 -1000.5 near pop
+1 1000.5 near pop
+1 -1 near pop
+1 1 near pop
+1 0 near pop
+0 NaN near pop
+0 -INF near pop
+0 +INF near pop
+0 -1000.5 near pop
+0 1000.5 near pop
+0 -1 near pop
+0 1 near pop
+0 0 near pop
+NaN NaN ge pop
+NaN -INF ge pop
+NaN +INF ge pop
+NaN -1000.5 ge pop
+NaN 1000.5 ge pop
+NaN -1 ge pop
+NaN 1 ge pop
+NaN 0 ge pop
+-INF NaN ge pop
+-INF -INF ge pop
+-INF +INF ge pop
+-INF -1000.5 ge pop
+-INF 1000.5 ge pop
+-INF -1 ge pop
+-INF 1 ge pop
+-INF 0 ge pop
++INF NaN ge pop
++INF -INF ge pop
++INF +INF ge pop
++INF -1000.5 ge pop
++INF 1000.5 ge pop
++INF -1 ge pop
++INF 1 ge pop
++INF 0 ge pop
+-1000.5 NaN ge pop
+-1000.5 -INF ge pop
+-1000.5 +INF ge pop
+-1000.5 -1000.5 ge pop
+-1000.5 1000.5 ge pop
+-1000.5 -1 ge pop
+-1000.5 1 ge pop
+-1000.5 0 ge pop
+1000.5 NaN ge pop
+1000.5 -INF ge pop
+1000.5 +INF ge pop
+1000.5 -1000.5 ge pop
+1000.5 1000.5 ge pop
+1000.5 -1 ge pop
+1000.5 1 ge pop
+1000.5 0 ge pop
+-1 NaN ge pop
+-1 -INF ge pop
+-1 +INF ge pop
+-1 -1000.5 ge pop
+-1 1000.5 ge pop
+-1 -1 ge pop
+-1 1 ge pop
+-1 0 ge pop
+1 NaN ge pop
+1 -INF ge pop
+1 +INF ge pop
+1 -1000.5 ge pop
+1 1000.5 ge pop
+1 -1 ge pop
+1 1 ge pop
+1 0 ge pop
+0 NaN ge pop
+0 -INF ge pop
+0 +INF ge pop
+0 -1000.5 ge pop
+0 1000.5 ge pop
+0 -1 ge pop
+0 1 ge pop
+0 0 ge pop
+NaN NaN gt pop
+NaN -INF gt pop
+NaN +INF gt pop
+NaN -1000.5 gt pop
+NaN 1000.5 gt pop
+NaN -1 gt pop
+NaN 1 gt pop
+NaN 0 gt pop
+-INF NaN gt pop
+-INF -INF gt pop
+-INF +INF gt pop
+-INF -1000.5 gt pop
+-INF 1000.5 gt pop
+-INF -1 gt pop
+-INF 1 gt pop
+-INF 0 gt pop
++INF NaN gt pop
++INF -INF gt pop
++INF +INF gt pop
++INF -1000.5 gt pop
++INF 1000.5 gt pop
++INF -1 gt pop
++INF 1 gt pop
++INF 0 gt pop
+-1000.5 NaN gt pop
+-1000.5 -INF gt pop
+-1000.5 +INF gt pop
+-1000.5 -1000.5 gt pop
+-1000.5 1000.5 gt pop
+-1000.5 -1 gt pop
+-1000.5 1 gt pop
+-1000.5 0 gt pop
+1000.5 NaN gt pop
+1000.5 -INF gt pop
+1000.5 +INF gt pop
+1000.5 -1000.5 gt pop
+1000.5 1000.5 gt pop
+1000.5 -1 gt pop
+1000.5 1 gt pop
+1000.5 0 gt pop
+-1 NaN gt pop
+-1 -INF gt pop
+-1 +INF gt pop
+-1 -1000.5 gt pop
+-1 1000.5 gt pop
+-1 -1 gt pop
+-1 1 gt pop
+-1 0 gt pop
+1 NaN gt pop
+1 -INF gt pop
+1 +INF gt pop
+1 -1000.5 gt pop
+1 1000.5 gt pop
+1 -1 gt pop
+1 1 gt pop
+1 0 gt pop
+0 NaN gt pop
+0 -INF gt pop
+0 +INF gt pop
+0 -1000.5 gt pop
+0 1000.5 gt pop
+0 -1 gt pop
+0 1 gt pop
+0 0 gt pop
+NaN NaN vmin pop
+NaN -INF vmin pop
+NaN +INF vmin pop
+NaN -1000.5 vmin pop
+NaN 1000.5 vmin pop
+NaN -1 vmin pop
+NaN 1 vmin pop
+NaN 0 vmin pop
+-INF NaN vmin pop
+-INF -INF vmin pop
+-INF +INF vmin pop
+-INF -1000.5 vmin pop
+-INF 1000.5 vmin pop
+-INF -1 vmin pop
+-INF 1 vmin pop
+-INF 0 vmin pop
++INF NaN vmin pop
++INF -INF vmin pop
++INF +INF vmin pop
++INF -1000.5 vmin pop
++INF 1000.5 vmin pop
++INF -1 vmin pop
++INF 1 vmin pop
++INF 0 vmin pop
+-1000.5 NaN vmin pop
+-1000.5 -INF vmin pop
+-1000.5 +INF vmin pop
+-1000.5 -1000.5 vmin pop
+-1000.5 1000.5 vmin pop
+-1000.5 -1 vmin pop
+-1000.5 1 vmin pop
+-1000.5 0 vmin pop
+1000.5 NaN vmin pop
+1000.5 -INF vmin pop
+1000.5 +INF vmin pop
+1000.5 -1000.5 vmin pop
+1000.5 1000.5 vmin pop
+1000.5 -1 vmin pop
+1000.5 1 vmin pop
+1000.5 0 vmin pop
+-1 NaN vmin pop
+-1 -INF vmin pop
+-1 +INF vmin pop
+-1 -1000.5 vmin pop
+-1 1000.5 vmin pop
+-1 -1 vmin pop
+-1 1 vmin pop
+-1 0 vmin pop
+1 NaN vmin pop
+1 -INF vmin pop
+1 +INF vmin pop
+1 -1000.5 vmin pop
+1 1000.5 vmin pop
+1 -1 vmin pop
+1 1 vmin pop
+1 0 vmin pop
+0 NaN vmin pop
+0 -INF vmin pop
+0 +INF vmin pop
+0 -1000.5 vmin pop
+0 1000.5 vmin pop
+0 -1 vmin pop
+0 1 vmin pop
+0 0 vmin pop
+NaN NaN vmax pop
+NaN -INF vmax pop
+NaN +INF vmax pop
+NaN -1000.5 vmax pop
+NaN 1000.5 vmax pop
+NaN -1 vmax pop
+NaN 1 vmax pop
+NaN 0 vmax pop
+-INF NaN vmax pop
+-INF -INF vmax p -1000.5 prod(3) pop
+NaN -INF 1000.5 prod(3) pop
+NaN -INF -1 prod(3) pop
+NaN -INF 1 prod(3) pop
+NaN -INF 0 prod(3) pop
+NaN +INF NaN prod(3) pop
+NaN +INF -INF prod(3) pop
+NaN +INF +INF prod(3) pop
+NaN +INF -1000.5 prod(3) pop
+NaN +INF 1000.5 prod(3) pop
+NaN +INF -1 prod(3) pop
+NaN +INF 1 prod(3) pop
+NaN +INF 0 prod(3) pop
+NaN -1000.5 NaN prod(3) pop
+NaN -1000.5 -INF prod(3) pop
+NaN -1000.5 +INF prod(3) pop
+NaN -1000.5 -1000.5 prod(3) pop
+NaN -1000.5 1000.5 prod(3) pop
+NaN -1000.5 -1 prod(3) pop
+NaN -1000.5 1 prod(3) pop
+NaN -1000.5 0 prod(3) pop
+NaN 1000.5 NaN prod(3) pop
+NaN 1000.5 -INF prod(3) pop
+NaN 1000.5 +INF prod(3) pop
+NaN 1000.5 -1000.5 prod(3) pop
+NaN 1000.5 1000.5 prod(3) pop
+NaN 1000.5 -1 prod(3) pop
+NaN 1000.5 1 prod(3) pop
+NaN 1000.5 0 prod(3) pop
+NaN -1 NaN prod(3) pop
+NaN -1 -INF prod(3) pop
+NaN -1 +INF prod(3) pop
+NaN -1 -1000.5 prod(3) pop
+NaN -1 1000.5 prod(3) pop
+NaN -1 -1 prod(3) pop
+NaN -1 1 prod(3) pop
+NaN -1 0 prod(3) pop
+NaN 1 NaN prod(3) pop
+NaN 1 -INF prod(3) pop
+NaN 1 +INF prod(3) pop
+NaN 1 -1000.5 prod(3) pop
+NaN 1 1000.5 prod(3) pop
+NaN 1 -1 prod(3) pop
+NaN 1 1 prod(3) pop
+NaN 1 0 prod(3) pop
+NaN 0 NaN prod(3) pop
+NaN 0 -INF prod(3) pop
+NaN 0 +INF prod(3) pop
+NaN 0 -1000.5 prod(3) pop
+NaN 0 1000.5 prod(3) pop
+NaN 0 -1 prod(3) pop
+NaN 0 1 prod(3) pop
+NaN 0 0 prod(3) pop
+-INF NaN NaN prod(3) pop
+-INF NaN -INF prod(3) pop
+-INF NaN +INF prod(3) pop
+-INF NaN -1000.5 prod(3) pop
+-INF NaN 1000.5 prod(3) pop
+-INF NaN -1 prod(3) pop
+-INF NaN 1 prod(3) pop
+-INF NaN 0 prod(3) pop
+-INF -INF NaN prod(3) pop
+-INF -INF -INF prod(3) pop
+-INF -INF +INF prod(3) pop
+-INF -INF -1000.5 prod(3) pop
+-INF -INF 1000.5 prod(3) pop
+-INF -INF -1 prod(3) pop
+-INF -INF 1 prod(3) pop
+-INF -INF 0 prod(3) pop
+-INF +INF NaN prod(3) pop
+-INF +INF -INF prod(3) pop
+-INF +INF +INF prod(3) pop
+-INF +INF -1000.5 prod(3) pop
+-INF +INF 1000.5 prod(3) pop
+-INF +INF -1 prod(3) pop
+-INF +INF 1 prod(3) pop
+-INF +INF 0 prod(3) pop
+-INF -1000.5 NaN prod(3) pop
+-INF -1000.5 -INF prod(3) pop
+-INF -1000.5 +INF prod(3) pop
+-INF -1000.5 -1000.5 prod(3) pop
+-INF -1000.5 1000.5 prod(3) pop
+-INF -1000.5 -1 prod(3) pop
+-INF -1000.5 1 prod(3) pop
+-INF -1000.5 0 prod(3) pop
+-INF 1000.5 NaN prod(3) pop
+-INF 1000.5 -INF prod(3) pop
+-INF 1000.5 +INF prod(3) pop
+-INF 1000.5 -1000.5 prod(3) pop
+-INF 1000.5 1000.5 prod(3) pop
+-INF 1000.5 -1 prod(3) pop
+-INF 1000.5 1 prod(3) pop
+-INF 1000.5 0 prod(3) pop
+-INF -1 NaN prod(3) pop
+-INF -1 -INF prod(3) pop
+-INF -1 +INF prod(3) pop
+-INF -1 -1000.5 prod(3) pop
+-INF -1 1000.5 prod(3) pop
+-INF -1 -1 prod(3) pop
+-INF -1 1 prod(3) pop
+-INF -1 0 prod(3) pop
+-INF 1 NaN prod(3) pop
+-INF 1 -INF prod(3) pop
+-INF 1 +INF prod(3) pop
+-INF 1 -1000.5 prod(3) pop
+-INF 1 1000.5 prod(3) pop
+-INF 1 -1 prod(3) pop
+-INF 1 1 prod(3) pop
+-INF 1 0 prod(3) pop
+-INF 0 NaN prod(3) pop
+-INF 0 -INF prod(3) pop
+-INF 0 +INF prod(3) pop
+-INF 0 -1000.5 prod(3) pop
+-INF 0 1000.5 prod(3) pop
+-INF 0 -1 prod(3) pop
+-INF 0 1 prod(3) pop
+-INF 0 0 prod(3) pop
++INF NaN NaN prod(3) pop
++INF NaN -INF prod(3) pop
++INF NaN +INF prod(3) pop
++INF NaN -1000.5 prod(3) pop
++INF NaN 1000.5 prod(3) pop
++INF NaN -1 prod(3) pop
++INF NaN 1 prod(3) pop
++INF NaN 0 prod(3) pop
++INF -INF NaN prod(3) pop
++INF -INF -INF prod(3) pop
++INF -INF +INF prod(3) pop
++INF -INF -1000.5 prod(3) pop
++INF -INF 1000.5 prod(3) pop
++INF -INF -1 prod(3) pop
++INF -INF 1 prod(3) pop
++INF -INF 0 prod(3) pop
++INF +INF NaN prod(3) pop
++INF +INF -INF prod(3) pop
++INF +INF +INF prod(3) pop
++INF +INF -1000.5 prod(3) pop
++INF +INF 1000.5 prod(3) pop
++INF +INF -1 prod(3) pop
++INF +INF 1 prod(3) pop
++INF +INF 0 prod(3) pop
++INF -1000.5 NaN prod(3) pop
++INF -1000.5 -INF prod(3) pop
++INF -1000.5 +INF prod(3) pop
++INF -1000.5 -1000.5 prod(3) pop
++INF -1000.5 1000.5 prod(3) pop
++INF -1000.5 -1 prod(3) pop
++INF -1000.5 1 prod(3) pop
++INF -1000.5 0 prod(3) pop
++INF 1000.5 NaN prod(3) pop
++INF 1000.5 -INF prod(3) pop
++INF 1000.5 +INF prod(3) pop
++INF 1000.5 -1000.5 prod(3) pop
++INF 1000.5 1000.5 prod(3) pop
++INF 1000.5 -1 prod(3) pop
++INF 1000.5 1 prod(3) pop
++INF 1000.5 0 prod(3) pop
++INF -1 NaN prod(3) pop
++INF -1 -INF prod(3) pop
++INF -1 +INF prod(3) pop
++INF -1 -1000.5 prod(3) pop
++INF -1 1000.5 prod(3) pop
++INF -1 -1 prod(3) pop
++INF -1 1 prod(3) pop
++INF -1 0 prod(3) pop
++INF 1 NaN prod(3) pop
++INF 1 -INF prod(3) pop
++INF 1 +INF prod(3) pop
++INF 1 -1000.5 prod(3) pop
++INF 1 1000.5 prod(3) pop
++INF 1 -1 prod(3) pop
++INF 1 1 prod(3) pop
++INF 1 0 prod(3) pop
++INF 0 NaN prod(3) pop
++INF 0 -INF prod(3) pop
++INF 0 +INF prod(3) pop
++INF 0 -1000.5 prod(3) pop
++INF 0 1000.5 prod(3) pop
++INF 0 -1 prod(3) pop
++INF 0 1 prod(3) pop
++INF 0 0 prod(3) pop
+-1000.5 NaN NaN prod(3) pop
+-1000.5 NaN -INF prod(3) pop
+-1000.5 NaN +INF prod(3) pop
+-1000.5 NaN -1000.5 prod(3) pop
+-1000.5 NaN 1000.5 prod(3) pop
+-1000.5 NaN -1 prod(3) pop
+-1000.5 NaN 1 prod(3) pop
+-1000.5 NaN 0 prod(3) pop
+-1000.5 -INF NaN prod(3) pop
+-1000.5 -INF -INF prod(3) pop
+-1000.5 -INF +INF prod(3) pop
+-1000.5 -INF -1000.5 prod(3) pop
+-1000.5 -INF 1000.5 prod(3) pop
+-1000.5 -INF -1 prod(3) pop
+-1000.5 -INF 1 prod(3) pop
+-1000.5 -INF 0 prod(3) pop
+-1000.5 +INF NaN prod(3) pop
+-1000.5 +INF -INF prod(3) pop
+-1000.5 +INF +INF prod(3) pop
+-1000.5 +INF -1000.5 prod(3) pop
+-1000.5 +INF 1000.5op(2)
+-1000.5 -1000.5 NaN ssub(2) pop(2)
+-1000.5 -1000.5 -INF ssub(2) pop(2)
+-1000.5 -1000.5 +INF ssub(2) pop(2)
+-1000.5 -1000.5 -1000.5 ssub(2) pop(2)
+-1000.5 -1000.5 1000.5 ssub(2) pop(2)
+-1000.5 -1000.5 -1 ssub(2) pop(2)
+-1000.5 -1000.5 1 ssub(2) pop(2)
+-1000.5 -1000.5 0 ssub(2) pop(2)
+-1000.5 1000.5 NaN ssub(2) pop(2)
+-1000.5 1000.5 -INF ssub(2) pop(2)
+-1000.5 1000.5 +INF ssub(2) pop(2)
+-1000.5 1000.5 -1000.5 ssub(2) pop(2)
+-1000.5 1000.5 1000.5 ssub(2) pop(2)
+-1000.5 1000.5 -1 ssub(2) pop(2)
+-1000.5 1000.5 1 ssub(2) pop(2)
+-1000.5 1000.5 0 ssub(2) pop(2)
+-1000.5 -1 NaN ssub(2) pop(2)
+-1000.5 -1 -INF ssub(2) pop(2)
+-1000.5 -1 +INF ssub(2) pop(2)
+-1000.5 -1 -1000.5 ssub(2) pop(2)
+-1000.5 -1 1000.5 ssub(2) pop(2)
+-1000.5 -1 -1 ssub(2) pop(2)
+-1000.5 -1 1 ssub(2) pop(2)
+-1000.5 -1 0 ssub(2) pop(2)
+-1000.5 1 NaN ssub(2) pop(2)
+-1000.5 1 -INF ssub(2) pop(2)
+-1000.5 1 +INF ssub(2) pop(2)
+-1000.5 1 -1000.5 ssub(2) pop(2)
+-1000.5 1 1000.5 ssub(2) pop(2)
+-1000.5 1 -1 ssub(2) pop(2)
+-1000.5 1 1 ssub(2) pop(2)
+-1000.5 1 0 ssub(2) pop(2)
+-1000.5 0 NaN ssub(2) pop(2)
+-1000.5 0 -INF ssub(2) pop(2)
+-1000.5 0 +INF ssub(2) pop(2)
+-1000.5 0 -1000.5 ssub(2) pop(2)
+-1000.5 0 1000.5 ssub(2) pop(2)
+-1000.5 0 -1 ssub(2) pop(2)
+-1000.5 0 1 ssub(2) pop(2)
+-1000.5 0 0 ssub(2) pop(2)
+1000.5 NaN NaN ssub(2) pop(2)
+1000.5 NaN -INF ssub(2) pop(2)
+1000.5 NaN +INF ssub(2) pop(2)
+1000.5 NaN -1000.5 ssub(2) pop(2)
+1000.5 NaN 1000.5 ssub(2) pop(2)
+1000.5 NaN -1 ssub(2) pop(2)
+1000.5 NaN 1 ssub(2) pop(2)
+1000.5 NaN 0 ssub(2) pop(2)
+1000.5 -INF NaN ssub(2) pop(2)
+1000.5 -INF -INF ssub(2) pop(2)
+1000.5 -INF +INF ssub(2) pop(2)
+1000.5 -INF -1000.5 ssub(2) pop(2)
+1000.5 -INF 1000.5 ssub(2) pop(2)
+1000.5 -INF -1 ssub(2) pop(2)
+1000.5 -INF 1 ssub(2) pop(2)
+1000.5 -INF 0 ssub(2) pop(2)
+1000.5 +INF NaN ssub(2) pop(2)
+1000.5 +INF -INF ssub(2) pop(2)
+1000.5 +INF +INF ssub(2) pop(2)
+1000.5 +INF -1000.5 ssub(2) pop(2)
+1000.5 +INF 1000.5 ssub(2) pop(2)
+1000.5 +INF -1 ssub(2) pop(2)
+1000.5 +INF 1 ssub(2) pop(2)
+1000.5 +INF 0 ssub(2) pop(2)
+1000.5 -1000.5 NaN ssub(2) pop(2)
+1000.5 -1000.5 -INF ssub(2) pop(2)
+1000.5 -1000.5 +INF ssub(2) pop(2)
+1000.5 -1000.5 -1000.5 ssub(2) pop(2)
+1000.5 -1000.5 1000.5 ssub(2) pop(2)
+1000.5 -1000.5 -1 ssub(2) pop(2)
+1000.5 -1000.5 1 ssub(2) pop(2)
+1000.5 -1000.5 0 ssub(2) pop(2)
+1000.5 1000.5 NaN ssub(2) pop(2)
+1000.5 1000.5 -INF ssub(2) pop(2)
+1000.5 1000.5 +INF ssub(2) pop(2)
+1000.5 1000.5 -1000.5 ssub(2) pop(2)
+1000.5 1000.5 1000.5 ssub(2) pop(2)
+1000.5 1000.5 -1 ssub(2) pop(2)
+1000.5 1000.5 1 ssub(2) pop(2)
+1000.5 1000.5 0 ssub(2) pop(2)
+1000.5 -1 NaN ssub(2) pop(2)
+1000.5 -1 -INF ssub(2) pop(2)
+1000.5 -1 +INF ssub(2) pop(2)
+1000.5 -1 -1000.5 ssub(2) pop(2)
+1000.5 -1 1000.5 ssub(2) pop(2)
+1000.5 -1 -1 ssub(2) pop(2)
+1000.5 -1 1 ssub(2) pop(2)
+1000.5 -1 0 ssub(2) pop(2)
+1000.5 1 NaN ssub(2) pop(2)
+1000.5 1 -INF ssub(2) pop(2)
+1000.5 1 +INF ssub(2) pop(2)
+1000.5 1 -1000.5 ssub(2) pop(2)
+1000.5 1 1000.5 ssub(2) pop(2)
+1000.5 1 -1 ssub(2) pop(2)
+1000.5 1 1 ssub(2) pop(2)
+1000.5 1 0 ssub(2) pop(2)
+1000.5 0 NaN ssub(2) pop(2)
+1000.5 0 -INF ssub(2) pop(2)
+1000.5 0 +INF ssub(2) pop(2)
+1000.5 0 -1000.5 ssub(2) pop(2)
+1000.5 0 1000.5 ssub(2) pop(2)
+1000.5 0 -1 ssub(2) pop(2)
+1000.5 0 1 ssub(2) pop(2)
+1000.5 0 0 ssub(2) pop(2)
+-1 NaN NaN ssub(2) pop(2)
+-1 NaN -INF ssub(2) pop(2)
+-1 NaN +INF ssub(2) pop(2)
+-1 NaN -1000.5 ssub(2) pop(2)
+-1 NaN 1000.5 ssub(2) pop(2)
+-1 NaN -1 ssub(2) pop(2)
+-1 NaN 1 ssub(2) pop(2)
+-1 NaN 0 ssub(2) pop(2)
+-1 -INF NaN ssub(2) pop(2)
+-1 -INF -INF ssub(2) pop(2)
+-1 -INF +INF ssub(2) pop(2)
+-1 -INF -1000.5 ssub(2) pop(2)
+-1 -INF 1000.5 ssub(2) pop(2)
+-1 -INF -1 ssub(2) pop(2)
+-1 -INF 1 ssub(2) pop(2)
+-1 -INF 0 ssub(2) pop(2)
+-1 +INF NaN ssub(2) pop(2)
+-1 +INF -INF ssub(2) pop(2)
+-1 +INF +INF ssub(2) pop(2)
+-1 +INF -1000.5 ssub(2) pop(2)
+-1 +INF 1000.5 ssub(2) pop(2)
+-1 +INF -1 ssub(2) pop(2)
+-1 +INF 1 ssub(2) pop(2)
+-1 +INF 0 ssub(2) pop(2)
+-1 -1000.5 NaN ssub(2) pop(2)
+-1 -1000.5 -INF ssub(2) pop(2)
+-1 -1000.5 +INF ssub(2) pop(2)
+-1 -1000.5 -1000.5 ssub(2) pop(2)
+-1 -1000.5 1000.5 ssub(2) pop(2)
+-1 -1000.5 -1 ssub(2) pop(2)
+-1 -1000.5 1 ssub(2) pop(2)
+-1 -1000.5 0 ssub(2) pop(2)
+-1 1000.5 NaN ssub(2) pop(2)
+-1 1000.5 -INF ssub(2) pop(2)
+-1 1000.5 +INF ssub(2) pop(2)
+-1 1000.5 -1000.5 ssub(2) pop(2)
+-1 1000.5 1000.5 ssub(2) pop(2)
+-1 1000.5 -1 ssub(2) pop(2)
+-1 1000.5 1 ssub(2) pop(2)
+-1 1000.5 0 ssub(2) pop(2)
+-1 -1 NaN ssub(2) pop(2)
+-1 -1 -INF ssub(2) pop(2)
+-1 -1 +INF ssub(2) pop(2)
+-1 -1 -1000.5 ssub(2) pop(2)
+-1 -1 1000.5 ssub(2) pop(2)
+-1 -1 -1 ssub(2) pop(2)
+-1 -1 1 ssub(2) pop(2)
+-1 -1 0 ssub(2) pop(2)
+-1 1 NaN ssub(2) pop(2)
+-1 1 -INF ssub(2) pop(2)
+-1 1 +INF ssub(2) pop(2)
+-1 1 -1000.5 ssub(2) pop(2)
+-1 1 1000.5 ssub(2) pop(2)
+-1 1 -1 ssub(2) pop(2)
+-1 1 1 ssub(2) pop(2)
+-1 1 0 ssub(2) pop(2)
+-1 0 NaN ssub(2) pop(2)
+-1 0 -INF ssub(2) pop(2)
+-1 0 +INF ssub(2) pop(2)
+-1 0 -1000.5 ssub(2) pop(2)
+-1 0 1000.5 ssub(2) pop(2)
+-1 0 -1 ssub(2) pop(2)
+-1 0 1 ssub(2) pop(2)
+-1 0 0 ssub(2) pop(2)
+1 NaN NaN ssub(2) pop(2)
+1 NaN -INF ssub(2) pop(2)
+1 NaN +INF ssub(2) pop(2)
+1 NaN -1000.5 ssub(2) pop(2)
+1 NaN 1000.5 ssub(2) pop(2)
+1 NaN -1 ssub(2) pop(2)
+1 NaN 1 ssub(2) pop(2)
+1 NaN 0 ssub(2) pop(2)
+1 -INF NaN ssub(2) pop(2)
+1 -INF -INF ssub(2) pop(2)
+1 -INF +INF ssub(2) pop(2)
+1 -INF -1000.5 ssub(2) pop(2)
+1 -INF 1000.5 ssub(2) pop(2)
+1 -INF -1 ssub(2) pop(2)
+1 -INF 1 ssub(2) pop(2)
+1 -INF 0 ssub(2) pop(2)
+1 +INF NaN ssub(2) pop(2)
+1 +INF -INF ssub(2) pop(2)
+1 +INF +INF ssub(2) pop(2)
+1 +INF -1000.5 ssub(2) pop(2)
+1 +INF 1000.5 ssub(2) pop(2)
+1 +INF -1 ssub(2) pop(2)
+1 +INF 1 ssub(2) pop(2)
+1 +INF 0 ssub(2) pop(2)
+1 -1000.5 NaN ssub(2) pop(2)
+1 -1000.5 -INF ssub(2) pop(2)
+1 -1000.5 +INF ssub(2) pop(2)
+1 -1000.5 -1000.5 ssub(2) pop(2)
+1 -1000.5 1000.5 ssub(2) pop(2)
+1 -1000.5 -1 ssub(2) pop(2)
+1 -1000.5 1 ssub(2) pop(2)
+1 -1000.5 0 ssub(2) pop(2)
+1 1000.5 NaN ssub(2) pop(2)
+1 1000.5 -INF ssub(2) pop(2)
+1 1000.5 +INF ssub(2) pop(2)
+1 1000.5 -1000.5 ssub(2) pop(2)
+1 1000.5 1000.5 ssub(2) pop(2)
+1 1000.5 -1 ssub(2) pop(2)
+1 1000.5 1 ssub(2) pop(2)
+1 1000.5 0 ssub(2) pop(2)
+1 -1 NaN ssub(2) pop(2)
+1 -1 -INF ssub(2) pop(2)
+1 -1 +INF ssub(2) pop(2)
+1 -1 -1000.5 ssub(2) pop(2)
+1 -1 1000.5 ssub(2) pop(2)
+1 -1 -1 ssub(2) pop(2)
+1 -1 1 ssub(2) pop(2)
+1 -1 0 ssub(2) pop(2)
+1 1 NaN ssub(2) pop(2)
+1 1 -INF ssub(2) pop(2)
+1 1 +INF ssub(2) pop(2)
+1 1 -1000.5 ssub(2) pop(2)
+1 1 1000.5 ssub(2) pop(2)
+1 1 -1 ssub(2) pop(2)
+1 1 1 ssub(2) pop(2)
+1 1 0 ssub(2) pop(2)
+1 0 NaN ssub(2) pop(2)
+1 0 -INF ssub(2) pop(2)
+1 0 +INF ssub(2) pop(2)
+1 0 -1000.5 ssub(2) pop(2)
+1 0 1000.5 ssub(2) pop(2)
+1 0 -1 ssub(2) pop(2)
+1 0 1 ssub(2) pop(2)
+1 0 0 ssub(2) pop(2)
+0 NaN NaN ssub(2) pop(2)
+0 NaN -INF ssub(2) pop(2)
+0 NaN +INF ssub(2) pop(2)
+0 NaN -1000.5 ssub(2) pop(2)
+0 NaN 1000.5 ssub(2) pop(2)
+0 NaN -1 ssub(2) pop(2)
+0 NaN 1 ssub(2) pop(2)
+0 NaN 0 ssub(2) pop(2)
+0 -INF NaN ssub(2) pop(2)
+0 -INF -INF ssub(2) pop(2)
+0 -INF +INF ssub(2) pop(2)
+0 -INF -1000.5 ssub(2) pop(2)
+0 -INF 1000.5 ssub(2) pop(2)
+0 -INF -1 ssub(2) pop(2)
+0 -INF 1 ssub(2) pop(2)
+0 -INF 0 ssub(2) pop(2)
+0 +INF NaN ssub(2) pop(2)
+0 +INF -INF ssub(2) pop(2)
+0 +INF +INF ssub(2) pop(2)
+0 +INF -1000.5 ssub(2) pop(2)
+0 +INF 1000.5 ssub(2) pop(2)
+0 +INF -1 ssub(2) pop(2)
+0 +INF 1 ssub(2) pop(2)
+0 +INF 0 ssub(2) pop(2)
+0 -1000.5 NaN ssub(2) pop(2)
+0 -1000.5 -INF ssub(2) pop(2)
+0 -1000.5 +INF ssub(2) pop(2)
+0 -1000.5 -1000.5 ssub(2) pop(2)
+0 -1000.5 1000.5 ssub(2) pop(2)
+0 -1000.5 -1 ssub(2) pop(2)
+0 -1000.5 1 ssub(2) pop(2)
+0 -1000.5 0 ssub(2) pop(2)
+0 1000.5 NaN ssub(2) pop(2)
+0 1000.5 -INF ssub(2) pop(2)
+0 1000.5 +INF ssub(2) pop(2)
+0b pop(3)
+-1 +INF 0 tLab pop(3)
+-1 -1000.5 NaN tLab pop(3)
+-1 -1000.5 -INF tLab pop(3)
+-1 -1000.5 +INF tLab pop(3)
+-1 -1000.5 -1000.5 tLab pop(3)
+-1 -1000.5 1000.5 tLab pop(3)
+-1 -1000.5 -1 tLab pop(3)
+-1 -1000.5 1 tLab pop(3)
+-1 -1000.5 0 tLab pop(3)
+-1 1000.5 NaN tLab pop(3)
+-1 1000.5 -INF tLab pop(3)
+-1 1000.5 +INF tLab pop(3)
+-1 1000.5 -1000.5 tLab pop(3)
+-1 1000.5 1000.5 tLab pop(3)
+-1 1000.5 -1 tLab pop(3)
+-1 1000.5 1 tLab pop(3)
+-1 1000.5 0 tLab pop(3)
+-1 -1 NaN tLab pop(3)
+-1 -1 -INF tLab pop(3)
+-1 -1 +INF tLab pop(3)
+-1 -1 -1000.5 tLab pop(3)
+-1 -1 1000.5 tLab pop(3)
+-1 -1 -1 tLab pop(3)
+-1 -1 1 tLab pop(3)
+-1 -1 0 tLab pop(3)
+-1 1 NaN tLab pop(3)
+-1 1 -INF tLab pop(3)
+-1 1 +INF tLab pop(3)
+-1 1 -1000.5 tLab pop(3)
+-1 1 1000.5 tLab pop(3)
+-1 1 -1 tLab pop(3)
+-1 1 1 tLab pop(3)
+-1 1 0 tLab pop(3)
+-1 0 NaN tLab pop(3)
+-1 0 -INF tLab pop(3)
+-1 0 +INF tLab pop(3)
+-1 0 -1000.5 tLab pop(3)
+-1 0 1000.5 tLab pop(3)
+-1 0 -1 tLab pop(3)
+-1 0 1 tLab pop(3)
+-1 0 0 tLab pop(3)
+1 NaN NaN tLab pop(3)
+1 NaN -INF tLab pop(3)
+1 NaN +INF tLab pop(3)
+1 NaN -1000.5 tLab pop(3)
+1 NaN 1000.5 tLab pop(3)
+1 NaN -1 tLab pop(3)
+1 NaN 1 tLab pop(3)
+1 NaN000000000 0.1343800000000000 0.2839000000000000 0.3482800000000000 0.3362000000000000 0.2908000000000000 0.1953600000000000 0.0956400000000000
+			 0.0320100000000000 0.0049000000000000 0.0093000000000000 0.0632700000000000 0.1655000000000000 0.2904000000000000 0.4334500000000000 0.5945000000000000 0.7621000000000000
+			 0.9163000000000000 1.0263000000000000 1.0622000000000000 1.0025999999999999 0.8544500000000000 0.6424000000000000 0.4479000000000000 0.2835000000000000 0.1649000000000000
+			 0.0874000000000000 0.0467700000000000 0.0227000000000000 0.0113590000000000
+
+			 0.0003960000000000 0.0012100000000000 0.0040000000000000 0.0116000000000000 0.0230000000000000 0.0380000000000000 0.0600000000000000 0.0909800000000000 0.1390200000000000
+			 0.2080200000000000 0.3230000000000000 0.5030000000000000 0.7100000000000000 0.8620000000000000 0.9540000000000000 0.9949500000000000 0.9950000000000000 0.9520000000000000
+			 0.8700000000000000 0.7570000000000000 0.6310000000000000 0.5030000000000000 0.3810000000000000 0.2650000000000000 0.1750000000000000 0.1070000000000000 0.0610000000000000
+			 0.0320000000000000 0.0170000000000000 0.0082100000000000 0.0041020000000000
+
+			 0.0678500000000000 0.2074000000000000 0.6456000000000000 1.3855999999999999 1.7470600000000001 1.7721100000000001 1.6692000000000000 1.2876399999999999 0.8129500000000000
+			 0.4651800000000000 0.2720000000000000 0.1582000000000000 0.0782500000000000 0.0421600000000000 0.0203000000000000 0.0087500000000000 0.0039000000000000 0.0021000000000000
+			 0.0016500000000000 0.0011000000000000 0.0008000000000000 0.0003400000000000 0.0001900000000000 0.0000500000000000 0.0000200000000000 0.0000000000000000 0.0000000000000000
+			 0.0000000000000000 0.0000000000000000 0.0000000000000000 0.0000000000000000
+			</ObserverFuncs>
+			<StdIlluminant>Custom</StdIlluminant>
+			<ColorTemperature></ColorTemperature>
+			<IlluminantSPD start="400" end="700" steps="31">
+			 0.7000000000000001 0.7000000000000001 0.7000000000000001 0.7000000000000001 0.7000000000000001 0.7000000000000001 0.7000000000000001 0.7000000000000001 0.7000000000000001
+			 0.7000000000000001 0.7000000000000001 0.7000000000000001 0.7000000000000001 0.7000000000000001 0.7000000000000001 0.7000000000000001 0.7000000000000001 2.1999999999999997
+			 4.5999999999999996 12.1999999999999993 29.0999999999999979 59.0999999999999943 83.7999999999999972 97.2000000000000028 100.0000000000000000 94.5000000000000000 87.4000000000000057
+			 79.2000000000000028 69.8999999999999915 59.5000000000000000 50.3999999999999986
+			</IlluminantSPD>
+			<SurroundXYZ X="337.5552345035600" Y="159.9999999999999" Z="7.421600217240496"/>
+    </spectralViewingConditionsType>
+    
+	<XYZType>
+      <TagSignature>wtpt</TagSignature>
+      <XYZNumber X="2.1097202156472501" Y="0.9999999999999996" Z="0.0463850013577531"/>
+    </XYZType>
+	
+	<float16NumberType>
+		<TagSignature>swpt</TagSignature>
+		<Data>
+		 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.0`0 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+		</Data>
+	</float16NumberType>
+    
+	<multiLocalizedUnicodeType>
+      <TagSignature>cprt</TagSignature>
+      <LocalizedText LanguageCountry="enUS"><![CDATA[Copyright 2019 International Color Consortium]]></LocalizedText>
+    </multiLocalizedUnicodeType>
+
+  </Tags>
+</IccProfile>
