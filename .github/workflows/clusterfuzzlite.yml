@@ -48,7 +48,7 @@ jobs:
       - name: Sanitize Workflow Inputs
         id: sanitize
         run: |
-          source .github/scripts/load-sanitizer.sh
+          source .github/scripts/sanitize-sed.sh
           FUZZ_SECONDS=$(sanitize_input "${{ github.event.inputs.fuzz-seconds || 3600 }}")
           NO_CACHE=$(sanitize_input "${{ github.event.inputs.no-cache || false }}")
           echo "fuzz-seconds=$FUZZ_SECONDS" >> $GITHUB_OUTPUT
