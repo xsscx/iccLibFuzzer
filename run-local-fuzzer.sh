@@ -48,13 +48,12 @@ cd "$FUZZER_DIR"
     -timeout=120 \
     -rss_limit_mb=6144 \
     -max_len=10000000 \
-    -detect_leaks=0 \
-    || true
+    -detect_leaks=0 || true
 
 echo ""
 echo "========================================"
 echo "Fuzzing complete!"
-echo "Crash dir: $CRASH_DIR"
+echo "Crash dir: $CRASH_DIR_ABS"
 CRASH_COUNT=$(find "$CRASH_DIR" -type f \( -name "crash-*" -o -name "leak-*" -o -name "oom-*" -o -name "timeout-*" \) 2>/dev/null | wc -l)
 if [ "$CRASH_COUNT" -gt 0 ]; then
     echo "Found $CRASH_COUNT artifact(s):"
