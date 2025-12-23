@@ -409,6 +409,7 @@ option(ICC_ENABLE_ASSERTS         "Enable ICC_ASSERT traps and debug assertions"
 option(ICC_LOG_SAFE               "Enable ICC_LOG_SAFE_VAL bounds-checked logging"      OFF)
 option(ENABLE_SANITIZERS          "Enable runtime sanitizers (ASan, UBSan, etc.)"       OFF)
 option(ENABLE_FUZZING             "Enable fuzzing instrumentation (libFuzzer)"          OFF)
+option(ENABLE_COVERAGE            "Enable code coverage instrumentation"                OFF)
 option(ENABLE_SPECTRE_MITIGATION  "Enable /Qspectre on MSVC for Spectre V1 mitigation"  OFF)
 option(ENABLE_USEICCDEVNAMESPACE  "Use iccDEV namespace wrapping"                       OFF)
 
@@ -448,6 +449,7 @@ message(STATUS "ICC_ENABLE_ASSERTS         = ${ICC_ENABLE_ASSERTS}")
 message(STATUS "ICC_LOG_SAFE               = ${ICC_LOG_SAFE}")
 message(STATUS "ENABLE_SANITIZERS          = ${ENABLE_SANITIZERS}")
 message(STATUS "ENABLE_FUZZING             = ${ENABLE_FUZZING}")
+message(STATUS "ENABLE_COVERAGE            = ${ENABLE_COVERAGE}")
 message(STATUS "ENABLE_SPECTRE_MITIGATION  = ${ENABLE_SPECTRE_MITIGATION}")
 message(STATUS "")
 
@@ -468,6 +470,15 @@ if(SANITIZER_FLAGS)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${FINAL_SAN_FLAGS}")
   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${FINAL_SAN_FLAGS}")
   message(STATUS ">>> Final sanitizer flags: ${FINAL_SAN_FLAGS}")
+endif()
+
+# Apply coverage instrumentation flags
+if(ENABLE_COVERAGE)
+  message(STATUS ">>> Coverage instrumentation enabled")
+  set(COVERAGE_FLAGS "--coverage -fprofile-arcs -ftest-coverage")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${COVERAGE_FLAGS}")
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${COVERAGE_FLAGS}")
+  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${COVERAGE_FLAGS}")
 endif()
 
 
@@ -833,14 +844,14 @@ ADD_SUBDIRECTORY(Tools/IccPngDump)
   endif()
 
   # Configure wxWidgets
-  find_package(wxWidgets COMPONENTS core base REQUIRED)
-  if (wxWidgets_FOUND)
-    include(${wxWidgets_USE_FILE})
-      ADD_SUBDIRECTORY(Tools/wxProfileDump)
-    message(STATUS "wxWidgets found and configured")
-  else()
-    message(FATAL_ERROR "wxWidgets not found. Please install it manually or via vcpkg.")
-  endif()
+#   find_package(wxWidgets COMPONENTS core base REQUIRED)
+#   if (wxWidgets_FOUND)
+#     include(${wxWidgets_USE_FILE})
+#       ADD_SUBDIRECTORY(Tools/wxProfileDump)
+#     message(STATUS "wxWidgets found and configured")
+#   else()
+#     message(FATAL_ERROR "wxWidgets not found. Please install it manually or via vcpkg.")
+#   endif()
 
 ENDIF(ENABLE_TOOLS)
 
