@@ -1,5 +1,9 @@
 #!/bin/bash -eu
 
+# ClusterFuzzLite Build Script
+# Host-optimized: W5-2465X 32-core system
+# Reference: .llmcjf-config.yaml, llmcjf/profiles/strict_engineering.yaml
+
 # Clean all previous fuzzer binaries
 cd $SRC/ipatch/fuzzers
 make clean 2>/dev/null || true

@@ -2,6 +2,8 @@
 
 # Local fuzzer build script for reproducing ClusterFuzzLite builds
 # Output: ./fuzzers-local/{address,undefined,memory}/icc_*_fuzzer
+# Host: W5-2465X (32-core) with RAID-1 NVMe SSD - optimized for maximum performance
+# Reference: .llmcjf-config.yaml
 
 set -e
 
@@ -14,7 +16,8 @@ OUTPUT_DIR="$REPO_ROOT/fuzzers-local/$SANITIZER"
 echo "Building fuzzers with $SANITIZER sanitizer to $OUTPUT_DIR"
 
 # Set compiler flags based on sanitizer
-# W5-2465X optimization: 24 threads, NVMe SSD
+# W5-2465X optimization: 32-core system, RAID-1 NVMe SSD
+# LLMCJF Profile: strict-engineering mode (llmcjf/profiles/)
 case "$SANITIZER" in
   address)
     CFLAGS="-O2 -fno-omit-frame-pointer -gline-tables-only -fsanitize=address,fuzzer-no-link -march=native"
@@ -52,8 +55,8 @@ cmake -B "$BUILD_DIR" -S . \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DBUILD_SHARED_LIBS=OFF
 
-cmake --build "$BUILD_DIR" --target IccProfLib2-static -j24
-cmake --build "$BUILD_DIR" --target IccXML2-static -j24
+cmake --build "$BUILD_DIR" --target IccProfLib2-static -j32
+cmake --build "$BUILD_DIR" --target IccXML2-static -j32
 
 # Create output directory
 mkdir -p "$OUTPUT_DIR"

@@ -1,5 +1,15 @@
 # Building iccDEV
 
+## Host Configuration (W5-2465X - Fuzzing Optimization)
+This repository is optimized for a **W5-2465X 32-core** system with **RAID-1 2x Samsung 990 PRO 2TB NVMe** storage.
+
+**Build Performance Tuning:**
+- CPU Cores: 24 (detected via `nproc`)  
+- Recommended: `-j32` for build parallelization
+- Compiler: `-march=native` for optimal performance
+- Storage: NVMe PCIe Gen4 (high-speed artifact I/O)
+- **LLMCJF Integration**: See `.llmcjf-config.yaml` and `llmcjf/` directory
+
 ## Quickstart installation: 
 
 | Method | Command |
@@ -31,7 +41,7 @@ git clone https://github.com/InternationalColorConsortium/iccdev.git iccdev
 cd iccdev/Build
 sudo apt install -y libpng-dev libjpeg-dev libtiff-dev libwxgtk3.2-dev libwxgtk-{media,webview}3.2-dev wx-common wx3.2-headers curl git make cmake clang{,-tools} libxml2{,-dev} nlohmann-json3-dev build-essential
 cmake Cmake
-make -j"$(nproc)"
+make -j32  # W5-2465X optimized (32-core)
 
 ```
 

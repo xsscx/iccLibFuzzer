@@ -1,6 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
+# Standalone FromXML Fuzzer Build Script
+# Host-optimized: W5-2465X 32-core system  
+# Reference: .llmcjf-config.yaml
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BUILD_DIR="$SCRIPT_DIR/build-standalone-fromxml"
 SANITIZER="${1:-address}"
@@ -18,8 +22,8 @@ cmake "$SCRIPT_DIR/Build/Cmake" \
   -DCMAKE_CXX_FLAGS="-O2 -g -fsanitize=$SANITIZER,fuzzer-no-link -march=native" \
   -DCMAKE_C_FLAGS="-O2 -g -fsanitize=$SANITIZER,fuzzer-no-link -march=native"
 
-# Build libraries
-make -j$(nproc) IccProfLib2-static IccXML2-static
+# Build libraries (W5-2465X: 32 cores)
+make -j32 IccProfLib2-static IccXML2-static
 
 # Build standalone fuzzer
 echo "Compiling standalone fuzzer binary..."

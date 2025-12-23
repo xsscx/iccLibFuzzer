@@ -1,0 +1,75 @@
+# LLMCJF Configuration for iccLibFuzzer
+# LLM Content Jockey Failure Prevention Configuration
+# Reference: llmcjf/README.md
+
+version: "1.0"
+project: "iccLibFuzzer"
+updated: "2025-12-23"
+
+# Host Configuration
+host:
+  model: "W5-2465X"
+  cores: 32
+  detected_cores: 24  # nproc output
+  storage: "RAID-1 2x Samsung 990 PRO 2TB NVMe M.2 PCIe Gen4"
+  optimization: "maximum_performance"
+
+# Build System Configuration
+build:
+  parallel_jobs: 32
+  compiler_flags:
+    native_optimization: "-march=native"
+    fast_math: false  # Disabled for fuzzing accuracy
+  cmake_parallel_target_build: 32
+
+# Fuzzing Configuration
+fuzzing:
+  sanitizers:
+    - address
+    - undefined
+    - memory
+  corpus_location: "./corpus"
+  poc_archive: "./poc-archive"
+  artifacts_retention_days: 90
+  
+# LLMCJF Behavioral Profiles
+profiles:
+  strict_engineering: "llmcjf/profiles/strict_engineering.yaml"
+  json_profile: "llmcjf/profiles/llm_strict_engineering_profile.json"
+  heuristics: "llmcjf/profiles/llm_cjf_heuristics.yaml"
+  hardmode_ruleset: "llmcjf/profiles/llmcjf-hardmode-ruleset.json"
+
+# Session Prologue
+prologue:
+  enabled: true
+  strict_mode: true
+  source: "llmcjf/STRICT_ENGINEERING_PROLOGUE.md"
+  
+# Reference Documentation
+documentation:
+  build_guide: "docs/build.md"
+  index: "docs/index.md"
+  copilot_instructions: ".github/copilot-instructions.md"
+
+# POC Management
+poc_management:
+  inventory: "poc-archive/POC_INVENTORY_20251221_153921.md"
+  crash_files: 6
+  leak_files: 3
+  oom_files: 2
+  total_artifacts: 11
+
+# CI/CD Integration
+cicd:
+  clusterfuzzlite:
+    workflow: ".github/workflows/clusterfuzzlite.yml"
+    config: ".clusterfuzzlite/project.yaml"
+    build_script: ".clusterfuzzlite/build.sh"
+  workflows_dir: ".github/workflows"
+  scripts_dir: ".github/scripts"
+
+# Compliance
+compliance:
+  no_push: true
+  local_commits_only: true
+  repository_scope: "all_subdirectories"

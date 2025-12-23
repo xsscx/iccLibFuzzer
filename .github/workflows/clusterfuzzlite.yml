@@ -1,5 +1,10 @@
 name: ClusterFuzzLite Continuous Fuzzing
 
+# LLMCJF Integration: strict-engineering mode
+# Host: W5-2465X 32-core with RAID-1 NVMe SSD
+# Configuration: .llmcjf-config.yaml
+# Profiles: llmcjf/profiles/
+
 on:
   pull_request:
     paths:

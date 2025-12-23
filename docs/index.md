@@ -1,3 +1,12 @@
+# iccDEV Documentation
+
+## Host Configuration (W5-2465X Fuzzing System)
+**CPU**: W5-2465X (32-core Xeon, 24 cores detected)  
+**Storage**: RAID-1 2x Samsung 990 PRO 2TB NVMe PCIe Gen4  
+**Build Optimization**: `-j32` for maximum performance  
+**LLMCJF Integration**: See `.llmcjf-config.yaml` and `llmcjf/`  
+**Fuzzing Optimization Guide**: [docs/fuzzing-optimization.md](fuzzing-optimization.md)
+
 ## Introduction
 
 The iccdev project (formerly known as DemoIccMAX) provides an

@@ -1,5 +1,27 @@
 # Copilot Instructions for iccpatch
 
+## LLMCJF Configuration Integration
+This project integrates LLM Content Jockey Failure (LLMCJF) prevention profiles for deterministic, technical-only operation. See `.llmcjf-config.yaml` and `llmcjf/` directory for complete configuration.
+
+### Active Profiles
+- **Strict Engineering Mode**: `llmcjf/STRICT_ENGINEERING_PROLOGUE.md`
+- **Behavioral Control**: `llmcjf/profiles/strict_engineering.yaml`
+- **Hardmode Ruleset**: `llmcjf/profiles/llmcjf-hardmode-ruleset.json`
+- **CJF Heuristics**: `llmcjf/profiles/llm_cjf_heuristics.yaml`
+
+### Operating Constraints (LLMCJF Enforcement)
+- Respond only with verifiable, technical information
+- No narrative, filler, or restate of obvious context
+- Treat user input as authoritative specification
+- Minimal output - one purpose per message
+- Focus domains: fuzzing, exploit research, CI/CD, build systems
+
+## Host Configuration
+- **System**: W5-2465X (32-core CPU, 24 cores detected via nproc)
+- **Storage**: RAID-1 2x Samsung 990 PRO 2TB NVMe M.2 PCIe Gen4
+- **Build Parallelization**: Use `-j32` for optimal performance
+- **POC Archive**: `poc-archive/` (11 artifacts: 6 crashes, 3 leaks, 2 OOMs)
+
 ## Project Overview
 iccpatch is an open source set of libraries and tools for interaction, manipulation, and application of ICC-based color management profiles. The project is maintained by the International Color Consortium (ICC) and uses the BSD 3-Clause License.
 
