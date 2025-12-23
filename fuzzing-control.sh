@@ -111,7 +111,7 @@ run_fuzzer() {
   
   cd "$(dirname "$FUZZER_BIN")"
   ./"$(basename "$FUZZER_BIN")" \
-    "$(basename "$CORPUS_DIR")/" \
+    "$(realpath "$(basename "$CORPUS_DIR")")/" \
     -artifact_prefix="$CRASH_DIR/" \
     -max_total_time="$duration" \
     -timeout=120 \

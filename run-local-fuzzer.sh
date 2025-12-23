@@ -40,7 +40,7 @@ echo ""
 
 cd "$FUZZER_DIR"
 ./$FUZZER \
-    "${FUZZER}_seed_corpus/" \
+    "$(realpath "${FUZZER}_seed_corpus")/" \
     -artifact_prefix="$CRASH_DIR/" \
     -max_total_time=$DURATION \
     -timeout=120 \
