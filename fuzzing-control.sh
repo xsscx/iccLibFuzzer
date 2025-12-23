@@ -4,6 +4,8 @@ set -euo pipefail
 # Fuzzing Control Script - W5-2465X Optimized
 # Master control interface for local fuzzing operations
 # Reference: .llmcjf-config.yaml, docs/fuzzing-optimization.md
+# Usage: ./fuzzing-control.sh <command> [args]
+# Defaults: sanitizer=address, fuzzer=icc_profile_fuzzer, duration=600s
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
@@ -207,18 +209,30 @@ Commands:
   verify          Verify host configuration
   build-all       Build all fuzzers (address, undefined, memory)
   list            List available fuzzers
-  run             Run fuzzer: $0 run [sanitizer] [fuzzer] [duration]
-  reproduce       Reproduce crash: $0 reproduce <poc-file> [sanitizer]
+  run [san] [fuz] [dur]
+                  Run fuzzer (defaults: address icc_profile_fuzzer 600)
+  reproduce <poc> [san]
+                  Reproduce crash (defaults: sanitizer=address)
   pocs            Show POC inventory
   clean           Clean all build artifacts
   help            Show this help message
+
+Defaults:
+  Sanitizer:  address (options: address, undefined, memory)
+  Fuzzer:     icc_profile_fuzzer
+  Duration:   600 seconds
+  RSS Limit:  6GB
 
 Examples:
   $0 verify
   $0 build-all
   $0 list
-  $0 run address icc_profile_fuzzer 600
-  $0 reproduce crash-31ff7f659128d0da5ffadb7a52a7c545bcfd312a address
+  $0 run                                    # Use all defaults
+  $0 run address                            # Default fuzzer, 600s
+  $0 run address icc_calculator_fuzzer      # Default duration
+  $0 run address icc_profile_fuzzer 3600    # All explicit
+  $0 reproduce crash-31ff7f659128d0da5ffadb7a52a7c545bcfd312a
+  $0 reproduce crash-05806b73da433dd63ab681e582dbf83640a4aac8 address
   $0 pocs
   $0 clean
 
