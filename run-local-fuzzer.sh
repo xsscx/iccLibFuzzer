@@ -32,7 +32,7 @@ cd "$FUZZER_DIR"
     -artifact_prefix="$CRASH_DIR/" \
     -max_total_time=$DURATION \
     -timeout=120 \
-    -rss_limit_mb=8192 \
+    -rss_limit_mb=6144 \
     -max_len=10000000 \
     -detect_leaks=0 \
     "$CORPUS_DIR" || true

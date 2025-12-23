@@ -88,7 +88,7 @@ sanitizers:
   -max_len=1048576 \
   -len_control=0 \
   -timeout=60 \
-  -rss_limit_mb=4096 \
+  -rss_limit_mb=6144 \
   -jobs=32 \
   -workers=24 \
   corpus/
