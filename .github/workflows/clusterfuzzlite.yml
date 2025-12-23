@@ -48,10 +48,13 @@ jobs:
       - name: Sanitize Workflow Inputs
         id: sanitize
         run: |
-          export FUZZ_SECONDS="${{ github.event.inputs.fuzz-seconds || 3600 }}"
-          export NO_CACHE="${{ github.event.inputs.no-cache || false }}"
-          source .github/scripts/sanitizer.sh
-          sanitize_inputs
+          source .github/scripts/load-sanitizer.sh
+          FUZZ_SECONDS=$(sanitize_input "${{ github.event.inputs.fuzz-seconds || 3600 }}")
+          NO_CACHE=$(sanitize_input "${{ github.event.inputs.no-cache || false }}")
+          echo "fuzz-seconds=$FUZZ_SECONDS" >> $GITHUB_OUTPUT
+          echo "no-cache=$NO_CACHE" >> $GITHUB_OUTPUT
+          echo "Sanitized fuzz-seconds: $FUZZ_SECONDS"
+          echo "Sanitized no-cache: $NO_CACHE"
         shell: bash
 
       - name: Clear Docker build cache
@@ -76,7 +79,7 @@ jobs:
         uses: google/clusterfuzzlite/actions/run_fuzzers@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          fuzz-seconds: ${{ github.event.inputs.fuzz-seconds || 3600 }}
+          fuzz-seconds: ${{ steps.sanitize.outputs.fuzz-seconds }}
           mode: 'code-change'
           sanitizer: ${{ matrix.sanitizer }}
       
