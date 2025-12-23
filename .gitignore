@@ -4,14 +4,31 @@ Build/IccXML/*.so*
 Build/Tools/*/icc*
 Build/*.a
 Build/*.o
+Build/Cmake/Build/
+*.cmake
 
-# Fuzzing artifacts
+# Fuzzing binaries (built locally or downloaded)
 icc_*_fuzzer
-corpus/
+*_seed_corpus/
+llvm-symbolizer
+
+# Fuzzing artifacts and crashes
 crash-*
 oom-*
 leak-*
 timeout-*
+fuzz-*.log
+
+# Local fuzzer builds
+fuzzers-local/
+
+# Downloaded CI artifacts
+artifacts/downloads/
+cifuzz-build-*/
+*.tar
+
+# Corpus (generated)
+corpus/
 
 # Compiled binaries
 *.so
@@ -27,6 +44,7 @@ llmcjf/
 # Test outputs
 *.icc.out
 *.xml.out
+*.log
 
 # Editor/IDE
 .vscode/
@@ -38,11 +56,7 @@ llmcjf/
 # OS
 .DS_Store
 Thumbs.db
-!corpus/icc_fromxml_standalone/
-!corpus/icc_calculator_standalone/
-!corpus/icc_profile_standalone/
-!corpus/icc_spectral_standalone/
-!corpus/icc_multitag_standalone/
-!corpus/icc_toxml_standalone/
-!corpus/icc_io_standalone/
-!corpus/icc_applyprofiles_standalone/
+
+# Exception: Keep specific corpus directories if needed
+!corpus/commodity/
+!poc-archive/
