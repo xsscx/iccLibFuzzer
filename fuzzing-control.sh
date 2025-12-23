@@ -88,20 +88,34 @@ run_fuzzer() {
     return 1
   fi
   
-  CORPUS_DIR="./corpus/${fuzzer}_corpus"
-  mkdir -p "$CORPUS_DIR"
+  CORPUS_DIR="./fuzzers-local/$sanitizer/${fuzzer}_seed_corpus"
+  
+  if [ ! -d "$CORPUS_DIR" ]; then
+    print_error "Corpus not found: $CORPUS_DIR"
+    print_status "Run: ./populate-corpus.sh"
+    return 1
+  fi
+  
+  CRASH_DIR="./fuzzers-local/$sanitizer/crashes"
+  mkdir -p "$CRASH_DIR"
+  
+  CORPUS_COUNT=$(find "$CORPUS_DIR" -type f | wc -l)
   
   print_status "Fuzzer: $FUZZER_BIN"
-  print_status "Corpus: $CORPUS_DIR"
+  print_status "Corpus: $CORPUS_DIR ($CORPUS_COUNT files)"
+  print_status "Crashes: $CRASH_DIR"
   print_status "Duration: ${duration}s"
-  print_status "Jobs: $BUILD_JOBS workers"
+  print_status "RSS limit: 6GB"
   
-  "$FUZZER_BIN" \
+  cd "$(dirname "$FUZZER_BIN")"
+  ./"$(basename "$FUZZER_BIN")" \
+    "$(basename "$CORPUS_DIR")/" \
+    -artifact_prefix="$CRASH_DIR/" \
     -max_total_time="$duration" \
-    -jobs="$BUILD_JOBS" \
-    -workers="$DETECTED_CORES" \
-    -print_final_stats=1 \
-    "$CORPUS_DIR" \
+    -timeout=120 \
+    -rss_limit_mb=6144 \
+    -max_len=10000000 \
+    -detect_leaks=0 \
     || print_error "Fuzzer exited with errors"
 }
 
