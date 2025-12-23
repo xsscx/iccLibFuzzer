@@ -49,8 +49,8 @@ jobs:
         id: sanitize
         run: |
           source .github/scripts/sanitize-sed.sh
-          FUZZ_SECONDS=$(sanitize_input "${{ github.event.inputs.fuzz-seconds || 3600 }}")
-          NO_CACHE=$(sanitize_input "${{ github.event.inputs.no-cache || false }}")
+          FUZZ_SECONDS=$(sanitize_line "${{ github.event.inputs.fuzz-seconds || 3600 }}")
+          NO_CACHE=$(sanitize_line "${{ github.event.inputs.no-cache || false }}")
           echo "fuzz-seconds=$FUZZ_SECONDS" >> $GITHUB_OUTPUT
           echo "no-cache=$NO_CACHE" >> $GITHUB_OUTPUT
           echo "Sanitized fuzz-seconds: $FUZZ_SECONDS"
