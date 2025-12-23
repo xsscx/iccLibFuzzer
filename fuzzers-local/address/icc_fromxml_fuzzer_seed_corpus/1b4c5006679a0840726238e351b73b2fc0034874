@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-                                       3
-                    </MatrixData>
-t{v2} 1 add tput{v2}</Macro>
-		<Macro Name="applyIdent">mtx{identity3x3}</Macro>
-	</Macros>
-</IccCalcImport>
