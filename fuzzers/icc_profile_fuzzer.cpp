@@ -34,7 +34,7 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
     
     // Exercise all tag iteration with deeper testing
     TagEntryList::iterator i;
-    for (i = pIcc->m_Tags->begin(); i != pIcc->m_Tags->end(); i++) {
+    for (i = pIcc->m_Tags.begin(); i != pIcc->m_Tags.end(); i++) {
       if (i->pTag) {
         std::string desc;
         i->pTag->Describe(desc, 100);

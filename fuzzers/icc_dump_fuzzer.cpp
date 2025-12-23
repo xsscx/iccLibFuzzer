@@ -49,15 +49,15 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
     // Tag duplication detection (IccDumpProfile lines 303-308)
     std::map<icTagSignature, int> tagCounts;
     TagEntryList::iterator i, j;
-    for (i = pIcc->m_Tags->begin(); i != pIcc->m_Tags->end(); i++) {
+    for (i = pIcc->m_Tags.begin(); i != pIcc->m_Tags.end(); i++) {
       tagCounts[i->TagInfo.sig]++;
     }
     
     // Tag overlap and padding validation (IccDumpProfile lines 337-380)
-    size_t n = pIcc->m_Tags->size();
+    size_t n = pIcc->m_Tags.size();
     icUInt32Number smallest_offset = pHdr->size;
     
-    for (i = pIcc->m_Tags->begin(); i != pIcc->m_Tags->end(); i++) {
+    for (i = pIcc->m_Tags.begin(); i != pIcc->m_Tags.end(); i++) {
       // Track smallest offset for first tag validation
       if (i->TagInfo.offset < smallest_offset) {
         smallest_offset = i->TagInfo.offset;
@@ -71,7 +71,7 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
       
       // Find closest following tag for overlap detection
       icUInt32Number closest = pHdr->size;
-      for (j = pIcc->m_Tags->begin(); j != pIcc->m_Tags->end(); j++) {
+      for (j = pIcc->m_Tags.begin(); j != pIcc->m_Tags.end(); j++) {
         if ((i != j) && (j->TagInfo.offset > i->TagInfo.offset) && 
             (j->TagInfo.offset <= closest)) {
           closest = j->TagInfo.offset;
@@ -108,7 +108,7 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
     }
     
     // Exercise all tags with multiple verbosity levels (DumpTag coverage)
-    for (i = pIcc->m_Tags->begin(); i != pIcc->m_Tags->end(); i++) {
+    for (i = pIcc->m_Tags.begin(); i != pIcc->m_Tags.end(); i++) {
       if (i->pTag) {
         std::string desc;
         i->pTag->Describe(desc, 1);    // Minimal verbosity

@@ -57,7 +57,7 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
     (void)tmp;
     
     TagEntryList::iterator i;
-    for (i = profile.m_Tags->begin(); i != profile.m_Tags->end(); i++) {
+    for (i = profile.m_Tags.begin(); i != profile.m_Tags.end(); i++) {
       if (i->pTag) {
         std::string desc;
         i->pTag->Describe(desc, 100);
