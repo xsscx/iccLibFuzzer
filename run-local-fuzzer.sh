@@ -40,6 +40,12 @@ cd "$FUZZER_DIR"
 echo ""
 echo "========================================"
 echo "Fuzzing complete!"
-echo "Crashes: $CRASH_DIR"
-ls -lh "$CRASH_DIR"/*.* 2>/dev/null || echo "No crashes found"
+echo "Crash dir: $CRASH_DIR"
+CRASH_COUNT=$(find "$CRASH_DIR" -type f \( -name "crash-*" -o -name "leak-*" -o -name "oom-*" -o -name "timeout-*" \) 2>/dev/null | wc -l)
+if [ "$CRASH_COUNT" -gt 0 ]; then
+    echo "Found $CRASH_COUNT artifact(s):"
+    find "$CRASH_DIR" -type f \( -name "crash-*" -o -name "leak-*" -o -name "oom-*" -o -name "timeout-*" \) -exec ls -lh {} \;
+else
+    echo "No crashes found"
+fi
 echo "========================================"
