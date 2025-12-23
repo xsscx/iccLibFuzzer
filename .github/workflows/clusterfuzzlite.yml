@@ -9,6 +9,17 @@ on:
       - 'fuzzers/**'
       - '.clusterfuzzlite/**'
   workflow_dispatch:
+    inputs:
+      no-cache:
+        description: 'Disable build cache (force rebuild)'
+        required: false
+        default: false
+        type: boolean
+      fuzz-seconds:
+        description: 'Fuzzing duration in seconds'
+        required: false
+        default: 3600
+        type: number
   schedule:
     - cron: '0 0 * * *'
 
@@ -30,9 +41,12 @@ jobs:
           fetch-depth: 0
 
       - name: Clear Docker build cache
+        if: github.event.inputs.no-cache == 'true' || github.event_name == 'pull_request'
         run: |
+          echo "Clearing Docker build cache..."
           docker system prune -af --volumes || true
           docker builder prune -af || true
+          echo "Docker cache cleared"
 
       - name: Build Fuzzers (${{ matrix.sanitizer }})
         id: build
@@ -41,13 +55,14 @@ jobs:
           sanitizer: ${{ matrix.sanitizer }}
           language: c++
           upload-build: true
+          bad-build-check: ${{ github.event.inputs.no-cache == 'true' && 'false' || 'true' }}
 
       - name: Run Fuzzers (${{ matrix.sanitizer }})
         id: run
         uses: google/clusterfuzzlite/actions/run_fuzzers@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          fuzz-seconds: 3600
+          fuzz-seconds: ${{ github.event.inputs.fuzz-seconds || 3600 }}
           mode: 'code-change'
           sanitizer: ${{ matrix.sanitizer }}
       
