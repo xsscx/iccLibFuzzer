@@ -1,0 +1,26 @@
+diff --git a/IccProfLib/IccTagBasic.cpp b/IccProfLib/IccTagBasic.cpp
+index 5e58d48..8ddf555 100644
+--- a/IccProfLib/IccTagBasic.cpp
++++ b/IccProfLib/IccTagBasic.cpp
+@@ -2838,6 +2838,21 @@ bool CIccTagNamedColor2::SetSize(icUInt32Number nSize, icInt32Number nDeviceCoor
+ 
+   icUInt32Number nColorEntrySize = 32/*rootName*/ + (3/*PCS*/ + 1/*iAny*/ + nDeviceCoords)*sizeof(icFloatNumber);
+ 
++  // Prevent OOM: validate allocation size before calloc
++  // Allow up to 1GB for named color tables (fuzzer has 2.5GB RSS limit)
++  // Typical usage: <10K entries (~1MB), but allow larger for valid use cases
++  const icUInt32Number MAX_NAMED_COLORS = 10000000; // 10 million entries
++  const icUInt64Number MAX_ALLOC_SIZE = 1024ULL * 1024 * 1024; // 1GB
++  
++  if (nSize > MAX_NAMED_COLORS) {
++    return false;
++  }
++  
++  icUInt64Number nTotalSize = (icUInt64Number)nSize * (icUInt64Number)nColorEntrySize;
++  if (nTotalSize > MAX_ALLOC_SIZE) {
++    return false;
++  }
++
+   SIccNamedColorEntry* pNamedColor = (SIccNamedColorEntry*)calloc(nSize, nColorEntrySize);
+ 
+   if (!pNamedColor)

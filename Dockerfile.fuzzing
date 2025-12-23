@@ -1,0 +1,56 @@
+# Dockerfile for libFuzzer Research
+FROM ubuntu:24.04 AS fuzzer-base
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV CC=/usr/bin/clang-18
+ENV CXX=/usr/bin/clang++-18
+
+# Install dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    clang-18 \
+    llvm-18 \
+    llvm-18-dev \
+    libclang-rt-18-dev \
+    cmake \
+    ninja-build \
+    git \
+    libxml2-dev \
+    libpng-dev \
+    libjpeg-dev \
+    libtiff-dev \
+    nlohmann-json3-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Clone and build with fuzzer instrumentation
+WORKDIR /src
+COPY . /src/ipatch
+
+# Build library with fuzzer instrumentation
+RUN cd /src/ipatch && \
+    sed -i '/find_package(wxWidgets/,/endif()/ s/^/# /' Build/Cmake/CMakeLists.txt && \
+    cmake -B build -S Build/Cmake \
+      -DCMAKE_C_COMPILER=clang-18 \
+      -DCMAKE_CXX_COMPILER=clang++-18 \
+      -DCMAKE_C_FLAGS="-g -fsanitize=address,fuzzer-no-link" \
+      -DCMAKE_CXX_FLAGS="-g -fsanitize=address,fuzzer-no-link" \
+      -DCMAKE_BUILD_TYPE=Debug \
+      -DBUILD_SHARED_LIBS=OFF && \
+    cmake --build build --target IccProfLib2-static -j$(nproc)
+
+# Build all fuzzers
+RUN cd /src/ipatch && \
+    for fuzzer in fuzzers/*.cpp; do \
+      name=$(basename "$fuzzer" .cpp); \
+      clang++-18 -g -fsanitize=address,fuzzer \
+        -I/src/ipatch/IccProfLib \
+        "$fuzzer" \
+        build/IccProfLib/libIccProfLib2-static.a \
+        -o "/src/ipatch/$name"; \
+    done
+
+# Create corpus directory
+RUN mkdir -p /corpus && \
+    cp /src/ipatch/Testing/*.icc /corpus/ 2>/dev/null || true
+
+WORKDIR /src/ipatch
+CMD ["/bin/bash"]

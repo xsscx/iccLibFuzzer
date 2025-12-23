@@ -1,75 +1,48 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.d
-*.obj
+# Build artifacts
+Build/IccProfLib/*.so*
+Build/IccXML/*.so*
+Build/Tools/*/icc*
+Build/*.a
+Build/*.o
 
-# Precompiled Headers
-*.gch
-*.pch
+# Fuzzing artifacts
+icc_*_fuzzer
+corpus/
+crash-*
+oom-*
+leak-*
+timeout-*
 
-# Compiled Dynamic libraries
+# Compiled binaries
 *.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-
-# Compiled Static libraries
-*.lai
-*.la
+*.so.*
 *.a
-*.lib
+*.o
+*.dylib
 
-# Executables
-*.exe
-*.out
-*.app
+# Submodules/external repos (should use git submodule instead)
+Commodity-Injection-Signatures/
+llmcjf/
 
-# Testing icc
-Testing/*/*.icc
-Testing/private/**
+# Test outputs
+*.icc.out
+*.xml.out
 
-# Xcode build files
-/Build/XCBuildData
-**/*.noindex
-**/Build
-!/Build
-**/xcuserdata
-**/DerivedData
-**/DataStore
-**/.DS_Store
-*.xcodeproj
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-# Visual Studio
-**/.vs
-*.vcxproj.user
-*.idb
-*.pdb
-*.exp
-*.ilk
-*.tlog
-*.log
-*.recipe
-**/Release/**
-**/Debug/**
-**/x64/**
-**/Win32/**
-**/vc_msw*/**
-Developer Defs.props
-
-# CMake generated files
-CMakeCache.txt
-**/CMakeFiles
-cmake_install.cmake
-*Uninstall.cmake
-*Config.cmake
-ReRunCMake.make
-Makefile
-
-# vcpkg folder on Windows
-/vcpkg_installed
-
-# Further additions that need to be moved to a proper category
+# OS
+.DS_Store
+Thumbs.db
+!corpus/icc_fromxml_standalone/
+!corpus/icc_calculator_standalone/
+!corpus/icc_profile_standalone/
+!corpus/icc_spectral_standalone/
+!corpus/icc_multitag_standalone/
+!corpus/icc_toxml_standalone/
+!corpus/icc_io_standalone/
+!corpus/icc_applyprofiles_standalone/

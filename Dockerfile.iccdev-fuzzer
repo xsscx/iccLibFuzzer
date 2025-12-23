@@ -1,0 +1,125 @@
+# Dockerfile for libFuzzer on srdcx/iccdev base image
+FROM srdcx/iccdev:latest
+
+USER root
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV CC=clang-18
+ENV CXX=clang++-18
+
+# Fix python3 and install clang-18 (avoid llvm-18-dev which needs python3)
+RUN mkdir -p /var/lib/apt/lists/partial && \
+    chmod 755 /var/lib/apt/lists/partial && \
+    rm -f /var/lib/dpkg/info/libgio-2.0-dev-bin.* && \
+    dpkg --configure -a || true && \
+    apt-get clean && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends \
+    clang-18 \
+    llvm-18 \
+    libclang-rt-18-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /src/ipatch
+
+# Copy source (assumes running from ipatch repo root)
+COPY . /src/ipatch/
+
+# Disable wxWidgets GUI dependencies
+RUN sed -i '/find_package(wxWidgets COMPONENTS core base REQUIRED)/,/endif()/ s/^/# /' Build/Cmake/CMakeLists.txt
+
+# Build fuzzers with Address Sanitizer
+RUN mkdir -p /fuzzers/address && \
+    BUILD_DIR="/src/ipatch/build_asan_$(date +%s)" && \
+    cmake -B "$BUILD_DIR" -S /src/ipatch/Build/Cmake \
+      -DCMAKE_C_COMPILER=clang-18 \
+      -DCMAKE_CXX_COMPILER=clang++-18 \
+      -DCMAKE_C_FLAGS="-O1 -fno-omit-frame-pointer -gline-tables-only -fsanitize=address,fuzzer-no-link" \
+      -DCMAKE_CXX_FLAGS="-O1 -fno-omit-frame-pointer -gline-tables-only -fsanitize=address,fuzzer-no-link" \
+      -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+      -DBUILD_SHARED_LIBS=OFF && \
+    cmake --build "$BUILD_DIR" --target IccProfLib2-static -j$(nproc) && \
+    for fuzzer in icc_link_fuzzer icc_dump_fuzzer icc_apply_fuzzer icc_roundtrip_fuzzer icc_profile_fuzzer icc_io_fuzzer; do \
+      clang++-18 -O1 -fno-omit-frame-pointer -gline-tables-only \
+        -fsanitize=address,fuzzer \
+        -I/src/ipatch/IccProfLib \
+        -I/src/ipatch/Tools/CmdLine/IccCommon \
+        -I/src/ipatch/Tools/CmdLine/IccApplyProfiles \
+        /src/ipatch/fuzzers/${fuzzer}.cpp \
+        ${BUILD_DIR}/IccProfLib/libIccProfLib2-static.a \
+        -o /fuzzers/address/${fuzzer}; \
+    done && \
+    mkdir -p /fuzzers/address/corpus && \
+    cp /src/ipatch/Testing/*.icc /fuzzers/address/corpus/ 2>/dev/null || true
+
+# Build fuzzers with Undefined Behavior Sanitizer
+RUN mkdir -p /fuzzers/undefined && \
+    BUILD_DIR="/src/ipatch/build_ubsan_$(date +%s)" && \
+    cmake -B "$BUILD_DIR" -S /src/ipatch/Build/Cmake \
+      -DCMAKE_C_COMPILER=clang-18 \
+      -DCMAKE_CXX_COMPILER=clang++-18 \
+      -DCMAKE_C_FLAGS="-O1 -fno-omit-frame-pointer -gline-tables-only -fsanitize=undefined,fuzzer-no-link" \
+      -DCMAKE_CXX_FLAGS="-O1 -fno-omit-frame-pointer -gline-tables-only -fsanitize=undefined,fuzzer-no-link" \
+      -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+      -DBUILD_SHARED_LIBS=OFF && \
+    cmake --build "$BUILD_DIR" --target IccProfLib2-static -j$(nproc) && \
+    for fuzzer in icc_link_fuzzer icc_dump_fuzzer icc_apply_fuzzer icc_roundtrip_fuzzer icc_profile_fuzzer icc_io_fuzzer; do \
+      clang++-18 -O1 -fno-omit-frame-pointer -gline-tables-only \
+        -fsanitize=undefined,fuzzer \
+        -I/src/ipatch/IccProfLib \
+        -I/src/ipatch/Tools/CmdLine/IccCommon \
+        -I/src/ipatch/Tools/CmdLine/IccApplyProfiles \
+        /src/ipatch/fuzzers/${fuzzer}.cpp \
+        ${BUILD_DIR}/IccProfLib/libIccProfLib2-static.a \
+        -o /fuzzers/undefined/${fuzzer}; \
+    done && \
+    cp -r /fuzzers/address/corpus /fuzzers/undefined/
+
+# Create test runner script
+RUN printf '#!/bin/bash\n' > /run-fuzzer.sh && \
+    printf 'set -e\n\n' >> /run-fuzzer.sh && \
+    printf 'SANITIZER=${SANITIZER:-address}\n' >> /run-fuzzer.sh && \
+    printf 'FUZZER=${FUZZER:-icc_profile_fuzzer}\n' >> /run-fuzzer.sh && \
+    printf 'DURATION=${DURATION:-60}\n' >> /run-fuzzer.sh && \
+    printf 'JOBS=${JOBS:-$(nproc)}\n\n' >> /run-fuzzer.sh && \
+    printf 'echo "========================================"\n' >> /run-fuzzer.sh && \
+    printf 'echo "Base Image: srdcx/iccdev:latest"\n' >> /run-fuzzer.sh && \
+    printf 'echo "Fuzzer: $FUZZER"\n' >> /run-fuzzer.sh && \
+    printf 'echo "Sanitizer: $SANITIZER"\n' >> /run-fuzzer.sh && \
+    printf 'echo "Duration: ${DURATION}s"\n' >> /run-fuzzer.sh && \
+    printf 'echo "Jobs: $JOBS"\n' >> /run-fuzzer.sh && \
+    printf 'echo "========================================"\n\n' >> /run-fuzzer.sh && \
+    printf 'mkdir -p /tmp/corpus\n' >> /run-fuzzer.sh && \
+    printf 'mkdir -p /fuzzers/crashes\n\n' >> /run-fuzzer.sh && \
+    printf '/fuzzers/${SANITIZER}/${FUZZER} \\\n' >> /run-fuzzer.sh && \
+    printf '  -artifact_prefix=/fuzzers/crashes/ \\\n' >> /run-fuzzer.sh && \
+    printf '  -jobs=$JOBS \\\n' >> /run-fuzzer.sh && \
+    printf '  -workers=$JOBS \\\n' >> /run-fuzzer.sh && \
+    printf '  -max_total_time=$DURATION \\\n' >> /run-fuzzer.sh && \
+    printf '  -rss_limit_mb=2048 \\\n' >> /run-fuzzer.sh && \
+    printf '  -timeout=25 \\\n' >> /run-fuzzer.sh && \
+    printf '  /tmp/corpus \\\n' >> /run-fuzzer.sh && \
+    printf '  /fuzzers/${SANITIZER}/corpus\n\n' >> /run-fuzzer.sh && \
+    printf 'echo ""\n' >> /run-fuzzer.sh && \
+    printf 'echo "Crash files saved to: /fuzzers/crashes/"\n' >> /run-fuzzer.sh && \
+    printf 'ls -lh /fuzzers/crashes/ 2>/dev/null || echo "No crashes found"\n' >> /run-fuzzer.sh && \
+    chmod +x /run-fuzzer.sh
+
+# Override base image entrypoint and shell configs
+ENTRYPOINT []
+
+# Disable bash login behavior
+ENV BASH_ENV=""
+ENV ENV=""
+
+# Create crash directory
+VOLUME /fuzzers/crashes
+
+WORKDIR /fuzzers
+
+ENV SANITIZER=address
+ENV FUZZER=icc_profile_fuzzer
+ENV DURATION=60
+ENV JOBS=1
+
+CMD ["/run-fuzzer.sh"]

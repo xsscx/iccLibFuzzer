@@ -1,0 +1,254 @@
+# Dockerfile for libFuzzer with Multiple Sanitizers
+FROM ubuntu:24.04 AS fuzzer-build
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV CC=/usr/bin/clang-18
+ENV CXX=/usr/bin/clang++-18
+
+# Install dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    clang-18 \
+    llvm-18 \
+    llvm-18-dev \
+    libclang-rt-18-dev \
+    cmake \
+    make \
+    ninja-build \
+    git \
+    libxml2-dev \
+    libpng-dev \
+    libjpeg-dev \
+    libtiff-dev \
+    nlohmann-json3-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /src
+
+# Copy entire repository
+COPY . /src/ipatch/
+
+# Debug: Show what was actually copied
+RUN echo "=== Top level ===" && \
+    ls -la /src/ipatch/ && \
+    echo "=== Checking for Build ===" && \
+    find /src/ipatch -name "Build" -type d && \
+    echo "=== All directories ===" && \
+    find /src/ipatch -maxdepth 2 -type d
+
+# Disable wxWidgets (file may not exist in all repos)
+RUN sed -i '/find_package(wxWidgets/,/endif()/ s/^/# /' /src/ipatch/Build/Cmake/CMakeLists.txt || true
+
+# ============================================
+# Build with Address Sanitizer
+# ============================================
+RUN mkdir -p /src/ipatch/build-asan && \
+    cd /src/ipatch/build-asan && \
+    cmake ../Build/Cmake \
+      -DCMAKE_C_COMPILER=clang-18 \
+      -DCMAKE_CXX_COMPILER=clang++-18 \
+      -DCMAKE_C_FLAGS="-g -O1 -fsanitize=address,fuzzer-no-link -fno-omit-frame-pointer" \
+      -DCMAKE_CXX_FLAGS="-g -O1 -fsanitize=address,fuzzer-no-link -fno-omit-frame-pointer" \
+      -DCMAKE_BUILD_TYPE=Debug \
+      -DBUILD_SHARED_LIBS=OFF && \
+    cmake --build . --target IccProfLib2-static -j$(nproc) && \
+    cmake --build . --target IccXML2-static -j$(nproc)
+
+RUN mkdir -p /fuzzers/asan && \
+    cd /src/ipatch && \
+    for fuzzer in fuzzers/icc_link_fuzzer.cpp fuzzers/icc_dump_fuzzer.cpp fuzzers/icc_apply_fuzzer.cpp fuzzers/icc_applyprofiles_fuzzer.cpp fuzzers/icc_roundtrip_fuzzer.cpp fuzzers/icc_profile_fuzzer.cpp fuzzers/icc_io_fuzzer.cpp fuzzers/icc_spectral_fuzzer.cpp fuzzers/icc_calculator_fuzzer.cpp fuzzers/icc_multitag_fuzzer.cpp; do \
+      name=$(basename "$fuzzer" .cpp); \
+      clang++-18 -g -O1 -fsanitize=address,fuzzer \
+        -fno-omit-frame-pointer \
+        -I/src/ipatch/IccProfLib \
+        -I/src/ipatch/Tools/CmdLine/IccCommon \
+        -I/src/ipatch/Tools/CmdLine/IccApplyProfiles \
+        "$fuzzer" \
+        /src/ipatch/build-asan/IccProfLib/libIccProfLib2-static.a \
+        -o "/fuzzers/asan/$name"; \
+    done && \
+    clang++-18 -g -O1 -fsanitize=address,fuzzer \
+      -fno-omit-frame-pointer \
+      -I/src/ipatch/IccProfLib \
+      -I/src/ipatch/IccXML/IccLibXML \
+      /src/ipatch/fuzzers/icc_fromxml_fuzzer.cpp \
+      /src/ipatch/build-asan/IccXML/libIccXML2-static.a \
+      /src/ipatch/build-asan/IccProfLib/libIccProfLib2-static.a \
+      -lxml2 \
+      -o "/fuzzers/asan/icc_fromxml_fuzzer" && \
+    clang++-18 -g -O1 -fsanitize=address,fuzzer \
+      -fno-omit-frame-pointer \
+      -I/src/ipatch/IccProfLib \
+      -I/src/ipatch/IccXML/IccLibXML \
+      /src/ipatch/fuzzers/icc_toxml_fuzzer.cpp \
+      /src/ipatch/build-asan/IccXML/libIccXML2-static.a \
+      /src/ipatch/build-asan/IccProfLib/libIccProfLib2-static.a \
+      -lxml2 \
+      -o "/fuzzers/asan/icc_toxml_fuzzer"
+
+# ============================================
+# Build with Undefined Behavior Sanitizer
+# ============================================
+RUN mkdir -p /src/ipatch/build-ubsan && \
+    cd /src/ipatch/build-ubsan && \
+    cmake ../Build/Cmake \
+      -DCMAKE_C_COMPILER=clang-18 \
+      -DCMAKE_CXX_COMPILER=clang++-18 \
+      -DCMAKE_C_FLAGS="-g -O1 -fsanitize=undefined,fuzzer-no-link -fno-omit-frame-pointer" \
+      -DCMAKE_CXX_FLAGS="-g -O1 -fsanitize=undefined,fuzzer-no-link -fno-omit-frame-pointer" \
+      -DCMAKE_BUILD_TYPE=Debug \
+      -DBUILD_SHARED_LIBS=OFF && \
+    cmake --build . --target IccProfLib2-static -j$(nproc) && \
+    cmake --build . --target IccXML2-static -j$(nproc)
+
+RUN mkdir -p /fuzzers/ubsan && \
+    cd /src/ipatch && \
+    for fuzzer in fuzzers/icc_link_fuzzer.cpp fuzzers/icc_dump_fuzzer.cpp fuzzers/icc_apply_fuzzer.cpp fuzzers/icc_applyprofiles_fuzzer.cpp fuzzers/icc_roundtrip_fuzzer.cpp fuzzers/icc_profile_fuzzer.cpp fuzzers/icc_io_fuzzer.cpp fuzzers/icc_spectral_fuzzer.cpp fuzzers/icc_calculator_fuzzer.cpp fuzzers/icc_multitag_fuzzer.cpp; do \
+      name=$(basename "$fuzzer" .cpp); \
+      clang++-18 -g -O1 -fsanitize=undefined,fuzzer \
+        -fno-omit-frame-pointer \
+        -I/src/ipatch/IccProfLib \
+        -I/src/ipatch/Tools/CmdLine/IccCommon \
+        -I/src/ipatch/Tools/CmdLine/IccApplyProfiles \
+        "$fuzzer" \
+        /src/ipatch/build-ubsan/IccProfLib/libIccProfLib2-static.a \
+        -o "/fuzzers/ubsan/$name"; \
+    done && \
+    clang++-18 -g -O1 -fsanitize=undefined,fuzzer \
+      -fno-omit-frame-pointer \
+      -I/src/ipatch/IccProfLib \
+      -I/src/ipatch/IccXML/IccLibXML \
+      /src/ipatch/fuzzers/icc_fromxml_fuzzer.cpp \
+      /src/ipatch/build-ubsan/IccXML/libIccXML2-static.a \
+      /src/ipatch/build-ubsan/IccProfLib/libIccProfLib2-static.a \
+      -lxml2 \
+      -o "/fuzzers/ubsan/icc_fromxml_fuzzer" && \
+    clang++-18 -g -O1 -fsanitize=undefined,fuzzer \
+      -fno-omit-frame-pointer \
+      -I/src/ipatch/IccProfLib \
+      -I/src/ipatch/IccXML/IccLibXML \
+      /src/ipatch/fuzzers/icc_toxml_fuzzer.cpp \
+      /src/ipatch/build-ubsan/IccXML/libIccXML2-static.a \
+      /src/ipatch/build-ubsan/IccProfLib/libIccProfLib2-static.a \
+      -lxml2 \
+      -o "/fuzzers/ubsan/icc_toxml_fuzzer"
+
+# ============================================
+# Build with Memory Sanitizer
+# ============================================
+RUN mkdir -p /src/ipatch/build-msan && \
+    cd /src/ipatch/build-msan && \
+    cmake ../Build/Cmake \
+      -DCMAKE_C_COMPILER=clang-18 \
+      -DCMAKE_CXX_COMPILER=clang++-18 \
+      -DCMAKE_C_FLAGS="-g -O1 -fsanitize=memory,fuzzer-no-link -fno-omit-frame-pointer -fsanitize-memory-track-origins" \
+      -DCMAKE_CXX_FLAGS="-g -O1 -fsanitize=memory,fuzzer-no-link -fno-omit-frame-pointer -fsanitize-memory-track-origins -stdlib=libc++" \
+      -DCMAKE_BUILD_TYPE=Debug \
+      -DBUILD_SHARED_LIBS=OFF && \
+    cmake --build . --target IccProfLib2-static -j$(nproc) || true && \
+    cmake --build . --target IccXML2-static -j$(nproc) || true
+
+RUN mkdir -p /fuzzers/msan && \
+    cd /src/ipatch && \
+    for fuzzer in fuzzers/icc_link_fuzzer.cpp fuzzers/icc_dump_fuzzer.cpp fuzzers/icc_apply_fuzzer.cpp fuzzers/icc_applyprofiles_fuzzer.cpp fuzzers/icc_roundtrip_fuzzer.cpp fuzzers/icc_profile_fuzzer.cpp fuzzers/icc_io_fuzzer.cpp fuzzers/icc_spectral_fuzzer.cpp fuzzers/icc_calculator_fuzzer.cpp fuzzers/icc_multitag_fuzzer.cpp; do \
+      name=$(basename "$fuzzer" .cpp); \
+      clang++-18 -g -O1 -fsanitize=memory,fuzzer \
+        -fno-omit-frame-pointer \
+        -fsanitize-memory-track-origins \
+        -stdlib=libc++ \
+        -I/src/ipatch/IccProfLib \
+        -I/src/ipatch/Tools/CmdLine/IccCommon \
+        -I/src/ipatch/Tools/CmdLine/IccApplyProfiles \
+        "$fuzzer" \
+        /src/ipatch/build-msan/IccProfLib/libIccProfLib2-static.a \
+        -o "/fuzzers/msan/$name" 2>/dev/null || true; \
+    done && \
+    clang++-18 -g -O1 -fsanitize=memory,fuzzer \
+      -fno-omit-frame-pointer \
+      -fsanitize-memory-track-origins \
+      -stdlib=libc++ \
+      -I/src/ipatch/IccProfLib \
+      -I/src/ipatch/IccXML/IccLibXML \
+      /src/ipatch/fuzzers/icc_fromxml_fuzzer.cpp \
+      /src/ipatch/build-msan/IccXML/libIccXML2-static.a \
+      /src/ipatch/build-msan/IccProfLib/libIccProfLib2-static.a \
+      -lxml2 \
+      -o "/fuzzers/msan/icc_fromxml_fuzzer" 2>/dev/null || true && \
+    clang++-18 -g -O1 -fsanitize=memory,fuzzer \
+      -fno-omit-frame-pointer \
+      -fsanitize-memory-track-origins \
+      -stdlib=libc++ \
+      -I/src/ipatch/IccProfLib \
+      -I/src/ipatch/IccXML/IccLibXML \
+      /src/ipatch/fuzzers/icc_toxml_fuzzer.cpp \
+      /src/ipatch/build-msan/IccXML/libIccXML2-static.a \
+      /src/ipatch/build-msan/IccProfLib/libIccProfLib2-static.a \
+      -lxml2 \
+      -o "/fuzzers/msan/icc_toxml_fuzzer" 2>/dev/null || true
+
+# Create corpus directories
+RUN mkdir -p /corpus && \
+    cp /src/ipatch/Testing/*.icc /corpus/ 2>/dev/null || true && \
+    find /src/ipatch/Testing -name "*.xml" -exec cp {} /corpus/ \; 2>/dev/null || true && \
+    cp /src/ipatch/fuzzers/icc.dict /corpus/ 2>/dev/null || true
+
+# Create runner script
+RUN cat > /run-fuzzer.sh <<'EOF'
+#!/bin/bash
+set -e
+
+SANITIZER=${SANITIZER:-asan}
+FUZZER=${FUZZER:-icc_profile_fuzzer}
+DURATION=${DURATION:-60}
+JOBS=${JOBS:-$(nproc)}
+
+echo "========================================"
+echo "Fuzzer: $FUZZER"
+echo "Sanitizer: $SANITIZER"
+echo "Duration: ${DURATION}s"
+echo "Jobs: $JOBS"
+echo "========================================"
+
+mkdir -p /tmp/corpus
+
+/fuzzers/${SANITIZER}/${FUZZER} \
+  -dict=/corpus/icc.dict \
+  -jobs=$JOBS \
+  -workers=$JOBS \
+  -max_total_time=$DURATION \
+  -rss_limit_mb=2048 \
+  -timeout=25 \
+  /tmp/corpus \
+  /corpus
+EOF
+
+RUN chmod +x /run-fuzzer.sh
+
+# ============================================
+# Runtime Stage
+# ============================================
+FROM ubuntu:24.04 AS runtime
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBCONF_NOWARNINGS=yes
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    bash \
+    libllvm18 \
+    libxml2 \
+    libpng16-16t64 \
+    libjpeg8 \
+    libtiff6 \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY --from=fuzzer-build /fuzzers /fuzzers
+COPY --from=fuzzer-build /corpus /corpus
+COPY --from=fuzzer-build /run-fuzzer.sh /run-fuzzer.sh
+
+WORKDIR /fuzzers
+
+ENV SANITIZER=asan
+ENV FUZZER=icc_profile_fuzzer
+ENV DURATION=60
+ENV JOBS=1
+
+CMD ["/bin/bash", "/run-fuzzer.sh"]
