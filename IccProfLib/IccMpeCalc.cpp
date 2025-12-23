@@ -4564,6 +4564,12 @@ bool CIccMpeCalculator::Read(icUInt32Number size, CIccIO *pIO)
   if (!pIO->Read32(&nSubElem))
     return false;
 
+  // Sanity check: prevent excessive sub-elements
+  const icUInt32Number MAX_SUB_ELEMENTS = 65536;
+  if (nSubElem > MAX_SUB_ELEMENTS) {
+    return false;
+  }
+
   icUInt32Number nPos = nSubElem + 1;
 
   if (headerSize + (icUInt64Number)nPos*sizeof(icPositionNumber) > size) {
@@ -4996,6 +5002,14 @@ CIccMultiProcessElement *CIccMpeCalculator::GetElem(icSigCalcOp opsig, icUInt16N
 bool CIccMpeCalculator::SetElem(icUInt32Number idx, CIccMultiProcessElement *pElem, icUInt32Number &count, CIccMultiProcessElement ***pArray)
 {
   bool rv = true;
+
+  // Sanity check: prevent excessive memory allocation
+  // Maximum reasonable number of calculator sub-elements
+  const icUInt32Number MAX_CALC_ELEMENTS = 65536; // 64K elements max
+  
+  if (idx >= MAX_CALC_ELEMENTS) {
+    return false;
+  }
 
   if (idx + 1 > count) {
     if (*pArray) {
