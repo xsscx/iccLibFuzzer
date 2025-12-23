@@ -100,19 +100,20 @@ run_fuzzer() {
   
   CRASH_DIR="./fuzzers-local/$sanitizer/crashes"
   mkdir -p "$CRASH_DIR"
+  CRASH_DIR_ABS="$(realpath "$CRASH_DIR")"
   
   CORPUS_COUNT=$(find "$CORPUS_DIR" -type f | wc -l)
   
   print_status "Fuzzer: $FUZZER_BIN"
   print_status "Corpus: $CORPUS_DIR ($CORPUS_COUNT files)"
-  print_status "Crashes: $CRASH_DIR"
+  print_status "Crashes: $CRASH_DIR_ABS"
   print_status "Duration: ${duration}s"
   print_status "RSS limit: 6GB"
   
   cd "$(dirname "$FUZZER_BIN")"
   ./"$(basename "$FUZZER_BIN")" \
     "$(realpath "$(basename "$CORPUS_DIR")")/" \
-    -artifact_prefix="$CRASH_DIR/" \
+    -artifact_prefix="$CRASH_DIR_ABS/" \
     -max_total_time="$duration" \
     -timeout=120 \
     -rss_limit_mb=6144 \

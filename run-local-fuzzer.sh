@@ -28,20 +28,22 @@ fi
 CORPUS_COUNT=$(find "$CORPUS_DIR" -type f | wc -l)
 
 mkdir -p "$CRASH_DIR"
+CRASH_DIR_ABS="$(realpath "$CRASH_DIR")"
+CORPUS_DIR_ABS="$(realpath "$CORPUS_DIR")"
 
 echo "========================================"
 echo "Running: $FUZZER"
 echo "Sanitizer: $SANITIZER"
 echo "Duration: ${DURATION}s"
-echo "Corpus: $CORPUS_DIR ($CORPUS_COUNT files)"
-echo "Crash dir: $CRASH_DIR"
+echo "Corpus: $CORPUS_DIR_ABS ($CORPUS_COUNT files)"
+echo "Crash dir: $CRASH_DIR_ABS"
 echo "========================================"
 echo ""
 
 cd "$FUZZER_DIR"
 ./$FUZZER \
-    "$(realpath "${FUZZER}_seed_corpus")/" \
-    -artifact_prefix="$CRASH_DIR/" \
+    "$CORPUS_DIR_ABS/" \
+    -artifact_prefix="$CRASH_DIR_ABS/" \
     -max_total_time=$DURATION \
     -timeout=120 \
     -rss_limit_mb=6144 \
