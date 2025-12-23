@@ -20,8 +20,8 @@ echo "Building fuzzers with $SANITIZER sanitizer to $OUTPUT_DIR"
 # LLMCJF Profile: strict-engineering mode (llmcjf/profiles/)
 case "$SANITIZER" in
   address)
-    CFLAGS="-O2 -fno-omit-frame-pointer -gline-tables-only -fsanitize=address,fuzzer-no-link -march=native -DASAN_OPTIONS=detect_leaks=0"
-    CXXFLAGS="-O2 -fno-omit-frame-pointer -gline-tables-only -fsanitize=address,fuzzer-no-link -march=native -DASAN_OPTIONS=detect_leaks=0"
+    CFLAGS="-O2 -fno-omit-frame-pointer -gline-tables-only -fsanitize=address,fuzzer-no-link -march=native"
+    CXXFLAGS="-O2 -fno-omit-frame-pointer -gline-tables-only -fsanitize=address,fuzzer-no-link -march=native"
     LINK_FLAGS="-fsanitize=fuzzer"
     ;;
   undefined)
