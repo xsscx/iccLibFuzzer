@@ -12,7 +12,7 @@ icc_*_fuzzer
 *_seed_corpus/
 llvm-symbolizer
 
-# Fuzzing artifacts and crashes
+# Fuzzing artifacts and crashes (except in poc-archive)
 crash-*
 oom-*
 leak-*
@@ -60,3 +60,9 @@ Thumbs.db
 # Exception: Keep specific corpus directories if needed
 !corpus/commodity/
 !poc-archive/
+
+# Exception: Allow crash/leak files in poc-archive
+!poc-archive/crash-*
+!poc-archive/leak-*
+!poc-archive/oom-*
+!poc-archive/timeout-*
