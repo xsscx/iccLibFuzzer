@@ -51,6 +51,11 @@ for fuzzer in icc_link_fuzzer icc_dump_fuzzer icc_apply_fuzzer icc_applyprofiles
   # Copy seed corpus
   mkdir -p $OUT/${fuzzer}_seed_corpus
   cp $SRC/ipatch/Testing/*.icc $OUT/${fuzzer}_seed_corpus/ 2>/dev/null || true
+  
+  # Copy dictionary for ICC binary fuzzers
+  if [ -f "$SRC/ipatch/fuzzers/icc_profile.dict" ]; then
+    cp $SRC/ipatch/fuzzers/icc_profile.dict $OUT/${fuzzer}.dict
+  fi
 done
 
 # Build XML fuzzers (requires IccXML library)
