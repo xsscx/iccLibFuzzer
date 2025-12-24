@@ -7,6 +7,27 @@ Build/*.o
 Build/Cmake/Build/
 *.cmake
 
+# CMake generated files
+Build/CMakeCache.txt
+Build/CMakeFiles/
+Build/Cmake/CMakeCache.txt
+Build/Cmake/CMakeFiles/
+Build/Cmake/*/CMakeFiles/
+Build/Cmake/*/*/CMakeFiles/
+Build/compile_commands.json
+Build/Cmake/compile_commands.json
+Build/**/flags.make
+Build/**/link.txt
+Build/**/compiler_depend.*
+Build/**/DependInfo.cmake
+Build/**/build.make
+Build/**/depend.make
+Build/**/cmake_clean.cmake
+Build/**/progress.make
+CMakeCache.txt
+CMakeFiles/
+compile_commands.json
+
 # Fuzzing binaries (built locally or downloaded)
 icc_*_fuzzer
 *_seed_corpus/
