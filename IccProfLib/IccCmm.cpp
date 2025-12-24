@@ -1686,7 +1686,9 @@ icUInt16Number CIccXform::GetNumSrcSamples() const
   icUInt16Number rv;
 
   if (m_nMCS==icFromMCS) {
-    rv = (icUInt16Number)icGetSpaceSamples((icColorSpaceSignature)m_pProfile->m_Header.mcs);
+    icUInt32Number mcsValue;
+    memcpy(&mcsValue, &m_pProfile->m_Header.mcs, sizeof(mcsValue));
+    rv = (icUInt16Number)icGetSpaceSamples((icColorSpaceSignature)mcsValue);
   }
   else if (m_bInput) {
     rv = (icUInt16Number)icGetSpaceSamples(m_pProfile->m_Header.colorSpace);
@@ -1718,7 +1720,9 @@ icColorSpaceSignature CIccXform::GetDstSpace() const
   icProfileClassSignature deviceClass = m_pProfile->m_Header.deviceClass;
 
   if (m_nMCS==icToMCS) {
-    rv = (icColorSpaceSignature)m_pProfile->m_Header.mcs;
+    icUInt32Number mcsValue;
+    memcpy(&mcsValue, &m_pProfile->m_Header.mcs, sizeof(mcsValue));
+    rv = (icColorSpaceSignature)mcsValue;
   }
   else if (m_bInput) {
     if (m_bUseSpectralPCS && m_pProfile->m_Header.spectralPCS)
@@ -1759,7 +1763,9 @@ icUInt16Number CIccXform::GetNumDstSamples() const
   icUInt16Number rv;
 
   if (m_nMCS==icToMCS) {
-    rv = (icUInt16Number)icGetSpaceSamples((icColorSpaceSignature)m_pProfile->m_Header.mcs);
+    icUInt32Number mcsValue;
+    memcpy(&mcsValue, &m_pProfile->m_Header.mcs, sizeof(mcsValue));
+    rv = (icUInt16Number)icGetSpaceSamples((icColorSpaceSignature)mcsValue);
   }
   else if (!m_bInput) {
     rv = (icUInt16Number)icGetSpaceSamples(m_pProfile->m_Header.colorSpace);
@@ -8138,6 +8144,9 @@ icStatusCMM CIccCmm::AddXform(CIccProfile *pProfile,
   if (!pProfile)
     return icCmmStatInvalidProfile;
 
+  icUInt32Number mcsValue;
+  memcpy(&mcsValue, &pProfile->m_Header.mcs, sizeof(mcsValue));
+
   switch(pProfile->m_Header.deviceClass) {
     case icSigMaterialIdentificationClass:
     case icSigMaterialVisualizationClass:
@@ -8216,7 +8225,7 @@ icStatusCMM CIccCmm::AddXform(CIccProfile *pProfile,
     case icXformLutBRDFMcsParam:
       if (!bInput)
         return icCmmStatBadSpaceLink;
-      nSrcSpace = (icColorSpaceSignature)pProfile->m_Header.mcs;
+      nSrcSpace = (icColorSpaceSignature)mcsValue;
       nDstSpace = icSigBRDFParameters;
       break;
 
@@ -8224,7 +8233,7 @@ icStatusCMM CIccCmm::AddXform(CIccProfile *pProfile,
       if (bInput) {
         nSrcSpace = pProfile->m_Header.colorSpace;
         nParentSpace = pProfile->GetParentColorSpace();
-        nDstSpace = (icColorSpaceSignature)pProfile->m_Header.mcs;
+        nDstSpace = (icColorSpaceSignature)mcsValue;
       }
       else {
         if (m_Xforms->size()) {
@@ -8255,7 +8264,7 @@ icStatusCMM CIccCmm::AddXform(CIccProfile *pProfile,
           return icCmmStatBadMCSLink;
         }
 
-        nSrcSpace = (icColorSpaceSignature)pProfile->m_Header.mcs;
+        nSrcSpace = (icColorSpaceSignature)mcsValue;
         if (pProfile->m_Header.deviceClass==icSigMaterialVisualizationClass) {
           if (bUseD2BxB2DxTags && pProfile->m_Header.spectralPCS) {
             nDstSpace = (icColorSpaceSignature)pProfile->m_Header.spectralPCS;
@@ -10544,6 +10553,9 @@ icStatusCMM CIccNamedColorCmm::AddXform(CIccProfile *pProfile,
   icStatusCMM rv;
   icXformLutType nUseLutType = nLutType;
 
+  icUInt32Number mcsValue;
+  memcpy(&mcsValue, &pProfile->m_Header.mcs, sizeof(mcsValue));
+
   switch(pProfile->m_Header.deviceClass) {
     case icSigMaterialIdentificationClass:
     case icSigMaterialLinkClass:
@@ -10692,10 +10704,10 @@ icStatusCMM CIccNamedColorCmm::AddXform(CIccProfile *pProfile,
         case icSigInputClass:
         case icSigMaterialIdentificationClass:
           nSrcSpace = pProfile->m_Header.colorSpace;
-          nDstSpace = (icColorSpaceSignature)pProfile->m_Header.mcs;
+          nDstSpace = (icColorSpaceSignature)mcsValue;
           break;
         case icSigMaterialVisualizationClass:
-          nSrcSpace = (icColorSpaceSignature)pProfile->m_Header.mcs;
+          nSrcSpace = (icColorSpaceSignature)mcsValue;
           if (bUseD2BxB2DxTags && pProfile->m_Header.spectralPCS) {
             nDstSpace = (icColorSpaceSignature)pProfile->m_Header.spectralPCS;
           }
@@ -10706,7 +10718,7 @@ icStatusCMM CIccNamedColorCmm::AddXform(CIccProfile *pProfile,
           break;
 
         case icSigMaterialLinkClass:
-          nSrcSpace = (icColorSpaceSignature)pProfile->m_Header.mcs;
+          nSrcSpace = (icColorSpaceSignature)mcsValue;
           nDstSpace = pProfile->m_Header.colorSpace;
           break;
 
