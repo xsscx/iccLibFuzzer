@@ -1,0 +1,19 @@
+ICC XML ROUND-TRIP SUMMARY
+==========================
+Total ICC files tested : 398
+Round-trip PASS        : 291
+FAIL at iccToXml       : 2
+FAIL at iccFromXml     : 105
+
+Observations:
+- iccFromXml failures are dominated by Calculator MPE grammar limitations (ULL/UL tokens).
+- Profiles without Calculator MPEs generally round-trip successfully.
+
+Action Items:
+1. Extend iccFromXml calculator grammar to accept typed integer tokens (ULL, UL, etc.).
+2. Or canonicalize calculator literals in iccToXml output.
+3. Treat ICC→XML as non-bijective for Calculator MPE profiles until fixed.
+
+Artifacts:
+- Detailed per-file log: icc_roundtrip_report.txt
+- Summary (this file):  icc_roundtrip_summary.txt

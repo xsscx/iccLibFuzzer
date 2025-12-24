@@ -1,0 +1,46 @@
+Built with IccProfLib version 2.3.1.1
+
+Profile:            './PCC/Spec400_10_700-B_2deg-CAM-from-xml.icc'
+Profile ID:         edd3b7724d035e3845f70b264184af1c
+Size:               1516 (0x5ec) bytes
+
+Header
+------
+Attributes:         Reflective | Glossy
+Cmm:                Unknown NULL
+Creation Date:      12/24/2025 (M/D/Y)  00:08:43
+Creator:            NULL
+Device Manufacturer:NULL
+Data Color Space:   0x001FChannelData
+Flags:              EmbeddedProfileTrue | UseAnywhere
+PCS Color Space:    NoData
+Platform:           Unknown
+Rendering Intent:   Absolute Colorimetric
+Profile Class:      ColorSpaceClass
+Profile SubClass:   'sref' = 73726566
+Version:            5.00
+SubClass Version:   2.00
+Illuminant:         X=0.8921, Y=1.0000, Z=4.7469
+Spectral PCS:       0x001FChannelReflectanceData
+Spectral PCS Range: start=400.0nm, end=700.0nm, steps=31
+BiSpectral Range:   Not Defined
+MCS Color Space:    Not Defined
+
+Profile Tags
+------------
+                         Tag    ID      Offset	    Size	     Pad
+                        ----  ------    ------	    ----	     ---
+       profileDescriptionTag  NULL       240	     234	       2
+                    DToB3Tag  NULL       476	      16	       0
+                    BToD3Tag  NULL       492	      16	       0
+      customToStandardPccTag  NULL       508	     120	       0
+      standardToCustomPccTag  NULL       628	     120	       0
+spectralViewingConditionsTag  NULL       748	     556	       0
+          mediaWhitePointTag  NULL      1304	      20	       0
+       spectralWhitePointTag  NULL      1324	      70	       2
+                copyrightTag  NULL      1396	     120	       0
+
+
+
+
+EXIT 0

@@ -1,0 +1,42 @@
+Built with IccProfLib version 2.3.1.1
+
+Profile:            './Named/FluorescentNamedColor-from-xml.icc'
+Profile ID:         4b2bcc91fdea792d243645c55b5923f2
+Size:               14000 (0x36b0) bytes
+
+Header
+------
+Attributes:         Reflective | Glossy
+Cmm:                Unknown NULL
+Creation Date:      12/24/2025 (M/D/Y)  00:08:42
+Creator:            NULL
+Device Manufacturer:NULL
+Data Color Space:   NoData
+Flags:              EmbeddedProfileTrue | UseAnywhere
+PCS Color Space:    NoData
+Platform:           Unknown
+Rendering Intent:   Absolute Colorimetric
+Profile Class:      NamedColorClass
+Profile SubClass:   Not Defined
+Version:            5.00
+Illuminant:         X=0.9642, Y=1.0000, Z=0.8249
+Spectral PCS:       0x04F7ChannelBiSpectralReflectanceData
+Spectral PCS Range: start=400.0nm, end=700.0nm, steps=31
+BiSpectral Range:     start=300.0nm, end=700.0nm, steps=41
+MCS Color Space:    Not Defined
+
+Profile Tags
+------------
+                         Tag    ID      Offset	    Size	     Pad
+                        ----  ------    ------	    ----	     ---
+       profileDescriptionTag  NULL       204	      86	       2
+              namedColor2Tag  NULL       292	   10460	       0
+spectralViewingConditionsTag  NULL     10752	     556	       0
+          mediaWhitePointTag  NULL     11308	      20	       0
+       spectralWhitePointTag  NULL     11328	    2550	       2
+                copyrightTag  NULL     13880	     120	       0
+
+
+
+
+EXIT 0

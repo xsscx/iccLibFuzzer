@@ -424,8 +424,10 @@ void CIccTagEmbeddedProfile::Describe(std::string& sDescription, int /* nVerbose
     else {
       sDescription += "BiSpectral Range:   Not Defined\n";
     }
-    if (pHdr->mcs) {
-      snprintf(buf, bufSize, "MCS Color Space:    %s\n", Fmt.GetColorSpaceSigName((icColorSpaceSignature)pHdr->mcs));
+    icUInt32Number mcsValue;
+    memcpy(&mcsValue, &pHdr->mcs, sizeof(mcsValue));
+    if (mcsValue) {
+      snprintf(buf, bufSize, "MCS Color Space:    %s\n", Fmt.GetColorSpaceSigName((icColorSpaceSignature)mcsValue));
       sDescription += buf;
     }
     else {

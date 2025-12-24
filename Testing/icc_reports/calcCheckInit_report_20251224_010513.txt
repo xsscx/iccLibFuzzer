@@ -1,0 +1,44 @@
+Built with IccProfLib version 2.3.1.1
+
+Profile:            './CalcTest/calcCheckInit.icc'
+Profile ID:         a8a6b9e67bdd18aa96e73ff1cb254e20
+Size:               3556 (0xde4) bytes
+
+Header
+------
+Attributes:         Reflective | Glossy
+Cmm:                Unknown NULL
+Creation Date:      12/24/2025 (M/D/Y)  00:08:40
+Creator:            'ICC ' = 49434320
+Device Manufacturer:NULL
+Data Color Space:   RgbData
+Flags:              EmbeddedProfileFalse | UseAnywhere
+PCS Color Space:    XYZData
+Platform:           Unknown
+Rendering Intent:   Relative Colorimetric
+Profile Class:      ColorSpaceClass
+Profile SubClass:   Not Defined
+Version:            5.00
+Illuminant:         X=0.9505, Y=1.0000, Z=1.0891
+Spectral PCS:       NoSpectralData
+Spectral PCS Range: Not Defined
+BiSpectral Range:   Not Defined
+MCS Color Space:    Not Defined
+
+Profile Tags
+------------
+                         Tag    ID      Offset	    Size	     Pad
+                        ----  ------    ------	    ----	     ---
+       profileDescriptionTag  NULL       228	      56	       0
+                    AToB1Tag  NULL       284	     804	       0
+                    BToA1Tag  NULL      1088	     804	       0
+      customToStandardPccTag  NULL      1892	      84	       0
+      standardToCustomPccTag  NULL      1976	      84	       0
+spectralViewingConditionsTag  NULL      2060	    1356	       0
+          mediaWhitePointTag  NULL      3416	      20	       0
+                copyrightTag  NULL      3436	     120	       0
+
+
+
+
+EXIT 0

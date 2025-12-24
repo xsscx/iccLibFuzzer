@@ -1,0 +1,38 @@
+Built with IccProfLib version 2.3.1.1
+
+Profile:            './Encoding/sRgbEncodingOverrides-from-xml.icc'
+Profile ID:         Profile ID not calculated.
+Size:               236 (0xec) bytes
+
+Header
+------
+Attributes:         Reflective | Glossy
+Cmm:                Unknown NULL
+Creation Date:      0/0/0 (M/D/Y)  00:00:00
+Creator:            NULL
+Device Manufacturer:NULL
+Data Color Space:   RgbData
+Flags:              EmbeddedProfileFalse | UseAnywhere
+PCS Color Space:    NoData
+Platform:           Unknown
+Rendering Intent:   Perceptual
+Profile Class:      ColorEncodingClass
+Profile SubClass:   Not Defined
+Version:            5.00
+Illuminant:         X=0.0000, Y=0.0000, Z=0.0000
+Spectral PCS:       NoSpectralData
+Spectral PCS Range: Not Defined
+BiSpectral Range:   Not Defined
+MCS Color Space:    Not Defined
+
+Profile Tags
+------------
+                         Tag    ID      Offset	    Size	     Pad
+                        ----  ------    ------	    ----	     ---
+            referenceNameTag  NULL       156	      13	       3
+      colorEncodingParamsTag  NULL       172	      64	       0
+
+
+
+
+EXIT 0

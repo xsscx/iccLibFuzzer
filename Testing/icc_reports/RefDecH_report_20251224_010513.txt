@@ -1,0 +1,43 @@
+Built with IccProfLib version 2.3.1.1
+
+Profile:            './SpecRef/RefDecH.icc'
+Profile ID:         3a975830e5c010c09a3c4d5023dd7f92
+Size:               952932 (0xe8a64) bytes
+
+Header
+------
+Attributes:         Reflective | Glossy
+Cmm:                Unknown NULL
+Creation Date:      12/24/2025 (M/D/Y)  00:08:45
+Creator:            'ICC ' = 49434320
+Device Manufacturer:NULL
+Data Color Space:   0x001FChannelReflectanceData
+Flags:              EmbeddedProfileFalse | UseAnywhere
+PCS Color Space:    NoData
+Platform:           Unknown
+Rendering Intent:   Absolute Colorimetric
+Profile Class:      AbstractClass
+Profile SubClass:   Not Defined
+Version:            5.00
+Illuminant:         X=0.9494, Y=1.0000, Z=1.0871
+Spectral PCS:       0x001FChannelReflectanceData
+Spectral PCS Range: start=400.0nm, end=700.0nm, steps=31
+BiSpectral Range:   Not Defined
+MCS Color Space:    Not Defined
+
+Profile Tags
+------------
+                         Tag    ID      Offset	    Size	     Pad
+                        ----  ------    ------	    ----	     ---
+       profileDescriptionTag  NULL       216	     292	       0
+                    DToB0Tag  NULL       508	  951560	       0
+          mediaWhitePointTag  NULL    952068	      20	       0
+                copyrightTag  NULL    952088	     120	       0
+spectralViewingConditionsTag  NULL    952208	     556	       0
+      customToStandardPccTag  NULL    952764	      84	       0
+      standardToCustomPccTag  NULL    952848	      84	       0
+
+
+
+
+EXIT 0

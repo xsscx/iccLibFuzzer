@@ -1,0 +1,46 @@
+Built with IccProfLib version 2.3.1.1
+
+Profile:            './Display/LCDDisplay.icc'
+Profile ID:         541b281dcc4ec11c943d8ede4b78d338
+Size:               30428 (0x76dc) bytes
+
+Header
+------
+Attributes:         Reflective | Glossy
+Cmm:                Unknown NULL
+Creation Date:      10/28/2014 (M/D/Y)  17:13:25
+Creator:            NULL
+Device Manufacturer:NULL
+Data Color Space:   RgbData
+Flags:              EmbeddedProfileTrue | UseAnywhere
+PCS Color Space:    XYZData
+Platform:           Unknown
+Rendering Intent:   Relative Colorimetric
+Profile Class:      DisplayClass
+Profile SubClass:   Not Defined
+Version:            5.00
+Illuminant:         X=0.9331, Y=1.0000, Z=0.9335
+Spectral PCS:       NoSpectralData
+Spectral PCS Range: Not Defined
+BiSpectral Range:   Not Defined
+MCS Color Space:    Not Defined
+
+Profile Tags
+------------
+                         Tag    ID      Offset	    Size	     Pad
+                        ----  ------    ------	    ----	     ---
+       profileDescriptionTag  NULL       252	      52	       0
+                    AToB1Tag  NULL       304	   11252	       0
+                    BToA1Tag  NULL     11556	   11252	       0
+      customToStandardPccTag  NULL     22808	      84	       0
+      standardToCustomPccTag  NULL     22892	      84	       0
+spectralViewingConditionsTag  NULL     22976	    6476	       0
+          mediaWhitePointTag  NULL     29452	      20	       0
+   Unknown 'smwi' = 736D7769  NULL     29472	      24	       0
+       spectralWhitePointTag  NULL     29496	     810	       2
+                copyrightTag  NULL     30308	     120	       0
+
+
+
+
+EXIT 0

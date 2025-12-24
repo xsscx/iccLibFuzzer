@@ -1,0 +1,44 @@
+Built with IccProfLib version 2.3.1.1
+
+Profile:            './PCC/Lab_float-D93_2deg-MAT.icc'
+Profile ID:         0f223b3f9d77e8739562298d3e691ac9
+Size:               2076 (0x81c) bytes
+
+Header
+------
+Attributes:         Reflective | Glossy
+Cmm:                Unknown NULL
+Creation Date:      12/24/2025 (M/D/Y)  00:08:43
+Creator:            NULL
+Device Manufacturer:NULL
+Data Color Space:   0x0003ChannelData
+Flags:              EmbeddedProfileTrue | UseAnywhere
+PCS Color Space:    LabData
+Platform:           Unknown
+Rendering Intent:   Absolute Colorimetric
+Profile Class:      ColorSpaceClass
+Profile SubClass:   Not Defined
+Version:            5.00
+Illuminant:         X=0.9532, Y=1.0000, Z=1.4136
+Spectral PCS:       NoSpectralData
+Spectral PCS Range: Not Defined
+BiSpectral Range:   Not Defined
+MCS Color Space:    Not Defined
+
+Profile Tags
+------------
+                         Tag    ID      Offset	    Size	     Pad
+                        ----  ------    ------	    ----	     ---
+       profileDescriptionTag  NULL       228	     150	       2
+                    AToB1Tag  NULL       380	      16	       0
+                    BToA1Tag  NULL       396	      16	       0
+      customToStandardPccTag  NULL       412	      84	       0
+      standardToCustomPccTag  NULL       496	      84	       0
+spectralViewingConditionsTag  NULL       580	    1356	       0
+          mediaWhitePointTag  NULL      1936	      20	       0
+                copyrightTag  NULL      1956	     120	       0
+
+
+
+
+EXIT 0

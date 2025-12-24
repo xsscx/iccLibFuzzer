@@ -1,0 +1,45 @@
+Built with IccProfLib version 2.3.1.1
+
+Profile:            './PCC/XYZ_float-D50_2deg-from-xml.icc'
+Profile ID:         2f9b6c4d874d0e8affdbceab75a93f46
+Size:               2084 (0x824) bytes
+
+Header
+------
+Attributes:         Reflective | Glossy
+Cmm:                Unknown NULL
+Creation Date:      12/24/2025 (M/D/Y)  00:08:45
+Creator:            NULL
+Device Manufacturer:NULL
+Data Color Space:   XYZData
+Flags:              EmbeddedProfileTrue | UseAnywhere
+PCS Color Space:    XYZData
+Platform:           Unknown
+Rendering Intent:   Absolute Colorimetric
+Profile Class:      ColorSpaceClass
+Profile SubClass:   'PCC ' = 50434320
+Version:            5.00
+SubClass Version:   1.00
+Illuminant:         X=0.9642, Y=1.0000, Z=0.8247
+Spectral PCS:       NoSpectralData
+Spectral PCS Range: Not Defined
+BiSpectral Range:   Not Defined
+MCS Color Space:    Not Defined
+
+Profile Tags
+------------
+                         Tag    ID      Offset	    Size	     Pad
+                        ----  ------    ------	    ----	     ---
+       profileDescriptionTag  NULL       228	     158	       2
+                    AToB3Tag  NULL       388	      16	       0
+                    BToA3Tag  NULL       404	      16	       0
+      customToStandardPccTag  NULL       420	      84	       0
+      standardToCustomPccTag  NULL       504	      84	       0
+spectralViewingConditionsTag  NULL       588	    1356	       0
+          mediaWhitePointTag  NULL      1944	      20	       0
+                copyrightTag  NULL      1964	     120	       0
+
+
+
+
+EXIT 0

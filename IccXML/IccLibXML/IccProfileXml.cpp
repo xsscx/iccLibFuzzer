@@ -132,7 +132,9 @@ bool CIccProfileXml::ToXmlWithBlanks(std::string &xml, std::string blanks)
   }
  
   xml+= blanks + "    ";
-  xml+= icGetHeaderFlagsName(m_Header.flags, (icUInt32Number)m_Header.mcs != 0);
+  icUInt32Number mcsFlags;
+  memcpy(&mcsFlags, &m_Header.mcs, sizeof(mcsFlags));
+  xml+= icGetHeaderFlagsName(m_Header.flags, mcsFlags != 0);
 
   if (m_Header.manufacturer != 0){
 	  snprintf(line, bufSize, "    <DeviceManufacturer>%s</DeviceManufacturer>\n", icFixXml(fix, icGetSigStr(buf, bufSize, m_Header.manufacturer)));
@@ -193,8 +195,10 @@ bool CIccProfileXml::ToXmlWithBlanks(std::string &xml, std::string blanks)
     }
   }
 
-  if (m_Header.mcs) {
-    snprintf(line, bufSize, "    <MCS>%s</MCS>\n",  icFixXml(fix, icGetColorSigStr(buf, bufSize, m_Header.mcs)));
+  icUInt32Number mcsValue;
+  memcpy(&mcsValue, &m_Header.mcs, sizeof(mcsValue));
+  if (mcsValue) {
+    snprintf(line, bufSize, "    <MCS>%s</MCS>\n",  icFixXml(fix, icGetColorSigStr(buf, bufSize, (icColorSpaceSignature)mcsValue)));
     xml += blanks + line;
   }
 

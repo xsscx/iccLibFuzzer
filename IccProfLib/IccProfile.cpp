@@ -1480,16 +1480,19 @@ icValidateStatus CIccProfile::CheckHeader(std::string &sReport) const
   }
 
 
+  icUInt32Number mcsValue;
+  memcpy(&mcsValue, &m_Header.mcs, sizeof(mcsValue));
+  
   if (m_Header.deviceClass==icSigMaterialIdentificationClass ||
       m_Header.deviceClass==icSigMaterialLinkClass ||
       m_Header.deviceClass==icSigMaterialVisualizationClass) {
-    if (icGetColorSpaceType(m_Header.mcs)!=icSigSrcMCSChannelData) {
+    if (icGetColorSpaceType((icColorSpaceSignature)mcsValue)!=icSigSrcMCSChannelData) {
       sReport += icMsgValidateCriticalError;
       sReport += " - Invalid MCS designator\n";
       rv = icMaxStatus(rv, icValidateCriticalError);
     }
   }
-  else if (m_Header.mcs != icSigNoMCSData && m_Header.deviceClass != icSigInputClass) {
+  else if (mcsValue != icSigNoMCSData && m_Header.deviceClass != icSigInputClass) {
     sReport += icMsgValidateNonCompliant;
     sReport += " - Invalid MCS designator for device class\n";
     rv = icMaxStatus(rv, icValidateNonCompliant);

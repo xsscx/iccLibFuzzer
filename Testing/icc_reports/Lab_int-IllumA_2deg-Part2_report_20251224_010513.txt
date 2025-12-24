@@ -1,0 +1,45 @@
+Built with IccProfLib version 2.3.1.1
+
+Profile:            './ICS/Lab_int-IllumA_2deg-Part2.icc'
+Profile ID:         8e0ca3af242664409dfffec04d5634a4
+Size:               291352 (0x47218) bytes
+
+Header
+------
+Attributes:         Reflective | Glossy
+Cmm:                RefIccMAX
+Creation Date:      12/24/2025 (M/D/Y)  00:08:42
+Creator:            'RICC' = 52494343
+Device Manufacturer:NULL
+Data Color Space:   LabData
+Flags:              EmbeddedProfileTrue | UseAnywhere
+PCS Color Space:    LabData
+Platform:           Unknown
+Rendering Intent:   Relative Colorimetric
+Profile Class:      ColorSpaceClass
+Profile SubClass:   'pcc ' = 70636320
+Version:            5.00
+SubClass Version:   2.00
+Illuminant:         X=1.0985, Y=1.0000, Z=0.3558
+Spectral PCS:       NoSpectralData
+Spectral PCS Range: Not Defined
+BiSpectral Range:   Not Defined
+MCS Color Space:    Not Defined
+
+Profile Tags
+------------
+                         Tag    ID      Offset	    Size	     Pad
+                        ----  ------    ------	    ----	     ---
+       profileDescriptionTag  NULL       228	     236	       0
+                copyrightTag  NULL       464	     120	       0
+                    AToB1Tag  NULL       584	     148	       0
+                    BToA1Tag  NULL       732	     148	       0
+          mediaWhitePointTag  NULL       880	      20	       0
+      customToStandardPccTag  NULL       900	  144548	       0
+      standardToCustomPccTag  NULL    145448	  144548	       0
+spectralViewingConditionsTag  NULL    289996	    1356	       0
+
+
+
+
+EXIT 0

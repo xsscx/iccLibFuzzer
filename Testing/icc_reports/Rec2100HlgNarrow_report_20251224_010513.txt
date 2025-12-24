@@ -1,0 +1,44 @@
+Built with IccProfLib version 2.3.1.1
+
+Profile:            './Display/Rec2100HlgNarrow.icc'
+Profile ID:         2d71f3839be55b64cd159d5d9eb3c7a8
+Size:               4336 (0x10f0) bytes
+
+Header
+------
+Attributes:         Reflective | Glossy
+Cmm:                Unknown NULL
+Creation Date:      12/24/2025 (M/D/Y)  00:08:41
+Creator:            NULL
+Device Manufacturer:NULL
+Data Color Space:   RgbData
+Flags:              EmbeddedProfileTrue | UseAnywhere
+PCS Color Space:    XYZData
+Platform:           Unknown
+Rendering Intent:   Relative Colorimetric
+Profile Class:      DisplayClass
+Profile SubClass:   Not Defined
+Version:            5.00
+Illuminant:         X=0.9504, Y=1.0000, Z=1.0885
+Spectral PCS:       NoSpectralData
+Spectral PCS Range: Not Defined
+BiSpectral Range:   Not Defined
+MCS Color Space:    Not Defined
+
+Profile Tags
+------------
+                         Tag    ID      Offset	    Size	     Pad
+                        ----  ------    ------	    ----	     ---
+       profileDescriptionTag  NULL       228	      74	       2
+                    AToB1Tag  NULL       304	    1120	       0
+                    BToA1Tag  NULL      1424	    1248	       0
+      customToStandardPccTag  NULL      2672	      84	       0
+      standardToCustomPccTag  NULL      2756	      84	       0
+spectralViewingConditionsTag  NULL      2840	    1356	       0
+          mediaWhitePointTag  NULL      4196	      20	       0
+                copyrightTag  NULL      4216	     120	       0
+
+
+
+
+EXIT 0

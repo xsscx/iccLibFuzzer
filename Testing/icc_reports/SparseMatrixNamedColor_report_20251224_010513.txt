@@ -1,0 +1,42 @@
+Built with IccProfLib version 2.3.1.1
+
+Profile:            './Named/SparseMatrixNamedColor.icc'
+Profile ID:         69e05f23b27f0211191b5ea3a9ab6492
+Size:               4436 (0x1154) bytes
+
+Header
+------
+Attributes:         Reflective | Glossy
+Cmm:                Unknown NULL
+Creation Date:      12/24/2025 (M/D/Y)  00:08:42
+Creator:            NULL
+Device Manufacturer:NULL
+Data Color Space:   NoData
+Flags:              EmbeddedProfileTrue | UseAnywhere
+PCS Color Space:    NoData
+Platform:           Unknown
+Rendering Intent:   Absolute Colorimetric
+Profile Class:      NamedColorClass
+Profile SubClass:   Not Defined
+Version:            5.00
+Illuminant:         X=0.9642, Y=1.0000, Z=0.8249
+Spectral PCS:       0x0300ChannelSparseMatrixReflectanceData
+Spectral PCS Range: start=400.0nm, end=700.0nm, steps=31
+BiSpectral Range:     start=300.0nm, end=700.0nm, steps=41
+MCS Color Space:    Not Defined
+
+Profile Tags
+------------
+                         Tag    ID      Offset	    Size	     Pad
+                        ----  ------    ------	    ----	     ---
+       profileDescriptionTag  NULL       204	      96	       0
+              namedColor2Tag  NULL       300	    3260	       0
+spectralViewingConditionsTag  NULL      3560	     556	       0
+          mediaWhitePointTag  NULL      4116	      20	       0
+       spectralWhitePointTag  NULL      4136	     180	       0
+                copyrightTag  NULL      4316	     120	       0
+
+
+
+
+EXIT 0

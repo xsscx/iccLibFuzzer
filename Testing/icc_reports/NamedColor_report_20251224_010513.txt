@@ -1,0 +1,42 @@
+Built with IccProfLib version 2.3.1.1
+
+Profile:            './Named/NamedColor.icc'
+Profile ID:         213306987a579c95983f612f90a56093
+Size:               3304 (0xce8) bytes
+
+Header
+------
+Attributes:         Reflective | Glossy
+Cmm:                Unknown NULL
+Creation Date:      12/24/2025 (M/D/Y)  00:08:42
+Creator:            NULL
+Device Manufacturer:NULL
+Data Color Space:   NoData
+Flags:              EmbeddedProfileTrue | UseAnywhere
+PCS Color Space:    LabData
+Platform:           Unknown
+Rendering Intent:   Absolute Colorimetric
+Profile Class:      NamedColorClass
+Profile SubClass:   Not Defined
+Version:            5.00
+Illuminant:         X=0.9642, Y=1.0000, Z=0.8249
+Spectral PCS:       0x0024ChannelReflectanceData
+Spectral PCS Range: start=380.0nm, end=730.0nm, steps=36
+BiSpectral Range:   Not Defined
+MCS Color Space:    Not Defined
+
+Profile Tags
+------------
+                         Tag    ID      Offset	    Size	     Pad
+                        ----  ------    ------	    ----	     ---
+       profileDescriptionTag  NULL       204	      86	       2
+              namedColor2Tag  NULL       292	    2244	       0
+spectralViewingConditionsTag  NULL      2536	     556	       0
+          mediaWhitePointTag  NULL      3092	      20	       0
+       spectralWhitePointTag  NULL      3112	      70	       2
+                copyrightTag  NULL      3184	     120	       0
+
+
+
+
+EXIT 0

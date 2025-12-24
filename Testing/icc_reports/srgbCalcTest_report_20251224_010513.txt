@@ -1,0 +1,41 @@
+Built with IccProfLib version 2.3.1.1
+
+Profile:            './Calc/srgbCalcTest.icc'
+Profile ID:         eab16895f336544a53de63581e2a98fa
+Size:               11236 (0x2be4) bytes
+
+Header
+------
+Attributes:         Reflective | Glossy
+Cmm:                Unknown NULL
+Creation Date:      12/24/2025 (M/D/Y)  00:08:40
+Creator:            'ICC ' = 49434320
+Device Manufacturer:NULL
+Data Color Space:   RgbData
+Flags:              EmbeddedProfileFalse | UseAnywhere
+PCS Color Space:    XYZData
+Platform:           Unknown
+Rendering Intent:   Relative Colorimetric
+Profile Class:      ColorSpaceClass
+Profile SubClass:   Not Defined
+Version:            5.00
+Illuminant:         X=0.9642, Y=1.0000, Z=0.8249
+Spectral PCS:       NoSpectralData
+Spectral PCS Range: Not Defined
+BiSpectral Range:   Not Defined
+MCS Color Space:    Not Defined
+
+Profile Tags
+------------
+                         Tag    ID      Offset	    Size	     Pad
+                        ----  ------    ------	    ----	     ---
+       profileDescriptionTag  NULL       192	      62	       2
+                    AToB1Tag  NULL       256	   10496	       0
+                    BToA1Tag  NULL     10752	     344	       0
+          mediaWhitePointTag  NULL     11096	      20	       0
+                copyrightTag  NULL     11116	     120	       0
+
+
+
+
+EXIT 0

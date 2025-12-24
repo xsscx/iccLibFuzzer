@@ -548,7 +548,9 @@ MyChild::MyChild(wxMDIParentFrame *parent, const wxString& title, CIccProfile *p
 	    m_textCreator->SetLabel(icGetSig(buf, bufSize, pHdr->creator));
         m_textDeviceManufacturer->SetLabel(icGetSig(buf, bufSize, pHdr->manufacturer));
         m_textColorSpace->SetLabel(Fmt.GetColorSpaceSigName(pHdr->colorSpace));
-	    m_textFlags->SetLabel(Fmt.GetProfileFlagsName(pHdr->flags, pHdr->mcs!=0));
+        icUInt32Number mcsFlags;
+        memcpy(&mcsFlags, &pHdr->mcs, sizeof(mcsFlags));
+	    m_textFlags->SetLabel(Fmt.GetProfileFlagsName(pHdr->flags, mcsFlags!=0));
 	    m_textPCS->SetLabel(Fmt.GetColorSpaceSigName(pHdr->pcs));
 	    m_textPlatform->SetLabel(Fmt.GetPlatformSigName(pHdr->platform));
 	    m_textRenderingIntent->SetLabel(Fmt.GetRenderingIntentName((icRenderingIntent)(pHdr->renderingIntent)));
@@ -588,8 +590,10 @@ MyChild::MyChild(wxMDIParentFrame *parent, const wxString& title, CIccProfile *p
             m_textBiSpectralWavelengths->SetLabel(_T("Not Defined"));
         }
 
-        if (pHdr->mcs) {
-            m_textMaterialColorSpace->SetLabel(Fmt.GetColorSpaceSigName((icColorSpaceSignature)pHdr->mcs));
+        icUInt32Number mcsValue;
+        memcpy(&mcsValue, &pHdr->mcs, sizeof(mcsValue));
+        if (mcsValue) {
+            m_textMaterialColorSpace->SetLabel(Fmt.GetColorSpaceSigName((icColorSpaceSignature)mcsValue));
         }
         else {
             m_textMaterialColorSpace->SetLabel(_T("Not Defined"));

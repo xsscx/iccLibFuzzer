@@ -1,0 +1,44 @@
+Built with IccProfLib version 2.3.1.1
+
+Profile:            './hybrid/Results/LCDDisplayCat8Obs-from-xml.icc'
+Profile ID:         59afb3689bded66f6e03b4765face20e
+Size:               12852 (0x3234) bytes
+
+Header
+------
+Attributes:         Reflective | Glossy
+Cmm:                DemoIccMAX
+Creation Date:      10/23/2025 (M/D/Y)  16:41:53
+Creator:            'DIMX' = 44494D58
+Device Manufacturer:NULL
+Data Color Space:   NoData
+Flags:              EmbeddedProfileFalse | UseAnywhere
+PCS Color Space:    LabData
+Platform:           Unknown
+Rendering Intent:   Perceptual
+Profile Class:      DisplayClass
+Profile SubClass:   Not Defined
+Version:            4.30
+Illuminant:         X=0.9642, Y=1.0000, Z=0.8249
+Spectral PCS:       NoSpectralData
+Spectral PCS Range: Not Defined
+BiSpectral Range:   Not Defined
+MCS Color Space:    Not Defined
+
+Profile Tags
+------------
+                         Tag    ID      Offset	    Size	     Pad
+                        ----  ------    ------	    ----	     ---
+       profileDescriptionTag  NULL       228	     110	       2
+                copyrightTag  NULL       340	     128	       0
+                   redTRCTag  NULL       468	    4108	       0
+                 greenTRCTag  NULL      4576	    4108	       0
+                  blueTRCTag  NULL      8684	    4108	       0
+              redColorantTag  NULL     12792	      20	       0
+            greenColorantTag  NULL     12812	      20	       0
+             blueColorantTag  NULL     12832	      20	       0
+
+
+
+
+EXIT 0

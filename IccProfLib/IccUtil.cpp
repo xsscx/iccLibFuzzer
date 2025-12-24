@@ -1403,12 +1403,12 @@ icUInt8Number icGetStorageTypeBytes(icUInt16Number nStorageType)
 }
 
 
-icUInt32Number icGetMaterialColorSpaceSamples(icMaterialColorSignature sig)
+icUInt32Number icGetMaterialColorSpaceSamples(icUInt32Number mcs)
 {
-  if (icGetColorSpaceType((icColorSpaceSignature)sig)!=icSigSrcMCSChannelData)
+  if (icGetColorSpaceType((icColorSpaceSignature)mcs)!=icSigSrcMCSChannelData)
     return 0;
 
-  return icNumColorSpaceChannels(sig);
+  return icNumColorSpaceChannels(mcs);
 }
 
 bool icSameSpectralRange(const icSpectralRange &rng1, const icSpectralRange &rng2)

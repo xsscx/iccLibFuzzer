@@ -1,0 +1,45 @@
+Built with IccProfLib version 2.3.1.1
+
+Profile:            './Display/sRGB_D65_colorimetric.icc'
+Profile ID:         b4f7b5c88c438c6ad995f8f2e5588e79
+Size:               24728 (0x6098) bytes
+
+Header
+------
+Attributes:         Reflective | Glossy
+Cmm:                Unknown NULL
+Creation Date:      12/24/2025 (M/D/Y)  00:08:42
+Creator:            'ICC ' = 49434320
+Device Manufacturer:NULL
+Data Color Space:   RgbData
+Flags:              EmbeddedProfileTrue | UseAnywhere
+PCS Color Space:    XYZData
+Platform:           Unknown
+Rendering Intent:   Relative Colorimetric
+Profile Class:      DisplayClass
+Profile SubClass:   Not Defined
+Version:            5.00
+Illuminant:         X=0.9504, Y=1.0000, Z=1.0889
+Spectral PCS:       NoSpectralData
+Spectral PCS Range: Not Defined
+BiSpectral Range:   Not Defined
+MCS Color Space:    Not Defined
+
+Profile Tags
+------------
+                         Tag    ID      Offset	    Size	     Pad
+                        ----  ------    ------	    ----	     ---
+       profileDescriptionTag  NULL       240	      72	       0
+                copyrightTag  NULL       312	     120	       0
+                    AToB1Tag  NULL       432	     344	       0
+                    BToA1Tag  NULL       776	     356	       0
+      customToStandardPccTag  NULL      1132	      84	       0
+      standardToCustomPccTag  NULL      1216	      84	       0
+spectralViewingConditionsTag  NULL      1300	    1356	       0
+          mediaWhitePointTag  NULL      2656	      20	       0
+gamutBoundaryDescription1Tag  NULL      2676	   22052	       0
+
+
+
+
+EXIT 0

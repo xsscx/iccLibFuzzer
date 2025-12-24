@@ -1,0 +1,44 @@
+Built with IccProfLib version 2.3.1.1
+
+Profile:            './CalcTest/calcUnderStack_sel.icc'
+Profile ID:         830d9aa8d0dff8a8f8107c202ecc1200
+Size:               4060 (0xfdc) bytes
+
+Header
+------
+Attributes:         Reflective | Glossy
+Cmm:                Unknown NULL
+Creation Date:      8/15/2018 (M/D/Y)  10:06:06
+Creator:            'ICC ' = 49434320
+Device Manufacturer:NULL
+Data Color Space:   RgbData
+Flags:              EmbeddedProfileFalse | UseAnywhere
+PCS Color Space:    XYZData
+Platform:           Unknown
+Rendering Intent:   Relative Colorimetric
+Profile Class:      ColorSpaceClass
+Profile SubClass:   Not Defined
+Version:            5.00
+Illuminant:         X=0.9505, Y=1.0000, Z=1.0891
+Spectral PCS:       NoSpectralData
+Spectral PCS Range: Not Defined
+BiSpectral Range:   Not Defined
+MCS Color Space:    Not Defined
+
+Profile Tags
+------------
+                         Tag    ID      Offset	    Size	     Pad
+                        ----  ------    ------	    ----	     ---
+       profileDescriptionTag  NULL       228	      64	       0
+                    AToB1Tag  NULL       292	    1052	       0
+                    BToA1Tag  NULL      1344	    1052	       0
+      customToStandardPccTag  NULL      2396	      84	       0
+      standardToCustomPccTag  NULL      2480	      84	       0
+spectralViewingConditionsTag  NULL      2564	    1356	       0
+          mediaWhitePointTag  NULL      3920	      20	       0
+                copyrightTag  NULL      3940	     118	       2
+
+
+
+
+EXIT 0

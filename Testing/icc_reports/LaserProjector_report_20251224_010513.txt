@@ -1,0 +1,46 @@
+Built with IccProfLib version 2.3.1.1
+
+Profile:            './Display/LaserProjector.icc'
+Profile ID:         8dda3cb2e8895cc756eadbc1a2423435
+Size:               2167088 (0x211130) bytes
+
+Header
+------
+Attributes:         Reflective | Glossy
+Cmm:                Unknown NULL
+Creation Date:      10/28/2014 (M/D/Y)  17:08:31
+Creator:            NULL
+Device Manufacturer:NULL
+Data Color Space:   RgbData
+Flags:              EmbeddedProfileTrue | UseAnywhere
+PCS Color Space:    XYZData
+Platform:           Unknown
+Rendering Intent:   Relative Colorimetric
+Profile Class:      DisplayClass
+Profile SubClass:   Not Defined
+Version:            5.00
+Illuminant:         X=0.8413, Y=1.0000, Z=0.9637
+Spectral PCS:       NoSpectralData
+Spectral PCS Range: Not Defined
+BiSpectral Range:   Not Defined
+MCS Color Space:    Not Defined
+
+Profile Tags
+------------
+                         Tag    ID      Offset	    Size	     Pad
+                        ----  ------    ------	    ----	     ---
+       profileDescriptionTag  NULL       252	      60	       0
+                    AToB1Tag  NULL       312	 2139780	       0
+                    BToA1Tag  NULL   2140092	   19376	       0
+      customToStandardPccTag  NULL   2159468	      84	       0
+      standardToCustomPccTag  NULL   2159552	      84	       0
+spectralViewingConditionsTag  NULL   2159636	    6476	       0
+          mediaWhitePointTag  NULL   2166112	      20	       0
+   Unknown 'smwi' = 736D7769  NULL   2166132	      24	       0
+       spectralWhitePointTag  NULL   2166156	     810	       2
+                copyrightTag  NULL   2166968	     120	       0
+
+
+
+
+EXIT 0

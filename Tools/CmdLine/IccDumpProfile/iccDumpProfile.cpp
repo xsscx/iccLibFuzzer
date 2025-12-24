@@ -262,8 +262,10 @@ print_usage:
       printf("BiSpectral Range:   Not Defined\n");
     }
 
-    if (pHdr->mcs) {
-      printf("MCS Color Space:    %s\n", Fmt.GetColorSpaceSigName((icColorSpaceSignature)pHdr->mcs));
+    icUInt32Number mcsValue;
+    memcpy(&mcsValue, &pHdr->mcs, sizeof(mcsValue));
+    if (mcsValue) {
+      printf("MCS Color Space:    %s\n", Fmt.GetColorSpaceSigName((icColorSpaceSignature)mcsValue));
     }
     else {
       printf("MCS Color Space:    Not Defined\n");

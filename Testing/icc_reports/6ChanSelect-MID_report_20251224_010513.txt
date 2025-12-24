@@ -1,0 +1,41 @@
+Built with IccProfLib version 2.3.1.1
+
+Profile:            './mcs/6ChanSelect-MID.icc'
+Profile ID:         c73df892fcf876a1d83ece8c23d41f57
+Size:               748 (0x2ec) bytes
+
+Header
+------
+Attributes:         Reflective | Glossy
+Cmm:                Unknown NULL
+Creation Date:      12/24/2025 (M/D/Y)  00:08:43
+Creator:            NULL
+Device Manufacturer:NULL
+Data Color Space:   0x0006ChannelData
+Flags:              EmbeddedProfileTrue | UseAnywhere
+PCS Color Space:    NoData
+Platform:           Unknown
+Rendering Intent:   Relative Colorimetric
+Profile Class:      MaterialIdentificationClass
+Profile SubClass:   'nink' = 6E696E6B
+Version:            5.00
+SubClass Version:   0.00
+Illuminant:         X=0.0000, Y=0.0000, Z=0.0000
+Spectral PCS:       NoSpectralData
+Spectral PCS Range: Not Defined
+BiSpectral Range:   Not Defined
+MCS Color Space:    0x6ColorData
+
+Profile Tags
+------------
+                         Tag    ID      Offset	    Size	     Pad
+                        ----  ------    ------	    ----	     ---
+       profileDescriptionTag  NULL       180	     138	       2
+                    AToM0Tag  NULL       320	     140	       0
+        materialTypeArrayTag  NULL       460	     168	       0
+                copyrightTag  NULL       628	     120	       0
+
+
+
+
+EXIT 0

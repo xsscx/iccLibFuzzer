@@ -1033,8 +1033,14 @@ CIccXform *CIccXform::Create(CIccProfile *pProfile,
         if (pTag && !pTag->IsSupported())
           pTag = NULL;
       }
-      if (pTag && pProfile->m_Header.mcs) {
-        rv = CIccXformCreator::CreateXform(icXformTypeMpe, pTag, pHintManager);
+      if (pTag) {
+        icUInt32Number mcsValue;
+        memcpy(&mcsValue, &pProfile->m_Header.mcs, sizeof(mcsValue));
+        if (mcsValue) {
+          rv = CIccXformCreator::CreateXform(icXformTypeMpe, pTag, pHintManager);
+        }
+        else
+          rv = NULL;
       }
       else
         rv = NULL;
@@ -1127,8 +1133,14 @@ CIccXform *CIccXform::Create(CIccProfile *pProfile,
           nMCS = icFromMCS;
           pTag = pProfile->FindTag(icSigMToA0Tag);
         }
-        if (pTag && pProfile->m_Header.mcs) {
-          rv = CIccXformCreator::CreateXform(icXformTypeMpe, pTag, pHintManager);
+        if (pTag) {
+          icUInt32Number mcsValue;
+          memcpy(&mcsValue, &pProfile->m_Header.mcs, sizeof(mcsValue));
+          if (mcsValue) {
+            rv = CIccXformCreator::CreateXform(icXformTypeMpe, pTag, pHintManager);
+          }
+          else
+            rv = NULL;
         }
         else
           rv = NULL;
@@ -8220,8 +8232,9 @@ icStatusCMM CIccCmm::AddXform(CIccProfile *pProfile,
           
           //Make sure previous profile connects with an icXformLutMCS
           if ((icXformLutType)(prev->ptr->GetXformType()) != icXformLutMCS) {
-            //check to see if we can convert previous xform to connect via an MCS
-            if (!prev->ptr->GetProfile()->m_Header.mcs) {
+            icUInt32Number prevMcsValue;
+            memcpy(&prevMcsValue, &prev->ptr->GetProfile()->m_Header.mcs, sizeof(prevMcsValue));
+            if (!prevMcsValue) {
               return icCmmStatBadMCSLink;
             }
 

@@ -1,0 +1,44 @@
+Built with IccProfLib version 2.3.1.1
+
+Profile:            './Display/Rec2020rgbColorimetric.icc'
+Profile ID:         0050f67a23cb399fda6b8bf69e85cfef
+Size:               2660 (0xa64) bytes
+
+Header
+------
+Attributes:         Reflective | Glossy
+Cmm:                Unknown NULL
+Creation Date:      12/24/2025 (M/D/Y)  00:08:41
+Creator:            NULL
+Device Manufacturer:NULL
+Data Color Space:   RgbData
+Flags:              EmbeddedProfileTrue | UseAnywhere
+PCS Color Space:    XYZData
+Platform:           Unknown
+Rendering Intent:   Relative Colorimetric
+Profile Class:      DisplayClass
+Profile SubClass:   Not Defined
+Version:            5.00
+Illuminant:         X=0.9504, Y=1.0000, Z=1.0885
+Spectral PCS:       NoSpectralData
+Spectral PCS Range: Not Defined
+BiSpectral Range:   Not Defined
+MCS Color Space:    Not Defined
+
+Profile Tags
+------------
+                         Tag    ID      Offset	    Size	     Pad
+                        ----  ------    ------	    ----	     ---
+       profileDescriptionTag  NULL       228	      56	       0
+                    AToB1Tag  NULL       284	     356	       0
+                    BToA1Tag  NULL       640	     356	       0
+      customToStandardPccTag  NULL       996	      84	       0
+      standardToCustomPccTag  NULL      1080	      84	       0
+spectralViewingConditionsTag  NULL      1164	    1356	       0
+          mediaWhitePointTag  NULL      2520	      20	       0
+                copyrightTag  NULL      2540	     120	       0
+
+
+
+
+EXIT 0

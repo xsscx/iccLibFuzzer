@@ -1,0 +1,46 @@
+Built with IccProfLib version 2.3.1.1
+
+Profile:            './Display/Rec2020rgbSpectral-from-xml-from-xml-from-xml.icc'
+Profile ID:         74e82ae636c4ebcb8c364f56af68b871
+Size:               24620 (0x602c) bytes
+
+Header
+------
+Attributes:         Reflective | Glossy
+Cmm:                Unknown NULL
+Creation Date:      12/24/2025 (M/D/Y)  00:08:41
+Creator:            NULL
+Device Manufacturer:NULL
+Data Color Space:   RgbData
+Flags:              EmbeddedProfileTrue | UseAnywhere
+PCS Color Space:    XYZData
+Platform:           Unknown
+Rendering Intent:   Relative Colorimetric
+Profile Class:      DisplayClass
+Profile SubClass:   Not Defined
+Version:            5.00
+Illuminant:         X=0.9504, Y=1.0000, Z=1.0885
+Spectral PCS:       NoSpectralData
+Spectral PCS Range: Not Defined
+BiSpectral Range:   Not Defined
+MCS Color Space:    Not Defined
+
+Profile Tags
+------------
+                         Tag    ID      Offset	    Size	     Pad
+                        ----  ------    ------	    ----	     ---
+       profileDescriptionTag  NULL       252	      74	       2
+                    AToB1Tag  NULL       328	    8336	       0
+                    BToA1Tag  NULL      8664	    8336	       0
+      customToStandardPccTag  NULL     17000	      84	       0
+      standardToCustomPccTag  NULL     17084	      84	       0
+spectralViewingConditionsTag  NULL     17168	    6476	       0
+          mediaWhitePointTag  NULL     23644	      20	       0
+         spectralDataInfoTag  NULL     23664	      24	       0
+       spectralWhitePointTag  NULL     23688	     810	       2
+                copyrightTag  NULL     24500	     120	       0
+
+
+
+
+EXIT 0

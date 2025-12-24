@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IccProfile>
+  <Header>
+    <PreferredCMMType></PreferredCMMType>
+    <ProfileVersion>5.00</ProfileVersion>
+    <ProfileDeviceClass>spac</ProfileDeviceClass>
+    <DataColourSpace>RGB </DataColourSpace>
+    <PCS>XYZ </PCS>
+    <CreationDateTime>2025-12-24T00:08:40</CreationDateTime>
+    <ProfileFlags EmbeddedInFile="false" UseWithEmbeddedDataOnly="false"/>
+    <DeviceAttributes ReflectiveOrTransparency="reflective" GlossyOrMatte="glossy" MediaPolarity="positive" MediaColour="colour"/>
+    <RenderingIntent>Relative</RenderingIntent>
+    <PCSIlluminant>
+      <XYZNumber X="0.964202880859" Y="1.000000000000" Z="0.824905395508"/>
+    </PCSIlluminant>
+    <ProfileCreator>ICC </ProfileCreator>
+    <ProfileID>EAB16895F336544A53DE63581E2A98FA</ProfileID>
+  </Header>
+  <Tags>
+    <profileDescriptionTag> <multiLocalizedUnicodeType>
+      <LocalizedText LanguageCountry="enUS"><![CDATA[sRGB calc tester]]></LocalizedText>
+    </multiLocalizedUnicodeType> </profileDescriptionTag>
+
+    <AToB1Tag> <multiProcessElementType>
+      <MultiProcessElements InputChannels="3" OutputChannels="3">
+        <CalculatorElement InputChannels="3" OutputChannels="3">
+          <SubElements>
+            <CurveSetElement InputChannels="3" OutputChannels="3">
+              <SegmentedCurve>
+                <FormulaSegment Start="-infinity" End="+infinity" FunctionType="0">
+                  1.000000000000 0.500000000000 0.000000000000 0.000000000000
+                </FormulaSegment>
+              </SegmentedCurve>
+              <SegmentedCurve>
+                <FormulaSegment Start="-infinity" End="+infinity" FunctionType="0">
+                  1.000000000000 1.000000000000 0.000000000000 0.000000000000
+                </FormulaSegment>
+              </SegmentedCurve>
+              <SegmentedCurve>
+                <FormulaSegment Start="-infinity" End="+infinity" FunctionType="0">
+                  1.000000000000 1.500000000000 0.000000000000 0.000000000000
+                </FormulaSegment>
+              </SegmentedCurve>
+            </CurveSetElement>
+            <CurveSetElement InputChannels="3" OutputChannels="3">
+              <SegmentedCurve>
+                <FormulaSegment Start="-infinity" End="0.04045000" FunctionType="0">
+                  1.000000000000 0.076431900263 0.012500000186 0.000000000000
+                </FormulaSegment>
+                <FormulaSegment Start="0.04045000" End="+infinity" FunctionType="0">
+                  2.400000095367 0.942912459373 0.051860187203 0.012500000186
+                </FormulaSegment>
+              </SegmentedCurve>
+              <SegmentedCurve>
+                <FormulaSegment Start="-infinity" End="0.04045000" FunctionType="0">
+                  1.000000000000 0.076431900263 0.012500000186 0.000000000000
+                </FormulaSegment>
+                <FormulaSegment Start="0.04045000" End="+infinity" FunctionType="0">
+                  2.400000095367 0.942912459373 0.051860187203 0.012500000186
+                </FormulaSegment>
+              </SegmentedCurve>
+              <SegmentedCurve>
+                <FormulaSegment Start="-infinity" End="0.04045000" FunctionType="0">
+                  1.000000000000 0.076431900263 0.012500000186 0.000000000000
+                </FormulaSegment>
+                <FormulaSegment Start="0.04045000" End="+infinity" FunctionType="0">
+                  2.400000095367 0.942912459373 0.051860187203 0.012500000186
+                </FormulaSegment>
+              </SegmentedCurve>
+            </CurveSetElement>
+            <MatrixElement InputChannels="3" OutputChannels="3">
+              <MatrixData>
+                1.000000000000 1.000000000000 -1.000000000000
+                2.000000000000 1.000000000000 -1.000000000000
+                1.000000000000 -1.000000000000 1.000000000000
+              </MatrixData>
+            </MatrixElement>
+            <MatrixElement InputChannels="3" OutputChannels="3">
+              <MatrixData>
+                0.465999990702 0.385100007057 0.143099993467
+                0.222499996424 0.716899991035 0.060600001365
+                0.013899999671 0.097099997103 0.713900029659
+              </MatrixData>
+            </MatrixElement>
+            <CLutElement InputChannels="3" OutputChannels="3">
+              <GridPoints>2 2 2</GridPoints>
+              <TableData>
+                   0.00000000    0.00000000    0.00000000    0.00000000    0.00000000    0.75000000
+                   0.00000000    0.50000000    0.00000000    0.00000000    0.50000000    0.75000000
+                   0.25000000    0.00000000    0.00000000    0.25000000    0.00000000    0.75000000
+                   0.25000000    0.50000000    0.00000000    0.25000000    0.50000000    0.75000000
+              </TableData>
+            </CLutElement>
+            <CalculatorElement InputChannels="3" OutputChannels="3">
+              <MainFunction>
+                { ULL[0,3] 1 1 1 ULL[3] ULL[0,3] }
+              </MainFunction>
+            </CalculatorElement>
+            <JabToXYZElement InputChannels="3" OutputChannels="3">
+              <ColorAppearanceParams>
+               <WhitePoint>
+                <XYZNumber X="0.964200019836" Y="1.000000000000" Z="0.824899971485"/>               </WhitePoint>
+               <Luminance>500.000000000000</Luminance>
+               <BackgroundLuminance>20.000000000000</BackgroundLuminance>
+               <ImpactSurround>0.689999997616</ImpactSurround>
+               <ChromaticInductionFactor>1.000000000000</ChromaticInductionFactor>
+               <AdaptationFactor>1.000000000000</AdaptationFactor>
+</ColorAppearanceParams>
+            </JabToXYZElement>
+            <XYZToJabElement InputChannels="3" OutputChannels="3">
+              <ColorAppearanceParams>
+               <WhitePoint>
+                <XYZNumber X="0.964200019836" Y="1.000000000000" Z="0.824899971485"/>               </WhitePoint>
+               <Luminance>500.000000000000</Luminance>
+               <BackgroundLuminance>20.000000000000</BackgroundLuminance>
+               <ImpactSurround>0.689999997616</ImpactSurround>
+               <ChromaticInductionFactor>1.000000000000</ChromaticInductionFactor>
+               <AdaptationFactor>1.000000000000</AdaptationFactor>
+</ColorAppearanceParams>
+            </XYZToJabElement>
+            <TintArrayElement InputChannels="1" OutputChannels="3">
+  <float32ArrayType>
+    <Data>
+        0.000000000000 2.000000000000 4.000000000000 2.000000000000 4.000000000000 8.000000000000
+    </Data>
+  </float32ArrayType>
+            </TintArrayElement>
+          </SubElements>
+          <MainFunction>
+            { 1 1 1 ULL[0,3] ULL[0,3] ULL(3) 3 ULL ULL[3] 1 1 1 ULL[4,3] ULL(3) 
+              3 ULL ULL[7] 1 1 1 ULL(0) ULL(3) 3 ULL ULL[8] 1 2 3 ULL(2) 0 1 2 
+              ULL[3] ULL(3) 0 ULL ULL[9] 1 1 1 ULL(4) 0.25 0.5 0.75 ULL[3] ULL(3) 
+              0 ULL ULL[10] 1 2 3 ULL(5) 2 3 4 ULL[3] ULL(3) 0 ULL ULL[11] 0.5 
+              ULL(8) 1 3 6 ULL[3] ULL(3) 0 ULL ULL[12] 100 0 0 ULL(6) 0.96420002 
+              1 0.82489997 ULL[3] ULL[3] ULL(3) 0.001 ULL ULL[13] 0.96420002 1 
+              0.82489997 ULL(7) 100 0 0 ULL[3] ULL[3] ULL(3) 0.1 ULL ULL[14] 1 
+              ULL(8) 2 4 8 ULL[3] ULL(3) 0 ULL ULL[15] 1 2 3 4 5 6 ULL(3,2) ULL(12) 
+              51 ULL ULL[16] 1 2 3 4 5 ULL 3 4 5 1 2 ULL[5] ULL(5) 0 ULL ULL[17] 
+              1 2 3 4 5 ULL 4 5 1 2 3 ULL[5] ULL(5) 0 ULL ULL[18] 1 2 3 4 5 ULL(4,2) 
+              ULL(7) 19 ULL ULL[19] 1 2 3 4 5 ULL(5) 5 4 3 2 1 ULL[5] ULL[5] ULL(5) 
+              0 ULL ULL[20] 1 2 3 4 5 ULL(2) ULL(3) 6 ULL ULL[21] 1 2 3 4 5 6 
+              7 8 9 6 15 24 ULL(3,3) 1 ULL ULL 
+              { 1 1 1 ULL[3] ULL[3] 9.9999997e-06 9.9999997e-06 9.9999997e-06 ULL[3] }
+              else
+              { 0 0 0 ULL[3] }
+              ULL(3) 3 ULL ULL[22] 1 2 3 4 5 6 7 8 ULL(2,4) 1 5 2 6 3 7 4 8 ULL[8] 
+              ULL(8) ULL[23] 2 3 4 5 ULL(4) 120 ULL ULL[24] 5 3 1 2 4 ULL(5) 1 
+              ULL ULL[25] 1 3 5 4 2 ULL(5) 5 ULL ULL[26] 1 1 1 1 1 ULL(5) ULL[27] 
+              0 0 1 0 0 ULL(5) ULL[28] ULL 3.1415 ULL ULL 0.1 ULL ULL[29] ULL 
+              1e+35 ULL ULL[30] ULL -1e+35 ULL ULL[31] ULL ULL ULL ULL[32] 1 2 
+              3 4 -1 -2 -3 -4 ULL[4] ULL(4) 0 ULL ULL[33] 1 2 3 4 1 2 3 4 ULL[4] 
+              ULL(4) 0 ULL ULL[34] 2 4 6 8 0.5 0.5 0.5 0.5 ULL[4] 1 2 3 4 ULL[4] 
+              ULL(4) 0 ULL ULL[35] 2 4 6 8 2 2 2 2 ULL[4] 1 2 3 4 ULL[4] ULL(4) 
+              0 ULL ULL[36] 5 11 3.25 2 4 1 ULL[3] 1 3 0.25 ULL[3] ULL(3) 0 ULL 
+              ULL[37] 2 2 2 2 2 3 4 5 ULL[4] 4 8 16 32 ULL[4] ULL(4) 0 ULL ULL[38] 
+              2 3 4 2 ULL[3] 4 9 16 ULL[3] ULL(3) 0 ULL ULL[39] 2 3 4 2 ULL[3] 
+              4 5 6 ULL[3] ULL(3) 0 ULL ULL[40] 3 4 5 2 ULL[3] 1 2 3 ULL[3] ULL(3) 
+              0 ULL ULL[41] 2 3 4 2 ULL[3] 4 6 8 ULL[3] ULL(3) 0 ULL ULL[42] 2 
+              4 8 2 ULL[3] 1 2 4 ULL[3] ULL(3) 0 ULL ULL[43] 2 3 4 ULL[3] 4 9 
+              16 ULL[3] ULL(3) 0 ULL ULL[44] 4 9 16 ULL[3] 2 3 4 ULL[3] ULL(3) 
+              0 ULL ULL[45] 2 3 4 ULL[3] 8 27 64 ULL[3] ULL(3) 0 ULL ULL[46] 8 
+              27 64 ULL[3] 2 3 4 ULL[3] ULL(3) 0 ULL ULL[47] 2 3 4 ULL[3] 8 27 
+              64 ULL[3] ULL(3) 0 ULL ULL[48] 8 27 64 ULL[3] 2 3 4 ULL[3] ULL(3) 
+              0 ULL ULL[49] 1 -2 3 -4 5 ULL[5] ULL(5) 15 ULL ULL[50] 1 2 3 4 ULL[4] 
+              -1 -2 -3 -4 ULL[4] ULL(4) 0 ULL ULL[51] 1.1 2.5 3.7 ULL[3] 1 3 4 
+              ULL[3] ULL(3) 0 ULL ULL[52] 1.1 2.5 3.7 ULL[3] 1 2 3 ULL[3] ULL(3) 
+              0 ULL ULL[53] 1.1 2.5 3.7 ULL[3] 2 3 4 ULL[3] ULL(3) 0 ULL ULL[54] 
+              1.1 2.5 3.7 ULL[3] 1 2 3 ULL[3] ULL(3) 0 ULL ULL[55] 1 2 3 ULL[3] 
+              ULL(3) ULL 30 ULL ULL 31 ULL ULL ULL[56] 10 100 1000 ULL[3] 1 2 
+              3 ULL[3] ULL(3) 0 ULL ULL[57] 3 7 20 ULL[3] ULL(3) ULL 6 ULL ULL 
+              7 ULL ULL ULL[58] 0 1.5707999 0.78539997 ULL[3] 0 1 0.70710999 ULL[3] 
+              ULL(3) ULL 0.0099999998 ULL ULL[59] 0 1.5707999 0.78539997 ULL[3] 
+              1 0 0.70710999 ULL[3] ULL(3) ULL 0.0099999998 ULL ULL[60] 0 1 0.78539997 
+              ULL[3] 0 1.5574 1 ULL[3] ULL(3) ULL 0.0099999998 ULL ULL[61] 0 1 
+              0.70710999 ULL[3] 0 1.5707999 0.78539997 ULL[3] ULL(3) ULL 0.0099999998 
+              ULL ULL[62] 0 1 0.70710999 ULL[3] 1.5707999 0 0.78539002 ULL[3] 
+              ULL(3) ULL 0.0099999998 ULL ULL[63] 0 1 0.70710999 ULL[3] 0 0.78539997 
+              0.61548001 ULL[3] ULL(3) ULL 0.0099999998 ULL ULL[64] 1 2 2 0 1 
+              2 ULL[3] 0 0.46364999 0.78539997 ULL[3] ULL(3) ULL 0.0099999998 
+              ULL ULL[65] 0 28.2843 40 40 28.2843 0 ULL[3] 40 40 40 0 45 90 ULL[6] 
+              ULL(6) ULL 0.0099999998 ULL ULL[66] 40 40 40 0 45 90 ULL[3] 0 28.2843 
+              40 40 28.2843 0 ULL[6] ULL(6) ULL 0.0099999998 ULL ULL[67] ULL ULL 
+              ULL ULL 4 ULL[5] 1 0 0 0 1 ULL[5] ULL(5) 5 ULL ULL[68] 1 2 3 4 5 
+              3 3 3 3 3 ULL[5] 1 1 0 0 0 ULL[5] ULL(5) 0 ULL ULL[69] 1 2 3 4 5 
+              3 3 3 3 3 ULL[5] 1 1 1 0 0 ULL[5] ULL(5) 0 ULL ULL[70] 1 2 3 4 5 
+              1 0 3 0 5 ULL[5] 1 0 1 0 1 ULL[5] ULL(5) 0 ULL ULL[71] 1 2 3 4 5 
+              1 0 3 0 5 ULL[5] 1 0 1 0 1 ULL[5] ULL(5) 0 ULL ULL[72] 1 2 3 4 5 
+              3 3 3 3 3 ULL[5] 0 0 1 1 1 ULL[5] ULL(5) 0 ULL ULL[73] 1 2 3 4 5 
+              3 3 3 3 3 ULL[5] 0 0 0 1 1 ULL[5] ULL(5) 0 ULL ULL[74] 1 0 1 0 1 
+              ULL[5] 0 1 0 1 0 ULL[5] ULL(5) 0 ULL ULL[75] 0 1 2 3 3 2 1 0 ULL[4] 
+              3 2 2 3 ULL[4] ULL(4) 0 ULL ULL[76] 0 1 2 3 3 2 1 0 ULL[4] 0 1 1 
+              0 ULL[4] ULL(4) 0 ULL ULL[77] 0 1 0 1 0 0 1 1 ULL[4] 0 0 0 1 ULL[4] 
+              ULL(4) 0 ULL ULL[78] 0 1 0 1 0 0 1 1 ULL[4] 0 1 1 1 ULL[4] ULL(4) 
+              0 ULL ULL[79] 1 0.5 0.25 1 0.5 0.25 1 0.5 0.25 ULL[3] 100 76.06926 
+              57.07542 0 0 0 0 0 0 ULL[9] ULL[9] ULL(9) 0.00050000002 ULL ULL[80] 
+              100 76.06926 57.07542 0 0 0 0 0 0 ULL[3] 1 0.5 0.25 1 0.5 0.25 1 
+              0.5 0.25 ULL[9] ULL[9] ULL(9) 0.00050000002 ULL ULL[81] 20 0 ULL 
+              { ULL(1) 10 }
+              20 ULL ULL[82] 20 1 ULL 
+              { ULL(1) 10 }
+              10 ULL ULL[83] 1 ULL 
+              { 10 }
+              else
+              { 20 }
+              10 ULL ULL[84] 0 ULL 
+              { 10 }
+              else
+              { 20 }
+              20 ULL ULL[85] 2 ULL 
+              case
+              { 1 }
+              case
+              { 2 }
+              case
+              { 4 }
+              case
+              { 8 }
+              dflt
+              { -1 }
+              4 ULL ULL[86] 8 ULL 
+              case
+              { 1 }
+              case
+              { 2 }
+              case
+              { 4 }
+              case
+              { 8 }
+              dflt
+              { -1 }
+              -1 ULL ULL[87] 0 1 ULL 
+              case
+              { ULL(1) 1 }
+              case
+              { ULL(1) 3 }
+              case
+              { ULL(1) 9 }
+              case
+              { ULL(1) 27 }
+              3 ULL ULL[88] 0 -1 ULL 
+              case
+              { ULL(1) 1 }
+              case
+              { ULL(1) 3 }
+              case
+              { ULL(1) 9 }
+              case
+              { ULL(1) 27 }
+              0 ULL ULL[89] ULL(true) 1 1 ULL[2] ULL 2 ULL ULL[90] ULL(ndef) 0 
+              0 ULL[2] ULL 2 ULL ULL[91] ULL[0,46] ULL[46,46] ULL(92) 92 ULL ULL 
+              { ULL(01020304) ULL 
+                { ULL(1,2) }
+                else
+                { ULL[0,3] ULL(1) ULL(3) }
+                ULL[0,3] }
+              else
+              { 0 0 0 ULL[0,3] }
+              }
+          </MainFunction>
+        </CalculatorElement>
+      </MultiProcessElements>
+    </multiProcessElementType> </AToB1Tag>
+
+    <BToA1Tag> <multiProcessElementType>
+      <MultiProcessElements InputChannels="3" OutputChannels="3">
+        <MatrixElement InputChannels="3" OutputChannels="3">
+          <MatrixData>
+            3.134577989578 -0.978956997395 0.072118997574
+            -1.617305994034 1.916218042374 -0.229141995311
+            -0.491034001112 0.033569999039 1.405750989914
+          </MatrixData>
+        </MatrixElement>
+        <CurveSetElement InputChannels="3" OutputChannels="3">
+          <SegmentedCurve>
+            <FormulaSegment Start="-infinity" End="0.01559200" FunctionType="0">
+              1.000000000000 13.083541870117 0.163544282317 0.000000000000
+            </FormulaSegment>
+            <FormulaSegment Start="0.01559200" End="+infinity" FunctionType="0">
+              0.416669994593 1.151512622833 -0.014393909834 -0.054999999702
+            </FormulaSegment>
+          </SegmentedCurve>
+          <SegmentedCurve>
+            <FormulaSegment Start="-infinity" End="0.01559200" FunctionType="0">
+              1.000000000000 13.083541870117 0.163544282317 0.000000000000
+            </FormulaSegment>
+            <FormulaSegment Start="0.01559200" End="+infinity" FunctionType="0">
+              0.416669994593 1.151512622833 -0.014393909834 -0.054999999702
+            </FormulaSegment>
+          </SegmentedCurve>
+          <SegmentedCurve>
+            <FormulaSegment Start="-infinity" End="0.01559200" FunctionType="0">
+              1.000000000000 13.083541870117 0.163544282317 0.000000000000
+            </FormulaSegment>
+            <FormulaSegment Start="0.01559200" End="+infinity" FunctionType="0">
+              0.416669994593 1.151512622833 -0.014393909834 -0.054999999702
+            </FormulaSegment>
+          </SegmentedCurve>
+        </CurveSetElement>
+      </MultiProcessElements>
+    </multiProcessElementType> </BToA1Tag>
+
+    <mediaWhitePointTag> <XYZArrayType>
+      <XYZNumber X="0.964202880859" Y="1.000000000000" Z="0.824905395508"/>
+    </XYZArrayType> </mediaWhitePointTag>
+
+    <copyrightTag> <multiLocalizedUnicodeType>
+      <LocalizedText LanguageCountry="enUS"><![CDATA[Copyright 2015 International Color Consortium]]></LocalizedText>
+    </multiLocalizedUnicodeType> </copyrightTag>
+
+  </Tags>
+</IccProfile>

@@ -1,0 +1,45 @@
+Built with IccProfLib version 2.3.1.1
+
+Profile:            './ICS/Rec2100HlgFull-Part2-from-xml.icc'
+Profile ID:         a2c1d5d7cce71a52ec41086aee6e2125
+Size:               482432 (0x75c80) bytes
+
+Header
+------
+Attributes:         Reflective | Glossy
+Cmm:                RefIccMAX
+Creation Date:      12/24/2025 (M/D/Y)  00:08:42
+Creator:            'RICC' = 52494343
+Device Manufacturer:NULL
+Data Color Space:   RgbData
+Flags:              EmbeddedProfileTrue | UseAnywhere
+PCS Color Space:    XYZData
+Platform:           Unknown
+Rendering Intent:   Relative Colorimetric
+Profile Class:      DisplayClass
+Profile SubClass:   'xrng' = 78726E67
+Version:            5.00
+SubClass Version:   2.00
+Illuminant:         X=0.9504, Y=1.0000, Z=1.0885
+Spectral PCS:       NoSpectralData
+Spectral PCS Range: Not Defined
+BiSpectral Range:   Not Defined
+MCS Color Space:    Not Defined
+
+Profile Tags
+------------
+                         Tag    ID      Offset	    Size	     Pad
+                        ----  ------    ------	    ----	     ---
+       profileDescriptionTag  NULL       228	      92	       0
+                copyrightTag  NULL       320	     120	       0
+                    AToB1Tag  NULL       440	  360236	       0
+                    BToA1Tag  NULL    360676	  120212	       0
+          mediaWhitePointTag  NULL    480888	      20	       0
+      customToStandardPccTag  NULL    480908	      84	       0
+      standardToCustomPccTag  NULL    480992	      84	       0
+spectralViewingConditionsTag  NULL    481076	    1356	       0
+
+
+
+
+EXIT 0

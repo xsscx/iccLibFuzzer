@@ -1,0 +1,2024 @@
+ICC XML Round-Trip Test Report
+Root: /home/xss/copilot/iccLibFuzzer/Testing
+Date: Wed Dec 24 12:53:53 AM UTC 2025
+----------------------------------------
+
+[TEST] ./Calc/srgbCalcTest.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 94
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './Calc/srgbCalcTest-from-icc.xml'
+
+[TEST] ./Calc/ElevenChanKubelkaMunk.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,11] 0 ULL(1,10) ULL[11] ULL(11) ULL(11) ULL 0 ULL ULL { "
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 30
+    Unable to Parse "multiProcessElementType" (DToB3Tag) Tag on line 28
+    
+    Unable to Parse './Calc/ElevenChanKubelkaMunk-from-icc.xml'
+
+[TEST] ./Calc/argbCalc.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 2.1992188 ULL[3] ULL[0,3] 0.57666862 0.18555851 0.188"
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './Calc/argbCalc-from-icc.xml'
+
+[TEST] ./Calc/CameraModel.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Last Few operators in reverse:
+     76.891418 92.933578 91.652931 87.424179 99.184952 103.05432 98.234177 95.705421 98.89344 95.750679
+    Syntax Error occurred while parsing Main Calculator Function from "{ 49.257473 56.461254 59.9841 57.77327 74.77597 87.198036 90.566"
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 49
+    Unable to Parse "multiProcessElementType" (BToD3Tag) Tag on line 47
+    
+    Unable to Parse './Calc/CameraModel-from-icc.xml'
+
+[TEST] ./Calc/srgbCalc++Test.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './Calc/srgbCalc++Test-from-icc.xml'
+
+[TEST] ./Calc/RGBWProjector.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] ULL(0) ULL[0,3] ULL(3) ULL(1) 1 ULL(2) 0.96420002 1 0"
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 29
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 27
+    
+    Unable to Parse './Calc/RGBWProjector-from-icc.xml'
+
+[TEST] ./SpecRef/SixChanCameraRef.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./SpecRef/RefDecH.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,31] ULL(31) ULL(0) 0.0099999998 ULL[3] ULL 360 ULL ULL[0"
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 30
+    Unable to Parse "multiProcessElementType" (DToB0Tag) Tag on line 28
+    
+    Unable to Parse './SpecRef/RefDecH-from-icc.xml'
+
+[TEST] ./SpecRef/SixChanInputRef-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./SpecRef/argbRef.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 2.1991875 ULL[3] ULL(0) ULL 360 ULL ULL[0,3] ULL[1] 9"
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 31
+    Unable to Parse "multiProcessElementType" (DToB3Tag) Tag on line 29
+    
+    Unable to Parse './SpecRef/argbRef-from-icc.xml'
+
+[TEST] ./SpecRef/SixChanCameraRef-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./SpecRef/SixChanCameraRef-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./SpecRef/SixChanInputRef-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./SpecRef/SixChanInputRef.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./SpecRef/RefIncW.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,31] ULL(31) ULL(0) 0.0099999998 ULL[3] ULL 360 ULL ULL[0"
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 30
+    Unable to Parse "multiProcessElementType" (DToB0Tag) Tag on line 28
+    
+    Unable to Parse './SpecRef/RefIncW-from-icc.xml'
+
+[TEST] ./SpecRef/srgbRef.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] ULL(0) ULL(1) ULL 360 ULL ULL[0,3] ULL[1] 9.9999999e-"
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 31
+    Unable to Parse "multiProcessElementType" (DToB3Tag) Tag on line 29
+    
+    Unable to Parse './SpecRef/srgbRef-from-icc.xml'
+
+[TEST] ./SpecRef/RefDecC.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,31] ULL(31) ULL(0) 0.0099999998 ULL[3] ULL 360 ULL ULL[0"
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 30
+    Unable to Parse "multiProcessElementType" (DToB0Tag) Tag on line 28
+    
+    Unable to Parse './SpecRef/RefDecC-from-icc.xml'
+
+[TEST] ./Display/Rec2100HlgNarrow.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL(MxLm) ULL { ULL[0] } else { ULL(1) 800 ULL[0] } ULL(MnLm) "
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './Display/Rec2100HlgNarrow-from-icc.xml'
+
+[TEST] ./Display/sRGB_D65_colorimetric-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Display/LCDDisplay.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Display/Rec2020rgbSpectral-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Display/LCDDisplay-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Display/sRGB_D65_MAT-500lx-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Display/sRGB_D65_MAT-300lx-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Display/RgbGSDF.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Last Few operators in reverse:
+     10
+    Syntax Error occurred while parsing Main Calculator Function from "{ 10 ULL[0] 1000 ULL[1] 3993.3296 ULL[1] ULL ULL[2] ULL(ambL) UL"
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 29
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 27
+    Unable to Parse "multiProcessElementType" (AToB0Tag) Tag on line 25
+    
+    Unable to Parse './Display/RgbGSDF-from-icc.xml'
+
+[TEST] ./Display/Rec2020rgbSpectral-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Display/Rec2100HlgFull.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL(MxLm) ULL { ULL[0] } else { ULL(1) 800 ULL[0] } ULL(MnLm) "
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './Display/Rec2100HlgFull-from-icc.xml'
+
+[TEST] ./Display/sRGB_D65_MAT-300lx.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Display/sRGB_D65_MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Display/sRGB_D65_MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Display/LCDDisplay-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Display/sRGB_D65_MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Display/sRGB_D65_colorimetric-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Display/LaserProjector.icc
+  RESULT: FAIL (iccToXml)
+    Unable to read './Display/LaserProjector.icc'
+
+[TEST] ./Display/GrayGSDF.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Last Few operators in reverse:
+     10
+    Syntax Error occurred while parsing Main Calculator Function from "{ 10 ULL[0] 1000 ULL[1] 3993.3296 ULL[1] ULL ULL[2] ULL(ambL) UL"
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 27
+    Unable to Parse "multiProcessElementType" (AToB0Tag) Tag on line 25
+    
+    Unable to Parse './Display/GrayGSDF-from-icc.xml'
+
+[TEST] ./Display/Rec2020rgbSpectral.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Display/Rec2020rgbColorimetric-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Display/sRGB_D65_MAT-500lx-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Display/sRGB_D65_MAT-500lx.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Display/Rec2020rgbColorimetric.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Display/Rec2020rgbColorimetric-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Display/sRGB_D65_MAT-300lx-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Display/sRGB_D65_colorimetric.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./mcs/Flexo-CMYKOGP/4ChanSelect-MID.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./mcs/Flexo-CMYKOGP/7ChanSelect-MID.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,4] ULL[0,4] 1 ULL[4] ULL ULL[4] 1 ULL[5] ULL ULL[5] 1 UL"
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 28
+    Unable to Parse "multiProcessElementType" (AToM0Tag) Tag on line 26
+    
+    Unable to Parse './mcs/Flexo-CMYKOGP/7ChanSelect-MID-from-icc.xml'
+
+[TEST] ./mcs/Flexo-CMYKOGP/OMYK-SelectMID-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./mcs/Flexo-CMYKOGP/4ChanSelect-MID-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./mcs/Flexo-CMYKOGP/CMYK-SelectMID.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./mcs/Flexo-CMYKOGP/CMPK-SelectMID-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./mcs/Flexo-CMYKOGP/CMPK-SelectMID.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./mcs/Flexo-CMYKOGP/CMYK-SelectMID-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./mcs/Flexo-CMYKOGP/4ChanSelect-MID-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./mcs/Flexo-CMYKOGP/CGYK-SelectMID.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./mcs/Flexo-CMYKOGP/CMYK-SelectMID-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./mcs/Flexo-CMYKOGP/OMYK-SelectMID.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./mcs/Flexo-CMYKOGP/CGYK-SelectMID-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./mcs/Flexo-CMYKOGP/CGYK-SelectMID-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./mcs/Flexo-CMYKOGP/CMYKOGP-MVIS-Smooth.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL(bkgX) ULL ULL { ULL(1) 0.96420002 } ULL(bkgY) ULL ULL { UL"
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 28
+    Unable to Parse "multiProcessElementType" (MToB0Tag) Tag on line 26
+    
+    Unable to Parse './mcs/Flexo-CMYKOGP/CMYKOGP-MVIS-Smooth-from-icc.xml'
+
+[TEST] ./mcs/Flexo-CMYKOGP/OMYK-SelectMID-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./mcs/Flexo-CMYKOGP/CMPK-SelectMID-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./mcs/6ChanSelect-MID.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,4] ULL[0,4] 1 ULL[4] ULL ULL[4] 1 ULL[5] ULL ULL[5] } "
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 28
+    Unable to Parse "multiProcessElementType" (AToM0Tag) Tag on line 26
+    
+    Unable to Parse './mcs/6ChanSelect-MID-from-icc.xml'
+
+[TEST] ./hybrid/Results/LCDDisplayCat8Obs-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./hybrid/Results/LCDDisplayCat8Obs-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./hybrid/Results/LCDDisplayCat8Obs.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Encoding/sRgbEncodingOverrides-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Encoding/ISO22028-Encoded-bg-sRGB.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Encoding/ISO22028-Encoded-bg-sRGB-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Encoding/sRgbEncoding.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Encoding/ISO22028-Encoded-sRGB-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Encoding/sRgbEncodingOverrides.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Encoding/sRgbEncodingOverrides-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Encoding/ISO22028-Encoded-sRGB-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Encoding/ISO22028-Encoded-bg-sRGB-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Encoding/sRgbEncoding-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Encoding/ISO22028-Encoded-sRGB.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Encoding/sRgbEncoding-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Named/SparseMatrixNamedColor.icc
+  RESULT: FAIL (iccToXml)
+    Unable to read './Named/SparseMatrixNamedColor.icc'
+
+[TEST] ./Named/NamedColor-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Named/FluorescentNamedColor-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Named/FluorescentNamedColor-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Named/FluorescentNamedColor.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Named/NamedColor.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./Named/NamedColor-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./CalcTest/calcUnderStack_ln.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_ln-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_trnc.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_trnc-from-icc.xml'
+
+[TEST] ./CalcTest/calcOverMem_tsav.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcOverMem_tsav-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_fLab.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_fLab-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_and.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_and-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_prod.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_prod-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_if.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_if-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_mod.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_mod-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_fJab.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_fJab-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_out.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_out-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_cos.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_cos-from-icc.xml'
+
+[TEST] ./CalcTest/calcOverMem_tput.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcOverMem_tput-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_log.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_log-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_clut.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_clut-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_ptoc.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_ptoc-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_pop.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_pop-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_sq.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_sq-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_ssub.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_ssub-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_div.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_div-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_max.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_max-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_atn2.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_atn2-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_flor.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_flor-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_sin.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_sin-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_ge.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_ge-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_neg.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_neg-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_lt.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_lt-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_le.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_le-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_near.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_near-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_eq.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_eq-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_tput.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_tput-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_mtx.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_mtx-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_abs.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_abs-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_posd.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_posd-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_add.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_add-from-icc.xml'
+
+[TEST] ./CalcTest/calcCheckInit.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0] ULL[2,2] 1 1 2 3 4 ULL[0,4] ULL[0,4] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 28
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcCheckInit-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_min.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_min-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_solv.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_solv-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_sel.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_sel-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_gama.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_gama-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_sign.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_sign-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_tJab.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_tJab-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_tint.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_tint-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_rotr.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_rotr-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_vor.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_vor-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_mul.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_mul-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_calc.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_calc-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_sdiv.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_sdiv-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_rotl.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_rotl-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_copy.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_copy-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_tLab.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_tLab-from-icc.xml'
+
+[TEST] ./CalcTest/calcOverMem_tget.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcOverMem_tget-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_curv.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_curv-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_ceil.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_ceil-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_atan.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_atan-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_vmin.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_vmin-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_vmax.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_vmax-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_flip.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_flip-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_not.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_not-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_cb.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_cb-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_elem.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_elem-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_sum.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_sum-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_asin.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_asin-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_cbrt.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_cbrt-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_sub.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_sub-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_smul.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_smul-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_rond.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_rond-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_exp.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_exp-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_rnum.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_rnum-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_ctop.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_ctop-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_tran.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_tran-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_sqrt.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_sqrt-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_gt.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_gt-from-icc.xml'
+
+[TEST] ./CalcTest/calcExercizeOps.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,2] 1 1 ULL[2] ULL[0,2] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 58
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcExercizeOps-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_or.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_or-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_tsav.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_tsav-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_pow.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_pow-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_vand.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_vand-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_acos.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_acos-from-icc.xml'
+
+[TEST] ./CalcTest/calcUnderStack_sadd.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1 1 1 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator starting on line 61
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 26
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 24
+    
+    Unable to Parse './CalcTest/calcUnderStack_sadd-from-icc.xml'
+
+[TEST] ./PCC/Spec400_10_700-D50_10deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/XYZ_float-D65_2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-N_2deg-CAT02-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D65_10deg-Abs-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-R1_2deg-Abs-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Lab_int-IllumA_2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-F11_2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-G_2deg-Abs.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D50_40yo2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DG_2deg-CAT02-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D93_2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec380_5_780-D50_2deg-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-B_2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D65_60yo2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DR_2deg-CAT02-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D50_80yo2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DR_2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DG_2deg-CAT02-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Lab_float-D50_2deg.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DG_2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DG_2deg-Abs-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-G_2deg-CAT02.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D93_10deg-Abs-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-Y_2deg-CAT02-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Lab_float-D50_2deg-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-N_2deg-Abs-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-Y_2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D93_2deg-Abs.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D65_10deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-G_2deg-Abs-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D50_2deg.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DR_2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-B_2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-R2_2deg-Abs-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-IllumA_10deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D65_60yo2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-B_2deg-CAT02-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-Y_2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D50_20yo2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D50_2deg-Abs-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-Y_2deg-CAT02.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/XYZ_float-D50_2deg-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D50_20yo2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-N_2deg-CAT02-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-F11_2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-B_2deg-Abs.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Lab_int-D65_2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Lab_int-D50_2deg.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-B_2deg-Abs-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D50_2deg-Abs-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DR_2deg-Abs.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-R2_2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D50_60yo2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-IllumA_2deg-Abs-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-R1_2deg-CAT02.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D65_40yo2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-G_2deg-CAT02-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D93_2deg-Abs-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-R2_2deg-CAT02.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D93_10deg-Abs-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D93_2deg-Abs-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-G_2deg-CAT02-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D65_40yo2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D50_10deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D93_10deg-Abs.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-IllumA_10deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-R2_2deg-CAT02-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DG_2deg-CAT02.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D65_10deg-Abs-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-R2_2deg-Abs-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Lab_int-D50_2deg-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Lab_int-IllumA_2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-Y_2deg-Abs.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-F11_2deg-CAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DB_2deg-CAT02-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-IllumA_10deg-Abs-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-R1_2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-B_2deg-Abs-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Lab_float-D50_2deg-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DB_2deg-Abs.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/XYZ_float-D65_2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/XYZ_float-D50_2deg-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-N_2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D65_80yo2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-IllumA_2deg-CAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D50_2deg-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-N_2deg-Abs.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Lab_float-D93_2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D50_2deg-Abs.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-R2_2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DR_2deg-CAT02-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-G_2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec380_5_780-D50_2deg-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-B_2deg-CAM-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D50_60yo2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D93_2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-N_2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-IllumA_2deg-CAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec380_10_730-D65_2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D65_20yo2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D50_20yo2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec380_10_730-D65_2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec380_10_730-D50_2deg.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DB_2deg-Abs-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec380_1_780-D50_2deg.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-IllumA_2deg-Abs.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D50_60yo2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DB_2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D65_20yo2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D50_10deg-Abs.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-N_2deg-CAT02.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D93_10deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DG_2deg-Abs.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-R2_2deg-CAT02-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-Y_2deg-CAT02-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Lab_int-D50_2deg-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D65_20yo2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-IllumA_10deg-Abs-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-IllumA_2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D65_80yo2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/XYZ_int-D65_2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/XYZ_int-D50_2deg-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-Y_2deg-Abs-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DB_2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DG_2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D50_80yo2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-R1_2deg-CAT02-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec380_10_730-D50_2deg-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-F11_2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec380_1_780-D50_2deg-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/XYZ_float-D65_2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-Y_2deg-Abs-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DB_2deg-CAT02-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-IllumA_2deg-Abs-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D65_60yo2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D93_2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DG_2deg-Abs-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D93_10deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D50_40yo2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D65_2deg-Abs-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec380_10_730-D50_2deg-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-N_2deg-Abs-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-R2_2deg-Abs.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-R1_2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D65_2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D65_40yo2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D65_2deg-Abs.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-R1_2deg-CAT02-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Lab_int-D65_2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-IllumA_10deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DG_2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-B_2deg-CAM-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D50_80yo2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DR_2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-G_2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D50_2deg-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D65_2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/XYZ_int-D65_2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-IllumA_2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-R1_2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-F11_2deg-CAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DB_2deg-CAT02.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-IllumA_2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Lab_float-D93_2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec380_1_780-D50_2deg-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D50_10deg-Abs-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-F11_2deg-CAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-N_2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DR_2deg-Abs-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-G_2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/XYZ_float-D50_2deg.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/XYZ_int-D65_2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-R1_2deg-Abs.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D93_10deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-IllumA_2deg-CAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Lab_float-D93_2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Lab_int-IllumA_2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-B_2deg-CAT02-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-G_2deg-Abs-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D65_10deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Lab_int-D65_2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-IllumA_10deg-Abs.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-R2_2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D65_2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D65_10deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-B_2deg-CAT02.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/XYZ_int-D50_2deg.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec380_10_730-D65_2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-B_2deg-CAM.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DR_2deg-Abs-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DR_2deg-CAT02.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D65_10deg-Abs.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-B_2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D65_2deg-Abs-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D65_80yo2deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DB_2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/XYZ_int-D65_2deg-MAT-Lvl2.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 65535 65535 65535 ULL[3] 32768 32768 32768 ULL[3] ULL"
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 28
+    Unable to Parse "multiProcessElementType" (AToB3Tag) Tag on line 26
+    
+    Unable to Parse './PCC/XYZ_int-D65_2deg-MAT-Lvl2-from-icc.xml'
+
+[TEST] ./PCC/XYZ_int-D50_2deg-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-R1_2deg-Abs-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec380_5_780-D50_2deg.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-DB_2deg-Abs-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D50_10deg-Abs-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D50_40yo2deg-MAT.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-Y_2deg-MAT-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./PCC/Spec400_10_700-D50_10deg-MAT-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./sRGB_v4_ICC_preference-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./CMYK-3DLUTs/CMYK-3DLUTs2.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,4] 0 0 0 0 ULL[4] ULL[4] 1 2 4 8 ULL[4] ULL(4) 15 ULL UL"
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 35
+    Unable to Parse "multiProcessElementType" (AToB0Tag) Tag on line 33
+    
+    Unable to Parse './CMYK-3DLUTs/CMYK-3DLUTs2-from-icc.xml'
+
+[TEST] ./ICS/Rec2100HlgFull-Part1.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./ICS/XYZ_float-D65_2deg-Part1.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./ICS/XYZ_float-D65_2deg-Part1-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./ICS/Spec400_10_700-D93_2deg-Part2.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] ULL(0) ULL(2) 9.9999999e-09 ULL ULL { ULL[1] ULL(3) U"
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 42
+    Unable to Parse "multiProcessElementType" (customToStandardPccTag) Tag on line 40
+    
+    Unable to Parse './ICS/Spec400_10_700-D93_2deg-Part2-from-icc.xml'
+
+[TEST] ./ICS/XYZ_int-D65_2deg-Part1.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./ICS/Rec2100HlgFull-Part2-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./ICS/Lab_float-D65_2deg-Part1.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./ICS/Lab_int-D65_2deg-Part1-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./ICS/Rec2100HlgFull-Part1-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./ICS/XYZ_int-IllumA_2deg-Part2.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] 1.9999695 ULL[3] ULL[0,3] } "
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 32
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 30
+    
+    Unable to Parse './ICS/XYZ_int-IllumA_2deg-Part2-from-icc.xml'
+
+[TEST] ./ICS/Rec2100HlgFull-Part2.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./ICS/XYZ_float-D65_2deg-Part1-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./ICS/XYZ_float-IllumA_2deg-Part2.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] ULL(0) ULL 360 ULL ULL[0,3] ULL[1] 9.9999999e-09 ULL "
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 46
+    Unable to Parse "multiProcessElementType" (customToStandardPccTag) Tag on line 44
+    
+    Unable to Parse './ICS/XYZ_float-IllumA_2deg-Part2-from-icc.xml'
+
+[TEST] ./ICS/Lab_int-D65_2deg-Part1.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./ICS/Rec2100HlgFull-Part1-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./ICS/Spec400_10_700-D50_2deg-Part1-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./ICS/Lab_float-IllumA_2deg-Part2.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0,3] ULL(0) ULL 360 ULL ULL[0,3] ULL[1] 9.9999999e-09 ULL "
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 46
+    Unable to Parse "multiProcessElementType" (customToStandardPccTag) Tag on line 44
+    
+    Unable to Parse './ICS/Lab_float-IllumA_2deg-Part2-from-icc.xml'
+
+[TEST] ./ICS/Lab_int-D65_2deg-Part1-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./ICS/Rec2100HlgFull-Part2-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./ICS/Lab_float-D65_2deg-Part1-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./ICS/XYZ_int-D65_2deg-Part1-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./ICS/Lab_int-IllumA_2deg-Part2.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL[0] 100 ULL ULL[1,2] 256 256 ULL[2] 128 128 ULL[2] ULL[0,3]"
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 32
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 30
+    
+    Unable to Parse './ICS/Lab_int-IllumA_2deg-Part2-from-icc.xml'
+
+[TEST] ./ICS/Rec2100HlgFull-Part3.icc
+  RESULT: FAIL (iccFromXml)
+    Invalid Operator "ULL"
+    Syntax Error occurred while parsing Main Calculator Function from "{ ULL(MxLm) ULL { ULL[0] } else { ULL(1) 800 ULL[0] } ULL(MnLm) "
+    Unable to parse element of type CIccMpeXmlCalculator
+    Unable to parse element (CalculatorElement) starting on line 32
+    Unable to Parse "multiProcessElementType" (AToB1Tag) Tag on line 30
+    
+    Unable to Parse './ICS/Rec2100HlgFull-Part3-from-icc.xml'
+
+[TEST] ./ICS/Spec400_10_700-D50_2deg-Part1.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./ICS/XYZ_int-D65_2deg-Part1-from-xml-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./ICS/Lab_float-D65_2deg-Part1-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./ICS/Spec400_10_700-D50_2deg-Part1-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./sRGB_v4_ICC_preference-from-xml.icc
+  RESULT: PASS (round-trip succeeded)
+
+[TEST] ./sRGB_v4_ICC_preference.icc
+  RESULT: PASS (round-trip succeeded)
+

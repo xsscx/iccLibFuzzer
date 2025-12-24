@@ -1,0 +1,236 @@
+# iccLibFuzzer - LibFuzzer & ClusterFuzzLite Integration
+
+ICC Color Profile Fuzzing Infrastructure with LLMCJF Integration
+
+## Host Configuration
+
+**System**: W5-2465X (32-core Xeon CPU)  
+**Storage**: RAID-1 2x Samsung 990 PRO 2TB NVMe M.2 PCIe Gen4  
+**Optimization**: Maximum performance fuzzing configuration  
+**Build Jobs**: `-j32` for optimal parallelization
+
+## LLMCJF Integration
+
+This project integrates **LLM Content Jockey Failure (LLMCJF)** prevention profiles for deterministic, technical-only operation in AI-assisted development workflows.
+
+**Configuration Files:**
+- `.llmcjf-config.yaml` - Root configuration
+- `llmcjf/STRICT_ENGINEERING_PROLOGUE.md` - Session prologue
+- `llmcjf/profiles/` - Behavioral control profiles
+- `llmcjf/reports/` - Post-mortem and regression analysis
+
+**Active Mode**: `strict-engineering` (minimal verbosity, technical-only responses)
+
+## Quick Start
+
+### 1. Verify Host Configuration
+```bash
+./fuzzing-control.sh verify
+```
+
+### 2. Build All Fuzzers
+```bash
+./build-all-sanitizers.sh
+# Or build individually:
+./build-fuzzers-local.sh address
+./build-fuzzers-local.sh undefined
+./build-fuzzers-local.sh memory
+```
+
+### 3. List Available Fuzzers
+```bash
+./fuzzing-control.sh list
+```
+
+### 4. Run Fuzzing
+```bash
+# Run with defaults (address sanitizer, 600s)
+./fuzzing-control.sh run
+
+# Run specific configuration
+./fuzzing-control.sh run address icc_profile_fuzzer 3600
+
+# Run all available fuzzers
+./run-local-fuzzer.sh
+```
+
+### 5. Reproduce Crashes
+```bash
+# Show POC inventory
+./fuzzing-control.sh pocs
+
+# Reproduce specific crash
+./fuzzing-control.sh reproduce crash-31ff7f659128d0da5ffadb7a52a7c545bcfd312a address
+
+# Use dedicated reproduce scripts
+./reproduce-heap-uaf-calculator.sh
+./reproduce-npd-spectral.sh
+```
+
+## Available Fuzzers
+
+**Core Fuzzers:**
+- `icc_profile_fuzzer` - Profile parsing and validation
+- `icc_io_fuzzer` - I/O operations
+- `icc_calculator_fuzzer` - Calculator operations
+- `icc_spectral_fuzzer` - Spectral data processing
+- `icc_multitag_fuzzer` - Multi-tag handling
+
+**XML Fuzzers:**
+- `icc_fromxml_fuzzer` - XML to ICC conversion
+- `icc_toxml_fuzzer` - ICC to XML conversion
+
+**Transform Fuzzers:**
+- `icc_apply_fuzzer` - Profile application
+- `icc_applyprofiles_fuzzer` - Multi-profile transforms
+- `icc_roundtrip_fuzzer` - Round-trip validation
+- `icc_link_fuzzer` - Profile linking
+- `icc_dump_fuzzer` - Profile dumping
+
+## POC Archive
+
+**Location**: `poc-archive/`  
+**Inventory**: `POC_INVENTORY_20251221_153921.md`
+
+**Current Artifacts** (as of 2025-12-21):
+- **Crashes**: 6 (5 valid + 1 empty)
+- **Leaks**: 3
+- **OOMs**: 2 (1 valid + 1 empty)
+- **Total**: 11 artifacts
+
+**Key PoCs:**
+- `crash-31ff7f659128d0da5ffadb7a52a7c545bcfd312a` - Heap UAF in calculator
+- `crash-05806b73da433dd63ab681e582dbf83640a4aac8` - Spectral null deref (XML)
+- `poc-heap-overflow-colorant.icc` - Colorant buffer overflow
+
+## CI/CD Integration
+
+### ClusterFuzzLite
+**Workflow**: `.github/workflows/clusterfuzzlite.yml`
+
+**Sanitizer Matrix**:
+- Address Sanitizer (ASan)
+- Undefined Behavior Sanitizer (UBSan)
+- Memory Sanitizer (MSan)
+
+**Triggers**:
+- Pull requests (paths: IccProfLib, IccXML, Tools, fuzzers)
+- Daily schedule (00:00 UTC)
+- Manual workflow_dispatch
+
+**Artifact Retention**: 90 days
+
+### Build & Test Workflows
+- `ci-pr-unix.yml` - Multi-OS builds
+- `ci-pr-unix-sb.yml` - Scan-build static analysis
+- `ci-pr-lint.yml` - Code quality checks
+
+## Documentation
+
+- **Build Guide**: [docs/build.md](docs/build.md)
+- **Fuzzing Optimization**: [docs/fuzzing-optimization.md](docs/fuzzing-optimization.md)
+- **Project Index**: [docs/index.md](docs/index.md)
+- **Copilot Instructions**: [.github/copilot-instructions.md](.github/copilot-instructions.md)
+
+## Project Structure
+
+```
+iccLibFuzzer/
+├── .llmcjf-config.yaml              # LLMCJF configuration
+├── llmcjf/                          # LLMCJF profiles and reports
+│   ├── profiles/                    # Behavioral control profiles
+│   ├── reports/                     # Post-mortem analysis
+│   └── STRICT_ENGINEERING_PROLOGUE.md
+├── fuzzers/                         # Fuzzer source code
+├── fuzzers-local/                   # Built fuzzer binaries
+│   ├── address/
+│   ├── undefined/
+│   └── memory/
+├── corpus/                          # Fuzzing corpora
+├── poc-archive/                     # Crash/leak/OOM artifacts
+├── IccProfLib/                      # Core ICC library
+├── IccXML/                          # XML support library
+├── Tools/                           # Command-line tools
+├── Testing/                         # Test profiles and scripts
+├── .clusterfuzzlite/                # CFL configuration
+│   ├── build.sh
+│   └── project.yaml
+├── .github/workflows/               # CI/CD workflows
+├── build-fuzzers-local.sh           # Local fuzzer builder
+├── build-all-sanitizers.sh          # Build all sanitizers
+├── fuzzing-control.sh               # Master control script
+└── docs/                            # Documentation
+```
+
+## Control Scripts
+
+### Master Control
+- `fuzzing-control.sh` - Unified fuzzing interface
+  - `verify` - Check host configuration
+  - `build-all` - Build all fuzzers
+  - `list` - Show available fuzzers
+  - `run` - Execute fuzzing
+  - `reproduce` - Replay crashes
+  - `pocs` - Show inventory
+  - `clean` - Remove build artifacts
+
+### Build Scripts
+- `build-all-sanitizers.sh` - Build all sanitizer variants
+- `build-fuzzers-local.sh <sanitizer>` - Build specific sanitizer
+- `build-standalone-fromxml-fuzzer.sh` - Standalone XML fuzzer
+
+### Reproduction Scripts
+- `reproduce-crash.sh` - Generic crash reproduction
+- `reproduce-heap-uaf-calculator.sh` - UAF reproduction
+- `reproduce-npd-spectral.sh` - Null pointer deref
+
+### Test Scripts
+- `test-heap-overflow-colorant.sh` - Heap overflow test
+- `test-uaf-fix.sh` - UAF fix validation
+- `test-oom-fix.sh` - OOM fix validation
+- `test-sparse-matrix-heap-fix.sh` - Sparse matrix test
+- Multiple PR-specific test scripts
+
+## Performance Optimization
+
+**Compiler Flags**:
+```bash
+CFLAGS="-O2 -march=native -fno-omit-frame-pointer"
+CXXFLAGS="-O2 -march=native -fno-omit-frame-pointer"
+```
+
+**Parallelization**:
+- CMake builds: `-j32`
+- Make builds: `-j32`
+- Fuzzer workers: 24 (detected cores)
+
+**Storage**:
+- NVMe PCIe Gen4 for fast corpus/artifact I/O
+- RAID-1 for reliability
+
+## Requirements
+
+**Build Dependencies**:
+- clang/clang++ (LibFuzzer support)
+- cmake (≥3.15)
+- libxml2-dev
+- libpng-dev
+- libjpeg-dev
+- libtiff-dev
+
+**Runtime**:
+- Linux (tested on Ubuntu)
+- 32-core CPU (optimized for W5-2465X)
+- NVMe storage (recommended)
+
+## License
+
+BSD 3-Clause License  
+Copyright (c) International Color Consortium
+
+## References
+
+- **ICC Specifications**: https://color.org/icc_specs2.xalter
+- **iccMAX Specification**: https://color.org/iccmax.xalter
+- **LLMCJF**: https://srd.cx/content-jockey/
+- **Upstream**: https://github.com/InternationalColorConsortium/DemoIccMAX

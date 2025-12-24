@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IccProfile>
+  <Header>
+    <PreferredCMMType>FFFFFFFFh</PreferredCMMType>
+    <ProfileVersion>166.65</ProfileVersion>
+    <ProfileSubClassVersion>166.65</ProfileSubClassVersion>
+    <ProfileDeviceClass>FFFFFFFFh</ProfileDeviceClass>
+    <DataColourSpace>FFFFFFFFh</DataColourSpace>
+    <PCS>FFFFFFFFh</PCS>
+    <CreationDateTime>65535-65535-65280T63487:65535:65456</CreationDateTime>
+    <PrimaryPlatform>FFFFFFFFh</PrimaryPlatform>
+    <ProfileFlags EmbeddedInFile="true" UseWithEmbeddedDataOnly="true" ExtendedRangePCS="true" VendorFlags="ffff29f4"/>
+    <DeviceManufacturer>FFFFFFFFh</DeviceManufacturer>
+    <DeviceModel>7AFFFFFFh</DeviceModel>
+    <DeviceAttributes ReflectiveOrTransparency="transparency" GlossyOrMatte="matte" MediaPolarity="negative" MediaColour="blackAndwhite" VendorSpecific="fffffffffffffff0"/>
+    <RenderingIntent>Unknown Intent '-1</RenderingIntent>
+    <PCSIlluminant>
+      <XYZNumber X="-255.031265258789" Y="-0.000015258789" Z="-0.000015258789"/>
+    </PCSIlluminant>
+    <ProfileCreator>FFFFAEDCh</ProfileCreator>
+    <ProfileID>02FFFFFFFF29FFFFFFFFFFFFFFFFFFFF</ProfileID>
+    <SpectralPCS>FFFFFFFFh</SpectralPCS>
+  </Header>
+  <Tags>
+  </Tags>
+</IccProfile>
