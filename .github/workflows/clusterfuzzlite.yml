@@ -37,6 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
+      max-parallel: 3
       matrix:
         sanitizer: [address, undefined, memory]
     steps:
@@ -44,6 +45,18 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           fetch-depth: 0
+
+      - name: Cache Fuzzing Corpus
+        uses: actions/cache@v4
+        with:
+          path: |
+            .clusterfuzzlite/corpus
+            build/corpus
+            out/*/corpus
+          key: corpus-${{ matrix.sanitizer }}-${{ github.run_id }}
+          restore-keys: |
+            corpus-${{ matrix.sanitizer }}-
+            corpus-
 
       - name: Sanitize Workflow Inputs
         id: sanitize

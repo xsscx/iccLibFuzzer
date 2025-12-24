@@ -1,4 +1,6 @@
-max_len = 10485760
-timeout = 25
-rss_limit_mb = 6144
+[libfuzzer]
+max_len = 15728640
+timeout = 45
+rss_limit_mb = 8192
 detect_leaks = 0
+use_value_profile = 1

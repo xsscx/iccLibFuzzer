@@ -1,4 +1,5 @@
 max_len = 5242880
 timeout = 30
-rss_limit_mb = 6144
+rss_limit_mb = 8192
 detect_leaks = 0
+use_value_profile = 1
