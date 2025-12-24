@@ -10,17 +10,22 @@ updated: "2025-12-23"
 host:
   model: "W5-2465X"
   cores: 32
-  detected_cores: 24  # nproc output
+  detected_cores: 24  # nproc output (verified 2025-12-24)
+  cpu_threads: 24  # /proc/cpuinfo processor count
   storage: "RAID-1 2x Samsung 990 PRO 2TB NVMe M.2 PCIe Gen4"
   optimization: "maximum_performance"
+  allowed_directories: ["all_subdirectories"]  # CWD and all subdirectories accessible
 
 # Build System Configuration
 build:
-  parallel_jobs: 32
+  parallel_jobs: 32  # W5-2465X 32-core optimization (24 detected)
   compiler_flags:
     native_optimization: "-march=native"
     fast_math: false  # Disabled for fuzzing accuracy
+    optimization_level: "-O2"
+    frame_pointer: "-fno-omit-frame-pointer"
   cmake_parallel_target_build: 32
+  make_jobs: "-j32"
 
 # Fuzzing Configuration
 fuzzing:
@@ -31,6 +36,25 @@ fuzzing:
   corpus_location: "./corpus"
   poc_archive: "./poc-archive"
   artifacts_retention_days: 90
+  fuzzers:
+    - icc_profile_fuzzer
+    - icc_calculator_fuzzer
+    - icc_spectral_fuzzer
+    - icc_fromxml_fuzzer
+    - icc_toxml_fuzzer
+    - icc_io_fuzzer
+    - icc_multitag_fuzzer
+    - icc_apply_fuzzer
+    - icc_applyprofiles_fuzzer
+    - icc_roundtrip_fuzzer
+    - icc_link_fuzzer
+    - icc_dump_fuzzer
+  libfuzzer_options:
+    max_len: 1048576
+    timeout: 60
+    rss_limit_mb: 6144
+    jobs: 32
+    workers: 24
   
 # LLMCJF Behavioral Profiles
 profiles:
@@ -53,11 +77,15 @@ documentation:
 
 # POC Management
 poc_management:
-  inventory: "poc-archive/POC_INVENTORY_20251221_153921.md"
-  crash_files: 6
-  leak_files: 3
-  oom_files: 2
-  total_artifacts: 11
+  location: "poc-archive/"
+  inventory_latest: "poc-archive/POC_INVENTORY_20251224_142339.md"
+  inventory_previous: "poc-archive/POC_INVENTORY_20251221_153921.md"
+  crash_files: 8
+  leak_files: 7
+  oom_files: 14
+  icc_files: 1
+  total_artifacts: 34  # Updated 2025-12-24
+  storage_size: "248KB"
 
 # CI/CD Integration
 cicd:
@@ -70,6 +98,8 @@ cicd:
 
 # Compliance
 compliance:
-  no_push: true
+  no_push: true  # LOCAL COMMITS ONLY - DO NOT PUSH
   local_commits_only: true
   repository_scope: "all_subdirectories"
+  allowed_directories: "cwd_and_all_subdirectories"
+  session_start: "2025-12-24T15:50:22Z"

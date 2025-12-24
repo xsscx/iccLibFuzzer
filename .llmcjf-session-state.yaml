@@ -1,0 +1,55 @@
+# LLMCJF Session State Tracker
+# Auto-generated: 2025-12-24T15:50:22Z
+
+session:
+  started: "2025-12-24T15:50:22Z"
+  mode: "strict_engineering"
+  compliance:
+    no_push: true
+    local_commits_only: true
+    all_subdirectories_allowed: true
+  
+profiles_loaded:
+  - llmcjf/STRICT_ENGINEERING_PROLOGUE.md
+  - llmcjf/profiles/strict_engineering.yaml
+  - llmcjf/profiles/llmcjf-hardmode-ruleset.json
+  - llmcjf/profiles/llm_cjf_heuristics.yaml
+  - llmcjf/profiles/llm_strict_engineering_profile.json
+
+documentation_consumed:
+  - docs/build.md
+  - docs/index.md
+  - docs/FUZZER_USAGE.md
+  - docs/fuzzing-optimization.md
+  - llmcjf/README.md
+  - NEXT_SESSION_START.md
+
+system_verification:
+  cpu_cores: 24
+  cpu_model: "W5-2465X"
+  storage_type: "NVMe PCIe Gen4 RAID-1"
+  build_parallelization: "-j32"
+  
+poc_archive_status:
+  total_files: 34
+  crashes: 8
+  leaks: 7
+  ooms: 14
+  icc_files: 1
+  scripts: 3
+  size: "248KB"
+  location: "poc-archive/"
+
+active_constraints:
+  - minimal_verbosity
+  - technical_only_responses
+  - no_narrative_padding
+  - no_content_jockey_behavior
+  - deterministic_operation
+  - focus_domains: ["fuzzing", "exploit_research", "ci_cd", "build_systems"]
+  
+service_control_surfaces:
+  - .llmcjf-config.yaml
+  - llmcjf/STRICT_ENGINEERING_PROLOGUE.md
+  - llmcjf/profiles/*.{yaml,json}
+  - .github/copilot-instructions.md
