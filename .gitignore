@@ -51,6 +51,7 @@ cifuzz-build-*/
 # Corpus (generated) - but allow .clusterfuzzlite/corpus for CI
 corpus/
 !.clusterfuzzlite/corpus/
+!.clusterfuzzlite/corpus-xml/
 
 # Compiled binaries
 *.so
