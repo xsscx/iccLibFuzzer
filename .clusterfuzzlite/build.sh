@@ -5,18 +5,18 @@
 # Reference: .llmcjf-config.yaml, llmcjf/profiles/strict_engineering.yaml
 
 # Clean all previous fuzzer binaries
-cd $SRC/ipatch/fuzzers
+cd $SRC/iccLibFuzzer/fuzzers
 make clean 2>/dev/null || true
 rm -f icc_profile_fuzzer icc_roundtrip_fuzzer icc_apply_fuzzer icc_dump_fuzzer icc_link_fuzzer
 
 # Use unique build directory to avoid any caching
 BUILD_DIR="build_$(date +%s)_$$"
-cd $SRC/ipatch/Build/Cmake
+cd $SRC/iccLibFuzzer/Build/Cmake
 
 # Remove any old build directories
 rm -rf build_* build/ CMakeCache.txt Makefile *.cmake CMakeFiles/
 
-cd $SRC/ipatch/Build/Cmake
+cd $SRC/iccLibFuzzer/Build/Cmake
 
 cmake -B $BUILD_DIR -S . \
   -DCMAKE_C_COMPILER=$CC \
@@ -31,19 +31,19 @@ cmake --build $BUILD_DIR --target IccXML2-static -j$(nproc) || true
 
 # Build TiffImg object for TIFF-dependent fuzzers
 $CXX $CXXFLAGS -frtti \
-  -I$SRC/ipatch/IccProfLib \
-  -I$SRC/ipatch/Tools/CmdLine/IccCommon \
-  -I$SRC/ipatch/Tools/CmdLine/IccApplyProfiles \
-  -c $SRC/ipatch/Tools/CmdLine/IccApplyProfiles/TiffImg.cpp \
+  -I$SRC/iccLibFuzzer/IccProfLib \
+  -I$SRC/iccLibFuzzer/Tools/CmdLine/IccCommon \
+  -I$SRC/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles \
+  -c $SRC/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/TiffImg.cpp \
   -o $BUILD_DIR/TiffImg.o
 
 # Build all fuzzers
 for fuzzer in icc_link_fuzzer icc_dump_fuzzer icc_apply_fuzzer icc_applyprofiles_fuzzer icc_roundtrip_fuzzer icc_profile_fuzzer icc_io_fuzzer icc_spectral_fuzzer icc_calculator_fuzzer icc_multitag_fuzzer; do
   $CXX $CXXFLAGS \
-    -I$SRC/ipatch/IccProfLib \
-    -I$SRC/ipatch/Tools/CmdLine/IccCommon \
-    -I$SRC/ipatch/Tools/CmdLine/IccApplyProfiles \
-    $SRC/ipatch/fuzzers/${fuzzer}.cpp \
+    -I$SRC/iccLibFuzzer/IccProfLib \
+    -I$SRC/iccLibFuzzer/Tools/CmdLine/IccCommon \
+    -I$SRC/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles \
+    $SRC/iccLibFuzzer/fuzzers/${fuzzer}.cpp \
     $BUILD_DIR/IccProfLib/libIccProfLib2-static.a \
     $LIB_FUZZING_ENGINE \
     -o $OUT/${fuzzer}
@@ -53,21 +53,21 @@ for fuzzer in icc_link_fuzzer icc_dump_fuzzer icc_apply_fuzzer icc_applyprofiles
   
   # Try multiple sources for seed corpus
   # 1. ClusterFuzzLite corpus directory (if exists)
-  if [ -d "$SRC/ipatch/.clusterfuzzlite/corpus" ]; then
-    cp $SRC/ipatch/.clusterfuzzlite/corpus/*.icc $OUT/${fuzzer}_seed_corpus/ 2>/dev/null || true
+  if [ -d "$SRC/iccLibFuzzer/.clusterfuzzlite/corpus" ]; then
+    cp $SRC/iccLibFuzzer/.clusterfuzzlite/corpus/*.icc $OUT/${fuzzer}_seed_corpus/ 2>/dev/null || true
   fi
   
   # 2. Testing directory
-  cp $SRC/ipatch/Testing/*.icc $OUT/${fuzzer}_seed_corpus/ 2>/dev/null || true
+  cp $SRC/iccLibFuzzer/Testing/*.icc $OUT/${fuzzer}_seed_corpus/ 2>/dev/null || true
   
   # 3. Root directory
-  cp $SRC/ipatch/*.icc $OUT/${fuzzer}_seed_corpus/ 2>/dev/null || true
+  cp $SRC/iccLibFuzzer/*.icc $OUT/${fuzzer}_seed_corpus/ 2>/dev/null || true
   
   echo "  Fuzzer $fuzzer: $(ls $OUT/${fuzzer}_seed_corpus 2>/dev/null | wc -l) seed files"
   
   # Copy dictionary for ICC binary fuzzers
-  if [ -f "$SRC/ipatch/fuzzers/icc_profile.dict" ]; then
-    cp $SRC/ipatch/fuzzers/icc_profile.dict $OUT/${fuzzer}.dict
+  if [ -f "$SRC/iccLibFuzzer/fuzzers/icc_profile.dict" ]; then
+    cp $SRC/iccLibFuzzer/fuzzers/icc_profile.dict $OUT/${fuzzer}.dict
   fi
 done
 
@@ -76,11 +76,11 @@ if [ -f "$BUILD_DIR/IccXML/libIccXML2-static.a" ]; then
   for fuzzer in icc_fromxml_fuzzer icc_toxml_fuzzer; do
     echo "Building $fuzzer with IccXML library..."
     $CXX $CXXFLAGS -frtti \
-      -I$SRC/ipatch/IccProfLib \
-      -I$SRC/ipatch/IccXML/IccLibXML \
+      -I$SRC/iccLibFuzzer/IccProfLib \
+      -I$SRC/iccLibFuzzer/IccXML/IccLibXML \
       -I/usr/include/libxml2 \
       -DHAVE_ICCXML \
-      $SRC/ipatch/fuzzers/${fuzzer}.cpp \
+      $SRC/iccLibFuzzer/fuzzers/${fuzzer}.cpp \
       $BUILD_DIR/IccXML/libIccXML2-static.a \
       $BUILD_DIR/IccProfLib/libIccProfLib2-static.a \
       -lxml2 \
@@ -91,18 +91,18 @@ if [ -f "$BUILD_DIR/IccXML/libIccXML2-static.a" ]; then
     mkdir -p $OUT/${fuzzer}_seed_corpus
     if [ "$fuzzer" = "icc_fromxml_fuzzer" ]; then
       # XML files for fromxml
-      if [ -d "$SRC/ipatch/.clusterfuzzlite/corpus-xml" ]; then
-        cp $SRC/ipatch/.clusterfuzzlite/corpus-xml/*.xml $OUT/${fuzzer}_seed_corpus/ 2>/dev/null || true
+      if [ -d "$SRC/iccLibFuzzer/.clusterfuzzlite/corpus-xml" ]; then
+        cp $SRC/iccLibFuzzer/.clusterfuzzlite/corpus-xml/*.xml $OUT/${fuzzer}_seed_corpus/ 2>/dev/null || true
       fi
-      find $SRC/ipatch/Testing -name "*.xml" -exec cp {} $OUT/${fuzzer}_seed_corpus/ \; 2>/dev/null || true
-      cp $SRC/ipatch/*.xml $OUT/${fuzzer}_seed_corpus/ 2>/dev/null || true
+      find $SRC/iccLibFuzzer/Testing -name "*.xml" -exec cp {} $OUT/${fuzzer}_seed_corpus/ \; 2>/dev/null || true
+      cp $SRC/iccLibFuzzer/*.xml $OUT/${fuzzer}_seed_corpus/ 2>/dev/null || true
     else
       # ICC files for toxml
-      if [ -d "$SRC/ipatch/.clusterfuzzlite/corpus" ]; then
-        cp $SRC/ipatch/.clusterfuzzlite/corpus/*.icc $OUT/${fuzzer}_seed_corpus/ 2>/dev/null || true
+      if [ -d "$SRC/iccLibFuzzer/.clusterfuzzlite/corpus" ]; then
+        cp $SRC/iccLibFuzzer/.clusterfuzzlite/corpus/*.icc $OUT/${fuzzer}_seed_corpus/ 2>/dev/null || true
       fi
-      cp $SRC/ipatch/Testing/*.icc $OUT/${fuzzer}_seed_corpus/ 2>/dev/null || true
-      cp $SRC/ipatch/*.icc $OUT/${fuzzer}_seed_corpus/ 2>/dev/null || true
+      cp $SRC/iccLibFuzzer/Testing/*.icc $OUT/${fuzzer}_seed_corpus/ 2>/dev/null || true
+      cp $SRC/iccLibFuzzer/*.icc $OUT/${fuzzer}_seed_corpus/ 2>/dev/null || true
     fi
     echo "  $fuzzer: $(ls $OUT/${fuzzer}_seed_corpus 2>/dev/null | wc -l) seed files"
   done
