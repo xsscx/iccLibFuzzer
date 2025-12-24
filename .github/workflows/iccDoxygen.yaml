@@ -26,10 +26,10 @@ jobs:
 
     steps:
     # Checkout the PatchIccMAX source code
-    - name: Checkout ipatchX
+    - name: Checkout iccLibFuzzerX
       uses: actions/checkout@v4
       with:
-        repository: xsscx/ipatch
+        repository: xsscx/iccLibFuzzer
         ref: master
 
     # Configure Git identity for any automated commits or artifact tagging
@@ -58,8 +58,8 @@ jobs:
     # Generate docs
     - name: Configure & Build Documentation
       run: |
-        wget https://raw.githubusercontent.com/xsscx/ipatch/refs/heads/re2311/contrib/Doxyfile
-        wget https://raw.githubusercontent.com/xsscx/ipatch/refs/heads/re2311/contrib/header.html
+        wget https://raw.githubusercontent.com/xsscx/iccLibFuzzer/refs/heads/re2311/contrib/Doxyfile
+        wget https://raw.githubusercontent.com/xsscx/iccLibFuzzer/refs/heads/re2311/contrib/header.html
         doxygen Doxyfile
 
     # Upload HTML 

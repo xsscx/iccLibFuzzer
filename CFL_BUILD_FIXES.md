@@ -55,12 +55,12 @@ cp Testing/*.icc .clusterfuzzlite/corpus/
 ---
 
 ### Issue 3: Wrong Main Repo in project.yaml
-**Error**: References `xsscx/ipatch` instead of correct repo
+**Error**: References `xsscx/iccLibFuzzer` instead of correct repo
 
 **Fix Applied**:
 ```yaml
 # Changed from:
-main_repo: 'https://github.com/xsscx/ipatch'
+main_repo: 'https://github.com/xsscx/iccLibFuzzer'
 
 # To:
 main_repo: 'https://github.com/xsscx/iccLibFuzzer'
@@ -172,7 +172,7 @@ Issue #2: Missing seed corpus
   - Provides minimal but representative fuzzing seeds
 
 Issue #3: Wrong repository in project.yaml
-  - Changed from xsscx/ipatch to xsscx/iccLibFuzzer
+  - Changed from xsscx/iccLibFuzzer to xsscx/iccLibFuzzer
   - Ensures CFL builds from correct repo
 
 Verified: Base classes are polymorphic (virtual destructor)

@@ -44,8 +44,8 @@ jobs:
           lcov gcovr tree moreutils liblcms2-utils liblcms2-dev liblcms2-2
     - name: Get research branch
       run: |
-        git clone https://github.com/xsscx/ipatch.git
-        cd ipatch
+        git clone https://github.com/xsscx/iccLibFuzzer.git
+        cd iccLibFuzzer
         git checkout re2311
     - name: Decscription
       run: |
@@ -62,7 +62,7 @@ jobs:
 
     - name: Configure & Build Little ICC Scanner Demo
       run: |
-        cd ipatch/contrib/Build/cmake/cov
+        cd iccLibFuzzer/contrib/Build/cmake/cov
         export CC=clang
         export CXX=clang++
         export PATH="/usr/lib/llvm-17/bin:$PATH"
@@ -75,7 +75,7 @@ jobs:
         # tree -a 2>&1 | tee tree.log
     - name: Run Little ICC Scanner Demo
       run: |
-          cd ipatch/contrib/Build/cmake/cov
+          cd iccLibFuzzer/contrib/Build/cmake/cov
           # Add Tools/* to PATH
           for d in ./*; do
             [ -d "$d" ] && export PATH="$(realpath "$d"):$PATH"
@@ -119,34 +119,34 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: iccmax-cov-binaries
-        path: ipatch/contrib/Build/cmake/cov/**/*
+        path: iccLibFuzzer/contrib/Build/cmake/cov/**/*
 
     - name: Upload coverage HTML report
       uses: actions/upload-artifact@v4
       with:
         name: html-coverage-report
-        path: ipatch/contrib/Build/cmake/cov/cov_html/
+        path: iccLibFuzzer/contrib/Build/cmake/cov/cov_html/
 
     - name: Upload build logs and tree
       uses: actions/upload-artifact@v4
       with:
         name: build-logs
         path: |
-          ipatch/contrib/Build/cmake/cov/build.log
-          ipatch/contrib/Build/cmake/cov/check.log
-          ipatch/contrib/Build/cmake/cov/tree.txt
+          iccLibFuzzer/contrib/Build/cmake/cov/build.log
+          iccLibFuzzer/contrib/Build/cmake/cov/check.log
+          iccLibFuzzer/contrib/Build/cmake/cov/tree.txt
     - name: Upload diagnostics
       uses: actions/upload-artifact@v4
       with:
         name: diagnostics
         path: |
-          ipatch/contrib/Build/cmake/cov/sysinfo.txt
-          ipatch/contrib/Build/cmake/cov/env_dump.txt
+          iccLibFuzzer/contrib/Build/cmake/cov/sysinfo.txt
+          iccLibFuzzer/contrib/Build/cmake/cov/env_dump.txt
     - name: Summary Report
       if: always()
       run: |
         echo "### 🧪 Ubuntu CI Build Summary" >> $GITHUB_STEP_SUMMARY
-        echo "- ✅ Instrumented Build: ipatch/Build/" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ Instrumented Build: iccLibFuzzer/Build/" >> $GITHUB_STEP_SUMMARY
         echo "- 📦 Binaries: iccdev-cov-binaries" >> $GITHUB_STEP_SUMMARY
         echo "- 📊 Coverage: html-coverage-report (LLVM format)" >> $GITHUB_STEP_SUMMARY
         echo "- 🧾 Logs: build.log, tree.txt, sysinfo.txt" >> $GITHUB_STEP_SUMMARY

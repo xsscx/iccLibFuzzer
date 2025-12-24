@@ -7,7 +7,7 @@ SANITIZER="${1:-address}"
 FUZZER="${2:-icc_profile_fuzzer}"
 DURATION="${3:-60}"
 
-IMAGE_NAME="ipatch-iccdev-fuzzer:latest"
+IMAGE_NAME="iccLibFuzzer-iccdev-fuzzer:latest"
 
 echo "Building Docker image: $IMAGE_NAME"
 docker build -f Dockerfile.iccdev-fuzzer -t "$IMAGE_NAME" .

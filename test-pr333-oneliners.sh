@@ -6,7 +6,7 @@ echo "=== PR #333 Testing One-Liners ==="
 echo ""
 
 echo "1. Clone and setup:"
-echo "git clone https://github.com/xsscx/ipatch.git && cd ipatch"
+echo "git clone https://github.com/xsscx/iccLibFuzzer.git && cd iccLibFuzzer"
 echo ""
 
 echo "2. Checkout PR #333:"

@@ -9,16 +9,16 @@ echo ""
 
 # Test with crash PoC
 echo "Testing crash PoC..."
-/home/xss/copilot/ipatch/Build/Tools/IccToXml/iccToXml \
-  /home/xss/copilot/ipatch/fuzzers-local/address/crashes/crash-e4523e17c2de76693b4b205e828e5c053130b45b \
+/home/xss/copilot/iccLibFuzzer/Build/Tools/IccToXml/iccToXml \
+  /home/xss/copilot/iccLibFuzzer/fuzzers-local/address/crashes/crash-e4523e17c2de76693b4b205e828e5c053130b45b \
   /tmp/crash_test.xml 2>&1 | grep -E "ERROR|heap-buffer" && echo "FAIL: Still crashes" || echo "PASS: No crash"
 
 echo ""
 
 # Test with valid profile  
 echo "Testing valid profile..."
-/home/xss/copilot/ipatch/Build/Tools/IccToXml/iccToXml \
-  /home/xss/copilot/ipatch/corpus/sRGB_v4_ICC_preference.icc \
+/home/xss/copilot/iccLibFuzzer/Build/Tools/IccToXml/iccToXml \
+  /home/xss/copilot/iccLibFuzzer/corpus/sRGB_v4_ICC_preference.icc \
   /tmp/valid_test.xml 2>&1 >/dev/null && echo "PASS: Valid profile works" || echo "FAIL: Valid profile broken"
 
 echo ""

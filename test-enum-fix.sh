@@ -8,7 +8,7 @@ echo "Issue: load of value 4294967295 (0xFFFFFFFF) not valid for enum"
 echo "Fix: Load as icUInt32Number before validation"
 echo ""
 
-grep -A5 "UB FIX.*mcs" /home/xss/copilot/ipatch/IccProfLib/IccCmm.cpp
+grep -A5 "UB FIX.*mcs" /home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmm.cpp
 
 echo ""
 echo "=== Fix Applied Successfully ===" 

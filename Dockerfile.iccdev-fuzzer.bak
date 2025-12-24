@@ -19,14 +19,14 @@ RUN mkdir -p /var/lib/apt/lists/partial && \
     libclang-rt-18-dev \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /src/ipatch
+WORKDIR /src/iccLibFuzzer
 
-# Copy source (assumes running from ipatch repo root)
-COPY . /src/ipatch/
+# Copy source (assumes running from iccLibFuzzer repo root)
+COPY . /src/iccLibFuzzer/
 
 # Build fuzzers with Address Sanitizer
 RUN mkdir -p /fuzzers/address && \
-    cd /src/ipatch/Build/Cmake && \
+    cd /src/iccLibFuzzer/Build/Cmake && \
     BUILD_DIR="build_asan_$(date +%s)" && \
     cmake -B "$BUILD_DIR" -S . \
       -DCMAKE_C_COMPILER=clang-18 \
@@ -36,23 +36,23 @@ RUN mkdir -p /fuzzers/address && \
       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
       -DBUILD_SHARED_LIBS=OFF && \
     cmake --build "$BUILD_DIR" --target IccProfLib2-static -j$(nproc) && \
-    cd /src/ipatch && \
+    cd /src/iccLibFuzzer && \
     for fuzzer in icc_link_fuzzer icc_dump_fuzzer icc_apply_fuzzer icc_roundtrip_fuzzer icc_profile_fuzzer icc_io_fuzzer; do \
       clang++-18 -O1 -fno-omit-frame-pointer -gline-tables-only \
         -fsanitize=address,fuzzer \
-        -I/src/ipatch/IccProfLib \
-        -I/src/ipatch/Tools/CmdLine/IccCommon \
-        -I/src/ipatch/Tools/CmdLine/IccApplyProfiles \
-        /src/ipatch/fuzzers/${fuzzer}.cpp \
-        /src/ipatch/Build/Cmake/${BUILD_DIR}/IccProfLib/libIccProfLib2-static.a \
+        -I/src/iccLibFuzzer/IccProfLib \
+        -I/src/iccLibFuzzer/Tools/CmdLine/IccCommon \
+        -I/src/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles \
+        /src/iccLibFuzzer/fuzzers/${fuzzer}.cpp \
+        /src/iccLibFuzzer/Build/Cmake/${BUILD_DIR}/IccProfLib/libIccProfLib2-static.a \
         -o /fuzzers/address/${fuzzer}; \
     done && \
     mkdir -p /fuzzers/address/corpus && \
-    cp /src/ipatch/Testing/*.icc /fuzzers/address/corpus/ 2>/dev/null || true
+    cp /src/iccLibFuzzer/Testing/*.icc /fuzzers/address/corpus/ 2>/dev/null || true
 
 # Build fuzzers with Undefined Behavior Sanitizer
 RUN mkdir -p /fuzzers/undefined && \
-    cd /src/ipatch/Build/Cmake && \
+    cd /src/iccLibFuzzer/Build/Cmake && \
     BUILD_DIR="build_ubsan_$(date +%s)" && \
     cmake -B "$BUILD_DIR" -S . \
       -DCMAKE_C_COMPILER=clang-18 \
@@ -62,15 +62,15 @@ RUN mkdir -p /fuzzers/undefined && \
       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
       -DBUILD_SHARED_LIBS=OFF && \
     cmake --build "$BUILD_DIR" --target IccProfLib2-static -j$(nproc) && \
-    cd /src/ipatch && \
+    cd /src/iccLibFuzzer && \
     for fuzzer in icc_link_fuzzer icc_dump_fuzzer icc_apply_fuzzer icc_roundtrip_fuzzer icc_profile_fuzzer icc_io_fuzzer; do \
       clang++-18 -O1 -fno-omit-frame-pointer -gline-tables-only \
         -fsanitize=undefined,fuzzer \
-        -I/src/ipatch/IccProfLib \
-        -I/src/ipatch/Tools/CmdLine/IccCommon \
-        -I/src/ipatch/Tools/CmdLine/IccApplyProfiles \
-        /src/ipatch/fuzzers/${fuzzer}.cpp \
-        /src/ipatch/Build/Cmake/${BUILD_DIR}/IccProfLib/libIccProfLib2-static.a \
+        -I/src/iccLibFuzzer/IccProfLib \
+        -I/src/iccLibFuzzer/Tools/CmdLine/IccCommon \
+        -I/src/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles \
+        /src/iccLibFuzzer/fuzzers/${fuzzer}.cpp \
+        /src/iccLibFuzzer/Build/Cmake/${BUILD_DIR}/IccProfLib/libIccProfLib2-static.a \
         -o /fuzzers/undefined/${fuzzer}; \
     done && \
     cp -r /fuzzers/address/corpus /fuzzers/undefined/

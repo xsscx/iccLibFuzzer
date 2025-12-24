@@ -272,7 +272,7 @@ The PR fuzzing workflow has been comprehensively reviewed and meets all critical
 - ✅ Artifacts uploaded correctly
 - ✅ No errors in logs
 
-**Last Successful Run:** https://github.com/xsscx/ipatch/actions/runs/20396621117
+**Last Successful Run:** https://github.com/xsscx/iccLibFuzzer/actions/runs/20396621117
 
 ---
 

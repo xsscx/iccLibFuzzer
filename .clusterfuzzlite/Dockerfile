@@ -6,6 +6,6 @@ RUN apt-get update && apt-get install -y \
   libjpeg-turbo8-dev \
   libtiff-dev \
   nlohmann-json3-dev
-COPY . $SRC/ipatch
-WORKDIR $SRC/ipatch
+COPY . $SRC/iccLibFuzzer
+WORKDIR $SRC/iccLibFuzzer
 COPY .clusterfuzzlite/build.sh $SRC/

@@ -6,7 +6,7 @@ set -e
 echo "=== Testing OOM Fix for CIccLocalizedUnicode ==="
 
 # Build test fuzzer
-cd /home/xss/copilot/ipatch/fuzzers
+cd /home/xss/copilot/iccLibFuzzer/fuzzers
 clang++ -g -O2 -fsanitize=address,fuzzer \
   -I../IccProfLib \
   icc_profile_fuzzer.cpp \

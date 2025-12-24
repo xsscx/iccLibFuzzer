@@ -33,7 +33,7 @@ This is **backwards** because:
 ## Crash Symptoms
 
 ```
-/src/ipatch/fuzzers/icc_profile_fuzzer.cpp:124:9: runtime error: member call on address 0x564ef0251d00 which does not point to an object of type 'CIccProfile'
+/src/iccLibFuzzer/fuzzers/icc_profile_fuzzer.cpp:124:9: runtime error: member call on address 0x564ef0251d00 which does not point to an object of type 'CIccProfile'
 0x564ef0251d00: note: object has invalid vptr
  00 00 00 00  00 00 00 00 ...
               ^~~~~~~~~~~~~~~~~~~~~~~

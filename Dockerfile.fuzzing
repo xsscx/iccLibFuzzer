@@ -23,10 +23,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Clone and build with fuzzer instrumentation
 WORKDIR /src
-COPY . /src/ipatch
+COPY . /src/iccLibFuzzer
 
 # Build library with fuzzer instrumentation
-RUN cd /src/ipatch && \
+RUN cd /src/iccLibFuzzer && \
     sed -i '/find_package(wxWidgets/,/endif()/ s/^/# /' Build/Cmake/CMakeLists.txt && \
     cmake -B build -S Build/Cmake \
       -DCMAKE_C_COMPILER=clang-18 \
@@ -38,19 +38,19 @@ RUN cd /src/ipatch && \
     cmake --build build --target IccProfLib2-static -j$(nproc)
 
 # Build all fuzzers
-RUN cd /src/ipatch && \
+RUN cd /src/iccLibFuzzer && \
     for fuzzer in fuzzers/*.cpp; do \
       name=$(basename "$fuzzer" .cpp); \
       clang++-18 -g -fsanitize=address,fuzzer \
-        -I/src/ipatch/IccProfLib \
+        -I/src/iccLibFuzzer/IccProfLib \
         "$fuzzer" \
         build/IccProfLib/libIccProfLib2-static.a \
-        -o "/src/ipatch/$name"; \
+        -o "/src/iccLibFuzzer/$name"; \
     done
 
 # Create corpus directory
 RUN mkdir -p /corpus && \
-    cp /src/ipatch/Testing/*.icc /corpus/ 2>/dev/null || true
+    cp /src/iccLibFuzzer/Testing/*.icc /corpus/ 2>/dev/null || true
 
-WORKDIR /src/ipatch
+WORKDIR /src/iccLibFuzzer
 CMD ["/bin/bash"]
