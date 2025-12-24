@@ -20,9 +20,10 @@ echo -e "${GREEN}======================================${NC}"
 echo "Host: W5-2465X (32-core)"
 echo "Build Jobs: -j32"
 echo "LLMCJF Mode: strict-engineering"
+echo "Note: Memory sanitizer requires libc++ - only available in CI/CD containers"
 echo ""
 
-SANITIZERS=("address" "undefined" "memory")
+SANITIZERS=("address" "undefined")
 FAILED=()
 
 for sanitizer in "${SANITIZERS[@]}"; do
