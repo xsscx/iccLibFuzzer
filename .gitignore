@@ -48,8 +48,9 @@ artifacts/downloads/
 cifuzz-build-*/
 *.tar
 
-# Corpus (generated)
+# Corpus (generated) - but allow .clusterfuzzlite/corpus for CI
 corpus/
+!.clusterfuzzlite/corpus/
 
 # Compiled binaries
 *.so
