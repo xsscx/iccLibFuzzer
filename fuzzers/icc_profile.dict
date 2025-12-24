@@ -109,3 +109,112 @@
 "\x01\xff\x00\x1a"
 "dLab"
 "\x00\x00\x00\x00\x00\x00\x00i"
+
+# ====================================================================
+# Priority 2.3 Dictionary Enhancements (2025-12-24)
+# ICC v5 and edge-case tokens for improved mutation coverage
+# ====================================================================
+
+# ICC v5 specific signatures
+"v5IC"
+"mCS "
+"brdf"
+"gamA"
+
+# MPE element types (Multi-Process Elements)
+"cvst"
+"matf"
+"bACS"
+"tint"
+"mAB "
+"mBA "
+"bmd "
+"emlm"
+
+# Edge case values - boundary conditions
+"\xff\xff\xff\xfe"  # Near-max uint32
+"\x00\x00\x10\x00"  # Common element count (4096)
+"\x00\x00\x00\x01"  # Min non-zero
+"\x7f\xff\xff\xff"  # Max int32
+"\x80\x00\x00\x00"  # Min int32
+"\x00\x01\x00\x00"  # 65536
+
+# Multi-channel color space signatures (2-15 channels)
+"2CLR"
+"3CLR"
+"4CLR"
+"5CLR"
+"6CLR"
+"7CLR"
+"8CLR"
+"9CLR"
+"ACLR"
+"BCLR"
+"CCLR"
+"DCLR"
+"ECLR"
+"FCLR"
+
+# Device manufacturer signatures
+"MSFT"
+"APPL"
+"SGI "
+"SUNW"
+"TGNT"
+"ADBE"
+"HPco"
+
+# Observer/Illuminant combinations (spectral)
+"D50 "
+"D55 "
+"D65 "
+"D75 "
+"D93 "
+"F2  "
+"F7  "
+"F11 "
+"A   "
+"C   "
+"E   "
+
+# Common tag counts (stress testing)
+"\x00\x00\x00\x09"  # 9 tags (typical RGB)
+"\x00\x00\x00\x0c"  # 12 tags
+"\x00\x00\x00\x14"  # 20 tags
+"\x00\x00\x00\x32"  # 50 tags (stress test)
+"\x00\x00\x00\x64"  # 100 tags (extreme)
+
+# Profile version numbers
+"\x02\x00\x00\x00"  # v2.0.0
+"\x02\x10\x00\x00"  # v2.1.0
+"\x04\x00\x00\x00"  # v4.0.0
+"\x04\x30\x00\x00"  # v4.3.0
+"\x05\x00\x00\x00"  # v5.0.0
+
+# Rendering intents
+"\x00\x00\x00\x00"  # Perceptual
+"\x00\x00\x00\x01"  # Relative Colorimetric
+"\x00\x00\x00\x02"  # Saturation
+"\x00\x00\x00\x03"  # Absolute Colorimetric
+
+# Device class signatures
+"scnr"  # Scanner
+"mntr"  # Monitor
+"prtr"  # Printer
+"link"  # DeviceLink
+"abst"  # Abstract
+"spac"  # ColorSpace
+"nmcl"  # NamedColor
+
+# Profile/Device Attributes flags
+"\x00\x00\x00\x00\x00\x00\x00\x00"  # None
+"\x00\x00\x00\x01\x00\x00\x00\x00"  # Reflective
+"\x00\x00\x00\x00\x00\x00\x00\x01"  # Glossy
+"\x00\x00\x00\x01\x00\x00\x00\x01"  # Reflective + Glossy
+
+# Spectral wavelength ranges (common)
+"\x00\x00\x01\x90"  # 400nm
+"\x00\x00\x02\xbc"  # 700nm
+"\x00\x00\x00\x0a"  # 10nm steps
+"\x00\x00\x00\x1f"  # 31 samples (400-700nm @ 10nm)
+

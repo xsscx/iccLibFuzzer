@@ -493,3 +493,85 @@ cicpTag
 "\xff\xff\xff\xfe"
 "\x40\x00\x00\x00"
 
+
+# ====================================================================
+# Priority 2.3 Comprehensive Dictionary Enhancements
+# ====================================================================
+
+# ICC v5 MPE Calculator operations
+"add "
+"sub "
+"mul "
+"div "
+"sqrt"
+"sqr "
+"cube"
+"pow "
+"log "
+"exp "
+"sin "
+"cos "
+"tan "
+"asin"
+"acos"
+"atan"
+"min "
+"max "
+"and "
+"or  "
+"not "
+"if  "
+"else"
+
+# BiSpectral signatures
+"bspc"
+"bs00"
+"bs01"
+
+# Sparse matrix types
+"smtx"
+"sp00"
+
+# Gamut boundary descriptor
+"gbd "
+"gbda"
+
+# Measurement types
+"meas"
+"mfl1"
+"mfl2"
+
+# Technology signatures
+"dcam"
+"fscn"
+"ijet"
+"twax"
+"offs"
+"silk"
+"flex"
+
+# Colorimetric intent image state
+"scoe"
+"sape"
+"fpce"
+
+# PCS tag signatures
+"pcs "
+"XYZ "
+"Lab "
+
+# Spectral data types
+"S400"
+"S700"
+"R001"
+"R002"
+
+# Critical size boundaries
+"\x00\x00\x00\x84"  # 132 bytes (profile header)
+"\x00\x00\x00\x80"  # 128 bytes
+"\x00\x00\x04\x00"  # 1024 bytes
+"\x00\x00\x10\x00"  # 4096 bytes
+"\x00\x01\x00\x00"  # 65536 bytes
+"\x00\x10\x00\x00"  # 1MB
+"\x01\x00\x00\x00"  # 16MB
+
