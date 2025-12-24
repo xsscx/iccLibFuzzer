@@ -94,7 +94,7 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
     // DEEP EXECUTION: Apply actual color transformations via CMM
     CIccCmm *pCmm = new CIccCmm();
     if (pCmm) {
-      if (pCmm->AddXform(pIcc, icPerceptual)) {
+      if (pCmm->AddXform(pIcc, icPerceptual) == icCmmStatOk) {
         // CMM now owns pIcc and will delete it in destructor
         // Must call Begin() before Apply() to initialize m_pApply
         if (pCmm->Begin() == icCmmStatOk) {

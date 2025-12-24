@@ -80,7 +80,7 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
         pProfile->m_Header.colorSpace == icSigTransmisionSpectralData ||
         pProfile->m_Header.pcs == icSigReflectanceSpectralPcsData) {
       CIccCmm *pCmm = new CIccCmm();
-      if (pCmm && pCmm->AddXform(pProfile, icPerceptual)) {
+      if (pCmm && pCmm->AddXform(pProfile, icPerceptual) == icCmmStatOk) {
         icFloatNumber spectral_in[16] = {0.5f};
         icFloatNumber spectral_out[16];
         pCmm->Apply(spectral_out, spectral_in);

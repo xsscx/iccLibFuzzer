@@ -76,7 +76,7 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
           if (nInputChannels > 0 && nInputChannels <= 16 &&
               nOutputChannels > 0 && nOutputChannels <= 16) {
             CIccCmm *pCmm = new CIccCmm();
-            if (pCmm && pCmm->AddXform(pProfile, icPerceptual)) {
+            if (pCmm && pCmm->AddXform(pProfile, icPerceptual) == icCmmStatOk) {
               icFloatNumber test_values[][16] = {
                 {0.0f}, {1.0f}, {0.5f}, {NAN}, {INFINITY}
               };
