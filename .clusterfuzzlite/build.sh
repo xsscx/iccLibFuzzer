@@ -22,7 +22,7 @@ cmake -B $BUILD_DIR -S . \
   -DCMAKE_C_COMPILER=$CC \
   -DCMAKE_CXX_COMPILER=$CXX \
   -DCMAKE_C_FLAGS="$CFLAGS" \
-  -DCMAKE_CXX_FLAGS="$CXXFLAGS" \
+  -DCMAKE_CXX_FLAGS="$CXXFLAGS -frtti" \
   -DCMAKE_BUILD_TYPE=RelWithDebInfo \
   -DBUILD_SHARED_LIBS=OFF
 
@@ -30,7 +30,7 @@ cmake --build $BUILD_DIR --target IccProfLib2-static -j$(nproc)
 cmake --build $BUILD_DIR --target IccXML2-static -j$(nproc) || true
 
 # Build TiffImg object for TIFF-dependent fuzzers
-$CXX $CXXFLAGS \
+$CXX $CXXFLAGS -frtti \
   -I$SRC/ipatch/IccProfLib \
   -I$SRC/ipatch/Tools/CmdLine/IccCommon \
   -I$SRC/ipatch/Tools/CmdLine/IccApplyProfiles \
@@ -62,7 +62,7 @@ done
 if [ -f "$BUILD_DIR/IccXML/libIccXML2-static.a" ]; then
   for fuzzer in icc_fromxml_fuzzer icc_toxml_fuzzer; do
     echo "Building $fuzzer with IccXML library..."
-    $CXX $CXXFLAGS \
+    $CXX $CXXFLAGS -frtti \
       -I$SRC/ipatch/IccProfLib \
       -I$SRC/ipatch/IccXML/IccLibXML \
       -I/usr/include/libxml2 \
