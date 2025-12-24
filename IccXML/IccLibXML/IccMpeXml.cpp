@@ -1562,7 +1562,9 @@ bool CIccMpeXmlTintArray::ToXml(std::string &xml, std::string blanks/* = ""*/)
 
   IIccExtensionTag *pTagEx;
   if (m_Array && (pTagEx=m_Array->GetExtension()) && !strcmp(pTagEx->GetExtClassName(), "CIccTagXml")) {
-    CIccTagXml *pTagXml = (CIccTagXml*)pTagEx;
+    CIccTagXml *pTagXml = dynamic_cast<CIccTagXml*>(pTagEx);
+    if (!pTagXml)
+      return false;
     const icChar* tagSig = icGetTagSigTypeName(m_Array->GetType());
 
     snprintf(line, bufSize, "  <%s>\n",  tagSig); //parent node is the tag type
@@ -1621,7 +1623,9 @@ bool CIccMpeXmlTintArray::ParseXml(xmlNode *pNode, std::string &parseStr)
     IIccExtensionTag *pExt;
 
     if (pTag && (pExt = pTag->GetExtension()) && !strcmp(pExt->GetExtClassName(), "CIccTagXml")) {
-      CIccTagXml* pXmlTag = (CIccTagXml*)pExt;
+      CIccTagXml* pXmlTag = dynamic_cast<CIccTagXml*>(pExt);
+      if (!pXmlTag)
+        return false;
       xmlAttr *attr;
 
       if (pXmlTag->ParseXml(pNode->children, parseStr)) {
@@ -2306,7 +2310,9 @@ bool CIccMpeXmlCalculator::ToXml(std::string &xml, std::string blanks/* = ""*/)
       if (m_SubElem[i]) {
         IIccExtensionMpe *pExt = m_SubElem[i]->GetExtension();
         if (pExt && !strcmp(pExt->GetExtClassName(), "CIccMpeXml")) {
-          CIccMpeXml *pMpe = (CIccMpeXml*)pExt;
+          CIccMpeXml *pMpe = dynamic_cast<CIccMpeXml*>(pExt);
+          if (!pMpe)
+            return false;
           pMpe->ToXml(xml, blanks2+"  ");
         }
         else {
@@ -2590,8 +2596,9 @@ bool CIccMpeXmlCalculator::ParseImport(xmlNode *pNode, std::string importPath, s
         }
 
         if (!strcmp(pMpe->GetClassName(), "CIccMpeXmlCalculator")) {
-          CIccMpeXmlCalculator *pSubCalc = (CIccMpeXmlCalculator*)pMpe;
-          pSubCalc->m_sImport = importPath;
+          CIccMpeXmlCalculator *pSubCalc = dynamic_cast<CIccMpeXmlCalculator*>(pMpe);
+          if (pSubCalc)
+            pSubCalc->m_sImport = importPath;
         }
 
         xmlAttr *attr;
@@ -2599,7 +2606,9 @@ bool CIccMpeXmlCalculator::ParseImport(xmlNode *pNode, std::string importPath, s
 
         if (pExt) {
           if (!strcmp(pExt->GetExtClassName(), "CIccMpeXml")) {
-            CIccMpeXml* pXmlMpe = (CIccMpeXml*)pExt;
+            CIccMpeXml* pXmlMpe = dynamic_cast<CIccMpeXml*>(pExt);
+            if (!pXmlMpe)
+              return false;
 
             if (pXmlMpe->ParseXml(pNext, parseStr)) {
               if ((attr = icXmlFindAttr(pNode, "Reserved"))) {

@@ -226,7 +226,7 @@ bool CIccProfileXml::ToXmlWithBlanks(std::string &xml, std::string blanks)
       CIccTag *pTag = FindTag(i->TagInfo.sig);
 
       if (pTag) {
-        CIccTagXml *pTagXml = (CIccTagXml*)(pTag->GetExtension());
+        CIccTagXml *pTagXml = dynamic_cast<CIccTagXml*>(pTag->GetExtension());
         if (pTagXml) {
           IccOffsetTagSigMap::iterator prevTag = offsetTags.find(i->TagInfo.offset);
           const icChar *tagName = Fmt.GetTagSigName(i->TagInfo.sig);
@@ -681,7 +681,9 @@ bool CIccProfileXml::ParseTag(xmlNode *pNode, std::string &parseStr)
         pExt = pTag->GetExtension();
 
       if (pExt && !strcmp(pExt->GetExtClassName(), "CIccTagXml")) {
-        CIccTagXml* pXmlTag = (CIccTagXml*)pExt;
+        CIccTagXml* pXmlTag = dynamic_cast<CIccTagXml*>(pExt);
+        if (!pXmlTag)
+          return false;
 
         if (pXmlTag && pXmlTag->ParseXml(pTypeNode->children, parseStr)) {
           if ((attr = icXmlFindAttr(pTypeNode, "reserved"))) {
@@ -735,7 +737,9 @@ bool CIccProfileXml::ParseTag(xmlNode *pNode, std::string &parseStr)
       pExt = pTag->GetExtension();
 
     if (pExt && !strcmp(pExt->GetExtClassName(), "CIccTagXml")) {
-      CIccTagXml* pXmlTag = (CIccTagXml*)pExt;
+      CIccTagXml* pXmlTag = dynamic_cast<CIccTagXml*>(pExt);
+      if (!pXmlTag)
+        return false;
 
       if (pXmlTag && pXmlTag->ParseXml(pNode->children, parseStr)) {
         if ((attr = icXmlFindAttr(pNode, "reserved"))) {

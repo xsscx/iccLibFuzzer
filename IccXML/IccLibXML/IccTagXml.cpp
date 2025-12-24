@@ -2227,7 +2227,7 @@ bool icProfDescToXml(std::string &xml, CIccProfileDescStruct &p, std::string bla
 
   if (pTag) {
 
-    pExt = (CIccTagXml*)(pTag->GetExtension());
+    pExt = dynamic_cast<CIccTagXml*>(pTag->GetExtension());
 
     if (!pExt || !pExt->GetExtClassName() || strcmp(pExt->GetExtClassName(), "CIccTagXml"))
       return false;
@@ -2250,7 +2250,7 @@ bool icProfDescToXml(std::string &xml, CIccProfileDescStruct &p, std::string bla
   pTag = p.m_deviceModelDesc.GetTag();
 
   if (pTag) {
-    pExt = (CIccTagXml*)(pTag->GetExtension());
+    pExt = dynamic_cast<CIccTagXml*>(pTag->GetExtension());
 
     if (!pExt || !pExt->GetExtClassName() || strcmp(pExt->GetExtClassName(), "CIccTagXml"))
       return false;
@@ -2312,7 +2312,7 @@ bool icXmlParseProfDesc(xmlNode *pNode, CIccProfileDescStruct &p, std::string &p
             if (!pTag)
               return false;
 
-            CIccTagXml *pExt = (CIccTagXml*)(pTag->GetExtension());
+            CIccTagXml *pExt = dynamic_cast<CIccTagXml*>(pTag->GetExtension());
 
             if (!pExt || !pExt->GetExtClassName() || strcmp(pExt->GetExtClassName(), "CIccTagXml"))
               return false;
@@ -2338,7 +2338,7 @@ bool icXmlParseProfDesc(xmlNode *pNode, CIccProfileDescStruct &p, std::string &p
             if (!pTag)
               return false;
 
-            CIccTagXml *pExt = (CIccTagXml*)(pTag->GetExtension());
+            CIccTagXml *pExt = dynamic_cast<CIccTagXml*>(pTag->GetExtension());
 
             if (!pExt || !pExt->GetExtClassName() || strcmp(pExt->GetExtClassName(), "CIccTagXml"))
               return false;
@@ -3074,7 +3074,8 @@ bool icCurvesToXml(std::string &xml, const char *szName, CIccCurve **pCurves, in
       if (!pTag || strcmp(pTag->GetExtDerivedClassName(), "CIccCurveXml"))
         return false;
 
-      if (!((CIccCurveXml *)pTag)->ToXml(xml, nType, blanks + "  "))
+      CIccCurveXml *pCurveXml = dynamic_cast<CIccCurveXml*>(pTag);
+      if (!pCurveXml || !pCurveXml->ToXml(xml, nType, blanks + "  "))
         return false;
     }
     xml += blanks + "</" + szName + ">\n";
@@ -3085,8 +3086,12 @@ bool icCurvesToXml(std::string &xml, const char *szName, CIccCurve **pCurves, in
 
 bool CIccTagXmlSegmentedCurve::ToXml(std::string &xml, std::string blanks/* = ""*/)
 {
-  if (m_pCurve)
-    return ((CIccSegmentedCurveXml*)m_pCurve)->ToXml(xml, blanks);
+  if (m_pCurve) {
+    CIccSegmentedCurveXml* pCurveXml = dynamic_cast<CIccSegmentedCurveXml*>(m_pCurve);
+    if (!pCurveXml)
+      return false;
+    return pCurveXml->ToXml(xml, blanks);
+  }
 
   return true;
 }
@@ -3280,7 +3285,9 @@ bool icCurvesFromXml(LPIccCurve *pCurve, icUInt32Number nChannels, xmlNode *pNod
 
         if (pExt) {
           if (!strcmp(pExt->GetExtDerivedClassName(), "CIccCurveXml")) {
-            CIccCurveXml *pCurveXml = (CIccCurveXml *)pExt;
+            CIccCurveXml *pCurveXml = dynamic_cast<CIccCurveXml*>(pExt);
+            if (!pCurveXml)
+              return false;
 
             if (pCurveXml->ParseXml(pCurveNode, nType, parseStr)) {
               pCurve[i] = pCurveTag;
@@ -3297,7 +3304,9 @@ bool icCurvesFromXml(LPIccCurve *pCurve, icUInt32Number nChannels, xmlNode *pNod
             }
           }
           else if (!strcmp(pExt->GetExtClassName(), "CIccTagXml")) {
-            CIccTagXml *pXmlTag = (CIccTagXml *)pExt;
+            CIccTagXml *pXmlTag = dynamic_cast<CIccTagXml*>(pExt);
+            if (!pXmlTag)
+              return false;
 
             if (pXmlTag->ParseXml(pCurveNode, parseStr)) {
               pCurve[i] = pCurveTag;
@@ -3987,7 +3996,9 @@ bool CIccTagXmlMultiProcessElement::ToXml(std::string &xml, std::string blanks/*
 
       if (pMpeExt) {
         if (!strcmp(pMpeExt->GetExtClassName(), "CIccMpeXml")) {
-          CIccMpeXml *pMpeXml = (CIccMpeXml*)pMpeExt;
+          CIccMpeXml *pMpeXml = dynamic_cast<CIccMpeXml*>(pMpeExt);
+          if (!pMpeXml)
+            return false;
 
           pMpeXml->ToXml(xml, blanks + "  ");
         }
@@ -4086,7 +4097,9 @@ bool CIccTagXmlMultiProcessElement::ParseElement(xmlNode *pNode, std::string &pa
 
   if (pExt) {
     if (!strcmp(pExt->GetExtClassName(), "CIccMpeXml")) {
-      CIccMpeXml* pXmlMpe = (CIccMpeXml*)pExt;
+      CIccMpeXml* pXmlMpe = dynamic_cast<CIccMpeXml*>(pExt);
+      if (!pXmlMpe)
+        return false;
 
       if (pXmlMpe->ParseXml(pNode, parseStr)) {
         if ((attr=icXmlFindAttr(pNode, "Reserved"))) {
@@ -4425,7 +4438,7 @@ bool CIccTagXmlStruct::ToXml(std::string &xml, std::string blanks/* = ""*/)
       CIccTag *pTag = FindElem(i->TagInfo.sig);
 
       if (pTag) {
-        CIccTagXml *pTagXml = (CIccTagXml*)(pTag->GetExtension());
+        CIccTagXml *pTagXml = dynamic_cast<CIccTagXml*>(pTag->GetExtension());
         if (pTagXml) {
           IccOffsetTagSigMap::iterator prevTag = offsetTags.find(i->TagInfo.offset);
           std::string tagName = ((pStruct!=NULL) ? pStruct->GetElemName((icSignature)i->TagInfo.sig) : "");
@@ -4620,7 +4633,9 @@ bool CIccTagXmlStruct::ParseTag(xmlNode *pNode, std::string &parseStr)
       IIccExtensionTag *pExt;
 
       if (pTag && (pExt = pTag->GetExtension()) && !strcmp(pExt->GetExtClassName(), "CIccTagXml")) {
-        CIccTagXml* pXmlTag = (CIccTagXml*)pExt;
+        CIccTagXml* pXmlTag = dynamic_cast<CIccTagXml*>(pExt);
+        if (!pXmlTag)
+          return false;
 
         if (pXmlTag->ParseXml(pTypeNode->children, parseStr)) {
           if ((attr = icXmlFindAttr(pTypeNode, "reserved"))) {
@@ -4664,7 +4679,9 @@ bool CIccTagXmlStruct::ParseTag(xmlNode *pNode, std::string &parseStr)
     IIccExtensionTag *pExt;
 
     if (pTag && (pExt = pTag->GetExtension()) && !strcmp(pExt->GetExtClassName(), "CIccTagXml")) {
-      CIccTagXml* pXmlTag = (CIccTagXml*)pExt;
+      CIccTagXml* pXmlTag = dynamic_cast<CIccTagXml*>(pExt);
+      if (!pXmlTag)
+        return false;
 
       if (pXmlTag->ParseXml(pNode->children, parseStr)) {
         if ((attr = icXmlFindAttr(pNode, "reserved"))) {
@@ -4792,7 +4809,7 @@ bool CIccTagXmlArray::ToXml(std::string &xml, std::string blanks/* = ""*/)
   for (i=0; i<(int)m_nSize; i++) {
     CIccTag* pTag = m_TagVals[i].ptr;
     if (pTag) {
-      CIccTagXml *pTagXml = (CIccTagXml*)(pTag->GetExtension());
+      CIccTagXml *pTagXml = dynamic_cast<CIccTagXml*>(pTag->GetExtension());
       if (pTagXml) {
         const icChar* tagSig = icGetTagSigTypeName(pTag->GetType());
 
@@ -4902,7 +4919,9 @@ bool CIccTagXmlArray::ParseXml(xmlNode *pNode, std::string &parseStr)
       IIccExtensionTag *pExt;
 
       if (pTag && (pExt = pTag->GetExtension()) && !strcmp(pExt->GetExtClassName(), "CIccTagXml")) {
-        CIccTagXml* pXmlTag = (CIccTagXml*)pExt;
+        CIccTagXml* pXmlTag = dynamic_cast<CIccTagXml*>(pExt);
+        if (!pXmlTag)
+          return false;
 
         if (pXmlTag->ParseXml(tagNode->children, parseStr)) {
           if ((attr=icXmlFindAttr(pNode, "reserved"))) {
@@ -5127,7 +5146,9 @@ bool CIccTagXmlEmbeddedProfile::ToXml(std::string &xml, std::string blanks/* = "
     return false;
   }
 
-  CIccProfileXml *pProfile = (CIccProfileXml*)m_pProfile;
+  CIccProfileXml *pProfile = dynamic_cast<CIccProfileXml*>(m_pProfile);
+  if (!pProfile)
+    return false;
 
   return pProfile->ToXmlWithBlanks(xml, blanks);
 }
