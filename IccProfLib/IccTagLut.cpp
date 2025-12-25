@@ -1884,7 +1884,10 @@ bool CIccCLUT::Init(const icUInt8Number *pGridPoints, icUInt32Number nMaxSize, i
   m_DimSize[i] = m_nOutput;
   nNumPoints = m_GridPoints[i];
   for (i--; i>=0; i--) {
-    m_DimSize[i] = m_DimSize[i+1] * m_GridPoints[i+1];
+    icUInt64Number nextDimSize = (icUInt64Number)m_DimSize[i+1] * m_GridPoints[i+1];
+    if (nextDimSize > 0xFFFFFFFF)
+      return false;
+    m_DimSize[i] = (icUInt32Number)nextDimSize;
     nNumPoints *= m_GridPoints[i];
     if (nMaxSize && nNumPoints * m_nOutput * nBytesPerPoint > nMaxSize)
       return false;
@@ -2268,16 +2271,31 @@ void CIccCLUT::Begin()
     delete [] m_nOffset;
 
   m_nOffset = new icUInt32Number[m_nNodes];
+  
+  if (!m_nOffset)
+    return;
+
+  icUInt32Number maxDataIndex = NumPoints() * m_nOutput;
 
   if (m_nInput==1) {
     m_nOffset[0] = n000 = 0;
     m_nOffset[1] = n001 = m_DimSize[0];
+    if (n001 + m_nOutput > maxDataIndex) {
+      delete[] m_nOffset;
+      m_nOffset = NULL;
+      return;
+    }
   }
   else if (m_nInput==2) {
     m_nOffset[0] = n000 = 0;
     m_nOffset[1] = n001 = m_DimSize[0];
     m_nOffset[2] = n010 = m_DimSize[1];
     m_nOffset[3] = n011 = n001 + n010;
+    if (n011 + m_nOutput > maxDataIndex) {
+      delete[] m_nOffset;
+      m_nOffset = NULL;
+      return;
+    }
   }
   else if (m_nInput==3) {
     m_nOffset[0] = n000 = 0;
@@ -2288,6 +2306,15 @@ void CIccCLUT::Begin()
     m_nOffset[5] = n101 = n100 + n001;
     m_nOffset[6] = n110 = n100 + n010;
     m_nOffset[7] = n111 = n110 + n001;
+    
+    icUInt64Number maxBaseOffset = (icUInt64Number)(m_GridPoints[0] > 0 ? m_GridPoints[0]-1 : 0) * n001 +
+                                   (icUInt64Number)(m_GridPoints[1] > 0 ? m_GridPoints[1]-1 : 0) * n010 +
+                                   (icUInt64Number)(m_GridPoints[2] > 0 ? m_GridPoints[2]-1 : 0) * n100;
+    if (maxBaseOffset + n111 + m_nOutput > maxDataIndex) {
+      delete[] m_nOffset;
+      m_nOffset = NULL;
+      return;
+    }
   }
   else if (m_nInput == 4) {
     m_nOffset[ 0] = 0;
