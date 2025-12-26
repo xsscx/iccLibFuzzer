@@ -1,8 +1,8 @@
 # Next Session Start Prompt
 
-**Date Updated**: 2025-12-26 16:40 UTC  
+**Date Updated**: 2025-12-26 17:55 UTC  
 **Repository**: https://github.com/xsscx/iccLibFuzzer  
-**Status**: PSSwopCustom22228 analysis complete, ready for upstream submission
+**Status**: IccApplyNamedCmm fuzzer complete + 3 OOM vulnerabilities fixed - Ready for upstream engagement
 
 ---
 
@@ -16,253 +16,296 @@ git pull origin master
 
 ---
 
-## ✅ Latest Session (2025-12-26 16:11-16:40 UTC)
+## ✅ Latest Session (2025-12-26 17:02-17:55 UTC)
 
-### Accomplishments
-1. ✅ **Analyzed PSSwopCustom22228.icc** - Comprehensive 796-line analysis document
-2. ✅ **Tested 7 tools** - IccDumpProfile, IccToXml, ASan, UBSan, Python, file, xxd
-3. ✅ **Documented 4 vulnerabilities** - CWE-125, CWE-190, CWE-681, CWE-787
-4. ✅ **Created reproduction script** - `reproduce_PSSwopCustom22228.sh`
-5. ✅ **Commits**: af70023, b09b927, 8a054fa
+### Accomplishments Summary
+**3 commits** | **6 files created** | **3 security vulnerabilities fixed** | **1 new fuzzer** | **30 unit tests**
 
-**Duration**: 29 minutes | **Documents**: 2 (796 lines) | **Tools Tested**: 7
+1. ✅ **IccApplyNamedCmm test suite** (30 tests, 100% pass)
+2. ✅ **IccApplyNamedCmm fuzzer** (373 lines, AST Query pattern)
+3. ✅ **3 OOM vulnerabilities fixed** (CWE-789)
+4. ✅ **Governance documentation consumed** (3,918 lines)
+5. ✅ **All commits pushed to GitHub**
+
+**Duration**: 53 minutes  
+**Files**: 6 created, 3 modified  
+**Lines**: 1,189 added, 20 changed  
+**Security**: CWE-789 (Memory Allocation with Excessive Size)
 
 ---
 
-## 🔧 PRIORITY 1: Push PSSwopCustom22228 Analysis to GitHub
+## 🔧 PRIORITY 1: Upstream Engagement - READY ✅
 
-**Status**: ✅ Analysis complete, ⏳ Not pushed to GitHub yet  
-**Documents**: 
-- `PSSwopCustom22228_ANALYSIS.md` (796 lines)
-- `reproduce_PSSwopCustom22228.sh` (automated tests)
-- `SESSION_2025-12-26_SUMMARY.md` (session summary)
+### OOM Vulnerability Fixes (Commit 731e63c)
+- **Status**: ✅ Fixed, tested, pushed
+- **CWE**: CWE-789 (Memory Allocation with Excessive Size Value)
+- **Impact**: 3 allocation sites validated, 5GB+ allocations prevented
+
+**Fixes**:
+1. **CIccTagMultiProcessElement::Read()** (IccTagMPE.cpp:1017)
+   - Before: 705M elements = 5.26 GB allocation
+   - After: Limited to 65,536 elements
+   - Consistent with IccMpeCalc.cpp MAX_CALC_ELEMENTS
+
+2. **CIccTagXYZ::Read()** (IccTagBasic.cpp:3642)
+   - Before: Unbounded XYZ array
+   - After: Limited to 65,536 entries
+   - Typical profiles: 1-3 entries
+
+3. **CIccTagTextDescription::Read()** (IccTagBasic.cpp:2122)
+   - Before: Existing 0xFFFFFFFF check insufficient
+   - After: Additional 1MB limit
+   - Typical descriptions: <1KB
+
+**Testing**:
+- ✅ All 3 crash inputs fixed
+- ✅ 60s regression: 178k exec/s, no crashes
+- ✅ No impact on valid profiles
 
 **Next Steps**:
-1. Push 3 commits to GitHub (af70023, b09b927, 8a054fa)
-2. File upstream issue with PSSwopCustom22228_ANALYSIS.md
-3. Add PSSwopCustom22228.icc to corpus/ for regression testing
-4. Monitor upstream response
-
-**Key Findings**:
-- Tag count corruption: 60,171 vs ~10-20 expected
-- SEGV in CIccTagCurve::Apply() at line 599
-- NaN→uint UB at line 584
-- IccToXml cannot process (fails Read() validation)
-- 4 code patches provided
+1. File upstream issue with vulnerability details
+2. Submit PR to DemoIccMAX with fixes
+3. Reference commit 731e63c
+4. Request CVE assignment if applicable
 
 ---
 
-## 🔧 PRIORITY 2: CLUT Bounds Validation - REQUIRES UPSTREAM REVIEW
+## 🚀 PRIORITY 2: New Fuzzer Validation - READY ✅
 
-**Bug**: crash-3c3c6c65ab8b4ba09d67bcb0edfdc2345e8285dd  
-**Status**: ✅ IN-SCOPE, ⚠️ FIX INCOMPLETE  
-**Location**: `CIccCLUT::Interp3d()` line 2712  
+### IccApplyNamedCmm Fuzzer (Commit 760faf7)
+- **Status**: ✅ Built, tested, documented
+- **Performance**: 311k exec/sec, 0 crashes in 10s smoke test
+- **Coverage**: Full AST Query pattern alignment
 
-**What Was Tried** (2025-12-25):
-- Added overflow checking in `Init()`
-- Added bounds validation in `Begin()`
-- Crash still reproduces
+**Features**:
+- 4 interface types (pixel2pixel, named2pixel, pixel2named, named2named)
+- Complete hint system (BPC, luminance, env vars, V5)
+- 6 encoding formats
+- Named color transformations
+- NaN/Infinity edge cases
 
-**Why It Failed**: Validation doesn't match runtime offset calculation.
+**Files**:
+- `fuzzers/icc_applynamedcmm_fuzzer.cpp` (373 lines)
+- `docs/icc_applynamedcmm_fuzzer_design.md` (221 lines)
+- `test-iccapplynamedcmm.sh` (30 tests, 100% pass)
+- `docs/iccapplynamedcmm-test-suite.md` (316 lines)
 
 **Next Steps**:
-1. Contact upstream with CRASH_3C3C6C65_VALIDATION.md
-2. Ask: Is `Begin()` called before `Apply()`?
-3. Research: Where is `Begin()` invoked in codebase?
-4. Consider: Defense-in-depth in `Apply()` for fuzzing?
-
-**Document**: `CRASH_3C3C6C65_VALIDATION.md` (full analysis)
+1. Run extended fuzzing (24-48 hours)
+2. Add to ClusterFuzzLite configuration
+3. Monitor for new findings
+4. Expand corpus with IccApplyNamedCmm test cases
 
 ---
 
-## 📋 Quick Reference
+## 📋 Recent Commits (Unpushed: 0)
 
-### Key Files
-- `PSSwopCustom22228_ANALYSIS.md` - Complete multi-tool analysis (NEW)
-- `reproduce_PSSwopCustom22228.sh` - Automated reproduction (NEW)
-- `SESSION_2025-12-26_SUMMARY.md` - Session summary (NEW)
-- `CRASH_3C3C6C65_VALIDATION.md` - CLUT bug analysis
-- `docs/scope-gates-draft.md` - Bug validation framework
-- `SESSION_2025-12-25_SUMMARY.md` - Previous session
-
-### Recent Commits (Unpushed)
 ```
-8a054fa (HEAD -> master) docs: Add quick start section to PSSwopCustom22228 analysis
-b09b927 test: Add automated reproduction script for PSSwopCustom22228.icc
-af70023 docs: Add comprehensive analysis of PSSwopCustom22228.icc
-4010dd7 (origin/master, origin/HEAD) docs: Add session summary and update next session prompt
-a5aa3db docs: Add scope gates for bug report validation
+731e63c (HEAD -> master, origin/master) fix: Add bounds validation for OOM vulnerabilities
+760faf7 fuzzer: Add IccApplyNamedCmm-specific fuzzer honoring AST Query pattern
+5cb75cc test: Add comprehensive test suite for IccApplyNamedCmm
+46022ff docs: Add session summary and update next session prompt
 ```
 
-**Unpushed**: 3 commits (af70023, b09b927, 8a054fa)
-
-### Build & Test
-```bash
-# Rebuild fuzzers
-./build-fuzzers-local.sh
-
-# Test PSSwopCustom22228.icc (all tools)
-./reproduce_PSSwopCustom22228.sh
-
-# Test crash-3c3c6c65 (CLUT)
-./fuzzers-local/address/icc_profile_fuzzer \
-  poc-archive/crash-3c3c6c65ab8b4ba09d67bcb0edfdc2345e8285dd
-
-# Check CFL status
-gh run list --workflow=clusterfuzzlite.yml --limit 3
-```
+**All commits pushed** ✅
 
 ---
 
-## 🎯 Next Session Recommendations
+## 🔍 Previous Work Status
 
-### High Priority
-1. **Push to GitHub** - 3 unpushed commits with PSSwopCustom22228 analysis
-2. **Upstream Engagement** - File issue with comprehensive analysis
-3. **Corpus Integration** - Add PSSwopCustom22228.icc to corpus/
+### PSSwopCustom22228 Analysis - COMPLETE ✅
+- **Analysis**: 796 lines (PSSwopCustom22228_ANALYSIS.md)
+- **Reproduction**: Automated script (reproduce_PSSwopCustom22228.sh)
+- **Status**: Ready for upstream submission
+- **Findings**: Tag count corruption, NaN→uint UB, 4 code patches
 
-### Medium Priority
-4. **CLUT Fix** - Resume work on crash-3c3c6c65 with upstream input
-5. **CFL Monitoring** - Validate build fix from previous session
-
-### Low Priority
-6. **POC Triage** - Apply scope gates to remaining 11 artifacts in poc-archive/
+### CLUT Bounds Validation - BLOCKED ⏸️
+- **Bug**: crash-3c3c6c65ab8b4ba09d67bcb0edfdc2345e8285dd
+- **Status**: Partial fix, requires upstream architectural review
+- **Document**: CRASH_3C3C6C65_VALIDATION.md
+- **Blocker**: Need clarification on Begin() invocation order
 
 ---
 
 ## 📊 POC Inventory
 
-**Total Artifacts**: 14 in poc-archive/
+**Total Artifacts**: 14+ in poc-archive/
 
-### Analyzed (3)
-- ✅ crash-3c3c6c65 (CLUT bounds) - Partial fix, upstream review needed
-- ✅ PSSwopCustom22228.icc (tag count) - Complete analysis, ready for submission
-- ✅ crash-10407162 (previous analysis)
+### Analyzed
+- ✅ crash-540819fe96cef6c097dd6ae76187e0796663d535 (OOM - FIXED)
+- ✅ oom-c0d10c9dc4aa50e0651c528fe3c657cae25d58a1 (OOM - FIXED)
+- ✅ oom-0d2a436abb13bca189fe73bae68be6210b63acf4 (OOM - FIXED)
+- ✅ PSSwopCustom22228.icc (tag count corruption - documented)
+- ✅ crash-3c3c6c65 (CLUT bounds - partial fix)
 
 ### Pending Triage (11)
-- crash-1eb75bc4
-- crash-42e85501
-- crash-540819fe
-- crash-577b537a
-- crash-7b559e7f
-- crash-9157fa14
-- crash-da39a3ee
+- crash-1eb75bc4, crash-42e85501, crash-7b559e7f, crash-9157fa14, crash-da39a3ee
 - leak-2872ae19, leak-75de5b81, leak-912223569, leak-a6ab65e8
-- oom-088d1055, oom-2db52183, oom-552d7d0c, oom-d145dc62
+- oom-088d1055, oom-2db52183
 
 **Triage Strategy**: Apply scope gates from docs/scope-gates-draft.md
 
 ---
 
-## 🔍 Session Context
+## 🎯 Immediate Next Actions
 
-### Current Work Stream
-1. **2025-12-25**: CLUT bounds validation (crash-3c3c6c65) - incomplete fix
-2. **2025-12-26**: PSSwopCustom22228 multi-tool analysis - complete
-3. **Next**: Push analysis, engage upstream, resume CLUT work
+### High Priority
+1. **Upstream OOM Fixes**
+   - File issue with commit 731e63c details
+   - Submit PR to DemoIccMAX
+   - Include test cases and regression validation
 
-### Upstream Engagement Strategy
-**Phase 1** (Current):
-- Submit PSSwopCustom22228_ANALYSIS.md with reproduction steps
-- Submit CRASH_3C3C6C65_VALIDATION.md for architectural review
+2. **Extended Fuzzing**
+   ```bash
+   # Run new fuzzer for 24 hours
+   ./fuzzers-local/address/icc_applynamedcmm_fuzzer \
+     fuzzers-local/address/icc_applynamedcmm_fuzzer_seed_corpus \
+     -max_total_time=86400 -workers=24
+   ```
 
-**Phase 2** (After Response):
-- Apply recommended fixes or defend current approach
-- Test fixes with both POCs
-- Submit PR with regression tests
+3. **Submit PSSwopCustom22228 Analysis**
+   - Copy PSSwopCustom22228_ANALYSIS.md to upstream issue
+   - Include reproduction script
+   - Reference 4 proposed patches
 
-**Phase 3** (Long-term):
-- Triage remaining 11 POCs
-- Build corpus of validated test cases
-- Continuous fuzzing integration
+### Medium Priority
+4. **Monitor ClusterFuzzLite**
+   ```bash
+   gh run list --workflow=clusterfuzzlite.yml --limit 5
+   ```
+
+5. **Survey Additional Bounds Validation**
+   - Review other CIccTag* Read() methods
+   - Check for similar unbounded allocations
+   - Apply consistent 65,536 element limits
+
+### Low Priority
+6. **Resume CLUT Work** (after upstream response)
+7. **Triage Remaining POCs** (11 artifacts)
+8. **JSON Config Fuzzing** (IccApplyNamedCmm Usage 1)
+
+---
+
+## 📖 Session Documentation
+
+### Latest Session (2025-12-26)
+**Summary**: `.copilot-sessions/summaries/2025-12-26_session.md`
+
+**Key Metrics**:
+- Time: 53 minutes
+- Commits: 3
+- Files: 6 created, 3 modified
+- Lines: 1,189 added, 20 changed
+- Tests: 30 (100% pass)
+- Bugs: 3 fixed (CWE-789)
+
+### Governance Framework
+**Location**: `.copilot-sessions/governance/`
+
+**Documents** (3,918 lines total):
+- README.md - Framework overview
+- SECURITY_CONTROLS.md - Security requirements
+- BEST_PRACTICES.md - Engineering standards
+- ANTI_PATTERNS.md - Failure mode catalog
+- TRANSPARENCY_GUIDE.md - Audit trail requirements
+- SESSION_TEMPLATE.md - Standard workflow
+
+**Key Principles**:
+- Security First: Zero tolerance for secrets
+- Minimal Changes: 1-5 lines ideal
+- Transparency: All decisions documented
+- Verifiability: Reproducible actions
+- Human Authority: User input authoritative
+
+---
+
+## 🏗️ Build Status
+
+**Last Build**: 2025-12-26 17:45 UTC
+
+**Fuzzers** (12 total):
+- ✓ icc_profile_fuzzer
+- ✓ icc_calculator_fuzzer
+- ✓ icc_spectral_fuzzer
+- ✓ icc_multitag_fuzzer
+- ✓ icc_fromxml_fuzzer
+- ✓ icc_toxml_fuzzer
+- ✓ icc_io_fuzzer
+- ✓ icc_apply_fuzzer
+- ✓ icc_applyprofiles_fuzzer
+- ✓ icc_roundtrip_fuzzer
+- ✓ icc_link_fuzzer
+- ✓ icc_dump_fuzzer
+- ✓ **icc_applynamedcmm_fuzzer** (NEW)
+
+**Tools**:
+- ✓ IccDumpProfile
+- ✓ IccToXml
+- ✓ IccFromXml
+- ✓ IccApplyNamedCmm (tested: 30/30 tests pass)
+
+---
+
+## 🔐 Security Status
+
+**Vulnerabilities Fixed This Session**: 3
+
+**CWE-789**: Memory Allocation with Excessive Size Value
+- Impact: 5+ GB allocations from malformed profiles
+- Fix: Bounds validation (65K elements max)
+- Testing: All crash inputs handled gracefully
+
+**Attack Surface Reduction**:
+- Profile parsing more resilient
+- Malformed input rejected early
+- Consistent limits across codebase
+
+**No Secrets Committed**: ✅ Verified
 
 ---
 
 ## 💡 Key Insights
 
 ### Tool Behavior Patterns
-- **IccToXml**: Strict validation, fails early on corruption
-- **IccDumpProfile**: Lenient, processes partial/corrupted data
-- **Fuzzers**: Bypass early validation, reach runtime crashes
-- **Python**: Best for binary structure analysis
+- **IccApplyNamedCmm**: Supports 4 interface types, full hint system
+- **AST Query Pattern**: Critical for architectural compliance
+- **Fuzzing Strategy**: Test suite → fuzzer → extended campaign
 
-**Recommendation**: Use IccDumpProfile for initial triage, fuzzers for vulnerability discovery
+### Bug Patterns Observed
+1. **Unbounded allocations**: Multiple tag types vulnerable
+2. **Inconsistent limits**: Some use 65K, some unlimited
+3. **Early validation**: Missing in many Read() methods
 
-### Corruption Patterns Observed
-1. **Tag count overflow** (PSSwopCustom22228) - Most common, high impact
-2. **CLUT size mismatch** (crash-3c3c6c65) - Requires deep validation
-3. **Invalid offsets** - Caught by early validation usually
-4. **NaN propagation** - Reaches runtime, causes UB
-
-### Defense-in-Depth Layers Needed
-1. **Entry validation** - Tag count, magic numbers, version
-2. **Structure validation** - Offsets, sizes, bounds
-3. **Runtime validation** - NaN/inf checks, pointer validation
-4. **Error handling** - Graceful degradation, no exceptions
+### Defense-in-Depth Needs
+1. ✅ Entry validation (partial - tag count checks)
+2. ✅ Structure validation (NEW - bounds checks added)
+3. ⏳ Runtime validation (NaN/inf - partially implemented)
+4. ✅ Error handling (graceful degradation working)
 
 ---
 
-## 🏗️ Build Status
+## 🎯 Next Session Preparation
 
-**Last Build**: 2025-12-26 01:14 UTC
-**Fuzzers**:
-- ✓ AddressSanitizer → `fuzzers-local/address/icc_profile_fuzzer`
-- ✓ UndefinedBehaviorSanitizer → `fuzzers-local/undefined/icc_profile_fuzzer`
-- ✓ MemorySanitizer → `fuzzers-local/memory/icc_profile_fuzzer`
+### Before Starting
+1. Read this document
+2. Review latest session summary
+3. Check git status and pull latest
+4. Verify CI/CD status
 
-**Tools**:
-- ✓ IccDumpProfile → `Build/Tools/IccDumpProfile/iccDumpProfile`
-- ✓ IccToXml → `Build/Tools/IccToXml/iccToXml`
-- ✓ IccFromXml → `Build/Tools/IccFromXml/iccFromXml`
+### Recommended Focus
+- **Primary**: Upstream engagement (OOM fixes + PSSwopCustom22228)
+- **Secondary**: Extended fuzzing validation
+- **Tertiary**: Additional bounds validation survey
 
-**Corpus**:
-- Location: `corpus/`
-- Count: TBD (needs update with PSSwopCustom22228.icc)
-
----
-
-## 📖 Documentation Status
-
-| Document | Status | Lines | Purpose |
-|----------|--------|-------|---------|
-| PSSwopCustom22228_ANALYSIS.md | ✅ Complete | 796 | Multi-tool analysis, CVE-ready |
-| reproduce_PSSwopCustom22228.sh | ✅ Complete | 37 | Automated testing |
-| SESSION_2025-12-26_SUMMARY.md | ✅ Complete | TBD | Session summary |
-| CRASH_3C3C6C65_VALIDATION.md | ✅ Complete | ~500 | CLUT bug validation |
-| docs/scope-gates-draft.md | ✅ Complete | ~300 | Bug triage framework |
-| SESSION_2025-12-25_SUMMARY.md | ✅ Complete | ~400 | Previous session |
-| NEXT_SESSION_START.md | 🔄 Updating | ~300 | This document |
-
-**Total Documentation**: ~2,800 lines across 7 documents
+### Expected Outcomes
+- OOM fixes submitted upstream
+- PSSwopCustom22228 analysis submitted
+- 24h fuzzing results analyzed
+- New findings documented
 
 ---
 
-## 🎯 Immediate Next Actions
-
-**Start Next Session With**:
-```bash
-# 1. Check unpushed commits
-git log origin/master..HEAD --oneline
-
-# 2. Push PSSwopCustom22228 analysis
-git push origin master
-
-# 3. Verify on GitHub
-gh browse
-
-# 4. File upstream issue (copy PSSwopCustom22228_ANALYSIS.md)
-# Navigate to: https://github.com/InternationalColorConsortium/DemoIccMAX/issues/new
-```
-
-**Expected Git Output**:
-```
-8a054fa docs: Add quick start section to PSSwopCustom22228 analysis
-b09b927 test: Add automated reproduction script for PSSwopCustom22228.icc
-af70023 docs: Add comprehensive analysis of PSSwopCustom22228.icc
-```
-
----
-
-**Last Updated**: 2025-12-26T16:40:00Z  
-**Status**: Analysis complete, ready for push  
+**Last Updated**: 2025-12-26T17:55:00Z  
+**Status**: Session complete, all work committed and pushed  
+**Next Session**: Upstream engagement and extended fuzzing validation  
 **Analyst**: GitHub Copilot CLI (LLMCJF strict-engineering mode)
