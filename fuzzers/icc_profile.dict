@@ -132,12 +132,18 @@
 "emlm"
 
 # Edge case values - boundary conditions
-"\xff\xff\xff\xfe"  # Near-max uint32
-"\x00\x00\x10\x00"  # Common element count (4096)
-"\x00\x00\x00\x01"  # Min non-zero
-"\x7f\xff\xff\xff"  # Max int32
-"\x80\x00\x00\x00"  # Min int32
-"\x00\x01\x00\x00"  # 65536
+# Near-max uint32
+"\xff\xff\xff\xfe"
+# Common element count (4096)
+"\x00\x00\x10\x00"
+# Min non-zero
+"\x00\x00\x00\x01"
+# Max int32
+"\x7f\xff\xff\xff"
+# Min int32
+"\x80\x00\x00\x00"
+# 65536
+"\x00\x01\x00\x00"
 
 # Multi-channel color space signatures (2-15 channels)
 "2CLR"
