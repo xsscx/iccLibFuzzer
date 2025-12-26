@@ -775,3 +775,22 @@ CORRUPTION INDICATORS
 **Last Updated**: 2025-12-26T16:22:00Z  
 **Status**: Ready for upstream submission  
 **Next Action**: File GitHub issue with this analysis
+
+---
+
+## Quick Start
+
+**1-Line Reproduction**:
+```bash
+./reproduce_PSSwopCustom22228.sh
+```
+
+**Expected Results**:
+- ✓ IccDumpProfile shows tag count 60,171
+- ✓ IccToXml fails with "Unable to read"
+- ✓ ASan fuzzer crashes with SEGV at line 599
+- ✓ UBSan reports NaN conversion undefined behavior
+
+---
+
+**Analysis Complete**: 2025-12-26T16:40:00Z
