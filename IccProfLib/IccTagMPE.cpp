@@ -1004,6 +1004,13 @@ bool CIccTagMultiProcessElement::Read(icUInt32Number size, CIccIO *pIO)
   if (!pIO->Read32(&m_nProcElements))
     return false;
 
+  // Bounds check: Reasonable maximum for processing elements
+  // Typical profiles have 1-100 elements, max observed ~1000
+  // Limit to 65536 (consistent with IccMpeCalc.cpp MAX_CALC_ELEMENTS)
+  const icUInt32Number MAX_PROC_ELEMENTS = 65536;
+  if (m_nProcElements > MAX_PROC_ELEMENTS)
+    return false;
+
   if (headerSize + (icUInt64Number)m_nProcElements*sizeof(icUInt32Number) > size)
     return false;
 

@@ -2119,6 +2119,12 @@ bool CIccTagTextDescription::Read(icUInt32Number size, CIccIO *pIO)
   if (nSize == 0xFFFFFFFF) 
     return false;
 
+  // Additional bounds check: Reasonable maximum for text description
+  // Typical descriptions are <1KB, but allow up to 1MB for safety
+  const icUInt32Number MAX_TEXT_DESC_SIZE = 1048576;  // 1MB
+  if (nSize > MAX_TEXT_DESC_SIZE)
+    return false;
+
   icUInt16Number *pBuf16 = GetUnicodeBuffer(nSize);
 
   if (nSize) {
@@ -3638,6 +3644,13 @@ bool CIccTagXYZ::Read(icUInt32Number size, CIccIO *pIO)
 
   icUInt32Number nNum=((size-2*sizeof(icUInt32Number)) / sizeof(icXYZNumber));
   icUInt32Number nNum32 = nNum*sizeof(icXYZNumber)/sizeof(icUInt32Number);
+
+  // Bounds check: Reasonable maximum for XYZ array
+  // Typical profiles have 1-3 XYZ values (whitepoint, primaries)
+  // Spectral profiles may have more, but 65536 is excessive
+  const icUInt32Number MAX_XYZ_ENTRIES = 65536;
+  if (nNum > MAX_XYZ_ENTRIES)
+    return false;
 
   if (!SetSize(nNum))
     return false;
