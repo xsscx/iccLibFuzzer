@@ -52,7 +52,7 @@
 # =========================
 # 1) BUILD STAGE
 # =========================
-FROM ubuntu:26.04 AS builder
+FROM ubuntu:24.04 AS builder
 ENV DEBIAN_FRONTEND=noninteractive
 
 LABEL org.opencontainers.image.title="iccDEV Build Container" \
@@ -256,7 +256,7 @@ RUN git config --system user.email "" \
 ###############################################################
 # 2) RUNTIME STAGE
 ###############################################################
-FROM ubuntu:26.04 AS runtime
+FROM ubuntu:24.04 AS runtime
 ENV DEBIAN_FRONTEND=noninteractive
 
 # ------------------------------------------------------------

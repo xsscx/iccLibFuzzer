@@ -55,7 +55,7 @@ RUN mkdir -p /src/iccLibFuzzer/build-asan && \
 
 RUN mkdir -p /fuzzers/asan && \
     cd /src/iccLibFuzzer && \
-    for fuzzer in fuzzers/icc_link_fuzzer.cpp fuzzers/icc_dump_fuzzer.cpp fuzzers/icc_apply_fuzzer.cpp fuzzers/icc_applyprofiles_fuzzer.cpp fuzzers/icc_roundtrip_fuzzer.cpp fuzzers/icc_profile_fuzzer.cpp fuzzers/icc_io_fuzzer.cpp fuzzers/icc_spectral_fuzzer.cpp fuzzers/icc_calculator_fuzzer.cpp fuzzers/icc_multitag_fuzzer.cpp; do \
+    for fuzzer in fuzzers/icc_link_fuzzer.cpp fuzzers/icc_dump_fuzzer.cpp fuzzers/icc_apply_fuzzer.cpp fuzzers/icc_applyprofiles_fuzzer.cpp fuzzers/icc_applynamedcmm_fuzzer.cpp fuzzers/icc_roundtrip_fuzzer.cpp fuzzers/icc_profile_fuzzer.cpp fuzzers/icc_io_fuzzer.cpp fuzzers/icc_spectral_fuzzer.cpp fuzzers/icc_calculator_fuzzer.cpp fuzzers/icc_multitag_fuzzer.cpp; do \
       name=$(basename "$fuzzer" .cpp); \
       clang++-18 -g -O1 -fsanitize=address,fuzzer \
         -fno-omit-frame-pointer \
@@ -102,7 +102,7 @@ RUN mkdir -p /src/iccLibFuzzer/build-ubsan && \
 
 RUN mkdir -p /fuzzers/ubsan && \
     cd /src/iccLibFuzzer && \
-    for fuzzer in fuzzers/icc_link_fuzzer.cpp fuzzers/icc_dump_fuzzer.cpp fuzzers/icc_apply_fuzzer.cpp fuzzers/icc_applyprofiles_fuzzer.cpp fuzzers/icc_roundtrip_fuzzer.cpp fuzzers/icc_profile_fuzzer.cpp fuzzers/icc_io_fuzzer.cpp fuzzers/icc_spectral_fuzzer.cpp fuzzers/icc_calculator_fuzzer.cpp fuzzers/icc_multitag_fuzzer.cpp; do \
+    for fuzzer in fuzzers/icc_link_fuzzer.cpp fuzzers/icc_dump_fuzzer.cpp fuzzers/icc_apply_fuzzer.cpp fuzzers/icc_applyprofiles_fuzzer.cpp fuzzers/icc_applynamedcmm_fuzzer.cpp fuzzers/icc_roundtrip_fuzzer.cpp fuzzers/icc_profile_fuzzer.cpp fuzzers/icc_io_fuzzer.cpp fuzzers/icc_spectral_fuzzer.cpp fuzzers/icc_calculator_fuzzer.cpp fuzzers/icc_multitag_fuzzer.cpp; do \
       name=$(basename "$fuzzer" .cpp); \
       clang++-18 -g -O1 -fsanitize=undefined,fuzzer \
         -fno-omit-frame-pointer \
@@ -149,7 +149,7 @@ RUN mkdir -p /src/iccLibFuzzer/build-msan && \
 
 RUN mkdir -p /fuzzers/msan && \
     cd /src/iccLibFuzzer && \
-    for fuzzer in fuzzers/icc_link_fuzzer.cpp fuzzers/icc_dump_fuzzer.cpp fuzzers/icc_apply_fuzzer.cpp fuzzers/icc_applyprofiles_fuzzer.cpp fuzzers/icc_roundtrip_fuzzer.cpp fuzzers/icc_profile_fuzzer.cpp fuzzers/icc_io_fuzzer.cpp fuzzers/icc_spectral_fuzzer.cpp fuzzers/icc_calculator_fuzzer.cpp fuzzers/icc_multitag_fuzzer.cpp; do \
+    for fuzzer in fuzzers/icc_link_fuzzer.cpp fuzzers/icc_dump_fuzzer.cpp fuzzers/icc_apply_fuzzer.cpp fuzzers/icc_applyprofiles_fuzzer.cpp fuzzers/icc_applynamedcmm_fuzzer.cpp fuzzers/icc_roundtrip_fuzzer.cpp fuzzers/icc_profile_fuzzer.cpp fuzzers/icc_io_fuzzer.cpp fuzzers/icc_spectral_fuzzer.cpp fuzzers/icc_calculator_fuzzer.cpp fuzzers/icc_multitag_fuzzer.cpp; do \
       name=$(basename "$fuzzer" .cpp); \
       clang++-18 -g -O1 -fsanitize=memory,fuzzer \
         -fno-omit-frame-pointer \

@@ -39,7 +39,7 @@ RUN mkdir -p /fuzzers/address && \
       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
       -DBUILD_SHARED_LIBS=OFF && \
     cmake --build "$BUILD_DIR" --target IccProfLib2-static -j$(nproc) && \
-    for fuzzer in icc_link_fuzzer icc_dump_fuzzer icc_apply_fuzzer icc_roundtrip_fuzzer icc_profile_fuzzer icc_io_fuzzer; do \
+    for fuzzer in icc_link_fuzzer icc_dump_fuzzer icc_apply_fuzzer icc_applynamedcmm_fuzzer icc_roundtrip_fuzzer icc_profile_fuzzer icc_io_fuzzer; do \
       clang++-18 -O1 -fno-omit-frame-pointer -gline-tables-only \
         -fsanitize=address,fuzzer \
         -I/src/iccLibFuzzer/IccProfLib \
@@ -63,7 +63,7 @@ RUN mkdir -p /fuzzers/undefined && \
       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
       -DBUILD_SHARED_LIBS=OFF && \
     cmake --build "$BUILD_DIR" --target IccProfLib2-static -j$(nproc) && \
-    for fuzzer in icc_link_fuzzer icc_dump_fuzzer icc_apply_fuzzer icc_roundtrip_fuzzer icc_profile_fuzzer icc_io_fuzzer; do \
+    for fuzzer in icc_link_fuzzer icc_dump_fuzzer icc_apply_fuzzer icc_applynamedcmm_fuzzer icc_roundtrip_fuzzer icc_profile_fuzzer icc_io_fuzzer; do \
       clang++-18 -O1 -fno-omit-frame-pointer -gline-tables-only \
         -fsanitize=undefined,fuzzer \
         -I/src/iccLibFuzzer/IccProfLib \
