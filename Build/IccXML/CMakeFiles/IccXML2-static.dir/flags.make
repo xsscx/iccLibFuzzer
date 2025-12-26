@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2
 
-CXX_FLAGS = -fsanitize=undefined -fno-sanitize-recover=all -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers
+CXX_FLAGS = -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers
 

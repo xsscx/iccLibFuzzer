@@ -1,643 +1,643 @@
 [
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccApplyBPC.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccApplyBPC.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccApplyBPC.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccApplyBPC.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccApplyBPC.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccApplyBPC.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccArrayBasic.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccArrayBasic.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccArrayBasic.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccArrayBasic.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccArrayBasic.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccArrayBasic.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccArrayFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccArrayFactory.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccArrayFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccArrayFactory.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccArrayFactory.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccArrayFactory.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccCAM.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccCAM.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccCAM.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccCAM.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccCAM.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccCAM.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmm.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmm.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmm.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmm.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmm.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmm.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccConvertUTF.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccConvertUTF.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccConvertUTF.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccConvertUTF.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccConvertUTF.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccConvertUTF.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccEncoding.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccEncoding.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccEncoding.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccEncoding.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccEncoding.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccEncoding.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccEnvVar.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccEnvVar.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccEnvVar.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccEnvVar.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccEnvVar.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccEnvVar.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccEval.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccEval.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccEval.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccEval.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccEval.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccEval.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccIO.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccIO.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccIO.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccIO.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccIO.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccIO.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMatrixMath.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMatrixMath.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMatrixMath.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMatrixMath.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMatrixMath.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMatrixMath.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeACS.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeACS.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeACS.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeACS.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeACS.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeACS.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeBasic.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeBasic.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeBasic.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeBasic.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeBasic.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeBasic.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeCalc.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeCalc.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeCalc.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeCalc.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeCalc.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeCalc.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeFactory.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeFactory.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeFactory.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeFactory.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeSpectral.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeSpectral.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeSpectral.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeSpectral.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeSpectral.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeSpectral.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccPrmg.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccPrmg.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccPrmg.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccPrmg.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccPrmg.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccPrmg.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccPcc.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccPcc.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccPcc.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccPcc.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccPcc.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccPcc.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccProfile.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccProfile.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccProfile.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccProfile.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccProfile.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccProfile.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccSolve.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccSolve.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccSolve.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccSolve.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccSolve.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccSolve.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccSparseMatrix.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccSparseMatrix.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccSparseMatrix.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccSparseMatrix.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccSparseMatrix.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccSparseMatrix.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccStructBasic.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccStructBasic.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccStructBasic.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccStructBasic.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccStructBasic.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccStructBasic.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccStructFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccStructFactory.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccStructFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccStructFactory.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccStructFactory.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccStructFactory.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagBasic.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagBasic.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagBasic.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagBasic.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagBasic.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagBasic.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagComposite.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagComposite.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagComposite.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagComposite.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagComposite.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagComposite.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagDict.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagDict.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagDict.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagDict.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagDict.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagDict.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagEmbedIcc.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagEmbedIcc.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagEmbedIcc.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagEmbedIcc.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagEmbedIcc.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagEmbedIcc.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagFactory.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagFactory.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagFactory.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagFactory.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagLut.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagLut.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagLut.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagLut.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagLut.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagLut.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagMPE.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagMPE.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagMPE.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagMPE.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagMPE.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagMPE.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagProfSeqId.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagProfSeqId.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagProfSeqId.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagProfSeqId.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagProfSeqId.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagProfSeqId.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccUtil.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccUtil.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccUtil.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccUtil.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccUtil.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccUtil.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccXformFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccXformFactory.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccXformFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccXformFactory.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccXformFactory.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccXformFactory.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMD5.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMD5.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMD5.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMD5.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMD5.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMD5.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmmSearch.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmmSearch.cpp",
+  "command": "/usr/bin/c++ -DIccProfLib2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmmSearch.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmmSearch.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmmSearch.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmmSearch.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccApplyBPC.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccApplyBPC.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccApplyBPC.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccApplyBPC.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccApplyBPC.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccApplyBPC.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccArrayBasic.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccArrayBasic.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccArrayBasic.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccArrayBasic.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccArrayBasic.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccArrayBasic.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccArrayFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccArrayFactory.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccArrayFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccArrayFactory.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccArrayFactory.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccArrayFactory.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccCAM.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccCAM.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccCAM.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccCAM.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccCAM.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccCAM.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmm.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmm.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmm.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmm.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmm.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmm.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccConvertUTF.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccConvertUTF.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccConvertUTF.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccConvertUTF.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccConvertUTF.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccConvertUTF.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccEncoding.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccEncoding.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccEncoding.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccEncoding.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccEncoding.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccEncoding.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccEnvVar.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccEnvVar.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccEnvVar.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccEnvVar.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccEnvVar.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccEnvVar.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccEval.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccEval.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccEval.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccEval.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccEval.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccEval.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccIO.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccIO.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccIO.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccIO.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccIO.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccIO.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMatrixMath.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMatrixMath.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMatrixMath.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMatrixMath.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMatrixMath.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMatrixMath.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeACS.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeACS.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeACS.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeACS.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeACS.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeACS.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeBasic.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeBasic.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeBasic.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeBasic.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeBasic.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeBasic.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeCalc.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeCalc.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeCalc.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeCalc.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeCalc.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeCalc.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeFactory.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeFactory.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeFactory.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeFactory.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeSpectral.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeSpectral.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeSpectral.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeSpectral.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeSpectral.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMpeSpectral.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccPrmg.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccPrmg.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccPrmg.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccPrmg.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccPrmg.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccPrmg.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccPcc.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccPcc.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccPcc.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccPcc.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccPcc.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccPcc.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccProfile.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccProfile.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccProfile.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccProfile.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccProfile.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccProfile.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccSolve.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccSolve.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccSolve.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccSolve.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccSolve.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccSolve.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccSparseMatrix.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccSparseMatrix.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccSparseMatrix.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccSparseMatrix.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccSparseMatrix.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccSparseMatrix.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccStructBasic.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccStructBasic.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccStructBasic.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccStructBasic.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccStructBasic.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccStructBasic.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccStructFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccStructFactory.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccStructFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccStructFactory.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccStructFactory.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccStructFactory.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagBasic.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagBasic.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagBasic.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagBasic.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagBasic.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagBasic.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagComposite.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagComposite.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagComposite.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagComposite.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagComposite.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagComposite.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagDict.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagDict.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagDict.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagDict.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagDict.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagDict.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagEmbedIcc.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagEmbedIcc.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagEmbedIcc.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagEmbedIcc.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagEmbedIcc.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagEmbedIcc.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagFactory.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagFactory.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagFactory.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagFactory.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagLut.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagLut.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagLut.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagLut.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagLut.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagLut.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagMPE.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagMPE.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagMPE.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagMPE.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagMPE.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagMPE.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagProfSeqId.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagProfSeqId.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagProfSeqId.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagProfSeqId.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagProfSeqId.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccTagProfSeqId.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccUtil.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccUtil.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccUtil.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccUtil.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccUtil.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccUtil.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccXformFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccXformFactory.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccXformFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccXformFactory.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccXformFactory.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccXformFactory.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMD5.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMD5.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMD5.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccMD5.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMD5.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccMD5.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccProfLib",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmmSearch.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmmSearch.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmmSearch.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmmSearch.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmmSearch.cpp",
   "output": "IccProfLib/CMakeFiles/IccProfLib2-static.dir/home/xss/copilot/iccLibFuzzer/IccProfLib/IccCmmSearch.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccXML",
-  "command": "/usr/bin/c++ -DIccXML2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccIoXml.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccIoXml.cpp",
+  "command": "/usr/bin/c++ -DIccXML2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccIoXml.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccIoXml.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccIoXml.cpp",
   "output": "IccXML/CMakeFiles/IccXML2.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccIoXml.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccXML",
-  "command": "/usr/bin/c++ -DIccXML2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccMpeXml.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccMpeXml.cpp",
+  "command": "/usr/bin/c++ -DIccXML2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccMpeXml.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccMpeXml.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccMpeXml.cpp",
   "output": "IccXML/CMakeFiles/IccXML2.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccMpeXml.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccXML",
-  "command": "/usr/bin/c++ -DIccXML2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccMpeXmlFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccMpeXmlFactory.cpp",
+  "command": "/usr/bin/c++ -DIccXML2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccMpeXmlFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccMpeXmlFactory.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccMpeXmlFactory.cpp",
   "output": "IccXML/CMakeFiles/IccXML2.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccMpeXmlFactory.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccXML",
-  "command": "/usr/bin/c++ -DIccXML2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccProfileXml.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccProfileXml.cpp",
+  "command": "/usr/bin/c++ -DIccXML2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccProfileXml.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccProfileXml.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccProfileXml.cpp",
   "output": "IccXML/CMakeFiles/IccXML2.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccProfileXml.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccXML",
-  "command": "/usr/bin/c++ -DIccXML2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccTagXml.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccTagXml.cpp",
+  "command": "/usr/bin/c++ -DIccXML2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccTagXml.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccTagXml.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccTagXml.cpp",
   "output": "IccXML/CMakeFiles/IccXML2.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccTagXml.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccXML",
-  "command": "/usr/bin/c++ -DIccXML2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccTagXmlFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccTagXmlFactory.cpp",
+  "command": "/usr/bin/c++ -DIccXML2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccTagXmlFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccTagXmlFactory.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccTagXmlFactory.cpp",
   "output": "IccXML/CMakeFiles/IccXML2.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccTagXmlFactory.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccXML",
-  "command": "/usr/bin/c++ -DIccXML2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccUtilXml.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccUtilXml.cpp",
+  "command": "/usr/bin/c++ -DIccXML2_EXPORTS -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -fPIC -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccUtilXml.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccUtilXml.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccUtilXml.cpp",
   "output": "IccXML/CMakeFiles/IccXML2.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccUtilXml.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccXML",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2-static.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccIoXml.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccIoXml.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2-static.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccIoXml.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccIoXml.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccIoXml.cpp",
   "output": "IccXML/CMakeFiles/IccXML2-static.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccIoXml.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccXML",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2-static.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccMpeXml.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccMpeXml.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2-static.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccMpeXml.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccMpeXml.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccMpeXml.cpp",
   "output": "IccXML/CMakeFiles/IccXML2-static.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccMpeXml.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccXML",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2-static.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccMpeXmlFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccMpeXmlFactory.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2-static.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccMpeXmlFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccMpeXmlFactory.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccMpeXmlFactory.cpp",
   "output": "IccXML/CMakeFiles/IccXML2-static.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccMpeXmlFactory.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccXML",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2-static.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccProfileXml.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccProfileXml.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2-static.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccProfileXml.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccProfileXml.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccProfileXml.cpp",
   "output": "IccXML/CMakeFiles/IccXML2-static.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccProfileXml.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccXML",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2-static.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccTagXml.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccTagXml.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2-static.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccTagXml.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccTagXml.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccTagXml.cpp",
   "output": "IccXML/CMakeFiles/IccXML2-static.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccTagXml.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccXML",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2-static.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccTagXmlFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccTagXmlFactory.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2-static.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccTagXmlFactory.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccTagXmlFactory.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccTagXmlFactory.cpp",
   "output": "IccXML/CMakeFiles/IccXML2-static.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccTagXmlFactory.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/IccXML",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2-static.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccUtilXml.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccUtilXml.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/IccXML2-static.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccUtilXml.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccUtilXml.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccUtilXml.cpp",
   "output": "IccXML/CMakeFiles/IccXML2-static.dir/home/xss/copilot/iccLibFuzzer/IccXML/IccLibXML/IccUtilXml.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccFromXml",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccFromXml.dir/home/xss/copilot/iccLibFuzzer/IccXML/CmdLine/IccFromXml/IccFromXml.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/CmdLine/IccFromXml/IccFromXml.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccFromXml.dir/home/xss/copilot/iccLibFuzzer/IccXML/CmdLine/IccFromXml/IccFromXml.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/CmdLine/IccFromXml/IccFromXml.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccXML/CmdLine/IccFromXml/IccFromXml.cpp",
   "output": "Tools/IccFromXml/CMakeFiles/iccFromXml.dir/home/xss/copilot/iccLibFuzzer/IccXML/CmdLine/IccFromXml/IccFromXml.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccToXml",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccToXml.dir/home/xss/copilot/iccLibFuzzer/IccXML/CmdLine/IccToXml/IccToXml.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/CmdLine/IccToXml/IccToXml.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccToXml.dir/home/xss/copilot/iccLibFuzzer/IccXML/CmdLine/IccToXml/IccToXml.cpp.o -c /home/xss/copilot/iccLibFuzzer/IccXML/CmdLine/IccToXml/IccToXml.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/IccXML/CmdLine/IccToXml/IccToXml.cpp",
   "output": "Tools/IccToXml/CMakeFiles/iccToXml.dir/home/xss/copilot/iccLibFuzzer/IccXML/CmdLine/IccToXml/IccToXml.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccJpegDump",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccJpegDump/../../../../Tools/CmdLine/IccJpegDump -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccJpegDump/../../../../Libraries/IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccJpegDump.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccJpegDump/iccJpegDump.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccJpegDump/iccJpegDump.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccJpegDump/../../../../Tools/CmdLine/IccJpegDump -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccJpegDump/../../../../Libraries/IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccJpegDump.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccJpegDump/iccJpegDump.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccJpegDump/iccJpegDump.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccJpegDump/iccJpegDump.cpp",
   "output": "Tools/IccJpegDump/CMakeFiles/iccJpegDump.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccJpegDump/iccJpegDump.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccApplyNamedCmm",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../Tools/CmdLine/IccApplyProfiles -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccApplyNamedCmm.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyNamedCmm/iccApplyNamedCmm.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyNamedCmm/iccApplyNamedCmm.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../Tools/CmdLine/IccApplyProfiles -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccApplyNamedCmm.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyNamedCmm/iccApplyNamedCmm.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyNamedCmm/iccApplyNamedCmm.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyNamedCmm/iccApplyNamedCmm.cpp",
   "output": "Tools/IccApplyNamedCmm/CMakeFiles/iccApplyNamedCmm.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyNamedCmm/iccApplyNamedCmm.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccApplyNamedCmm",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../Tools/CmdLine/IccApplyProfiles -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccApplyNamedCmm.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccCmmConfig.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccCmmConfig.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../Tools/CmdLine/IccApplyProfiles -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccApplyNamedCmm.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccCmmConfig.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccCmmConfig.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccCmmConfig.cpp",
   "output": "Tools/IccApplyNamedCmm/CMakeFiles/iccApplyNamedCmm.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccCmmConfig.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccApplyNamedCmm",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../Tools/CmdLine/IccApplyProfiles -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccApplyNamedCmm.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccJsonUtil.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccJsonUtil.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../Tools/CmdLine/IccApplyProfiles -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccApplyNamedCmm.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccJsonUtil.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccJsonUtil.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccJsonUtil.cpp",
   "output": "Tools/IccApplyNamedCmm/CMakeFiles/iccApplyNamedCmm.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccJsonUtil.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccDumpProfile",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccDumpProfile.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccDumpProfile/iccDumpProfile.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccDumpProfile/iccDumpProfile.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccDumpProfile.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccDumpProfile/iccDumpProfile.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccDumpProfile/iccDumpProfile.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccDumpProfile/iccDumpProfile.cpp",
   "output": "Tools/IccDumpProfile/CMakeFiles/iccDumpProfile.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccDumpProfile/iccDumpProfile.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccRoundTrip",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccRoundTrip.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccRoundTrip/iccRoundTrip.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccRoundTrip/iccRoundTrip.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccRoundTrip.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccRoundTrip/iccRoundTrip.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccRoundTrip/iccRoundTrip.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccRoundTrip/iccRoundTrip.cpp",
   "output": "Tools/IccRoundTrip/CMakeFiles/iccRoundTrip.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccRoundTrip/iccRoundTrip.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccFromCube",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccFromCube.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccFromCube/iccFromCube.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccFromCube/iccFromCube.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccFromCube.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccFromCube/iccFromCube.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccFromCube/iccFromCube.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccFromCube/iccFromCube.cpp",
   "output": "Tools/IccFromCube/CMakeFiles/iccFromCube.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccFromCube/iccFromCube.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccV5DspObsToV4Dsp",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccV5DspObsToV4Dsp.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccV5DspObsToV4Dsp/IccV5DspObsToV4Dsp.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccV5DspObsToV4Dsp/IccV5DspObsToV4Dsp.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccV5DspObsToV4Dsp.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccV5DspObsToV4Dsp/IccV5DspObsToV4Dsp.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccV5DspObsToV4Dsp/IccV5DspObsToV4Dsp.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccV5DspObsToV4Dsp/IccV5DspObsToV4Dsp.cpp",
   "output": "Tools/IccV5DspObsToV4Dsp/CMakeFiles/iccV5DspObsToV4Dsp.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccV5DspObsToV4Dsp/IccV5DspObsToV4Dsp.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccApplyToLink",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccApplyToLink.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyToLink/iccApplyToLink.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyToLink/iccApplyToLink.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccApplyToLink.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyToLink/iccApplyToLink.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyToLink/iccApplyToLink.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyToLink/iccApplyToLink.cpp",
   "output": "Tools/IccApplyToLink/CMakeFiles/iccApplyToLink.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyToLink/iccApplyToLink.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccApplySearch",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccApplySearch.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplySearch/iccApplySearch.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplySearch/iccApplySearch.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccApplySearch.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplySearch/iccApplySearch.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplySearch/iccApplySearch.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplySearch/iccApplySearch.cpp",
   "output": "Tools/IccApplySearch/CMakeFiles/iccApplySearch.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplySearch/iccApplySearch.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccApplySearch",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccApplySearch.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccJsonUtil.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccJsonUtil.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccApplySearch.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccJsonUtil.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccJsonUtil.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccJsonUtil.cpp",
   "output": "Tools/IccApplySearch/CMakeFiles/iccApplySearch.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccJsonUtil.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccApplySearch",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccApplySearch.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccCmmConfig.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccCmmConfig.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -isystem /usr/include/libxml2 -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccApplySearch.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccCmmConfig.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccCmmConfig.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccCmmConfig.cpp",
   "output": "Tools/IccApplySearch/CMakeFiles/iccApplySearch.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccCmmConfig.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccPngDump",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccPngDump/../../../../Tools/CmdLine/IccPngDump -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccPngDump/../../../../Libraries/IccProfLib -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccPngDump.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccPngDump/iccPngDump.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccPngDump/iccPngDump.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccPngDump/../../../../Tools/CmdLine/IccPngDump -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccPngDump/../../../../Libraries/IccProfLib -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccPngDump.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccPngDump/iccPngDump.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccPngDump/iccPngDump.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccPngDump/iccPngDump.cpp",
   "output": "Tools/IccPngDump/CMakeFiles/iccPngDump.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccPngDump/iccPngDump.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccApplyProfiles",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccApplyProfiles.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/iccApplyProfiles.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/iccApplyProfiles.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccApplyProfiles.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/iccApplyProfiles.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/iccApplyProfiles.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/iccApplyProfiles.cpp",
   "output": "Tools/IccApplyProfiles/CMakeFiles/iccApplyProfiles.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/iccApplyProfiles.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccApplyProfiles",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccApplyProfiles.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/TiffImg.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/TiffImg.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccApplyProfiles.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/TiffImg.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/TiffImg.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/TiffImg.cpp",
   "output": "Tools/IccApplyProfiles/CMakeFiles/iccApplyProfiles.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/TiffImg.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccApplyProfiles",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccApplyProfiles.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccJsonUtil.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccJsonUtil.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccApplyProfiles.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccJsonUtil.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccJsonUtil.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccJsonUtil.cpp",
   "output": "Tools/IccApplyProfiles/CMakeFiles/iccApplyProfiles.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccJsonUtil.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccApplyProfiles",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccApplyProfiles.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccCmmConfig.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccCmmConfig.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccApplyProfiles.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccCmmConfig.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccCmmConfig.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccCmmConfig.cpp",
   "output": "Tools/IccApplyProfiles/CMakeFiles/iccApplyProfiles.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccCommon/IccCmmConfig.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccSpecSepToTiff",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccSpecSepToTiff/../../../../Tools/CmdLine/IccApplyProfiles -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccSpecSepToTiff.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccSpecSepToTiff/iccSpecSepToTiff.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccSpecSepToTiff/iccSpecSepToTiff.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccSpecSepToTiff/../../../../Tools/CmdLine/IccApplyProfiles -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccSpecSepToTiff.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccSpecSepToTiff/iccSpecSepToTiff.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccSpecSepToTiff/iccSpecSepToTiff.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccSpecSepToTiff/iccSpecSepToTiff.cpp",
   "output": "Tools/IccSpecSepToTiff/CMakeFiles/iccSpecSepToTiff.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccSpecSepToTiff/iccSpecSepToTiff.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccSpecSepToTiff",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccSpecSepToTiff/../../../../Tools/CmdLine/IccApplyProfiles -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccSpecSepToTiff.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/TiffImg.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/TiffImg.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccSpecSepToTiff/../../../../Tools/CmdLine/IccApplyProfiles -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccSpecSepToTiff.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/TiffImg.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/TiffImg.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/TiffImg.cpp",
   "output": "Tools/IccSpecSepToTiff/CMakeFiles/iccSpecSepToTiff.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/TiffImg.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccTiffDump",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccTiffDump/../../../../Tools/CmdLine/IccApplyProfiles -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccTiffDump.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccTiffDump/iccTiffDump.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccTiffDump/iccTiffDump.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccTiffDump/../../../../Tools/CmdLine/IccApplyProfiles -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccTiffDump.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccTiffDump/iccTiffDump.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccTiffDump/iccTiffDump.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccTiffDump/iccTiffDump.cpp",
   "output": "Tools/IccTiffDump/CMakeFiles/iccTiffDump.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccTiffDump/iccTiffDump.cpp.o"
 },
 {
   "directory": "/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccTiffDump",
-  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccTiffDump/../../../../Tools/CmdLine/IccApplyProfiles -g -fsanitize=address,undefined -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccTiffDump.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/TiffImg.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/TiffImg.cpp",
+  "command": "/usr/bin/c++  -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccTiffDump/../../../../Tools/CmdLine/IccApplyProfiles -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers -o CMakeFiles/iccTiffDump.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/TiffImg.cpp.o -c /home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/TiffImg.cpp",
   "file": "/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/TiffImg.cpp",
   "output": "Tools/IccTiffDump/CMakeFiles/iccTiffDump.dir/home/xss/copilot/iccLibFuzzer/Tools/CmdLine/IccApplyProfiles/TiffImg.cpp.o"
 }

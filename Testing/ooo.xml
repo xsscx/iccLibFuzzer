@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IccProfile>
+  <Header>
+    <PreferredCMMType>APPL</PreferredCMMType>
+    <ProfileVersion>64.00</ProfileVersion>
+    <ProfileSubClassVersion>133.29</ProfileSubClassVersion>
+    <ProfileDeviceClass>link</ProfileDeviceClass>
+    <ProfileDeviceSubClass>F7000000h</ProfileDeviceSubClass>
+    <DataColourSpace>8CLR</DataColourSpace>
+    <PCS>rs0000</PCS>
+    <CreationDateTime>98-32865-25T00:96:37</CreationDateTime>
+    <PrimaryPlatform>0900A6A6h</PrimaryPlatform>
+    <ProfileFlags EmbeddedInFile="false" UseWithEmbeddedDataOnly="true" MCSNeedsSubset="true" VendorFlags="a6a6a6a0"/>
+    <DeviceManufacturer>A6740000h</DeviceManufacturer>
+    <DeviceModel>39A6A6A6h</DeviceModel>
+    <DeviceAttributes ReflectiveOrTransparency="reflective" GlossyOrMatte="matte" MediaPolarity="negative" MediaColour="colour" VendorSpecific="a6a6a6a6a6a6a6a0"/>
+    <RenderingIntent>Unknown Intent '-1499027802</RenderingIntent>
+    <PCSIlluminant>
+      <XYZNumber X="-23033.902343750000" Y="0.476562500000" Z="9569.388671875000"/>
+    </PCSIlluminant>
+    <ProfileCreator>70000074h</ProfileCreator>
+    <ProfileID>73620000000000000000000000000000</ProfileID>
+    <SpectralPCS>003FFFFFh</SpectralPCS>
+    <SpectralRange>
+     <Wavelengths start="-nan" end="-nan" steps="49318"/>
+    </SpectralRange>
+    <BiSpectralRange>
+     <Wavelengths start="-0.02597046" end="-0.02597046" steps="42629"/>
+)    </BiSpectralRange>
+    <MCS>85850000h</MCS>
+    <Reserved>00000005</Reserved>
+  </Header>
+  <Tags>
+  </Tags>
+</IccProfile>

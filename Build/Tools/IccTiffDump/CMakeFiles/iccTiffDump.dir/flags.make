@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccProfLib -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/../../IccXML/IccLibXML -I/usr/share/cmake/nlohmann_json -I/home/xss/copilot/iccLibFuzzer/Build/Cmake/Tools/IccTiffDump/../../../../Tools/CmdLine/IccApplyProfiles
 
-CXX_FLAGS = -fsanitize=undefined -fno-sanitize-recover=all -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers
+CXX_FLAGS = -g -fsanitize=address,undefined -fno-sanitize=leak -fno-omit-frame-pointer -Wall -g -g -O0 -Wall -Wextra -DDEBUG -std=gnu++17 -Wall -Wno-overloaded-virtual -Wno-switch -Wno-unused-parameter -Wno-unused-variable -Wno-missing-field-initializers
 

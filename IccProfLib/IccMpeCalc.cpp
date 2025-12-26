@@ -85,6 +85,10 @@
 
 //#define ICC_VERBOSE_CALC_APPLY 1
 
+// Thread-local recursion depth tracking for CIccMpeCalculator::Read
+static thread_local icUInt32Number g_calcReadRecursionDepth = 0;
+static const icUInt32Number MAX_CALC_READ_RECURSION_DEPTH = 32;
+
 
 class CIccConsoleDebugger : public IIccCalcDebugger
 {
@@ -4523,6 +4527,11 @@ typedef std::map<CIccCalculatorFunc*, icPositionNumber> icChannelFuncPtrMap;
  ******************************************************************************/
 bool CIccMpeCalculator::Read(icUInt32Number size, CIccIO *pIO)
 {
+  if (g_calcReadRecursionDepth >= MAX_CALC_READ_RECURSION_DEPTH) {
+    return false;
+  }
+  g_calcReadRecursionDepth++;
+
   icElemTypeSignature sig;
 
   size_t startPos = pIO->Tell();
@@ -4536,54 +4545,71 @@ bool CIccMpeCalculator::Read(icUInt32Number size, CIccIO *pIO)
     sizeof(icUInt16Number) +
     sizeof(icUInt16Number);
 
-  if (headerSize > size)
+  if (headerSize > size) {
+    g_calcReadRecursionDepth--;
     return false;
+  }
 
   if (!pIO) {
+    g_calcReadRecursionDepth--;
     return false;
   }
 
   icUInt16Number nInputChannels, nOutputChannels;
 
-  if (!pIO->Read32(&sig))
+  if (!pIO->Read32(&sig)) {
+    g_calcReadRecursionDepth--;
     return false;
+  }
 
-  if (!pIO->Read32(&m_nReserved))
+  if (!pIO->Read32(&m_nReserved)) {
+    g_calcReadRecursionDepth--;
     return false;
+  }
 
-  if (!pIO->Read16(&nInputChannels))
+  if (!pIO->Read16(&nInputChannels)) {
+    g_calcReadRecursionDepth--;
     return false;
+  }
 
-  if (!pIO->Read16(&nOutputChannels))
+  if (!pIO->Read16(&nOutputChannels)) {
+    g_calcReadRecursionDepth--;
     return false;
+  }
 
   SetSize(nInputChannels, nOutputChannels);
 
   icUInt32Number nSubElem;
 
-  if (!pIO->Read32(&nSubElem))
+  if (!pIO->Read32(&nSubElem)) {
+    g_calcReadRecursionDepth--;
     return false;
+  }
 
   // Sanity check: prevent excessive sub-elements
   const icUInt32Number MAX_SUB_ELEMENTS = 65536;
   if (nSubElem > MAX_SUB_ELEMENTS) {
+    g_calcReadRecursionDepth--;
     return false;
   }
 
   icUInt32Number nPos = nSubElem + 1;
 
   if (headerSize + (icUInt64Number)nPos*sizeof(icPositionNumber) > size) {
+    g_calcReadRecursionDepth--;
     return false;
   }
 
   icPositionNumber *pos, *posvals = (icPositionNumber*)malloc(nPos*sizeof(icPositionNumber));
   if (!posvals) {
+    g_calcReadRecursionDepth--;
     return false;
   }
 
   icUInt32Number n = nPos * (sizeof(icPositionNumber)/sizeof(icUInt32Number));
   if (pIO->Read32(posvals, n)!=n) {
     free(posvals);
+    g_calcReadRecursionDepth--;
     return false;
   }
 
@@ -4596,24 +4622,28 @@ bool CIccMpeCalculator::Read(icUInt32Number size, CIccIO *pIO)
     for (n=0; n<nSubElem; n++) {
       if (pos->offset + pos->size > size) {
         free(posvals);
+        g_calcReadRecursionDepth--;
         return false;
       }
       pIO->Seek(startPos + pos->offset, icSeekSet);
 
       if (!pIO->Read32(&elemSig)) {
         free(posvals);
+        g_calcReadRecursionDepth--;
         return false;
       }
 
       CIccMultiProcessElement *pElem = CIccMultiProcessElement::Create(elemSig);
       if (!pElem) {
         free(posvals);
+        g_calcReadRecursionDepth--;
         return false;
       }
 
       pIO->Seek(startPos + pos->offset, icSeekSet);
       if (!pElem->Read(pos->size, pIO)) {
         free(posvals);
+        g_calcReadRecursionDepth--;
         return false;
       }
       SetSubElem((icUInt16Number)n, pElem);
@@ -4626,18 +4656,21 @@ bool CIccMpeCalculator::Read(icUInt32Number size, CIccIO *pIO)
 
   if (!m_calcFunc || pos->offset + pos->size > size) {
     free(posvals);
+    g_calcReadRecursionDepth--;
     return false;
   }
 
   pIO->Seek(startPos + pos->offset, icSeekSet);
 
   if (!m_calcFunc->Read(pos->size, pIO)) {
+    g_calcReadRecursionDepth--;
     return false;
   }
   free(posvals);
 
   pIO->Seek(startPos + size, icSeekSet);
 
+  g_calcReadRecursionDepth--;
   return true;
 }
 
