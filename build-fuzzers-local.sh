@@ -63,7 +63,7 @@ mkdir -p "$OUTPUT_DIR"
 
 # Build fuzzers
 cd "$REPO_ROOT"
-for fuzzer in icc_link_fuzzer icc_dump_fuzzer icc_apply_fuzzer icc_applyprofiles_fuzzer icc_roundtrip_fuzzer icc_profile_fuzzer icc_io_fuzzer icc_spectral_fuzzer icc_calculator_fuzzer icc_multitag_fuzzer; do
+for fuzzer in icc_link_fuzzer icc_dump_fuzzer icc_apply_fuzzer icc_applyprofiles_fuzzer icc_applynamedcmm_fuzzer icc_roundtrip_fuzzer icc_profile_fuzzer icc_io_fuzzer icc_spectral_fuzzer icc_calculator_fuzzer icc_multitag_fuzzer; do
   echo "Building $fuzzer..."
   clang++ $CXXFLAGS \
     -I"$REPO_ROOT/IccProfLib" \
