@@ -1,8 +1,8 @@
 # Next Session Start Prompt
 
-**Date Updated**: 2025-12-26 18:44 UTC  
+**Date Updated**: 2025-12-26 20:49 UTC  
 **Repository**: https://github.com/xsscx/iccLibFuzzer  
-**Status**: 4 OOM vulnerabilities fixed + CI/CD stabilized + Docker infrastructure complete - Ready for upstream engagement
+**Status**: IccDumpProfile enhanced with debug logging + security heuristics - Ready for POC analysis
 
 ---
 
@@ -16,25 +16,74 @@ git pull origin master
 
 ---
 
-## ✅ Latest Session (2025-12-26 18:26-18:44 UTC)
+## ✅ Latest Session (2025-12-26 20:41-20:49 UTC)
 
 ### Accomplishments Summary
-**5 commits** | **1 file created** | **1 security vulnerability fixed** | **4 Dockerfiles updated** | **CI/CD fixed**
+**2 commits** | **1 file modified** | **Debug logging + Security heuristics added**
 
-1. ✅ **XNU macOS crash reproduced on Ubuntu** (crash-a60dedb59fbdfbb226d516ebaf14b04169f11e14)
-2. ✅ **CIccTagZipUtf8Text OOM fixed** (CWE-789, 1MB limit)
-3. ✅ **Dictionary syntax fixed** (83% CI failure resolved)
-4. ✅ **Docker infrastructure updated** (Ubuntu 26.04→24.04, fuzzer list complete)
-5. ✅ **README-DOCKER.md created** (592 lines, comprehensive guide)
+1. ✅ **IccDumpProfile debug logging enhanced** (commit 54a2db6)
+2. ✅ **Malicious profile heuristics added** (commit fbb43b7, 9 detection categories)
+3. ✅ **Test suite validated** (clean/malicious/POC profiles)
 
-**Duration**: 18 minutes  
-**Files**: 1 created, 7 modified  
-**Lines**: 614 added, 27 changed  
-**Security**: CWE-789 (Memory Allocation with Excessive Size Value)
+**Duration**: 8 minutes  
+**Files**: 1 modified (iccDumpProfile.cpp: 452→589 lines)  
+**Lines**: 139 added, 2 changed  
+**Purpose**: Copilot session POC analysis and triage support
 
 ---
 
-## 🔧 PRIORITY 1: Upstream Engagement - READY ✅
+## 🔧 PRIORITY 1: POC Analysis with Enhanced IccDumpProfile ✅
+
+### Tool Enhancements (Commits 54a2db6 + fbb43b7)
+- **Status**: ✅ Built, tested, pushed
+- **Purpose**: Debug logging + security heuristics for copilot sessions
+
+**Debug Logging** (commit 54a2db6):
+- Parse status (file, verbosity, validation mode)
+- Header details (size, raw bytes, color spaces)
+- Tag tracking (count, padding warnings)
+- Tag dump details (address, type sig, description length)
+- Validation status codes
+- All output prefixed with [DEBUG] for filtering
+
+**Security Heuristics** (commit fbb43b7):
+9 detection categories:
+1. Excessive file size (>50MB) - DoS indicator
+2. Excessive tag count (>100) - memory exhaustion
+3. Excessive tag size (>10MB) - allocation bomb
+4. Tag offset overlaps header/tag-table - corruption
+5. Tag extends beyond EOF - out-of-bounds read
+6. Overlapping tag pairs - exploit/confusion
+7. Duplicate tag signatures - parser confusion
+8. Zero tags - malformed profile
+9. Suspiciously small (<256 bytes)
+
+**Risk Scoring**:
+- HIGH (≥5): Multiple malicious indicators
+- MEDIUM (≥2): Suspicious characteristics
+- LOW (>0): Minor anomalies
+- CLEAN (0): No heuristic matches
+
+**Test Results**:
+- Valid profile (srgbCalcTest.icc): CLEAN (score 0)
+- Crafted duplicates: HIGH (score 5, 2 flags)
+- POC heap overflow: LOW (score 1, 1 flag)
+
+**Usage**:
+```bash
+./Build/Tools/IccDumpProfile/iccDumpProfile <profile.icc>
+./Build/Tools/IccDumpProfile/iccDumpProfile -v <profile.icc>  # with validation
+```
+
+**Next Steps**:
+1. Run enhanced IccDumpProfile on all POC artifacts
+2. Categorize POCs by risk level
+3. Prioritize HIGH risk profiles for deeper analysis
+4. Use debug output for root cause analysis
+
+---
+
+## 🔧 PRIORITY 2: Upstream Engagement - READY ✅
 
 ### OOM Vulnerability Fixes (Commits 731e63c + 1f0330b)
 - **Status**: ✅ Fixed, tested, pushed (4 total vulnerabilities)
@@ -107,20 +156,47 @@ git pull origin master
 ## 📋 Recent Commits (Unpushed: 0)
 
 ```
-a4a9134 (HEAD -> master, origin/master) docs: Add Docker build/test guide and fix Dockerfile.fuzzing
+fbb43b7 (HEAD -> master, origin/master) security: Add malicious profile heuristics to IccDumpProfile
+54a2db6 debug: Enhanced IccDumpProfile logging for copilot sessions
+a4a9134 docs: Add Docker build/test guide and fix Dockerfile.fuzzing
 aeecff1 fix: Update Dockerfiles - Ubuntu version and fuzzer list
 13ad6e9 fix: Remove inline comments from libFuzzer dictionary
 1f0330b fix: Add bounds validation for CIccTagZipUtf8Text OOM vulnerability
 78a9ae7 docs: Add session summary and update next session prompt
-731e63c fix: Add bounds validation for OOM vulnerabilities in tag parsing
-760faf7 fuzzer: Add IccApplyNamedCmm-specific fuzzer honoring AST Query pattern
 ```
 
 **All commits pushed** ✅
 
 ---
 
-## 🚀 NEW: CI/CD Infrastructure Stabilized ✅
+## 🚀 NEW: IccDumpProfile Enhanced for POC Analysis ✅
+
+### Debug Logging + Security Heuristics (Session 2025-12-26 20:41-20:49)
+- **Status**: ✅ Complete, tested, pushed
+- **Files**: iccDumpProfile.cpp (452→589 lines, +137 lines)
+- **Commits**: 54a2db6 (debug) + fbb43b7 (heuristics)
+
+**Features Added**:
+1. **Comprehensive debug logging** - parsing status, header details, tag metadata
+2. **9-category heuristic detection** - malicious profile indicators
+3. **Risk scoring system** - HIGH/MEDIUM/LOW/CLEAN classification
+4. **Validation integration** - works with existing -v flag
+5. **Filterable output** - [DEBUG], [HEURISTIC], [SECURITY] prefixes
+
+**Validated Against**:
+- ✅ Valid profiles: CLEAN detection
+- ✅ Malicious crafted: HIGH risk (score 5)
+- ✅ POC artifacts: LOW risk (small file)
+
+**Impact**:
+- Accelerates POC triage workflow
+- Provides immediate risk assessment
+- Aids root cause analysis with detailed debug info
+- Supports copilot session debugging
+
+---
+
+## 🚀 CI/CD Infrastructure Stabilized ✅
 
 ### GitHub Actions Dictionary Fix (Commit 13ad6e9)
 - **Status**: ✅ Fixed, tested, pushed
@@ -180,14 +256,28 @@ aeecff1 fix: Update Dockerfiles - Ubuntu version and fuzzer list
 ## 🎯 Immediate Next Actions
 
 ### High Priority
-1. **Verify CI/CD Stabilization**
+1. **POC Analysis with Enhanced Tool**
+   ```bash
+   # Analyze all POC artifacts with new heuristics
+   for f in poc-archive/*.icc; do
+     echo "=== $f ==="
+     ./Build/Tools/IccDumpProfile/iccDumpProfile "$f" 2>&1 | grep -A 4 SECURITY
+   done
+   
+   # Analyze crash files that parse successfully
+   for f in poc-archive/crash-*; do
+     timeout 5 ./Build/Tools/IccDumpProfile/iccDumpProfile "$f" 2>&1
+   done
+   ```
+
+2. **Verify CI/CD Stabilization**
    ```bash
    # Check next scheduled run
    gh run list --workflow=clusterfuzzlite.yml --limit 3
    # Should pass with dict fix + all 13 fuzzers
    ```
 
-2. **Upstream OOM Fixes**
+3. **Upstream OOM Fixes**
    - File issue with commits 731e63c + 1f0330b details
    - Submit PR to DemoIccMAX with 4 fixes
    - Include test cases and regression validation
@@ -230,7 +320,19 @@ aeecff1 fix: Update Dockerfiles - Ubuntu version and fuzzer list
 
 ## 📖 Session Documentation
 
-### Latest Session (2025-12-26 18:26-18:44 UTC)
+### Latest Session (2025-12-26 20:41-20:49 UTC)
+**Summary**: Enhanced IccDumpProfile with debug logging and malicious profile heuristics
+
+**Key Metrics**:
+- Time: 8 minutes
+- Commits: 2
+- Files: 1 modified (iccDumpProfile.cpp)
+- Lines: 139 added, 2 changed
+- Features: Debug logging + 9 heuristic categories
+- Risk levels: HIGH/MEDIUM/LOW/CLEAN classification
+- Testing: 3 profiles validated (clean/malicious/POC)
+
+### Previous Session (2025-12-26 18:26-18:44 UTC)
 **Summary**: Session focused on CI/CD stabilization and Docker infrastructure
 
 **Key Metrics**:
@@ -331,6 +433,15 @@ aeecff1 fix: Update Dockerfiles - Ubuntu version and fuzzer list
 
 ## 💡 Key Insights
 
+### Session 3 Findings
+- **Heuristics Effective**: Duplicate tags + header overlap = HIGH risk (score 5)
+- **Debug Logging**: Comprehensive parse/tag/validation metadata aids analysis
+- **Risk Scoring**: Weighted system prioritizes multiple indicators over single flags
+- **POC Triage**: Small file size (194 bytes) = LOW risk but still requires analysis
+- **Output Format**: Prefixed tags ([DEBUG], [HEURISTIC], [SECURITY]) enable filtering
+- **Build Performance**: 8-minute session, 2 commits, clean build
+- **Tool Usage**: IccDumpProfile now primary POC analysis tool for copilot sessions
+
 ### Session 2 Findings
 - **CI/CD**: libFuzzer dict format prohibits inline comments (83% failure)
 - **Cross-Platform**: XNU macOS crashes reproducible on Ubuntu with ASan
@@ -364,28 +475,33 @@ aeecff1 fix: Update Dockerfiles - Ubuntu version and fuzzer list
 1. Read this document
 2. Review latest session summary
 3. Check git status and pull latest
-4. Verify CI/CD status (should pass now)
+4. Run POC analysis with enhanced IccDumpProfile
 
 ### Recommended Focus
-- **Primary**: Verify CI/CD pass, upstream engagement (4 OOM fixes + PSSwopCustom22228)
-- **Secondary**: Extended fuzzing validation, Docker testing
-- **Tertiary**: Additional bounds validation survey
+- **Primary**: POC analysis with heuristics, categorize by risk level
+- **Secondary**: Verify CI/CD pass, upstream engagement (4 OOM fixes + PSSwopCustom22228)
+- **Tertiary**: Extended fuzzing validation, Docker testing
 
 ### Expected Outcomes
+- All POC artifacts analyzed with heuristic scoring
+- HIGH risk profiles identified and triaged
+- Debug logs available for root cause analysis
 - CI/CD runs clean (dict + fuzzer list fixes validated)
-- 4 OOM fixes submitted upstream with XNU reproduction details
-- PSSwopCustom22228 analysis submitted
-- 24h fuzzing results analyzed
-- Docker infrastructure validated
+- Upstream submissions prepared (4 OOM fixes + PSSwopCustom22228)
 
-### Documentation Added
+### Documentation Added (Session 2)
 - ✅ README-DOCKER.md (592 lines, comprehensive Docker guide)
 - ✅ All Dockerfiles synchronized with current fuzzer list
 - ✅ CI/CD dictionary format corrected
 
+### Tool Enhancements (Session 3)
+- ✅ IccDumpProfile debug logging (commit 54a2db6)
+- ✅ IccDumpProfile security heuristics (commit fbb43b7)
+- ✅ Test suite validation (clean/malicious/POC)
+
 ---
 
-**Last Updated**: 2025-12-26T18:44:00Z  
+**Last Updated**: 2025-12-26T20:49:00Z  
 **Status**: Session complete, all work committed and pushed  
-**Next Session**: CI/CD verification and upstream engagement  
+**Next Session**: POC analysis with enhanced IccDumpProfile + upstream engagement  
 **Analyst**: GitHub Copilot CLI (LLMCJF strict-engineering mode)
