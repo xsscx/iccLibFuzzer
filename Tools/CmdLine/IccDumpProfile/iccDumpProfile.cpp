@@ -96,17 +96,24 @@ void DumpTag(CIccProfile *pIcc, icTagSignature sig, int nVerboseness)
 
   std::string contents;
 
+  printf("[DEBUG] Dumping tag signature: 0x%08x (%s)\n", sig, icGetSig(buf, bufSize, sig));
+  
   if (pTag) {
     printf("\nContents of %s tag (%s)\n", Fmt.GetTagSigName(sig), icGetSig(buf, bufSize, sig));
+    printf("[DEBUG] Tag found at address: %p\n", (void*)pTag);
     printf("Type: ");
     if (pTag->IsArrayType()) {
       printf("Array of ");
     }
     printf("%s (%s)\n", Fmt.GetTagTypeSigName(pTag->GetType()), icGetSig(buf, bufSize, pTag->GetType()));
+    printf("[DEBUG] Tag type signature: 0x%08x\n", pTag->GetType());
+    printf("[DEBUG] Verboseness level for Describe(): %d\n", nVerboseness);
     pTag->Describe(contents, nVerboseness);
+    printf("[DEBUG] Description length: %zu bytes\n", contents.length());
     fwrite(contents.c_str(), contents.length(), 1, stdout);
   }
   else {
+    printf("[DEBUG] Tag (%s) not found in profile\n", icGetSig(buf, bufSize, sig));
     printf("Tag (%s) not found in profile\n", icGetSig(buf, bufSize, sig));
   }
 }
@@ -198,8 +205,13 @@ print_usage:
 
   // Precondition: nArg is argument of ICC profile filename
   printf("Built with IccProfLib version " ICCPROFLIBVER "\n\n");
+  printf("[DEBUG] Parsing file: %s\n", argv[nArg]);
+  printf("[DEBUG] Verbosity level: %d\n", verbosity);
+  printf("[DEBUG] Validation mode: %s\n", bDumpValidation ? "ENABLED" : "DISABLED");
+  
   if (!pIcc) {
-    printf("Unable to parse '%s' as ICC profile!\n", argv[nArg]);
+    printf("[ERROR] Unable to parse '%s' as ICC profile!\n", argv[nArg]);
+    printf("[DEBUG] Parse failure - file may be corrupted or invalid format\n");
     nStatus = icValidateCriticalError;
   }
   else {
@@ -207,12 +219,19 @@ print_usage:
     const size_t bufSize = 64;
     char buf[bufSize];
 
+    printf("[DEBUG] Profile parsed successfully\n");
+    printf("[DEBUG] Header size: %zu bytes\n", sizeof(icHeader));
     printf("Profile:            '%s'\n", argv[nArg]);
     if(Fmt.IsProfileIDCalculated(&pHdr->profileID))
       printf("Profile ID:         %s\n", Fmt.GetProfileID(&pHdr->profileID));
     else
       printf("Profile ID:         Profile ID not calculated.\n");
     printf("Size:               %d (0x%x) bytes\n", pHdr->size, pHdr->size);
+    printf("[DEBUG] Header raw bytes: size=%u cmmId=0x%08x version=0x%08x class=0x%08x\n",
+           pHdr->size, pHdr->cmmId, pHdr->version, pHdr->deviceClass);
+    printf("[DEBUG] Color spaces: data=%s PCS=%s\n",
+           Fmt.GetColorSpaceSigName(pHdr->colorSpace),
+           Fmt.GetColorSpaceSigName(pHdr->pcs));
 
     printf("\nHeader\n");
     printf(  "------\n");
@@ -273,6 +292,7 @@ print_usage:
 
     printf("\nProfile Tags\n");
     printf(  "------------\n");
+    printf("[DEBUG] Tag count: %zu\n", pIcc->m_Tags.size());
 
     printf("%28s    ID    %8s\t%8s\t%8s\n", "Tag",  "Offset", "Size", "Pad");
     printf("%28s  ------  %8s\t%8s\t%8s\n", "----", "------", "----", "---");
@@ -295,9 +315,18 @@ print_usage:
 
         printf("%28s  %s  %8d\t%8d\t%8d\n", Fmt.GetTagSigName(i->TagInfo.sig),
             icGetSig(buf, i->TagInfo.sig, false), i->TagInfo.offset, i->TagInfo.size, pad);
+        if (pad < 0) {
+          printf("[DEBUG] WARNING: Tag %s has negative padding (%d) - overlapping tags!\n",
+                 Fmt.GetTagSigName(i->TagInfo.sig), pad);
+        }
+        if (pad > 3) {
+          printf("[DEBUG] WARNING: Tag %s has excessive padding (%d bytes)\n",
+                 Fmt.GetTagSigName(i->TagInfo.sig), pad);
+        }
     }
 
     printf("\n");
+    printf("[DEBUG] Tag enumeration complete (%d tags)\n", n);
 
     // Report all duplicated tags in the tag index
     // Both ICC.1 and ICC.2 are silent on what should happen for this but report as a warning!!!
@@ -394,12 +423,16 @@ print_usage:
 
     if (argc>nArg+1) {
       if (!stricmp(argv[nArg+1], "ALL")) {
+        printf("[DEBUG] Dumping ALL tags (count: %zu)\n", pIcc->m_Tags.size());
         for (i = pIcc->m_Tags.begin(); i!=pIcc->m_Tags.end(); i++) {
           DumpTag(pIcc, i->TagInfo.sig, verbosity);
         }
+        printf("[DEBUG] All tags dumped\n");
       }
       else {
-        DumpTag(pIcc, (icTagSignature)icGetSigVal(argv[nArg+1]), verbosity);
+        icTagSignature tagSig = (icTagSignature)icGetSigVal(argv[nArg+1]);
+        printf("[DEBUG] Dumping specific tag: %s (0x%08x)\n", argv[nArg+1], tagSig);
+        DumpTag(pIcc, tagSig, verbosity);
       }
     }
   }
@@ -409,6 +442,7 @@ print_usage:
   if (bDumpValidation) {
     printf("\nValidation Report\n");
     printf(  "-----------------\n");
+    printf("[DEBUG] Validation status code: %d\n", nStatus);
     switch (nStatus) {
     case icValidateOK:
       printf("Profile is valid");
@@ -438,6 +472,7 @@ print_usage:
     }
   }
   printf("\n\n");
+  printf("[DEBUG] Report length: %zu bytes\n", sReport.length());
 
   sReport += "\n";
   fwrite(sReport.c_str(), sReport.length(), 1, stdout);
