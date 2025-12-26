@@ -1438,6 +1438,12 @@ bool CIccTagZipUtf8Text::SetText(const icUChar16 *szText)
  */
 icUChar *CIccTagZipUtf8Text::AllocBuffer(icUInt32Number nSize)
 {
+  const icUInt32Number MAX_ZIP_TEXT_SIZE = 1048576; // 1MB limit for compressed text
+  
+  if (nSize > MAX_ZIP_TEXT_SIZE) {
+    return NULL;
+  }
+  
   if (m_nBufSize != nSize) {
     if (!nSize) {
       if (m_pZipBuf) {
