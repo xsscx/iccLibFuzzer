@@ -1,0 +1,34 @@
+PSSwopCustom22228.icc Analysis Summary
+======================================
+
+Repository: https://github.com/xsscx/iccLibFuzzer
+Date: 2025-12-26
+Commits: af70023, b09b927, 8a054fa
+
+Files Added:
+- PSSwopCustom22228.icc (707 KB)
+- PSSwopCustom22228_ANALYSIS.md (796 lines)
+- reproduce_PSSwopCustom22228.sh (executable)
+
+Tools Tested:
+✓ IccDumpProfile - Exposes tag count 60,171
+✓ IccToXml - Fails at Read() with validation error
+✓ ASan fuzzer - SEGV at IccTagLut.cpp:599
+✓ UBSan fuzzer - NaN→uint UB + SEGV
+✓ Python parser - Confirms 12 valid / 60,171 tags
+✓ file/xxd - Header analysis
+
+Vulnerabilities:
+- CWE-125: Heap OOB read (CRITICAL)
+- CWE-190: Integer overflow in tag iteration
+- CWE-681: NaN to unsigned int conversion UB
+- CWE-787: Potential heap overflow (write primitive TBD)
+
+Reproduction:
+$ ./reproduce_PSSwopCustom22228.sh
+
+Next Actions:
+1. Push commits to GitHub
+2. File upstream issue with analysis document
+3. Add to fuzzer corpus for regression testing
+4. Apply recommended fixes (4 patches identified)
