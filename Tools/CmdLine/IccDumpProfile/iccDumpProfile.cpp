@@ -72,6 +72,8 @@
 
 #include <stdio.h>
 #include <cstring>
+#include <set>
+#include <utility>
 #include "IccProfile.h"
 #include "IccTag.h"
 #include "IccUtil.h"
@@ -327,6 +329,106 @@ print_usage:
 
     printf("\n");
     printf("[DEBUG] Tag enumeration complete (%d tags)\n", n);
+
+    printf("\n[SECURITY] Malicious Profile Heuristics\n");
+    printf(  "---------------------------------------\n");
+    int heuristic_score = 0;
+    int heuristic_flags = 0;
+
+    if (pHdr->size > 50*1024*1024) {
+      printf("[HEURISTIC] Excessive file size: %u bytes (>50MB) - potential DoS\n", pHdr->size);
+      heuristic_score += 3;
+      heuristic_flags++;
+    }
+    
+    if (pIcc->m_Tags.size() > 100) {
+      printf("[HEURISTIC] Excessive tag count: %zu (>100) - potential memory exhaustion\n", pIcc->m_Tags.size());
+      heuristic_score += 2;
+      heuristic_flags++;
+    }
+    
+    if (pIcc->m_Tags.size() == 0) {
+      printf("[HEURISTIC] Zero tags - malformed profile\n");
+      heuristic_score += 1;
+      heuristic_flags++;
+    }
+
+    for (i=pIcc->m_Tags.begin(); i!=pIcc->m_Tags.end(); i++) {
+      if (i->TagInfo.size > 10*1024*1024) {
+        printf("[HEURISTIC] Tag %s has excessive size: %u bytes (>10MB)\n",
+               Fmt.GetTagSigName(i->TagInfo.sig), i->TagInfo.size);
+        heuristic_score += 2;
+        heuristic_flags++;
+      }
+      
+      if (i->TagInfo.offset < 128 + 4 + (pIcc->m_Tags.size() * 12)) {
+        printf("[HEURISTIC] Tag %s offset %u overlaps header/tag-table\n",
+               Fmt.GetTagSigName(i->TagInfo.sig), i->TagInfo.offset);
+        heuristic_score += 3;
+        heuristic_flags++;
+      }
+      
+      if (i->TagInfo.offset + i->TagInfo.size > pHdr->size) {
+        printf("[HEURISTIC] Tag %s extends beyond EOF (offset=%u size=%u filesize=%u)\n",
+               Fmt.GetTagSigName(i->TagInfo.sig), i->TagInfo.offset, i->TagInfo.size, pHdr->size);
+        heuristic_score += 5;
+        heuristic_flags++;
+      }
+    }
+
+    int overlap_count = 0;
+    for (i=pIcc->m_Tags.begin(); i!=pIcc->m_Tags.end(); i++) {
+      for (j=pIcc->m_Tags.begin(); j!=pIcc->m_Tags.end(); j++) {
+        if (i != j && i->TagInfo.offset < j->TagInfo.offset) {
+          if (i->TagInfo.offset + i->TagInfo.size > j->TagInfo.offset) {
+            overlap_count++;
+          }
+        }
+      }
+    }
+    if (overlap_count > 0) {
+      printf("[HEURISTIC] Detected %d overlapping tag pairs - potential exploit/confusion\n", overlap_count);
+      heuristic_score += overlap_count;
+      heuristic_flags++;
+    }
+
+    int duplicate_count = 0;
+    std::set<std::pair<void*, icTagSignature>> seen_tags;
+    for (i = pIcc->m_Tags.begin(); i != pIcc->m_Tags.end(); i++) {
+      std::pair<void*, icTagSignature> tag_pair(&(*i), i->TagInfo.sig);
+      for (j = pIcc->m_Tags.begin(); j != pIcc->m_Tags.end(); j++) {
+        if ((i != j) && (i->TagInfo.sig == j->TagInfo.sig)) {
+          if (seen_tags.find(tag_pair) == seen_tags.end()) {
+            duplicate_count++;
+            seen_tags.insert(tag_pair);
+            break;
+          }
+        }
+      }
+    }
+    if (duplicate_count > 0) {
+      printf("[HEURISTIC] %d duplicate tag signatures - parser confusion\n", duplicate_count);
+      heuristic_score += duplicate_count;
+      heuristic_flags++;
+    }
+
+    if (pHdr->size < 256) {
+      printf("[HEURISTIC] Suspiciously small file size: %u bytes\n", pHdr->size);
+      heuristic_score += 1;
+      heuristic_flags++;
+    }
+
+    printf("\n[SECURITY] Heuristic Summary: %d flags raised, risk score=%d\n", heuristic_flags, heuristic_score);
+    if (heuristic_score >= 5) {
+      printf("[SECURITY] RISK LEVEL: HIGH - Profile exhibits multiple malicious indicators\n");
+    } else if (heuristic_score >= 2) {
+      printf("[SECURITY] RISK LEVEL: MEDIUM - Profile has suspicious characteristics\n");
+    } else if (heuristic_score > 0) {
+      printf("[SECURITY] RISK LEVEL: LOW - Minor anomalies detected\n");
+    } else {
+      printf("[SECURITY] RISK LEVEL: CLEAN - No heuristic matches\n");
+    }
+    printf("\n");
 
     // Report all duplicated tags in the tag index
     // Both ICC.1 and ICC.2 are silent on what should happen for this but report as a warning!!!
