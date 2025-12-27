@@ -969,7 +969,7 @@ wxString AnalyzeRoundTrip(wxString &profilePath, icRenderingIntent nIntent, bool
   std::string path = profilePath.ToStdString(wxConvUTF8);
 
   clock_t start = clock();
-  icStatusCMM stat = eval.EvaluateProfile( (const icChar*) path.c_str(), 0, nIntent, icInterpTetrahedral, bUseMPE);
+  icStatusCMM stat = eval.EvaluateProfile( (const icChar*) path.c_str(), 9, nIntent, icInterpTetrahedral, bUseMPE);
 
   if (stat!=icCmmStatOk) {
     report += wxString::Format("  Unable to perform round trip on '%s'\n", profilePath.c_str());
